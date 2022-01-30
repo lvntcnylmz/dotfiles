@@ -1,0 +1,22 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+$HOME/.config/polybar/launch.sh
+
+bspc monitor -d I II III IV V
+bspc monitor DP-1 -d V VI VII VIII IX X
+
+bspc config border_width         0
+bspc config window_gap          11
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a xfce4-terminal -o desktop='^1'
+bspc rule -a firefox -o desktop='^2'
+bspc rule -a codium -o desktop='^5' 
+
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
