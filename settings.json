@@ -1,0 +1,142 @@
+{
+  // * workbench settings
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Amethyst Dark (Higher Contrast)",
+  "security.workspace.trust.banner": "never",
+
+
+  // * editor settings
+  "editor.cursorBlinking": "expand",
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 2,
+  "editor.fontFamily": "FiraCode NF",
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.guides.highlightActiveBracketPair": true,
+  "editor.semanticHighlighting.enabled": true,
+  "editor.tokenColorCustomizations": {
+    // "functions": "#FCEFE3",
+    // "keywords": "#C0C8D5",
+    // "numbers": "#9DA9C4",
+    // "strings": "#72638F",
+    // "types": "#BA869F",
+    // "variables": "#D1ABB6"
+  },
+
+
+  // * explorer settings
+  "explorer.compactFolders": false,
+
+
+  // * terminal settings
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+
+
+  // * terminal profiles
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Windows PowerShell": {
+      "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+    }
+  },
+
+
+  // * java settings
+  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -javaagent:\"c:\\Users\\lvntc\\.vscode\\extensions\\gabrielbb.vscode-lombok-1.0.1\\server\\lombok.jar\"",
+  "java.jdt.ls.java.home": "C:\\Users\\lvntc\\.jdks\\jdk-17.0.2",
+  "[javascript]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+
+
+  // * better comment extension setting
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#FCEE0C",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+
+
+  // * utils settings
+  "redhat.telemetry.enabled": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "git.confirmSync": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "files.associations": {
+    "*.sass": "sass"
+  },
+
+  
+  // * live sass compiler extension settings
+  "liveSassCompile.settings.generateMap": false,
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "~/../../css/"
+    }
+  ],
+  "material-icon-theme.activeIconPack": "angular_ngrx",
+  "material-icon-theme.folders.color": "#ab46d2",
+}
