@@ -5,10 +5,24 @@
         "alignment": "left",
         "segments": [
           {
-            "background": "#0077c2",
+            "background": "#0f94d2",
             "foreground": "#ffffff",
             "leading_diamond": "\u256d\u2500\ue0b6",
+            "properties": {
+              "linux": "\uF303 ",
+              "macos": "\ue27f ",
+              "windows": "\uE62A "
+            },
             "style": "diamond",
+            "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+            "type": "os"
+          },
+          {
+            "background": "#d2232a",
+            "foreground": "#ffffff",
+            "leading_diamond": "\ue0b6",
+            "powerline_symbol": "\ue0b0",
+            "style": "powerline",
             "template": "\uf120 {{ .Name }} ",
             "type": "shell"
           },
@@ -22,7 +36,7 @@
               "style": "short"
             },
             "style": "powerline",
-            "template": " \uf07b\uf553{{ .Path }} ",
+            "template": " \uf07b \uf553 {{ .Path }} ",
             "type": "path"
           },
           {
@@ -51,8 +65,8 @@
         "alignment": "right",
         "segments": [
           {
-            "background": "#303030",
-            "foreground": "#3C873A",
+            "background": "#3C873A",
+            "foreground": "#fff",
             "leading_diamond": "\ue0b6",
             "properties": {
               "fetch_package_manager": true,
@@ -119,8 +133,8 @@
             "type": "dart"
           },
           {
-            "background": "#ffffff",
-            "foreground": "#ce092f",
+            "background": "#ce092f",
+            "foreground": "#fff",
             "leading_diamond": " \ue0b6",
             "style": "diamond",
             "template": "\ue753 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
@@ -171,19 +185,6 @@
             "template": "\ufd31 {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}",
             "trailing_diamond": "\ue0b4",
             "type": "kubectl"
-          },
-          {
-            "background": "#660b4e",
-            "foreground": "#ffffff",
-            "leading_diamond": "\ue0b6",
-            "properties": {
-              "linux": "\uF303",
-              "macos": "\ue27f",
-              "windows": "\uE62A"
-            },
-            "style": "diamond",
-            "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}}<#000000> \ue0b2</>",
-            "type": "os"
           },
           {
             "type": "owm",
