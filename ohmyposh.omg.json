@@ -18,7 +18,7 @@
             "type": "os"
           },
           {
-            "background": "#d2232a",
+            "background": "#593869",
             "foreground": "#ffffff",
             "leading_diamond": "\ue0b6",
             "powerline_symbol": "\ue0b0",
@@ -188,10 +188,11 @@
           },
           {
             "type": "owm",
-            "style": "diamond",
-            "foreground": "#ffffff",
+            "style": "powerline",
+            "foreground": "#fff",
             "background": "#66230b",
-            "leading_diamond": "\ue0b2",
+            "powerline_symbol": "\ue0b2",
+            "invert_powerline": true,
             "properties": {
               "apikey": "2d33906c4852d7e528c08dab94722964",
               "location": "CLAUSTHAL,DE",
@@ -200,15 +201,14 @@
               "http_timeout": 400,
               "cache_timeout": 15
             },
-            "template": " {{.Weather}} {{.Temperature}} {{.UnitIcon}}<#000000> \ue0b2</>"
+            "template": " {{.Weather}}  {{.Temperature}} {{.UnitIcon}} "
           }, 
           {
             "background": "#0b6623",
             "foreground": "#ffffff",
             "invert_powerline": true,
-            "leading_diamond": "\ue0b2",
             "properties": {
-              "time_format": "_2,15:04"
+              "time_format": "Mon 02/Jan/2006 - 15:04"
             },
             "style": "diamond",
             "template": " \uf5ef {{ .CurrentDate | date .Format }} ",
