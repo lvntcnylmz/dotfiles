@@ -1,10 +1,10 @@
 {
+
   // * workbench settings
   "workbench.iconTheme": "material-icon-theme",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "Amethyst Dark (Higher Contrast)",
-  "security.workspace.trust.banner": "never",
+  "workbench.colorTheme": "Death Purple",
 
 
   // * editor settings
@@ -12,19 +12,13 @@
   "editor.cursorStyle": "line",
   "editor.cursorWidth": 2,
   "editor.fontFamily": "FiraCode NF",
+  "editor.fontLigatures": true,
   "editor.cursorSmoothCaretAnimation": true,
   "editor.guides.bracketPairs": "active",
   "editor.guides.highlightActiveBracketPair": true,
   "editor.semanticHighlighting.enabled": true,
-  "editor.tokenColorCustomizations": {
-    // "functions": "#FCEFE3",
-    // "keywords": "#C0C8D5",
-    // "numbers": "#9DA9C4",
-    // "strings": "#72638F",
-    // "types": "#BA869F",
-    // "variables": "#D1ABB6"
-  },
-
+  "editor.guides.indentation": true,
+  
 
   // * explorer settings
   "explorer.compactFolders": false,
@@ -90,28 +84,28 @@
     },
     {
       "tag": "//",
-      "color": "#474747",
-      "strikethrough": true,
+      "color": "#000000",
+      "strikethrough": false,
       "underline": false,
-      "backgroundColor": "transparent",
+      "backgroundColor": "#00ff15",
       "bold": false,
       "italic": false
     },
     {
       "tag": "todo",
-      "color": "#FF8C00",
+      "color": "#000000",
       "strikethrough": false,
       "underline": false,
-      "backgroundColor": "transparent",
+      "backgroundColor": "#FF8C00",
       "bold": false,
       "italic": false
     },
     {
       "tag": "*",
-      "color": "#FCEE0C",
+      "color": "#000000",
       "strikethrough": false,
       "underline": false,
-      "backgroundColor": "transparent",
+      "backgroundColor": "#FCEE0C",
       "bold": false,
       "italic": false
     }
@@ -119,24 +113,20 @@
 
 
   // * utils settings
+  "security.workspace.trust.banner": "never",
   "redhat.telemetry.enabled": false,
-  "diffEditor.ignoreTrimWhitespace": false,
   "git.confirmSync": false,
-  "liveServer.settings.donotShowInfoMsg": true,
+  "git.mergeEditor": true,
+  "material-icon-theme.activeIconPack": "angular_ngrx",
+  "material-icon-theme.folders.color": "#ab46d2",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "files.associations": {
     "*.sass": "sass"
   },
+  "editor.minimap.renderCharacters": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "window.menuBarVisibility": "compact",
+  "workbench.layoutControl.enabled": false,
 
-  
-  // * live sass compiler extension settings
-  "liveSassCompile.settings.generateMap": false,
-  "liveSassCompile.settings.formats": [
-    {
-      "format": "expanded",
-      "extensionName": ".css",
-      "savePath": "~/../../css/"
-    }
-  ],
-  "material-icon-theme.activeIconPack": "angular_ngrx",
-  "material-icon-theme.folders.color": "#ab46d2",
 }
