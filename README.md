@@ -2,6 +2,7 @@
 
 ## Modules 
 - Terminal : zsh
+- Promt Theme Engine : oh-my-posh
 - Windows Manager : bspwm
-- Status bar : Polybar
+- Status Bar : Polybar
 - System info tool : Neofetch
