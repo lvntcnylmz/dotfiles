@@ -6,7 +6,12 @@
         "segments": [
           {
             "style": "plain",
-            "template": "\u256d\u2500[<#ffff55>{{ .UserName }}</><#ff5555>@</><#55ff55>{{ .HostName }}</>]\u2500",
+            "template": "\u256d\u2500[ <#ff6000>\uf120{{ .Name }} </>]",
+            "type": "shell"
+          },
+          {
+            "style": "plain",
+            "template": "\u2500[<#55ff55>{{ .HostName }}</>]\u2500",
             "type": "session"
           },
           {
@@ -124,29 +129,27 @@
               "windows": "<#ffffff>\ue27f</>"
             },
             "style": "plain",
-            "template": "<#ffffff>(</>{{ if .WSL }}WSL at {{ end }}{{.Icon}}<#ffffff>)\u2500</>",
+            "template": "<#ffffff>(</>{{ if .WSL }}WSL at {{ end }}{{.Icon}}<#ffffff>) \u2500</>",
             "type": "os"
           },
           {
-            "foreground": "#ffffff",
-            "foreground_templates": [
-              "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
-              "{{if eq \"Discharging\" .State.String}}#FFFB38{{end}}",
-              "{{if eq \"Full\" .State.String}}#33DD2D{{end}}"
-            ],
-            "properties": {
-              "charged_icon": "\uf58e ",
-              "charging_icon": "\uf1e6 ",
-              "discharging_icon": "\ue234 "
-            },
+            "type": "owm",
             "style": "plain",
-            "template": "<#ffffff>[</>{{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}%<#ffffff>]\u2500</>",
-            "type": "battery"
-          },
+            "foreground": "#fff",
+            "properties": {
+              "apikey": "2d33906c4852d7e528c08dab94722964",
+              "location": "CLAUSTHAL,DE",
+              "units": "metric",
+              "enable_hyperlink": true,
+              "http_timeout": 400,
+              "cache_timeout": 15
+            },
+            "template": " <#ffffff>[</>{{.Temperature}}{{.UnitIcon}}<#ffffff>]</> "
+          }, 
           {
             "foreground": "#55ffff",
             "properties": {
-              "time_format": "_2,15:04"
+              "time_format": "Mon Jan 02 2006 - 15:04"
             },
             "style": "plain",
             "template": "<#ffffff>[</>{{ .CurrentDate | date .Format }}<#ffffff>]</>",
