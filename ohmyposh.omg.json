@@ -5,7 +5,7 @@
         "alignment": "left",
         "segments": [
           {
-            "background": "#0f94d2",
+            "background": "#1793d1",
             "foreground": "#ffffff",
             "leading_diamond": "\u256d\u2500\ue0b6",
             "properties": {
@@ -18,7 +18,7 @@
             "type": "os"
           },
           {
-            "background": "#593869",
+            "background": "#8800cc",
             "foreground": "#ffffff",
             "leading_diamond": "\ue0b6",
             "powerline_symbol": "\ue0b0",
@@ -27,12 +27,12 @@
             "type": "shell"
           },
           {
-            "background": "#E95420",
-            "foreground": "#2d3436",
+            "background": "#cc0088",
+            "foreground": "#000000",
             "powerline_symbol": "\ue0b0",
             "properties": {
               "folder_icon": " \uf07b ",
-              "home_icon": "\uf7dd",
+              "home_icon": "\uf7dd ",
               "style": "short"
             },
             "style": "powerline",
@@ -40,9 +40,9 @@
             "type": "path"
           },
           {
-            "background": "#FFFB38",
+            "background": "#22cc00",
             "background_templates": [
-              "{{ if or (.Working.Changed) (.Staging.Changed) }}#ffeb95{{ end }}",
+              "{{ if or (.Working.Changed) (.Staging.Changed) }}#22cc00{{ end }}",
               "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#c5e478{{ end }}",
               "{{ if gt .Ahead 0 }}#C792EA{{ end }}",
               "{{ if gt .Behind 0 }}#C792EA{{ end }}"
@@ -189,8 +189,8 @@
           {
             "type": "owm",
             "style": "powerline",
-            "foreground": "#fff",
-            "background": "#66230b",
+            "foreground": "#000000",
+            "background": "#FED766",
             "powerline_symbol": "\ue0b2",
             "invert_powerline": true,
             "properties": {
@@ -201,14 +201,14 @@
               "http_timeout": 400,
               "cache_timeout": 15
             },
-            "template": " {{.Weather}} {{.Temperature}} {{.UnitIcon}} "
+            "template": " {{.Weather}}{{.Temperature}}{{.UnitIcon}} "
           }, 
           {
-            "background": "#0b6623",
-            "foreground": "#ffffff",
+            "background": "#69995D",
+            "foreground": "#000000",
             "invert_powerline": true,
             "properties": {
-              "time_format": "Mon 02/Jan/2006 - 15:04"
+              "time_format": "Mon Jan 02 2006 - 15:04"
             },
             "style": "diamond",
             "template": " \uf5ef {{ .CurrentDate | date .Format }} ",
