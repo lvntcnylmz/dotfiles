@@ -1,8 +1,8 @@
-# ArchLinux-dotfiles
+# Arch Linux Dotfiles
 
 ## Modules 
-- Terminal : zsh
+- Shell : fish
 - Promt Theme Engine : oh-my-posh
 - Windows Manager : bspwm
 - Status Bar : Polybar
-- System info tool : Neofetch
+- System Info Tool : Neofetch
