@@ -201,7 +201,7 @@
               "http_timeout": 400,
               "cache_timeout": 15
             },
-            "template": " {{.Weather}}{{.Temperature}}{{.UnitIcon}} "
+            "template": " {{.Weather}} {{.Temperature}}{{.UnitIcon}} "
           }, 
           {
             "background": "#69995D",
