@@ -1,0 +1,97 @@
+{
+    // * workbench settings
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.productIconTheme": "fluent-icons",
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Death Purple",
+    "workbench.layoutControl.enabled": false,
+  
+  
+    // * editor settings
+    "editor.cursorBlinking": "expand",
+    "editor.cursorStyle": "line",
+    "editor.cursorWidth": 2,
+    "editor.fontFamily": "Fira Code Medium",
+    "editor.fontLigatures": true,
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.guides.highlightActiveBracketPair": true,
+    "editor.semanticHighlighting.enabled": true,
+    "editor.guides.indentation": true,
+    
+  
+    // * explorer settings
+    "explorer.compactFolders": false,
+  
+  
+    // * terminal settings
+    "terminal.integrated.fontFamily": "Fira Code Medium",
+  
+  
+    // * better comment extension setting
+    "better-comments.tags": [
+      {
+        "tag": "!",
+        "color": "#FF2D00",
+        "strikethrough": false,
+        "underline": false,
+        "backgroundColor": "transparent",
+        "bold": false,
+        "italic": false
+      },
+      {
+        "tag": "?",
+        "color": "#3498DB",
+        "strikethrough": false,
+        "underline": false,
+        "backgroundColor": "transparent",
+        "bold": false,
+        "italic": false
+      },
+      {
+        "tag": "//",
+        "color": "#000000",
+        "strikethrough": false,
+        "underline": false,
+        "backgroundColor": "#00ff15",
+        "bold": false,
+        "italic": false
+      },
+      {
+        "tag": "todo",
+        "color": "#000000",
+        "strikethrough": false,
+        "underline": false,
+        "backgroundColor": "#FF8C00",
+        "bold": false,
+        "italic": false
+      },
+      {
+        "tag": "*",
+        "color": "#000000",
+        "strikethrough": false,
+        "underline": false,
+        "backgroundColor": "#FCEE0C",
+        "bold": false,
+        "italic": false
+      }
+    ],
+  
+  
+    // * utils settings
+    "security.workspace.trust.banner": "never",
+    "security.workspace.trust.emptyWindow": true,
+    "security.workspace.trust.enabled": false,
+    "redhat.telemetry.enabled": false,
+    "git.confirmSync": false,
+    "git.mergeEditor": true,
+    "material-icon-theme.activeIconPack": "angular_ngrx",
+    "material-icon-theme.folders.color": "#ab46d2",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.minimap.renderCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "window.menuBarVisibility": "toggle",
+  
+  }
+  
