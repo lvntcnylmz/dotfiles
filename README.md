@@ -8,3 +8,4 @@
 - System Info Tool : neofetch
 - Terminal : terminator
 - Display Manager : ly
+- File Manager : ranger
