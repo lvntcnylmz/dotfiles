@@ -115,8 +115,8 @@
             "type": "go"
           },
           {
-            "background": "#f3f0ec",
-            "foreground": "#925837",
+            "background": "#925837",
+            "foreground": "#f3f0ec",
             "leading_diamond": "\ue0b6",
             "style": "diamond",
             "template": "\ue7a8 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
