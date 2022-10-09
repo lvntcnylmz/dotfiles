@@ -6,11 +6,11 @@
     "margin-left": 10,
     "margin-right": 10,
     "modules-left": [
-        "custom/weather",
-        "custom/spotify"
+        "custom/weather"
     ],
     "modules-center": [
-        "clock"
+        "clock",
+        "custom/spotify"
     ],
     "modules-right": [
         "idle_inhibitor",
@@ -18,12 +18,18 @@
         "pulseaudio#mic",
         "cpu",
         "memory",
+        "disk",
         "temperature",
         "battery",
         "sway/language",
         "tray",
         "custom/power"
     ],
+    "disk": {
+        "interval": 30,
+        "format": "{used} ",
+        "path": "/"
+    },
     "sway/window": {
         "format": "{app_id}",
         "max-length": 50,
@@ -137,18 +143,16 @@
         "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
     },
     "custom/spotify": {
-        "format": "{icon} {}",
+        "format": " {}",
         "escape": true,
         "return-type": "json",
         "max-length": 40,
-        "interval": 30, // Remove this if your script is endless and write in loop
         "on-click": "playerctl -p spotify play-pause",
         "on-click-right": "killall spotify",
-        "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+        "smooth-scrolling-threshold": 10,
         "on-scroll-up": "playerctl -p spotify next",
         "on-scroll-down": "playerctl -p spotify previous",
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
-        "exec-if": "pgrep spotify"
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
     },
     "custom/power": {
         "tooltip": false,

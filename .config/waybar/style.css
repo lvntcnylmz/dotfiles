@@ -37,6 +37,8 @@ menu {
     padding: 0 5px;
     margin: 3px 0;
     background-color: #290052;
+    border-right: solid 1#007A58;
+    border-left: solid 1#007A58;
 }
 
 #window,
