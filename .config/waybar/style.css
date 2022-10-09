@@ -1,0 +1,138 @@
+* {
+    font-family: Fira Code Medium;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #120024;
+    color: #007A58;
+    border: none;
+}
+
+menu {
+    color: #00A878;
+    border: solid 1 #00A878;
+}
+
+#window {
+    color: #00A878;
+    font-weight: bold;
+}
+
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio.volume,
+#pulseaudio.mic,
+#tray,
+#mode,
+#idle_inhibitor,
+#custom-power,
+#language,
+#clock,
+#custom-weather,
+#custom-spotify {
+    padding: 0 5px;
+    margin: 3px 0;
+    background-color: #290052;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 0;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #ffffff;
+    background-color: #00A878;
+    color: #120024;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#pulseaudio.volume.muted {
+    color: #a80030;
+}
+
+#pulseaudio.mic.source-muted{
+    color: #a80030;
+}
+
+/* #temperature {
+    background-color: #f0932b;
+} */
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#idle_inhibitor.activated {
+    background-color: #00A878;
+    color: #120024;
+}
+
+#mpd {
+    background-color: #66cc99;
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
+}
+
+#custom-power {
+    background-color: #a80030;
+    padding: 0 5px;
+    min-width: 16px;
+}
