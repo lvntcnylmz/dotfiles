@@ -14,7 +14,7 @@ configuration {
 /*	run-shell-command: "{terminal} -e {cmd}";*/
 /*	window-command: "wmctrl -i -R {window}";*/
 /*	window-match-fields: "all";*/
-/*	icon-theme: ;*/
+/*  icon-theme:"/home/can/.local/share/icons/Papirus-Dark";*/
 /*	drun-match-fields: "name,generic,exec,categories,keywords";*/
 /*	drun-categories: ;*/
 /*	drun-show-actions: false;*/
@@ -148,5 +148,7 @@ configuration {
       directories-first: true;
       sorting-method:    "name";
   }
+
 }
-@theme "/usr/share/rofi/themes/arthur.rasi"
+//@theme "/usr/share/rofi/themes/arthur.rasi"
+@theme "/home/can/.local/share/rofi/themes/death-purple.rasi"
