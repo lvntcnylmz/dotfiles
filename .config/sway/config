@@ -19,7 +19,7 @@ set $term terminator
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu rofi -show run     
+set $menu rofi -show run -icon-theme "Papirus" -show-icons 
 
 ### Output configuration
 #
@@ -54,6 +54,8 @@ gaps outer 5
 # border config
 default_border none
 default_floating_border none
+
+bindsym $mod+shift+x exec swaylock -c 120024
 
 ### Idle configuration
 #
@@ -173,7 +175,7 @@ default_floating_border none
     bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
+    bindsym $mod+f fullscreen toggle 
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
@@ -203,10 +205,10 @@ mode "resize" {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    bindsym $left resize shrink width 10ppt
+    bindsym $down resize grow height 10ppt
+    bindsym $up resize shrink height 10ppt
+    bindsym $right resize grow width 10ppt
 
     # Ditto, with arrow keys
     bindsym Left resize shrink width 10px
@@ -241,7 +243,6 @@ bindsym $mod+r mode "resize"
 bar swaybar_command waybar
 
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle 
@@ -252,5 +253,9 @@ bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+bindsym $mod+Shift+n exec swaync-client -t -sw
+
+exec swaync
 
 include /etc/sway/config.d/*
