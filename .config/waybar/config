@@ -159,7 +159,7 @@
         "on-click": "rofi -show p -modi p:rofi-power-menu -fullscreen -theme death-purple -font 'FiraCode Medium 11' -width 10 -lines 6"
     },
     "custom/weather": {
-        "exec": "curl 'https://wttr.in/Clausthal-Zellerfeld?format=%l:+%c+%C+%t+%m+%w'",
+        "exec": "curl 'https://wttr.in/Clausthal-Zellerfeld?format=%l:+%c%C|Feel:%f|Actual:%t|%m+%w'",
         "interval": 60
     },
     "custom/notification": {
