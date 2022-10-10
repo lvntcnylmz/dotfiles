@@ -33,7 +33,7 @@ menu {
 #language,
 #clock,
 #custom-weather,
-#custom-spotify {
+#custom-spotify, #custom-notification {
     padding: 0 5px;
     margin: 3px 0;
     background-color: #290052;

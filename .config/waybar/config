@@ -2,9 +2,7 @@
     "layer": "top",
     "output": "HDMI-A-2",
     "height": 30,
-    "spacing": 3,
-    "margin-left": 10,
-    "margin-right": 10,
+    "spacing": 0,
     "modules-left": [
         "custom/weather"
     ],
@@ -22,6 +20,7 @@
         "temperature",
         "battery",
         "sway/language",
+        "custom/notification",
         "tray",
         "custom/power"
     ],
@@ -66,7 +65,7 @@
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% "
     },
     "temperature": {
         "critical-threshold": 80,
@@ -157,10 +156,26 @@
     "custom/power": {
         "tooltip": false,
         "format": "",
-        "on-click": "bash $HOME/.config/waybar/poweroff.sh"
+        "on-click": "rofi -show p -modi p:rofi-power-menu -fullscreen -theme death-purple -font 'FiraCode Medium 11' -width 10 -lines 6"
     },
     "custom/weather": {
         "exec": "curl 'https://wttr.in/Clausthal-Zellerfeld?format=%l:+%c+%C+%t+%m+%w'",
-        "interval": 10
-    }
+        "interval": 60
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{} {icon}",
+        "format-icons": {
+          "notification": "<span foreground='red'><sup></sup></span>",
+          "none": "",
+          "dnd-notification": "<span foreground='red'><sup></sup></span>",
+          "dnd-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+      }
 }
