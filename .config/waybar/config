@@ -1,83 +1,35 @@
 {
     "layer": "top",
-    "output": "HDMI-A-2",
-    "height": 30,
-    "spacing": 0,
+    "position": "top",
+    "output": [
+        "HDMI-A-2"
+    ],
     "modules-left": [
-        "custom/weather"
+        "custom/power",
+        "clock",
+        "sway/language",
+        "backlight",
+        "custom/pacman",
+        "idle_inhibitor",
+        "custom/media",
+        "sway/mode"
     ],
     "modules-center": [
-        "clock",
-        "custom/spotify"
+        "sway/workspaces"
     ],
     "modules-right": [
-        "idle_inhibitor",
-        "pulseaudio#volume",
-        "pulseaudio#mic",
-        "cpu",
-        "memory",
+        "network",
+        "custom/weather",
         "disk",
         "temperature",
+        "pulseaudio#volume",
+        "pulseaudio#mic",
         "battery",
-        "sway/language",
         "custom/notification",
-        "tray",
-        "custom/power"
+        "tray"
     ],
-    "disk": {
-        "interval": 30,
-        "format": "{used} ",
-        "path": "/"
-    },
-    "sway/window": {
-        "format": "{app_id}",
-        "max-length": 50,
-        "rewrite": {
-            "(*) - Mozilla Firefox": "🌎 $1",
-            "(.*) - vim": " $1",
-            "(.*) - zsh": " [$1]"
-        }
-    },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/language": {
-        "format": "{shortDescription} {variant}"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "tray": {
-        "spacing": 10
-    },
-    "clock": {
-        "timezone": "Europe/Berlin",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
-        "interval": 1,
-        "format": "{:%d/%m/%y %A %H:%M:%S}"
-    },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}% "
-    },
-    "temperature": {
-        "critical-threshold": 80,
-        "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": [
-            "",
-            "",
-            ""
-        ]
-    },
     "backlight": {
+        "device": "intel_backlight",
         "format": "{percent}% {icon}",
         "format-icons": [
             "",
@@ -89,7 +41,61 @@
             "",
             "",
             ""
-        ]
+        ],
+        "on-click": "brightnessctl set 5%+",
+        "on-click-right": "brightnessctl set 5%-"
+    },
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "urgent": "<big></big>",
+            "focused": "<big></big>",
+            "default": "<big></big>"
+        }
+    },
+    "sway/mode": {
+        "format": " {}",
+        "max-length": 50
+    },
+    "sway/window": {
+        "format": "{}",
+        "max-length": 50,
+        "tooltip": false
+    },
+    "bluetooth": {
+        "interval": 30,
+        "format": "{icon}",
+        "format-alt": "{status}",
+        "format-icons": {
+            "enabled": "",
+            "disabled": ""
+        },
+        "on-click": "blueberry"
+    },
+    "sway/language": {
+        "format": "<big></big> <big>{shortDescription}</big>",
+        "max-length": 5,
+        "min-length": 5
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "<big></big>",
+            "deactivated": "<big></big>"
+        },
+        "tooltip": "true"
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 3
+    },
+    "clock": {
+        "format": "<big></big>  {:%H:%M:%S  <big></big> %d %b %y}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "today-format": "<b>{}</b>",
+        "interval": 1
     },
     "battery": {
         "states": {
@@ -98,78 +104,97 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format-charging": "{capacity}% <big></big>",
+        "format-plugged": "{capacity}% <big></big>",
         "format-alt": "{time} {icon}",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>"
+        ]
+    },
+    "disk": {
+        "format": "{used} <big></big>"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": [
+            "<big></big>",
+            "<big></big>",
+            "<big></big>"
         ]
     },
     "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-wifi": "  {essid}",
+        "format-ethernet": "Connected <big></big>",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-disconnected": "",
+        "family": "ipv4",
+        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits}  {bandwidthDownBits}",
+        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits}  {bandwidthDownBits}"
     },
     "pulseaudio#volume": {
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "{volume}% ",
+        "format-muted": "{volume}% <big></big>",
         "format-icons": {
             "headphone": "",
             "phone": "",
             "portable": "",
             "car": "",
             "default": [
-                "",
-                "",
-                ""
+                "<big></big>",
+                "<big></big>",
+                "<big></big>"
             ]
         },
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol"
     },
     "pulseaudio#mic": {
         "format": "{format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "{volume}% ",
+        "format-source": "{volume}% <big><b/ig>",
+        "format-source-muted": "{volume}% <big></big>",
         "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
     },
-    "custom/spotify": {
-        "format": " {}",
-        "escape": true,
-        "return-type": "json",
-        "max-length": 40,
-        "on-click": "playerctl -p spotify play-pause",
-        "on-click-right": "killall spotify",
-        "smooth-scrolling-threshold": 10,
-        "on-scroll-up": "playerctl -p spotify next",
-        "on-scroll-down": "playerctl -p spotify previous",
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
-    },
-    "custom/power": {
-        "tooltip": false,
-        "format": "",
-        "on-click": "rofi -show p -modi p:rofi-power-menu -fullscreen -theme death-purple -font 'FiraCode Medium 11' -width 10 -lines 6"
+    "custom/pacman": {
+        "format": "<big></big>  {}",
+        "interval": 1800,
+        "exec": "checkupdates | wc -l",
+        "exec-if": "exit 0",
+        "on-click": "terminator -e 'yay'; pkill -SIGRTMIN+8 waybar",
+        "signal": 8,
+        "max-length": 5,
+        "min-length": 3
     },
     "custom/weather": {
-        "exec": "curl 'https://wttr.in/Clausthal-Zellerfeld?format=%l:+%c%C|Feel:%f|Actual:%t|%m+%w'",
-        "interval": 60
+        "exec": "curl 'https://wttr.in/Clausthal-Zellerfeld?format=2'",
+        "interval": 3600
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "<big></big>",
+            "default": "<big></big>"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
     },
     "custom/notification": {
         "tooltip": false,
         "format": "{} {icon}",
         "format-icons": {
-          "notification": "<span foreground='red'><sup></sup></span>",
-          "none": "",
-          "dnd-notification": "<span foreground='red'><sup></sup></span>",
-          "dnd-none": ""
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": ""
         },
         "return-type": "json",
         "exec-if": "which swaync-client",
@@ -177,5 +202,10 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
-      }
+    },
+    "custom/power": {
+        "tooltip": false,
+        "format": "<big></big>",
+        "on-click": "rofi -show p -modi p:rofi-power-menu -fullscreen -theme death-purple -font 'FiraCode Medium 11' -width 10 -lines 6"
+    }
 }

@@ -1,140 +1,147 @@
 * {
-    font-family: Fira Code Medium;
-    font-size: 13px;
-    font-weight: bold;
     background-color: #120024;
-    color: #007A58;
+    color: #00a878;
     border: none;
+    margin: 0.2em 0.3em 0.2em 0.3em;
 }
 
-menu {
-    color: #00A878;
-    border: solid 1 #00A878;
-}
-
-#window {
-    color: #00A878;
+#waybar {
+    font-family: "Cantarell", "Font Awesome 5 Pro";
+    font-size: 12px;
     font-weight: bold;
 }
 
-#battery,
+#clock,
+#language,
+#custom-pacman,
+#sway-mode,
+#idle_inhibitor,
+#custom-media,
+#sway-workspaces,
+#custom-weather,
 #cpu,
-#memory,
 #disk,
 #temperature,
-#backlight,
-#network,
 #pulseaudio.volume,
 #pulseaudio.mic,
-#tray,
+#battery,
 #mode,
-#idle_inhibitor,
-#custom-power,
-#language,
-#clock,
-#custom-weather,
-#custom-spotify, #custom-notification {
-    padding: 0 5px;
-    margin: 3px 0;
-    background-color: #290052;
-    border-right: solid 1#007A58;
-    border-left: solid 1#007A58;
+#network,
+#tray,
+#backlight,
+#custom-notification {
+    background: #250c3e;
+    font-weight: bold;
+    padding: 0 0.6em;
 }
 
-#window,
-#workspaces {
-    margin: 0 4px;
+#custom-power {
+    background: #ff6000;
+    color: #250c3e;
+    font-weight: bold;
+    padding: 0 0.6em;
 }
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left>widget:first-child>#workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right>widget:last-child>#workspaces {
-    margin-right: 0;
-}
-
-#battery.charging,
-#battery.plugged {
-    color: #ffffff;
-    background-color: #00A878;
-    color: #120024;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 1s;
+/* Each module that should blink */
+#mode,
+#memory,
+#temperature,
+#battery {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
-label:focus {
-    background-color: #000000;
+/* Each critical module */
+#memory.critical,
+#cpu.critical,
+#temperature.critical,
+#battery.critical {
+    color: #BF616A;
 }
 
-#pulseaudio.volume.muted {
-    color: #a80030;
+/* Each critical that should blink */
+#mode,
+#memory.critical,
+#cpu.critical,
+#temperature.critical,
+#battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 2s;
 }
 
-#pulseaudio.mic.source-muted{
-    color: #a80030;
-}
-
-/* #temperature {
-    background-color: #f0932b;
-} */
-
-#temperature.critical {
-    background-color: #eb4d4b;
-}
-
-
-
-#tray>.passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray>.needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
-}
-
-#idle_inhibitor.activated {
-    background-color: #00A878;
+/* Each warning */
+#network.disconnected,
+#memory.warning,
+#cpu.warning,
+#temperature.warning,
+#battery.warning {
+    background: #ebcb8b;
     color: #120024;
 }
 
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
+/* Each warning that should blink */
+#battery.warning.discharging {
+    animation-name: blink-warning;
+    animation-duration: 3s;
 }
 
-#mpd.disconnected {
-    background-color: #f53c3c;
+#mode {
+    color: #120024;
+    background: #ff6000;
 }
 
-#mpd.stopped {
-    background-color: #90b1b1;
+#workspaces button {
+    font-weight: bold;
+    padding: 0;
+    color: #ff6000;
+    opacity: 0.3;
+    background: none;
+    font-size: 1em;
 }
 
-#mpd.paused {
-    background-color: #51a37a;
+#workspaces button.focused {
+    color: #ff6000;
+    opacity: 1;
+    padding: 0 0.4em;
 }
 
-#custom-power {
-    background-color: #a80030;
-    padding: 0 5px;
-    min-width: 16px;
+#workspaces button.urgent {
+    border-color: #c9545d;
+    color: #c9545d;
+    opacity: 1;
+}
+
+#battery.charging,
+#battery.plugged {
+    background-color: #00a878;
+    color: #120024;
+}
+
+#pulseaudio.volume.muted {
+    background: #ff6000;
+    color: #120024;
+}
+
+#pulseaudio.mic.source-muted {
+    background: #ff6000;
+    color: #120024;
+}
+
+#custom-notification.dnd-notification,
+#custom-notification.dnd-none {
+    background: #ff6000;
+    color: #120024;
+}
+
+@keyframes blink-warning {
+    to {
+        background-color: #ff6000;
+    }
+}
+
+@keyframes blink-critical {
+    to {
+        background-color: #ff6000;
+    }
 }
