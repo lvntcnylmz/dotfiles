@@ -12,3 +12,8 @@
 - Text Editor: Nvim / VsCodium
 - Window Switcher/App Launcher : rofi
 - Spotify Command Line: spicetify
+
+## Screenshots
+
+![image](/img/screenshot_window.png)
+![image](/img/screenshot_desktop.png)
