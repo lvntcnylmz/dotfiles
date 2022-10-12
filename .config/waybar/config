@@ -18,8 +18,8 @@
         "sway/workspaces"
     ],
     "modules-right": [
-        "network",
         "custom/weather",
+        "network",
         "disk",
         "temperature",
         "pulseaudio#volume",
@@ -46,13 +46,13 @@
         "on-click-right": "brightnessctl set 5%-"
     },
     "sway/workspaces": {
-        "disable-scroll": true,
+        "disable-scroll": false,
         "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
             "urgent": "<big></big>",
             "focused": "<big></big>",
-            "default": "<big></big>"
+            "default": "<big></big>"
         }
     },
     "sway/mode": {
@@ -89,13 +89,17 @@
     },
     "tray": {
         "icon-size": 18,
-        "spacing": 3
+        "spacing": 3,
+        "show-passive-items": true
     },
     "clock": {
-        "format": "<big></big>  {:%H:%M:%S  <big></big> %d %b %y}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "today-format": "<b>{}</b>",
-        "interval": 1
+        "format": "<big></big>  {:%H:%M:%S  <big></big>  %d %b %y}",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        "today-format": "<span color='#ff6000'><big>{}</big></span>",
+        "locale": "en_GB.UTF-8",
+        "interval": 1,
+        "max-length": 19,
+        "min-length": 19
     },
     "battery": {
         "states": {
@@ -113,7 +117,8 @@
             "<big></big>",
             "<big></big>",
             "<big></big>"
-        ]
+        ],
+        "interval": 60
     },
     "disk": {
         "format": "{used} <big></big>"
@@ -130,7 +135,7 @@
     },
     "network": {
         "format-wifi": "  {essid}",
-        "format-ethernet": "Connected <big></big>",
+        "format-ethernet": "{ifname} <big></big>",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "",
         "family": "ipv4",
@@ -141,7 +146,7 @@
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "{volume}% <big></big>",
+        "format-muted": "{volume}% <big></big>",
         "format-icons": {
             "headphone": "",
             "phone": "",
@@ -158,13 +163,13 @@
     },
     "pulseaudio#mic": {
         "format": "{format_source}",
-        "format-source": "{volume}% <big><b/ig>",
+        "format-source": "{volume}% <big></big>",
         "format-source-muted": "{volume}% <big></big>",
         "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
     },
     "custom/pacman": {
         "format": "<big></big>  {}",
-        "interval": 1800,
+        "interval": 60,
         "exec": "checkupdates | wc -l",
         "exec-if": "exit 0",
         "on-click": "terminator -e 'yay'; pkill -SIGRTMIN+8 waybar",
@@ -173,8 +178,8 @@
         "min-length": 3
     },
     "custom/weather": {
-        "exec": "curl 'https://wttr.in/Clausthal-Zellerfeld?format=2'",
-        "interval": 3600
+        "exec": "curl 'https://wttr.in/Clausthal-Zellerfeld?format=%C+%c+%t+%w'",
+        "interval": 60
     },
     "custom/media": {
         "format": "{icon} {}",
@@ -182,7 +187,7 @@
         "max-length": 40,
         "format-icons": {
             "spotify": "<big></big>",
-            "default": "<big></big>"
+            "default": "<big></big>"
         },
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
@@ -205,7 +210,7 @@
     },
     "custom/power": {
         "tooltip": false,
-        "format": "<big></big>",
+        "format": "<big></big>",
         "on-click": "rofi -show p -modi p:rofi-power-menu -fullscreen -theme death-purple -font 'FiraCode Medium 11' -width 10 -lines 6"
     }
 }

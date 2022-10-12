@@ -1,14 +1,13 @@
 * {
     background-color: #120024;
-    color: #00a878;
-    border: none;
-    margin: 0.2em 0.3em 0.2em 0.3em;
+    margin: 0.2em 0.4em 0.2em 0.4em;
 }
 
 #waybar {
     font-family: "Cantarell", "Font Awesome 5 Pro";
     font-size: 12px;
     font-weight: bold;
+    border-bottom: solid 2 #ff6000;
 }
 
 #clock,
@@ -16,7 +15,6 @@
 #custom-pacman,
 #sway-mode,
 #idle_inhibitor,
-#custom-media,
 #sway-workspaces,
 #custom-weather,
 #cpu,
@@ -31,6 +29,18 @@
 #backlight,
 #custom-notification {
     background: #250c3e;
+    font-weight: bold;
+    padding: 0 0.6em;
+    color: #00a878;
+}
+
+#tray menu {
+    color: #00a878;
+}
+
+#custom-media{
+    background: #00a878;
+    color: #120024;
     font-weight: bold;
     padding: 0 0.6em;
 }
@@ -83,7 +93,7 @@
 /* Each warning that should blink */
 #battery.warning.discharging {
     animation-name: blink-warning;
-    animation-duration: 3s;
+    animation-duration: 1s;
 }
 
 #mode {
@@ -92,18 +102,13 @@
 }
 
 #workspaces button {
-    font-weight: bold;
     padding: 0;
-    color: #ff6000;
-    opacity: 0.3;
-    background: none;
-    font-size: 1em;
+    color: #00a878;
 }
 
 #workspaces button.focused {
     color: #ff6000;
     opacity: 1;
-    padding: 0 0.4em;
 }
 
 #workspaces button.urgent {
@@ -135,12 +140,18 @@
 }
 
 @keyframes blink-warning {
+    from{
+        background-color: #ffffff;
+    }
     to {
         background-color: #ff6000;
     }
 }
 
 @keyframes blink-critical {
+    from{
+        background-color: #ffffff;
+    }
     to {
         background-color: #ff6000;
     }
