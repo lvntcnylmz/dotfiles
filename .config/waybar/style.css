@@ -1,6 +1,6 @@
 * {
     background-color: #120024;
-    margin: 0.2em 0.4em 0.2em 0.4em;
+    margin: 0.2em 0.4em;
 }
 
 #waybar {
@@ -27,22 +27,26 @@
 #network,
 #tray,
 #backlight,
-#custom-notification {
+#custom-notification,
+#bluetooth,
+#custom-scratchpad-indicator {
     background: #250c3e;
     font-weight: bold;
-    padding: 0 0.6em;
+    padding: 0 0.5em;
     color: #00a878;
+    margin: 0.2em 0.1em;
 }
 
-#tray menu {
-    color: #00a878;
+#custom-scratchpad-indicator{
+    color: #ff6000;
 }
 
-#custom-media{
+#custom-media {
     background: #00a878;
     color: #120024;
     font-weight: bold;
     padding: 0 0.6em;
+    margin: 0.2em 0.1em;
 }
 
 #custom-power {
@@ -52,53 +56,8 @@
     padding: 0 0.6em;
 }
 
-/* Each module that should blink */
-#mode,
-#memory,
-#temperature,
-#battery {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-/* Each critical module */
-#memory.critical,
-#cpu.critical,
-#temperature.critical,
-#battery.critical {
-    color: #BF616A;
-}
-
-/* Each critical that should blink */
-#mode,
-#memory.critical,
-#cpu.critical,
-#temperature.critical,
-#battery.critical.discharging {
-    animation-name: blink-critical;
-    animation-duration: 2s;
-}
-
-/* Each warning */
-#network.disconnected,
-#memory.warning,
-#cpu.warning,
-#temperature.warning,
-#battery.warning {
-    background: #ebcb8b;
-    color: #120024;
-}
-
-/* Each warning that should blink */
-#battery.warning.discharging {
-    animation-name: blink-warning;
-    animation-duration: 1s;
-}
-
-#mode {
-    color: #120024;
-    background: #ff6000;
+#workspaces button:hover {
+    background: transparent;
 }
 
 #workspaces button {
@@ -108,7 +67,6 @@
 
 #workspaces button.focused {
     color: #ff6000;
-    opacity: 1;
 }
 
 #workspaces button.urgent {
@@ -117,41 +75,59 @@
     opacity: 1;
 }
 
+#tray>.active,
+#tray>.passive {
+    background-color: rgba(250, 23, 99, 0);
+}
+
+#tray menu {
+    color: #00a878;
+}
+
 #battery.charging,
 #battery.plugged {
     background-color: #00a878;
     color: #120024;
 }
 
-#pulseaudio.volume.muted {
-    background: #ff6000;
-    color: #120024;
-}
-
-#pulseaudio.mic.source-muted {
-    background: #ff6000;
-    color: #120024;
-}
-
+#mode,
+#network.disconnected,
+#memory.critical,
+#cpu.critical,
+#temperature.critical,
+#battery.critical,
+#memory.warning,
+#cpu.warning,
+#temperature.warning,
+#battery.warning,
+#idle_inhibitor.activated,
+#bluetooth.on,
+#pulseaudio.volume.muted,
+#pulseaudio.mic.source-muted,
 #custom-notification.dnd-notification,
 #custom-notification.dnd-none {
     background: #ff6000;
     color: #120024;
 }
 
-@keyframes blink-warning {
-    from{
-        background-color: #ffffff;
-    }
-    to {
-        background-color: #ff6000;
-    }
+#battery.warning.discharging,
+#mode,
+#memory.critical,
+#cpu.critical,
+#temperature.critical,
+#battery.critical.discharging {
+    animation-name: blink-warning;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
-@keyframes blink-critical {
-    from{
+@keyframes blink-warning {
+    from {
         background-color: #ffffff;
     }
+
     to {
         background-color: #ff6000;
     }

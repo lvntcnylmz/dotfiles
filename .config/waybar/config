@@ -12,6 +12,7 @@
         "custom/pacman",
         "idle_inhibitor",
         "custom/media",
+        "custom/scratchpad-indicator",
         "sway/mode"
     ],
     "modules-center": [
@@ -20,6 +21,7 @@
     "modules-right": [
         "custom/weather",
         "network",
+        "bluetooth",
         "disk",
         "temperature",
         "pulseaudio#volume",
@@ -64,32 +66,39 @@
         "max-length": 50,
         "tooltip": false
     },
-    "bluetooth": {
-        "interval": 30,
-        "format": "{icon}",
-        "format-alt": "{status}",
-        "format-icons": {
-            "enabled": "",
-            "disabled": ""
-        },
-        "on-click": "blueberry"
-    },
     "sway/language": {
         "format": "<big></big> <big>{shortDescription}</big>",
         "max-length": 5,
         "min-length": 5
     },
+    "bluetooth": {
+        "format": "<big></big> {status}",
+        "format-off": "<big></big> off",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "format-device-preference": [
+            "device1",
+            "device2"
+        ],
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "exec bluetoothctl power on",
+        "on-click-right": "exec bluetoothctl power off",
+        "on-click-middle": "exec blueman-manager"
+    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "<big></big>",
-            "deactivated": "<big></big>"
+            "activated": "<big></big>",
+            "deactivated": "<big></big>"
         },
         "tooltip": "true"
     },
     "tray": {
         "icon-size": 18,
-        "spacing": 3,
+        "spacing": 2,
         "show-passive-items": true
     },
     "clock": {
@@ -134,13 +143,15 @@
         ]
     },
     "network": {
-        "format-wifi": "  {essid}",
-        "format-ethernet": "{ifname} <big></big>",
+        "format-wifi": "<big></big>  {essid}",
+        "format-ethernet": "Connected <big></big>",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "",
+        "format-disconnected": "睊 Disconnected",
         "family": "ipv4",
-        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits}  {bandwidthDownBits}",
-        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits}  {bandwidthDownBits}"
+        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits} -  {bandwidthDownBits}",
+        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits}  {bandwidthDownBits}",
+        "internval": 60,
+        "on-click": "exec iwgtk"
     },
     "pulseaudio#volume": {
         "format": "{volume}% {icon}",
@@ -158,6 +169,8 @@
                 "<big></big>"
             ]
         },
+        "max-length": 7,
+        "min-length": 7,
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "pavucontrol"
     },
@@ -165,7 +178,9 @@
         "format": "{format_source}",
         "format-source": "{volume}% <big></big>",
         "format-source-muted": "{volume}% <big></big>",
-        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "max-length": 6,
+        "min-length": 6
     },
     "custom/pacman": {
         "format": "<big></big>  {}",
@@ -173,9 +188,7 @@
         "exec": "checkupdates | wc -l",
         "exec-if": "exit 0",
         "on-click": "terminator -e 'yay'; pkill -SIGRTMIN+8 waybar",
-        "signal": 8,
-        "max-length": 5,
-        "min-length": 3
+        "signal": 8
     },
     "custom/weather": {
         "exec": "curl 'https://wttr.in/Clausthal-Zellerfeld?format=%C+%c+%t+%w'",
@@ -196,9 +209,9 @@
         "tooltip": false,
         "format": "{} {icon}",
         "format-icons": {
-            "notification": "<span foreground='red'><sup></sup></span>",
+            "notification": "<span foreground='#ff6000'><sup></sup></span>",
             "none": "",
-            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-notification": "<span foreground='#00a878'><sup></sup></span>",
             "dnd-none": ""
         },
         "return-type": "json",
@@ -206,11 +219,20 @@
         "exec": "swaync-client -swb",
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
-        "escape": true
+        "escape": true,
+        "max-length": 4,
+        "min-length": 4
     },
     "custom/power": {
         "tooltip": false,
         "format": "<big></big>",
         "on-click": "rofi -show p -modi p:rofi-power-menu -fullscreen -theme death-purple -font 'FiraCode Medium 11' -width 10 -lines 6"
+    },
+    "custom/scratchpad-indicator": {
+        "interval": 3,
+        "exec": "swaymsg -t get_tree | jq 'recurse(.nodes[]) | first(select(.name==\"__i3_scratch\")) | .floating_nodes | length | select(. >= 1)'",
+        "format": "{} <big></big>",
+        "on-click": "swaymsg 'scratchpad show'",
+        "on-click-right": "swaymsg 'move scratchpad'"
     }
 }
