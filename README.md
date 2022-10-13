@@ -15,5 +15,5 @@
 
 ## Screenshots
 
-![image](/img/screenshot_window.png)
-![image](/img/screenshot_desktop.png)
+![image](/img/desktop.png)
+![image](/img/desktop2.png)
