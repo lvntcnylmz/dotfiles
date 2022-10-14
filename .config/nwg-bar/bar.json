@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Lock",
+    "exec": "swaylock -f -c 000000",
+    "icon": "/home/can/.config/nwg-bar/image/green/lock-green.svg"
+  },
+  {
+    "label": "Logout",
+    "exec": "swaymsg exit",
+    "icon": "/home/can/.config/nwg-bar/image/green/logout-green.svg"
+  },
+  {
+    "label": "Reboot",
+    "exec": "systemctl reboot",
+    "icon": "/home/can/.config/nwg-bar/image/green/reboot-green.svg"
+  },
+  {
+    "label": "Shutdown",
+    "exec": "systemctl poweroff",
+    "icon": "/home/can/.config/nwg-bar/image/green/shutdown-green.svg"
+  }
+]
