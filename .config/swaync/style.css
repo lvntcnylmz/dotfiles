@@ -1,0 +1,108 @@
+@define-color main-bg-color #120024;
+@define-color main-fg-color #00a878;
+@define-color module-color #250c3e;
+@define-color highlight-color #ff6000;
+
+.notification-row {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-default-action {
+  padding: 4px;
+  margin: 0;
+  box-shadow: none;
+  background: @main-bg-color;
+  color: #ff6000;
+  border: solid 0.7 @main-fg-color;
+  border-radius: 0;
+}
+
+.body-image {
+  margin-top: 6px;
+}
+
+.summary {
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent;
+  color: @main-fg-color;
+  text-shadow: none;
+}
+
+.body {
+  font-size: 16px;
+  font-weight: normal;
+  background: transparent;
+  color: @main-fg-color;
+  text-shadow: none;
+}
+
+.time {
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent;
+  color: @highlight-color;
+  text-shadow: none;
+  margin-right: 18px;
+}
+
+.blank-window {
+  background: alpha(black, 0.0);
+}
+
+.close-button {
+  margin: 8px;
+  background: @highlight-color;
+  border-radius: 0;
+}
+
+.close-button:hover {
+  background: @main-fg-color;
+}
+
+.widget-title {
+  margin: 8px;
+  font-size: 1.5rem;
+}
+
+.widget-title>button {
+  font-size: initial;
+  color: white;
+  text-shadow: none;
+  background: @main-bg-color;
+  border-radius: 0;
+  margin: 4px;
+}
+
+.widget-title>button:hover {
+  background: @main-fg-color;
+  color: @main-bg-color;
+}
+
+.widget-dnd {
+  margin: 10px;
+  font-size: 1.1rem;
+}
+
+.widget-dnd>switch {
+  margin: 4px;
+}
+
+.widget-dnd>switch:checked {
+  background: @highlight-color;
+}
+
+.widget-dnd>switch slider {
+  background: @main-fg-color;
+}
+
+.widget-label {
+  margin: 8px;
+}
+
+.widget-label>label {
+  font-size: 1.1rem;
+}
