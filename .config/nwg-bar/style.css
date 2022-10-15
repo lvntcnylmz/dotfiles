@@ -1,15 +1,21 @@
-window {
-        background-color: #120024;
+@define-color main-bg-color #120024;
+@define-color main-fg-color #00a878;
+@define-color module-color #250c3e;
+
+#window {
+	background-color: @main-bg-color;
 }
 
 /* Outer bar container, takes all the window width/height */
 #outer-box {
-	margin: 0px
+	margin: 0px;
+	border: solid 1 @main-fg-color;
+	background-color: @main-bg-color;
 }
 
 /* Inner bar container, surrounds buttons */
 #inner-box {
-	background-color: #120024;
+	background-color: @main-bg-color;
 	border-radius: 10px;
 	border-style: none;
 	border-width: 1px;
@@ -18,11 +24,12 @@ window {
 	margin: 5px
 }
 
-button, image {
+button,
+image {
 	background: none;
 	border: none;
 	box-shadow: none;
-	color: #00a878;
+	color: @main-fg-color;
 }
 
 button {
@@ -32,5 +39,5 @@ button {
 }
 
 button:hover {
-	background-color: rgba (255, 255, 255, 0.1)
+	background-color: @module-color
 }
