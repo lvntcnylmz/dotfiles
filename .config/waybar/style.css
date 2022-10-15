@@ -1,13 +1,23 @@
+@define-color main-bg-color #120024;
+@define-color main-fg-color #00a878;
+@define-color module-color #250c3e;
+@define-color highlight-color #ff6000;
+@define-color critical-color #920053;
+@define-color warning-bg-color #ffffff;
+
 * {
-    background-color: #120024;
     margin: 0.2em 0.4em;
+    border: none;
+    border-radius: 0;
+    font-family: "Cantarell";
+    /*"Font Awesome 6 Free"; */
+    font-size: 12px;
 }
 
 #waybar {
-    font-family: "Cantarell", "Font Awesome 5 Pro";
-    font-size: 12px;
-    font-weight: bold;
-    border-bottom: solid 2 #ff6000;
+    border-bottom: solid 2 @highlight-color;
+    background-color: @main-bg-color;
+    color: @main-fg-color;
 }
 
 #clock,
@@ -29,29 +39,31 @@
 #backlight,
 #custom-notification,
 #bluetooth,
+/* #bluetooth.off, */
+/* #bluetooth.disabled, */
 #custom-scratchpad-indicator {
-    background: #250c3e;
+    background: @module-color;
     font-weight: bold;
     padding: 0 0.5em;
-    color: #00a878;
+    /* color: #00a878; */
     margin: 0.2em 0.1em;
 }
 
-#custom-scratchpad-indicator{
-    color: #ff6000;
+#custom-scratchpad-indicator {
+    color: @highlight-color;
 }
 
 #custom-media {
-    background: #00a878;
-    color: #120024;
+    background: @main-fg-color;
+    color: @main-bg-color;
     font-weight: bold;
     padding: 0 0.6em;
     margin: 0.2em 0.1em;
 }
 
 #custom-power {
-    background: #ff6000;
-    color: #250c3e;
+    background: @highlight-color;
+    color: @module-color;
     font-weight: bold;
     padding: 0 0.6em;
 }
@@ -62,52 +74,48 @@
 
 #workspaces button {
     padding: 0;
-    color: #00a878;
+    color: @main-fg-color;
 }
 
 #workspaces button.focused {
-    color: #ff6000;
+    color: @highlight-color;
 }
 
 #workspaces button.urgent {
-    border-color: #c9545d;
-    color: #c9545d;
+    border-color: @critical-color;
+    color: @critical-color;
     opacity: 1;
 }
 
-#tray>.active,
-#tray>.passive {
-    background-color: rgba(250, 23, 99, 0);
-}
-
 #tray menu {
-    color: #00a878;
+    color: @main-fg-color;
+    background: @main-bg-color;
 }
 
 #battery.charging,
 #battery.plugged {
-    background-color: #00a878;
-    color: #120024;
+    background-color: @main-fg-color;
+    color: @main-bg-color;
 }
 
 #mode,
-#network.disconnected,
-#memory.critical,
-#cpu.critical,
-#temperature.critical,
-#battery.critical,
-#memory.warning,
 #cpu.warning,
-#temperature.warning,
-#battery.warning,
-#idle_inhibitor.activated,
+#cpu.critical,
 #bluetooth.on,
+#memory.warning,
+#memory.critical,
+#temperature.warning,
+#temperature.critical,
+#network.disconnected,
+#idle_inhibitor.activated,
 #pulseaudio.volume.muted,
 #pulseaudio.mic.source-muted,
-#custom-notification.dnd-notification,
-#custom-notification.dnd-none {
-    background: #ff6000;
-    color: #120024;
+#battery.warning.discharging,
+#battery.critical.discharging,
+#custom-notification.dnd-none,
+#custom-notification.dnd-notification {
+    background: @highlight-color;
+    color: @main-bg-color;
 }
 
 #battery.warning.discharging,
@@ -123,12 +131,30 @@
     animation-direction: alternate;
 }
 
+#battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
 @keyframes blink-warning {
     from {
-        background-color: #ffffff;
+        background-color: @warning-bg-color;
     }
 
     to {
-        background-color: #ff6000;
+        background-color: @highlight-color;
+    }
+}
+
+@keyframes blink-critical {
+    from {
+        background-color: @warning-bg-color;
+    }
+
+    to {
+        background-color: @critical-color;
     }
 }

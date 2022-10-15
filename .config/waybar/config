@@ -21,7 +21,6 @@
     "modules-right": [
         "custom/weather",
         "network",
-        "bluetooth",
         "disk",
         "temperature",
         "pulseaudio#volume",
@@ -58,7 +57,7 @@
         }
     },
     "sway/mode": {
-        "format": " {}",
+        "format": "<big></big> {}",
         "max-length": 50
     },
     "sway/window": {
@@ -73,20 +72,17 @@
     },
     "bluetooth": {
         "format": "<big></big> {status}",
-        "format-off": "<big></big> off",
+        "format-off": "<big></big> {status}",
+        "format-disabled": "",
         "format-connected": " {device_alias}",
         "format-connected-battery": " {device_alias} {device_battery_percentage}%",
-        "format-device-preference": [
-            "device1",
-            "device2"
-        ],
         "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-        "on-click": "exec bluetoothctl power on",
-        "on-click-right": "exec bluetoothctl power off",
-        "on-click-middle": "exec blueman-manager"
+        "on-click": "bluetoothctl power on",
+        "on-click-right": "bluetoothctl power off",
+        "on-click-middle": "blueman-manager"
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -102,7 +98,7 @@
         "show-passive-items": true
     },
     "clock": {
-        "format": "<big></big>  {:%H:%M:%S  <big></big>  %d %b %y}",
+        "format": "<big></big> {:%H:%M:%S    %d %b %y}",
         "tooltip-format": "<tt><big>{calendar}</big></tt>",
         "today-format": "<span color='#ff6000'><big>{}</big></span>",
         "locale": "en_GB.UTF-8",
@@ -113,13 +109,12 @@
     "battery": {
         "states": {
             "good": 95,
-            "warning": 30,
-            "critical": 15
+            "warning": 20,
+            "critical": 10
         },
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% <big></big>",
         "format-plugged": "{capacity}% <big></big>",
-        "format-alt": "{time} {icon}",
         "format-icons": [
             "<big></big>",
             "<big></big>",
@@ -127,31 +122,32 @@
             "<big></big>",
             "<big></big>"
         ],
+        "tooltip-format": "{time}",
         "interval": 60
     },
     "disk": {
-        "format": "{used} <big></big>"
+        "format": "{used} <big></big>"
     },
     "temperature": {
         "critical-threshold": 80,
         "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": [
-            "<big></big>",
+            "<big></big>",
             "<big></big>",
-            "<big></big>"
+            "<big></big>"
         ]
     },
     "network": {
         "format-wifi": "<big></big>  {essid}",
-        "format-ethernet": "Connected <big></big>",
+        "format-ethernet": "Connected {} <big></big>",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "睊 Disconnected",
         "family": "ipv4",
         "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits} -  {bandwidthDownBits}",
-        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits}  {bandwidthDownBits}",
+        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits} -  {bandwidthDownBits}",
         "internval": 60,
-        "on-click": "exec iwgtk"
+        "on-click": "iwgtk"
     },
     "pulseaudio#volume": {
         "format": "{volume}% {icon}",
@@ -191,7 +187,9 @@
         "signal": 8
     },
     "custom/weather": {
-        "exec": "curl 'https://wttr.in/Clausthal-Zellerfeld?format=%C+%c+%t+%w'",
+        "format": "{}",
+        "return-type": "json",
+        "exec": "curl 'https://wttr.in/Clausthal-Zellerfeld?format=%C+%c+%t+%w' | jq --unbuffered --compact-output -M -R '{text:.}'",
         "interval": 60
     },
     "custom/media": {
@@ -209,9 +207,9 @@
         "tooltip": false,
         "format": "{} {icon}",
         "format-icons": {
-            "notification": "<span foreground='#ff6000'><sup></sup></span>",
+            "notification": "<span foreground='#ff6000'><sup></sup></span>",
             "none": "",
-            "dnd-notification": "<span foreground='#00a878'><sup></sup></span>",
+            "dnd-notification": "<span foreground='#00a878'><sup></sup></span>",
             "dnd-none": ""
         },
         "return-type": "json",
@@ -220,13 +218,13 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true,
-        "max-length": 4,
-        "min-length": 4
+        "max-length": 5,
+        "min-length": 5
     },
     "custom/power": {
         "tooltip": false,
         "format": "<big></big>",
-        "on-click": "rofi -show p -modi p:rofi-power-menu -fullscreen -theme death-purple -font 'FiraCode Medium 11' -width 10 -lines 6"
+        "on-click": "nwg-bar"
     },
     "custom/scratchpad-indicator": {
         "interval": 3,
