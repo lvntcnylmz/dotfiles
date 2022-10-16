@@ -1,9 +1,11 @@
+[![arch](https://user-images.githubusercontent.com/19970595/196043408-762cd631-9828-461e-9ab7-08d9dc9ab887.png)][1]
+
 # Arch Linux Dotfiles
 
-## Modules 
+dotfiles are the files that starts wth a . (dot). this files are generally responsible for software configurations. This repository contains my favorite and most used dotfiles in my Arch Linux setup.
 
 |**Module Type**|**Module Name / Project Link**|      
-|---------------|----------------| 
+|---------------|------------------------------| 
 |Shell|[fish-shell](https://github.com/fish-shell/fish-shell)|
 |Promt Theme Engine|[oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh)|
 |Window Manager|[swaywm](https://github.com/swaywm/sway)|
@@ -17,20 +19,7 @@
 |Text Editor|[nvim](https://github.com/neovim/neovim), [vscodium](https://github.com/VSCodium/vscodium)|
 |App Launcher|[rofi](https://github.com/davatorium/rofi)|
 
-<!---
-- Shell : fish
-- Promt Theme Engine : oh-my-posh
-- Window Manager : swaywm
-- Notification Daemon : swaync
-- Screen Locker : swaylock +  swaylock-effects 
-- Status Bar : waybar
-- System Info Tool : neofetch
-- Terminal : terminator
-- Display Manager : ly
-- File Manager : ranger
-- Text Editor: Nvim / VSCodium
-- Window Switcher/App Launcher : rofi
---->
+[1]: https://archlinux.org/
 
 ## Screenshots
 
