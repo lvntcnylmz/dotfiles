@@ -1,4 +1,5 @@
 ignore-empty-password
+
 font=Cantarell
 font-size=40
 
@@ -10,11 +11,9 @@ datestr=%a - %d %b %y
 
 screenshots
 
-fade-in=0.5
-
-effect-blur=7x5
-effect-vignette=0.5:0.5 
-effect-pixelate=10
+fade-in=1
+effect-blur=7x5 
+effect-pixelate=5
 
 indicator
 indicator-radius=150
@@ -22,34 +21,32 @@ indicator-thickness=20
 indicator-caps-lock
 
 key-hl-color=ff6000
-
+bs-hl-color=ff6000
 separator-color=00000000
 
 inside-color=120024
-inside-clear-color=0080ff
-inside-caps-lock-color=009ddc00
-inside-ver-color=d9d8d800
-inside-wrong-color=ee2e2400
+inside-clear-color=250c3e
+inside-caps-lock-color=a80030
+inside-ver-color=00a878
+inside-wrong-color=920053
 
-ring-color=120024D9
-ring-clear-color=120024D9
-ring-caps-lock-color=120024D9
-ring-ver-color=120024D9
-ring-wrong-color=120024D9
+ring-color=120024
+ring-clear-color=120024
+ring-caps-lock-color=a80030
+ring-ver-color=00a878
+ring-wrong-color=920053
 
-line-color=00000000
-line-clear-color=ffd204FF
-line-caps-lock-color=009ddcFF
-line-ver-color=d9d8d8FF
-line-wrong-color=ee2e24FF
+line-color=120024
+line-clear-color=120024
+line-caps-lock-color=a80030
+line-ver-color=00a878
+line-wrong-color=920053
 
-text-clear-color=ffd20400
-text-ver-color=d9d8d800
-text-wrong-color=ee2e2400
 text-color=00a878
+text-clear-color=00a878
+text-ver-color=120024
+text-wrong-color=120024
 
-bs-hl-color=ee2e24FF
-caps-lock-key-hl-color=ffd204FF
-caps-lock-bs-hl-color=ee2e24FF
-disable-caps-lock-text
-text-caps-lock-color=009ddc
+caps-lock-key-hl-color=a80030
+caps-lock-bs-hl-color=a80030
+text-caps-lock-color=00a878
