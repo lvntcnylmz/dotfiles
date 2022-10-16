@@ -1,26 +1,13 @@
-# #!/bin/sh
+#!/bin/bash
 
-# set class $(platerctl metadata --player=spotify --format '{{lc(status)}}')
-# set icon ""
+player_status=$(playerctl -p %any status)
+player_name=$(playerctl metadata --format "{{playerName}}")
 
-# if $class == "playing" ; then
-#   set info $(playerctl metadata --player=spotify --format '{{artist}} - {{title}}')
-#   if $info > 40 ; then
-#     set info $(echo $info | cut -c1-40)"..."
-#   fi
-#   set text $info" "$icon
-#   elif $class == "paused" ; then
-#   set text $icon
-#   elif $class == "stopped" ; then
-#   set text ""
-# fi
 
-# echo -e "{\"text\":\""$text"\", \"class\":\""$class"\"}"
-
-#!/bin/sh
-player_status=$(playerctl status 2> /dev/null)
-if [ "$player_status" = "Playing" ]; then
-    echo "$(playerctl metadata artist) - $(playerctl metadata title)"
-elif [ "$player_status" = "Paused" ]; then
-    echo " $(playerctl metadata artist) - $(playerctl metadata title)"
+if [ "$player_status" = "Playing" ] || [ "$player_status" = "Paused" ] ; then
+    if [ "$player_name" = "spotify" ] ; then
+        echo "$(playerctl metadata --format "{{ emoji(status) }} {{ artist }} - {{ title }} - {{ duration(position) }} / {{ duration(mpris:length) }}")"
+    else
+        echo "$(playerctl metadata --format "{{ emoji(status) }} {{ artist }} - {{ title }}")"
+    fi
 fi

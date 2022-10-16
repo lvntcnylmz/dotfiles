@@ -183,25 +183,24 @@
         "interval": 60,
         "exec": "checkupdates | wc -l",
         "exec-if": "exit 0",
-        "on-click": "terminator -e 'yay'; pkill -SIGRTMIN+8 waybar",
         "signal": 8
     },
     "custom/weather": {
         "format": "{}",
         "return-type": "json",
-        "exec": "curl 'https://wttr.in/Clausthal-Zellerfeld?format=%C+%c+%t+%w' | jq --unbuffered --compact-output -M -R '{text:.}'",
+        "exec": "curl 'https://wttr.in/Clausthal-Zellerfeld?format=%C+%c+%t+%w+%m' | jq --unbuffered --compact-output -M -R '{text:.}'",
         "interval": 60
     },
     "custom/media": {
         "format": "{icon} {}",
-        "return-type": "json",
         "max-length": 40,
         "format-icons": {
-            "spotify": "<big></big>",
-            "default": "<big></big>"
+            "spotify": "<big></big>",
+            "firefox": "<big></big>"
         },
         "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+        "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null",
+        "interval": 1
     },
     "custom/notification": {
         "tooltip": false,
@@ -227,9 +226,10 @@
         "on-click": "nwg-bar"
     },
     "custom/scratchpad-indicator": {
-        "interval": 3,
-        "exec": "swaymsg -t get_tree | jq 'recurse(.nodes[]) | first(select(.name==\"__i3_scratch\")) | .floating_nodes | length | select(. >= 1)'",
         "format": "{} <big></big>",
+        "return-type": "json",
+        "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '(recurse(.nodes[]) | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | if ($scratch_nodes|length) > 0 then { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") } else empty end'",
+        "interval": 3,
         "on-click": "swaymsg 'scratchpad show'",
         "on-click-right": "swaymsg 'move scratchpad'"
     }
