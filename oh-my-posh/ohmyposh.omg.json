@@ -195,8 +195,8 @@
           "powerline_symbol": "\ue0b2",
           "invert_powerline": true,
           "properties": {
-            "apikey": "2d33906c4852d7e528c08dab94722964",
-            "location": "CLAUSTHAL,DE",
+            "apikey": "YOUR-API-KEY",
+            "location": "YOUR-CITY-CODE",
             "units": "metric",
             "enable_hyperlink": true,
             "http_timeout": 400,
