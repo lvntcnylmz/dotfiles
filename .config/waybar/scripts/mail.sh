@@ -1,20 +1,17 @@
-#!/bin/sh
-# personalmail and workmail are defined in /etc/hosts with credentials in ~/.netrc
-personal_mail="$(curl -sfnX "STATUS INBOX (UNSEEN)" imap://lvntcnylmz%40hotmail.com@outlook.office365.com | tr -dc "[:digit:]")"
+#!/bin/bash
 
-is_int () {
-    [ "$1" -ge 0 ] 2> /dev/null
-}
+# Server and mail adress are defined with credentials in ~/.netrc
+SERVER="$(head -1 ~/.netrc | awk '{print $2}')"
+INBOX=$(curl -fk --netrc -X "STATUS INBOX (UNSEEN)" imaps://$SERVER/INBOX | tr -d -c "[:digit:]")
 
-if is_int "$PERSONAL" 
-then
-    count="$(echo "$personal_mail" | bc)"
-    if [ "$count" -eq 0 ] 
-    then
-        echo " 0"
+if [ $INBOX ] && [ $INBOX -gt 0 ] ; then
+    if [ $INBOX -eq 1 ] ; then
+        echo "$INBOX"
+        notify-send -i mail-unread-symbolic "Thunderbird" "You have an unread e-mail."
     else
-        echo "$count" ; notify-send 'You have e-mail'
+        echo "$INBOX" 
+        notify-send -i mail-unread-symbolic "Thunderbird" "You have $INBOX unread e-mail."
     fi
 else
-    echo " ?"
+    echo "$INBOX"
 fi
