@@ -7,7 +7,7 @@
       "segments": [
         {
           "background": "#1793d1",
-          "foreground": "#ffffff",
+          "foreground": "#000000",
           "leading_diamond": "\u256d\u2500\ue0b6",
           "properties": {
             "linux": "\uF303 ",
@@ -195,7 +195,7 @@
           "powerline_symbol": "\ue0b2",
           "invert_powerline": true,
           "properties": {
-            "apikey": "2d33906c4852d7e528c08dab94722964",
+            "apikey": "8d0c924508acc389d302f584c7a3b7ea",
             "location": "CLAUSTHAL,DE",
             "units": "metric",
             "enable_hyperlink": true,
