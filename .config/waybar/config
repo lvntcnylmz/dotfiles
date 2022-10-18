@@ -9,14 +9,15 @@
         "clock",
         "sway/language",
         "backlight",
-        "custom/pacman",
         "idle_inhibitor",
         "custom/media",
         "custom/scratchpad-indicator",
         "sway/mode"
     ],
     "modules-center": [
-        "sway/workspaces"
+        "custom/pacman",
+        "sway/workspaces",
+        "custom/mail"
     ],
     "modules-right": [
         "custom/weather",
@@ -51,6 +52,9 @@
         "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
+            "1": "<big></big>",
+            "2": "<big></big>",
+            "3": "<big></big>",
             "urgent": "<big></big>",
             "focused": "<big></big>",
             "default": "<big></big>"
@@ -71,8 +75,8 @@
         "min-length": 5
     },
     "bluetooth": {
-        "format": "<big></big> {status}",
-        "format-off": "<big></big> {status}",
+        "format": "<big></big> {status}",
+        "format-off": "<big></big> {status}",
         "format-disabled": "",
         "format-connected": " {device_alias}",
         "format-connected-battery": " {device_alias} {device_battery_percentage}%",
@@ -181,9 +185,10 @@
     "custom/pacman": {
         "format": "<big></big>  {}",
         "interval": 60,
-        "exec": "checkupdates | wc -l",
+        "exec": "$HOME/.config/waybar/scripts/checkupdates.sh 2> /dev/null",
         "exec-if": "exit 0",
-        "signal": 8
+        "signal": 8,
+        "tooltip": false
     },
     "custom/weather": {
         "format": "{}",
@@ -199,7 +204,7 @@
             "firefox": "<big></big>"
         },
         "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null",
+        "exec": "$HOME/.config/waybar/scripts/mediaplayer.sh 2> /dev/null",
         "interval": 1
     },
     "custom/notification": {
@@ -232,5 +237,10 @@
         "interval": 3,
         "on-click": "swaymsg 'scratchpad show'",
         "on-click-right": "swaymsg 'move scratchpad'"
+    },
+    "custom/mail": {
+        "format": "<big></big> {}",
+        "exec": "$HOME/.config/waybar/scripts/mail.sh 2> /dev/null",
+        "interval": 60 
     }
 }

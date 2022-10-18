@@ -1,6 +1,6 @@
 @define-color main-bg-color #120024;
 @define-color main-fg-color #00a878;
-@define-color module-color #250c3e;
+@define-color module-color #34084f;
 @define-color highlight-color #ff6000;
 @define-color critical-color #920053;
 @define-color warning-bg-color #ffffff;
@@ -12,6 +12,7 @@
     font-family: "Cantarell";
     /*"Font Awesome 6 Free"; */
     font-size: 12px;
+    font-weight: bold;
 }
 
 #waybar {
@@ -20,33 +21,32 @@
     color: @main-fg-color;
 }
 
-#clock,
-#language,
-#custom-pacman,
-#sway-mode,
-#idle_inhibitor,
-#sway-workspaces,
-#custom-weather,
-#cpu,
-#disk,
-#temperature,
-#pulseaudio.volume,
-#pulseaudio.mic,
-#battery,
 #mode,
-#network,
 #tray,
+#disk,
+#clock,
+#network,
+#battery,
+#language,
+#sway-mode,
 #backlight,
-#custom-notification,
 #bluetooth,
-/* #bluetooth.off, */
-/* #bluetooth.disabled, */
+#workspaces,
+#custom-mail,
+#temperature,
+#custom-pacman,
+#idle_inhibitor,
+#custom-weather,
+#sway-workspaces,
+#pulseaudio.mic,
+#pulseaudio.volume,
+#custom-notification,
 #custom-scratchpad-indicator {
     background: @module-color;
     font-weight: bold;
     padding: 0 0.5em;
-    /* color: #00a878; */
     margin: 0.2em 0.2em;
+    border-radius: 2rem;
 }
 
 #custom-scratchpad-indicator {
@@ -59,6 +59,7 @@
     font-weight: bold;
     padding: 0 0.6em;
     margin: 0.2em 0.1em;
+    border-radius: 2rem;
 }
 
 #custom-power {
@@ -66,6 +67,7 @@
     color: @module-color;
     font-weight: bold;
     padding: 0 0.6em;
+    border-radius: 2rem;
 }
 
 #workspaces button:hover {
