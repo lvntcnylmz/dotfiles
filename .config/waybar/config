@@ -102,13 +102,13 @@
         "show-passive-items": true
     },
     "clock": {
-        "format": "<big></big> {:%H:%M:%S    %d %b %y}",
+        "format": "<big></big> {:%H:%M:%S    %d %b %y %a}",
         "tooltip-format": "<tt><big>{calendar}</big></tt>",
         "today-format": "<span color='#ff6000'><big>{}</big></span>",
         "locale": "en_GB.UTF-8",
         "interval": 1,
-        "max-length": 19,
-        "min-length": 19
+        "max-length": 22,
+        "min-length": 22
     },
     "battery": {
         "states": {
@@ -144,7 +144,7 @@
     },
     "network": {
         "format-wifi": "<big></big>  {essid}",
-        "format-ethernet": "Connected {} <big></big>",
+        "format-ethernet": "Connected {} <big>歷</big>",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "睊 Disconnected",
         "family": "ipv4",
@@ -184,11 +184,9 @@
     },
     "custom/pacman": {
         "format": "<big></big>  {}",
-        "interval": 60,
-        "exec": "$HOME/.config/waybar/scripts/checkupdates.sh 2> /dev/null",
-        "exec-if": "exit 0",
-        "signal": 8,
-        "tooltip": false
+        "interval": 300,
+        "exec": "$HOME/.config/waybar/scripts/checkupdates.sh",
+        "signal": 8
     },
     "custom/weather": {
         "format": "{}",
@@ -239,8 +237,10 @@
         "on-click-right": "swaymsg 'move scratchpad'"
     },
     "custom/mail": {
-        "format": "<big></big> {}",
+        "format": "{} <big></big>",
         "exec": "$HOME/.config/waybar/scripts/mail.sh 2> /dev/null",
-        "interval": 60 
+        "interval": 60,
+        "on-click": "thunderbird",
+        "tooltip": false
     }
 }
