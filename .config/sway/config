@@ -1,7 +1,3 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
 # Read `man 5 sway` for a complete reference.
 
 ### Variables
@@ -21,41 +17,42 @@ set $term terminator
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu rofi -show run 
 
-### Output configuration
+### Output and background configuration
+#
+# You can get the name of your outputs by running: swaymsg -t get_output
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
-output DP-1 bg /home/can/Pictures/cyberpunk.png fill
-output HDMI-A-2 bg /home/can/Pictures/disco-elysium.png fill
-output eDP-1 bg /home/can/Pictures/disco-elysium.png fill
+output DP-1 {
+    background /home/can/Pictures/cyberpunk.png fill
+    resolution 1080x1920 pos 0,0 transform 270
+}
 
+output HDMI-A-2 {
+    background /home/can/Pictures/disco-elysium.png fill
+    resolution 1920x1080 position 1080,0
+}
 
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-output DP-1 res 1080x1920 pos 0,0 transform 270
-output HDMI-A-2 resolution 1920x1080 position 1080,0 
-output eDP-1 resolution 1920x1080 position 3000,0 
+output eDP-1 {
+    background /home/can/Pictures/disco-elysium.png fill
+    resolution 1920x1080 position 3000,0
+} 
 
 focus output HDMI-A-2
 
-# workspace config 
+# workspace config
 workspace 1 output HDMI-A-2
 workspace 2 output DP-1
 workspace 3 output eDP-1
-
-# gaps config 
-gaps inner 5
-gaps outer 5
 
 # border config
 default_border none
 default_floating_border none
 
-bindsym $mod+shift+x exec swaylock
+# gaps config
+gaps inner 5
+gaps outer 5
 
 ### Idle configuration
 #
@@ -95,13 +92,13 @@ exec swayidle -w \
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+escape exec $menu
 
     # Start browser
-    bindsym $mod+shift+f exec firefox
+    bindsym $mod+Shift+f exec firefox
 
     # Start file manager
-    bindsym $mod+shift+t exec thunar
+    bindsym $mod+Shift+t exec thunar
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -112,6 +109,13 @@ exec swayidle -w \
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
+
+    # Toggle outer gaps
+    bindsym $mod+less gaps outer current set -5
+    bindsym $mod+greater gaps outer current set 5
+
+    # Toggle lock screen
+    bindsym $mod+Shift+x exec swaylock
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
