@@ -239,7 +239,7 @@
     "custom/mail": {
         "format": "{} <big></big>",
         "exec": "$HOME/.config/waybar/scripts/mail.sh 2> /dev/null",
-        "interval": 60,
+        "interval": 300,
         "on-click": "thunderbird",
         "tooltip": false
     }
