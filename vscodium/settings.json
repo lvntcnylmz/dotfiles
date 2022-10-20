@@ -25,7 +25,8 @@
   
   
     // * terminal settings
-    "terminal.integrated.fontFamily": "Fira Code Medium",
+    "terminal.integrated.fontFamily": "MesloLGS Nerd Font",
+    "terminal.integrated.fontWeight": "bold",
   
   
     // * better comment extension setting
@@ -83,15 +84,14 @@
     "security.workspace.trust.emptyWindow": true,
     "security.workspace.trust.enabled": false,
     "redhat.telemetry.enabled": false,
-    "git.confirmSync": false,
-    "git.mergeEditor": true,
     "material-icon-theme.activeIconPack": "angular_ngrx",
     "material-icon-theme.folders.color": "#ab46d2",
     "javascript.updateImportsOnFileMove.enabled": "always",
     "typescript.updateImportsOnFileMove.enabled": "always",
     "editor.minimap.renderCharacters": false,
     "diffEditor.ignoreTrimWhitespace": false,
-    "window.menuBarVisibility": "toggle",
-  
+    "git.confirmSync": false,
+    "git.mergeEditor": true,
+    "window.menuBarVisibility": "toggle"
   }
   
