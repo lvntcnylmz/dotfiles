@@ -1,8 +1,10 @@
-[![arch](https://user-images.githubusercontent.com/19970595/196043408-762cd631-9828-461e-9ab7-08d9dc9ab887.png)][1]
-
 # Arch Linux Dotfiles
 
-dotfiles are the files that starts wth a . (dot). this files are generally responsible for software configurations. This repository contains my favorite and most used dotfiles in my Arch Linux setup.
+dotfiles are the files that starts wth a . (dot). This files are generally responsible for software configurations. This repository contains my favorite and most used dotfiles in my Arch Linux setup.
+
+<img align="right" width="550" height="200" src="https://archlinux.org/static/logos/archlinux-logo-light-1200dpi.7ccd81fd52dc.png"/>
+<img align="right" width="550" height="250" src="https://www.golem.de/1903/139946-189883-189882_rc.jpg"/>
+
 
 |**Module Type**|**Module Name / Project Link**|      
 |---------------|------------------------------| 
@@ -18,8 +20,6 @@ dotfiles are the files that starts wth a . (dot). this files are generally respo
 |File Manager|[ranger](https://github.com/ranger/ranger), [thunar](https://github.com/xfce-mirror/thunar)|
 |Text Editor|[nvim](https://github.com/neovim/neovim), [vscodium](https://github.com/VSCodium/vscodium)|
 |App Launcher|[rofi](https://github.com/davatorium/rofi)|
-
-[1]: https://archlinux.org/
 
 ## Screenshots
 
