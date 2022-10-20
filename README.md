@@ -1,10 +1,8 @@
+<img width=150 height=50 align=right src="https://archlinux.org/static/logos/archlinux-logo-light-1200dpi.7ccd81fd52dc.png">
+
 # Arch Linux Dotfiles
 
 dotfiles are the files that starts wth a . (dot). This files are generally responsible for software configurations. This repository contains my favorite and most used dotfiles in my Arch Linux setup.
-
-<img align="right" width="450" height="100" src="https://archlinux.org/static/logos/archlinux-logo-light-1200dpi.7ccd81fd52dc.png"/>
-<img align="right" width="450" height="150" src="https://www.golem.de/1903/139946-189883-189882_rc.jpg"/>
-
 
 |**Module Type**|**Module Name / Project Link**|      
 |---------------|------------------------------| 
