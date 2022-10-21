@@ -5,19 +5,44 @@
 
 .notification-row {
   background: transparent;
+  box-shadow: none;
   border: 0;
   padding: 0;
   margin: 0;
+  border-radius: 0;
 }
 
+.notification-content {
+  background: transparent;
+  box-shadow: none;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 0;
+}
+
+.notification-action,
 .notification-default-action {
-  padding: 4px;
-  margin: 0;
+  padding: 10px;
   box-shadow: none;
   background: @main-bg-color;
   color: #ff6000;
   border: solid 0.7 @main-fg-color;
   border-radius: 0;
+}
+
+.low, .normal, .critical {
+  padding: 0px;
+  margin: 10px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.critical .body,
+.critical .summary,
+.critical .notification-action,
+.critical .notification-default-action {
+  color: @main-bg-color;
+  background: @highlight-color;
 }
 
 .body-image {
