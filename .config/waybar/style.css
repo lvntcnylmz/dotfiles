@@ -10,7 +10,6 @@
     border: none;
     border-radius: 0;
     font-family: "Cantarell";
-    /*"Font Awesome 6 Free"; */
     font-size: 12px;
     font-weight: bold;
 }
@@ -120,14 +119,13 @@
     color: @main-bg-color;
 }
 
-#battery.warning.discharging,
 #mode,
-#memory.critical,
 #cpu.critical,
+#memory.critical,
 #temperature.critical,
-#battery.critical.discharging {
+#battery.warning.discharging {
     animation-name: blink-warning;
-    animation-duration: 0.5s;
+    animation-duration: 1s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -135,28 +133,16 @@
 
 #battery.critical.discharging {
     animation-name: blink-critical;
-    animation-duration: 0.25s;
-    animation-timing-function: linear;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
 
 @keyframes blink-warning {
-    from {
-        background-color: @warning-bg-color;
-    }
-
-    to {
-        background-color: @highlight-color;
-    }
+    from { background-color: @warning-bg-color; }
+    to { background-color: @highlight-color; }
 }
 
 @keyframes blink-critical {
-    from {
-        background-color: @warning-bg-color;
-    }
-
-    to {
-        background-color: @critical-color;
-    }
+    from { background-color: @warning-bg-color; }
+    to { background-color: @critical-color; }
 }

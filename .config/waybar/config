@@ -27,6 +27,7 @@
         "pulseaudio#volume",
         "pulseaudio#mic",
         "battery",
+        "custom/battery",
         "custom/notification",
         "tray"
     ],
@@ -184,15 +185,18 @@
     },
     "custom/pacman": {
         "format": "<big></big>  {}",
+        "format-update": "<big></big>  {}",
         "interval": 300,
         "exec": "$HOME/.config/waybar/scripts/checkupdates.sh",
-        "signal": 8
+        "signal": 8,
+        "on-click": "notify-send -i software-update-available-symbolic \"$(yay -Qu | wc -l) update/s available.\" \"$(yay -Qu)\""
     },
     "custom/weather": {
         "format": "{}",
         "return-type": "json",
         "exec": "curl 'https://wttr.in/Clausthal-Zellerfeld?format=%C+%c+%t+%w+%m' | jq --unbuffered --compact-output -M -R '{text:.}'",
-        "interval": 60
+        "interval": 300,
+        "tooltip":"{}"
     },
     "custom/media": {
         "format": "{icon} {}",
@@ -239,8 +243,12 @@
     "custom/mail": {
         "format": "{} <big></big>",
         "exec": "$HOME/.config/waybar/scripts/mail.sh 2> /dev/null",
-        "interval": 300,
+        "interval": 60,
         "on-click": "thunderbird",
         "tooltip": false
+    },
+    "custom/battery": {
+        "exec": "$HOME/.config/waybar/scripts/battery.sh 2> /dev/null",
+        "interval": 180
     }
 }
