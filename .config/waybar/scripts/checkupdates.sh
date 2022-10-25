@@ -20,7 +20,7 @@ if [ "$updates" -gt 0 ]; then
     fi 
     if [ "$updates_pacman" -gt 1 ]; then
         echo "$updates_pacman"
-        notify-send -u normal -i software-update-available-symbolic "Arch Linux" "$updates_pacman updates available from AUR"
+        notify-send -u normal -i software-update-available-symbolic "Arch Linux" "$updates_pacman updates available from pacman"
     fi 
 else
     echo "0"
