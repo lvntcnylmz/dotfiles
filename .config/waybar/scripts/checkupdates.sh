@@ -1,7 +1,7 @@
 #!/bin/bash
 
 updates_yay=$(yay -Qu --aur 2> /dev/null | wc -l)
-updates_pacman=$(checkupdates 2> /dev/null | wc -l)
+updates_pacman=$(pacman -Qu 2> /dev/null | wc -l)
 
 updates=$((updates_pacman + updates_yay))
 
@@ -15,12 +15,12 @@ if [ "$updates" -gt 0 ]; then
         notify-send -u normal -i software-update-available-symbolic "Arch Linux" "$updates_pacman update available from pacman"
     fi
     if [ "$updates_yay" -gt 1 ]; then
-        echo "$updates_yay"
+        echo "$updates"
         notify-send -u normal -i software-update-available-symbolic "Arch Linux" "$updates_yay updates available from AUR"
     fi 
     if [ "$updates_pacman" -gt 1 ]; then
-        echo "$updates_pacman"
-        notify-send -u normal -i software-update-available-symbolic "Arch Linux" "$updates_pacman updates available from AUR"
+        echo "$updates"
+        notify-send -u normal -i software-update-available-symbolic "Arch Linux" "$updates_pacman updates available from pacman"
     fi 
 else
     echo "0"
