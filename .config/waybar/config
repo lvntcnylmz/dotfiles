@@ -186,7 +186,7 @@
     "custom/pacman": {
         "format": "<big></big>  {}",
         "format-update": "<big></big>  {}",
-        "interval": 300,
+        "interval": 3600,
         "exec": "$HOME/.config/waybar/scripts/checkupdates.sh",
         "signal": 8,
         "on-click": "notify-send -i software-update-available-symbolic \"$(yay -Qu | wc -l) update/s available.\" \"$(yay -Qu)\""
@@ -243,9 +243,8 @@
     "custom/mail": {
         "format": "{} <big></big>",
         "exec": "$HOME/.config/waybar/scripts/mail.sh 2> /dev/null",
-        "interval": 300,
-        "on-click": "thunderbird",
-        "tooltip": false
+        "interval": 3600,
+        "on-click": "thunderbird"
     },
     "custom/battery": {
         "exec": "$HOME/.config/waybar/scripts/battery.sh 2> /dev/null",
