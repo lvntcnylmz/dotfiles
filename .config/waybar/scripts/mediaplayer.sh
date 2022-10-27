@@ -1,6 +1,6 @@
 #!/bin/bash
 
-player_status=$(playerctl -p %any status)
+player_status=$(playerctl --player=spotify,firefox status)
 player_name=$(playerctl metadata --format "{{ playerName }}")
 song=$(playerctl metadata --format "{{ artist }}\n{{ title }}\n{{ album }}")
 
