@@ -15,7 +15,6 @@
 }
 
 #waybar {
-    /* border-bottom: solid 2 @main-fg-color; */
     background-color: @main-bg-color;
     color: @main-fg-color;
 }
@@ -37,11 +36,12 @@
 #idle_inhibitor,
 #custom-weather,
 #sway-workspaces,
-#pulseaudio.mic,
 #pulseaudio.volume,
 #custom-notification,
-#custom-scratchpad-indicator {
+#custom-scratchpad-indicator,
+#pulseaudio.mic.source-muted {
     background: @module-color;
+    color: @main-fg-color;
     font-weight: bold;
     padding: 0 0.5em;
     margin: 0.2em 0.2em;
@@ -103,6 +103,7 @@
 #cpu.warning,
 #cpu.critical,
 #bluetooth.on,
+#pulseaudio.mic,
 #memory.warning,
 #memory.critical,
 #temperature.warning,
@@ -110,13 +111,16 @@
 #network.disconnected,
 #idle_inhibitor.activated,
 #pulseaudio.volume.muted,
-#pulseaudio.mic.source-muted,
 #battery.warning.discharging,
 #battery.critical.discharging,
 #custom-notification.dnd-none,
 #custom-notification.dnd-notification {
     background: @highlight-color;
     color: @main-bg-color;
+    font-weight: bold;
+    padding: 0 0.5em;
+    margin: 0.2em 0.2em;
+    border-radius: 2rem;
 }
 
 #mode,
@@ -138,11 +142,21 @@
 }
 
 @keyframes blink-warning {
-    from { background-color: @warning-bg-color; }
-    to { background-color: @highlight-color; }
+    from {
+        background-color: @warning-bg-color;
+    }
+
+    to {
+        background-color: @highlight-color;
+    }
 }
 
 @keyframes blink-critical {
-    from { background-color: @warning-bg-color; }
-    to { background-color: @critical-color; }
+    from {
+        background-color: @warning-bg-color;
+    }
+
+    to {
+        background-color: @critical-color;
+    }
 }
