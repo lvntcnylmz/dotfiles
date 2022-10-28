@@ -19,11 +19,7 @@ if [ "$updates" -gt 0 ]; then
         notify-send -u normal -i software-update-available-symbolic "Arch Linux" "$updates_yay updates available from AUR"
     fi 
     if [ "$updates_pacman" -gt 1 ]; then
-<<<<<<< HEAD
         echo "$updates"
-=======
-        echo "$updates_pacman"
->>>>>>> 216fc08463da472dc93b47a0172d37694ac3cfef
         notify-send -u normal -i software-update-available-symbolic "Arch Linux" "$updates_pacman updates available from pacman"
     fi 
 else
