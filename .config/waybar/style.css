@@ -15,7 +15,7 @@
 }
 
 #waybar {
-    border-bottom: solid 2 @highlight-color;
+    /* border-bottom: solid 2 @main-fg-color; */
     background-color: @main-bg-color;
     color: @main-fg-color;
 }
