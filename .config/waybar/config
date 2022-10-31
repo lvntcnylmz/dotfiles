@@ -8,9 +8,8 @@
     ],
     "modules-left": [
         "custom/power",
-        "clock",
-        "sway/language",
-        "backlight",
+        "sway/workspaces",
+        "custom/weather",
         "idle_inhibitor",
         "custom/media",
         "custom/scratchpad-indicator",
@@ -18,14 +17,14 @@
     ],
     "modules-center": [
         "custom/pacman",
-        "sway/workspaces",
+        "clock",
         "custom/mail"
     ],
     "modules-right": [
-        "custom/weather",
         "network",
         "disk",
         "temperature",
+        "backlight",
         "pulseaudio#volume",
         "pulseaudio#mic",
         "battery",
@@ -72,11 +71,6 @@
         "max-length": 50,
         "tooltip": false
     },
-    "sway/language": {
-        "format": "<big></big> <big>{shortDescription}</big>",
-        "max-length": 5,
-        "min-length": 5
-    },
     "bluetooth": {
         "format": "<big></big> {status}",
         "format-off": "<big></big> {status}",
@@ -105,13 +99,13 @@
         "show-passive-items": true
     },
     "clock": {
-        "format": "<big></big> {:%H:%M:%S    %d %b %y %a}",
+        "format": "<big></big> {:%H:%M | %a %d %b %y <big></big>}",
         "tooltip-format": "<tt><big>{calendar}</big></tt>",
         "today-format": "<span color='#ff6000'><big>{}</big></span>",
         "locale": "en_GB.UTF-8",
-        "interval": 1,
-        "max-length": 22,
-        "min-length": 22
+        "interval": 60,
+        "max-length": 20,
+        "min-length": 20
     },
     "battery": {
         "states": {
@@ -133,7 +127,7 @@
         "interval": 60
     },
     "disk": {
-        "format": "{used} <big></big>"
+        "format": "{used} <big></big>"
     },
     "temperature": {
         "critical-threshold": 80,
@@ -146,10 +140,10 @@
         ]
     },
     "network": {
-        "format-wifi": "<big></big>  {essid}",
-        "format-ethernet": "Connected {} <big>歷</big>",
+        "format-wifi": "{essid} <big></big>",
+        "format-ethernet": "Connected {} <big></big>",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "睊 Disconnected",
+        "format-disconnected": "Disconnected 睊",
         "family": "ipv4",
         "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits} -  {bandwidthDownBits}",
         "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits} -  {bandwidthDownBits}",
@@ -186,8 +180,8 @@
         "min-length": 6
     },
     "custom/pacman": {
-        "format": "<big></big>  {}",
-        "format-update": "<big></big>  {}",
+        "format": "<big></big> {}",
+        "format-update": "<big></big> {}",
         "interval": 3600,
         "exec": "$HOME/.config/waybar/scripts/checkupdates.sh",
         "signal": 8,
