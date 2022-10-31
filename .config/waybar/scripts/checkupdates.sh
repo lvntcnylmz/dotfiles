@@ -5,7 +5,7 @@ updates_pacman=$(pacman -Qu 2> /dev/null | wc -l)
 
 updates=$((updates_pacman + updates_yay))
 
-if [ "$updates" -gt 0 ]; then
+if [ "$updates" -ge 1 ]; then
     if [ "$updates_yay" -eq 1 ]; then
         echo "1"
         notify-send -u normal -i software-update-available-symbolic "Arch Linux" "$updates_yay update available from AUR"
