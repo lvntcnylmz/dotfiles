@@ -45,7 +45,7 @@
     font-weight: bold;
     padding: 0 0.5em;
     margin: 0.2em 0.2em;
-    border-radius: 2rem;
+    border-radius: 5px;
 }
 
 #custom-scratchpad-indicator {
@@ -58,7 +58,7 @@
     font-weight: bold;
     padding: 0 0.6em;
     margin: 0.2em 0.1em;
-    border-radius: 2rem;
+    border-radius: 5px;
 }
 
 #custom-power {
@@ -66,7 +66,7 @@
     color: @module-color;
     font-weight: bold;
     padding: 0 0.6em;
-    border-radius: 2rem;
+    border-radius: 5px;
 }
 
 #workspaces button:hover {
@@ -120,7 +120,7 @@
     font-weight: bold;
     padding: 0 0.5em;
     margin: 0.2em 0.2em;
-    border-radius: 2rem;
+    border-radius: 5px;
 }
 
 #mode,
