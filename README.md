@@ -17,7 +17,7 @@ dotfiles are the files that starts wth a . (dot). This files are generally respo
 |Display Manager|[ly](https://github.com/fairyglade/ly)|
 |File Manager|[ranger](https://github.com/ranger/ranger), [thunar](https://github.com/xfce-mirror/thunar)|
 |Text Editor|[nvim](https://github.com/neovim/neovim), [vscodium](https://github.com/VSCodium/vscodium)|
-|App Launcher|[rofi](https://github.com/davatorium/rofi)|
+|App Launcher|[fuzzel](https://codeberg.org/dnkl/fuzzel)|
 
 ## Screenshots
 
