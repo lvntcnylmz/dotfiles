@@ -43,7 +43,7 @@
     background: @module-color;
     color: @main-fg-color;
     font-weight: bold;
-    padding: 0 0.5em;
+    padding: 0 0.3em;
     margin: 0.2em 0.2em;
     border-radius: 5px;
 }
@@ -56,16 +56,16 @@
     background: @main-fg-color;
     color: @main-bg-color;
     font-weight: bold;
-    padding: 0 0.6em;
-    margin: 0.2em 0.1em;
+    padding: 0 0.3em;
+    margin: 0.2em 0.2em;
     border-radius: 5px;
 }
 
 #custom-power {
     background: @highlight-color;
     color: @module-color;
-    font-weight: bold;
-    padding: 0 0.6em;
+    padding: 0 0.3em;
+    margin: 0.2em 0.2em;
     border-radius: 5px;
 }
 
@@ -118,7 +118,7 @@
     background: @highlight-color;
     color: @main-bg-color;
     font-weight: bold;
-    padding: 0 0.5em;
+    padding: 0 0.3em;
     margin: 0.2em 0.2em;
     border-radius: 5px;
 }
