@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
     "output": [
-        "eDP-1",
+        "!eDP-1",
         "HDMI-A-2",
         "!DP-1"
     ],
@@ -99,7 +99,7 @@
         "show-passive-items": true
     },
     "clock": {
-        "format": "<big></big> {:%H:%M | %a %d %b %y <big></big>}",
+        "format": "<big></big>  {:%H:%M  %a %d %b %y  <big></big>}",
         "tooltip-format": "<tt><big>{calendar}</big></tt>",
         "today-format": "<span color='#ff6000'><big>{}</big></span>",
         "locale": "en_GB.UTF-8",
@@ -108,6 +108,7 @@
         "min-length": 20
     },
     "battery": {
+        "adapter": "AC",
         "states": {
             "good": 95,
             "warning": 20,
@@ -117,11 +118,16 @@
         "format-charging": "{capacity}% <big></big>",
         "format-plugged": "{capacity}% <big></big>",
         "format-icons": [
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>"
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>"
         ],
         "tooltip-format": "{time}",
         "interval": 60
