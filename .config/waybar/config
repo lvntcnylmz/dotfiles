@@ -27,8 +27,8 @@
         "backlight",
         "pulseaudio#volume",
         "pulseaudio#mic",
-        "battery",
-        "custom/battery",
+        "battery#bat0",
+        "battery#bat1",
         "custom/notification",
         "tray"
     ],
@@ -107,16 +107,16 @@
         "max-length": 20,
         "min-length": 20
     },
-    "battery": {
-        "adapter": "AC",
+    "battery#bat0": {
+        "bat": "BAT0",
         "states": {
             "good": 95,
             "warning": 20,
             "critical": 10
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% <big></big>",
-        "format-plugged": "{capacity}% <big></big>",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% s",
         "format-icons": [
             "<big></big>",
             "<big></big>",
@@ -130,7 +130,32 @@
             "<big></big>"
         ],
         "tooltip-format": "{time}",
-        "interval": 60
+        "interval": 1
+    },
+    "battery#bat1": {
+        "bat": "BAT1",
+        "states": {
+            "good": 95,
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-icons": [
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>"
+        ],
+        "tooltip-format": "{time}",
+        "interval": 1
     },
     "disk": {
         "format": "{used} <big></big>"
@@ -186,12 +211,10 @@
         "min-length": 6
     },
     "custom/pacman": {
-        "format": "<big></big> {}",
-        "format-update": "<big></big> {}",
         "interval": 3600,
         "exec": "$HOME/.config/waybar/scripts/checkupdates.sh",
         "signal": 8,
-        "on-click": "notify-send -i software-update-available-symbolic \"$(yay -Qu | wc -l) update/s available.\" \"$(yay -Qu)\""
+        "on-click": "notify-send -i software-update-available-symbolic \"Updates Available\" \"$(yay -Qu | checkupdates) \""
     },
     "custom/weather": {
         "format": "{}",
@@ -243,13 +266,12 @@
         "on-click-right": "swaymsg 'move scratchpad'"
     },
     "custom/mail": {
-        "format": "{} <big></big>",
         "exec": "$HOME/.config/waybar/scripts/mail.sh 2> /dev/null",
         "interval": 3600,
         "on-click": "thunderbird"
     },
     "custom/battery": {
         "exec": "$HOME/.config/waybar/scripts/battery.sh 2> /dev/null",
-        "interval": 180
+        "interval": 60
     }
 }
