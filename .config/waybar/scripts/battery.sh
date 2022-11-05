@@ -1,28 +1,33 @@
-#!/bin/bash
+#!/bin/sh
 
-PATH_AC="$(cat /sys/class/power_supply/AC/online)"
-PATH_BATTERY_BAT0="/sys/class/power_supply/BAT0"
-PATH_BATTERY_BAT1="/sys/class/power_supply/BAT1"
+PATH_AC="/sys/class/power_supply/AC"
+PATH_BATTERY_0="/sys/class/power_supply/BAT0"
+PATH_BATTERY_1="/sys/class/power_supply/BAT1"
 
+ac=0
 battery_level_0=0
 battery_level_1=0
 battery_max_0=0
 battery_max_1=0
 
-if [ -f "$PATH_BATTERY_BAT0/energy_now" ]; then
-    battery_level_0=$(cat "$PATH_BATTERY_BAT0/energy_now")
+if [ -f "$PATH_AC/online" ]; then
+    ac=$(cat "$PATH_AC/online")
 fi
 
-if [ -f "$PATH_BATTERY_BAT0/energy_full" ]; then
-    battery_max_0=$(cat "$PATH_BATTERY_BAT0/energy_full")
+if [ -f "$PATH_BATTERY_0/energy_now" ]; then
+    battery_level_0=$(cat "$PATH_BATTERY_0/energy_now")
 fi
 
-if [ -f "$PATH_BATTERY_BAT1/energy_now" ]; then
-    battery_level_1=$(cat "$PATH_BATTERY_BAT1/energy_now")
+if [ -f "$PATH_BATTERY_0/energy_full" ]; then
+    battery_max_0=$(cat "$PATH_BATTERY_0/energy_full")
 fi
 
-if [ -f "$PATH_BATTERY_BAT1/energy_full" ]; then
-    battery_max_1=$(cat "$PATH_BATTERY_BAT1/energy_full")
+if [ -f "$PATH_BATTERY_1/energy_now" ]; then
+    battery_level_1=$(cat "$PATH_BATTERY_1/energy_now")
+fi
+
+if [ -f "$PATH_BATTERY_1/energy_full" ]; then
+    battery_max_1=$(cat "$PATH_BATTERY_1/energy_full")
 fi
 
 battery_level=$(("$battery_level_0 + $battery_level_1"))
@@ -31,7 +36,33 @@ battery_max=$(("$battery_max_0 + $battery_max_1"))
 battery_percent=$(("$battery_level * 100"))
 battery_percent=$(("$battery_percent / $battery_max"))
 
-if [ $battery_percent -le 10 ] && [ $PATH_AC -eq 0 ]
+if [ $battery_percent -le 10 ] && [  "$ac" -eq 0 ]
 then 
     notify-send -u critical -i battery-level-10-symbolic "Arch Linux" "$battery_percent battery left."
+fi
+
+if [ "$ac" -eq 1 ]; then
+    echo "$battery_percent "
+else 
+    if [ $battery_percent -eq 100 ]; then
+        echo "$battery_percent% <big></big>"
+    elif [ $battery_percent -le 90 ] && [ $battery_percent -ge 81 ]; then
+        echo "$battery_percent% <big></big>"
+    elif [ $battery_percent -le 80 ] && [ $battery_percent -ge 71 ]; then
+        echo "$battery_percent% <big></big>"
+    elif [ $battery_percent -le 70 ] && [ $battery_percent -ge 61 ]; then
+        echo "$battery_percent% <big></big>"
+    elif [ $battery_percent -le 60 ] && [ $battery_percent -ge 51 ]; then
+        echo "$battery_percent% <big></big>"
+    elif [ $battery_percent -le 50 ] && [ $battery_percent -ge 41 ]; then
+        echo "$battery_percent% <big></big>"
+    elif [ $battery_percent -le 40 ] && [ $battery_percent -ge 31 ]; then
+        echo "$battery_percent% <big></big>"
+    elif [ $battery_percent -le 30 ] && [ $battery_percent -ge 21 ]; then
+        echo "$battery_percent% <big></big>"
+    elif [ $battery_percent -le 20 ] && [ $battery_percent -ge 11 ]; then
+        echo "$battery_percent% <big></big>"
+    elif [ $battery_percent -le 10 ]; then
+        echo "$battery_percent% <big></big>"
+    fi
 fi
