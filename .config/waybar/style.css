@@ -24,7 +24,6 @@
 #disk,
 #clock,
 #network,
-#battery,
 #language,
 #sway-mode,
 #backlight,
@@ -32,6 +31,8 @@
 #workspaces,
 #custom-mail,
 #temperature,
+#battery.bat0,
+#battery.bat1,
 #custom-pacman,
 #idle_inhibitor,
 #custom-weather,
@@ -93,8 +94,10 @@
     background: @main-bg-color;
 }
 
-#battery.charging,
-#battery.plugged {
+#battery.bat0.charging,
+#battery.bat0.plugged,
+#battery.bat1.charging,
+#battery.bat1.plugged {
     background-color: @main-fg-color;
     color: @main-bg-color;
 }
@@ -111,8 +114,10 @@
 #network.disconnected,
 #idle_inhibitor.activated,
 #pulseaudio.volume.muted,
-#battery.warning.discharging,
-#battery.critical.discharging,
+#battery.bat0.warning.discharging,
+#battery.bat0.critical.discharging,
+#battery.bat1.warning.discharging,
+#battery.bat1.critical.discharging,
 #custom-notification.dnd-none,
 #custom-notification.dnd-notification {
     background: @highlight-color;
@@ -123,32 +128,11 @@
     border-radius: 5px;
 }
 
-#mode,
-#cpu.critical,
-#memory.critical,
-#temperature.critical,
-#battery.warning.discharging {
-    animation-name: blink-warning;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#battery.critical.discharging {
+#battery.bat0.critical.discharging,
+#battery.bat1.critical.discharging {
     animation-name: blink-critical;
     animation-duration: 1s;
     animation-iteration-count: infinite;
-}
-
-@keyframes blink-warning {
-    from {
-        background-color: @warning-bg-color;
-    }
-
-    to {
-        background-color: @highlight-color;
-    }
 }
 
 @keyframes blink-critical {
