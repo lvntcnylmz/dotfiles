@@ -99,13 +99,11 @@
         "show-passive-items": true
     },
     "clock": {
-        "format": "<big></big>  {:%H:%M  %a %d %b %y  <big></big>}",
+        "format": "<big></big>  {:%H:%M:%S  %a %d %b %y  <big></big>}",
         "tooltip-format": "<tt><big>{calendar}</big></tt>",
         "today-format": "<span color='#ff6000'><big>{}</big></span>",
         "locale": "en_GB.UTF-8",
-        "interval": 60,
-        "max-length": 20,
-        "min-length": 20
+        "interval": 1
     },
     "battery#bat0": {
         "bat": "BAT0",
@@ -207,8 +205,8 @@
         "format-source": "{volume}% <big></big>",
         "format-source-muted": "{volume}% <big></big>",
         "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-        "max-length": 6,
-        "min-length": 6
+        "max-length": 7,
+        "min-length": 7
     },
     "custom/pacman": {
         "interval": 3600,
