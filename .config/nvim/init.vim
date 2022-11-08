@@ -12,8 +12,10 @@ set signcolumn=yes
 set hidden
 set noswapfile
 set nobackup
+set clipboard+=unnamedplus
 
 call plug#begin()
+    Plug 'neovim/nvim-lspconfig'
     Plug 'gruvbox-community/gruvbox'
     Plug 'preservim/nerdtree'
     Plug 'vim-airline/vim-airline'
