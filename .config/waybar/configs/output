@@ -1,0 +1,16 @@
+output DP-1 {
+    background /home/can/Pictures/cyberpunk.png fill
+    resolution 1080x1920 pos 0,0 transform 270
+}
+
+output HDMI-A-2 {
+    background /home/can/Pictures/disco_2.png fill
+    resolution 1920x1080 position 1080,0
+}
+
+output eDP-1 {
+    background /home/can/Pictures/disco_2.png fill
+    resolution 1920x1080 position 3000,0
+} 
+
+focus output HDMI-A-2

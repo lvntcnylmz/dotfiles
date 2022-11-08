@@ -1,0 +1,28 @@
+# workspace config
+workspace 1 output HDMI-A-2
+workspace 2 output DP-1
+workspace 3 output eDP-1
+
+# border config
+default_border none
+default_floating_border none
+
+# gaps config
+gaps inner 5
+gaps outer 5
+
+# exec waybar
+bar {
+    swaybar_command waybar
+}
+
+# titlebar colors
+# Property Name             Border  BG      Text    Indicator Child-border
+client.focused              #0a0b16 #34084f #00a878 #4477ff   #4477ff
+client.focused_inactive     #2f343f #303D40 #00a878 #2f343f   #2f343f
+client.unfocused            #2f343f #303D40 #d8dee8 #2f343f   #2f343f
+client.urgent               #2f343f #303D40 #d8dee8 #2f343f   #2f343f
+client.placeholder          #2f343f #303D40 #d8dee8 #2f343f   #2f343f
+
+title_align center
+font pango:Fira Code Medium 10
