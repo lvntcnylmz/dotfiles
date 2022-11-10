@@ -29,6 +29,7 @@
         "pulseaudio#mic",
         "battery#bat0",
         "battery#bat1",
+        "custom/battery",
         "custom/notification",
         "tray"
     ],
