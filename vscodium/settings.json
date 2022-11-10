@@ -92,6 +92,7 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "git.confirmSync": false,
     "git.mergeEditor": true,
-    "window.menuBarVisibility": "toggle"
+    "git.autofetch": true,
+    "css.validate": false,
+    "window.menuBarVisibility": "toggle",
   }
-  
