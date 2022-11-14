@@ -30,18 +30,16 @@ if [ -f "$PATH_BATTERY_1/energy_full" ]; then
     battery_max_1=$(cat "$PATH_BATTERY_1/energy_full")
 fi
 
-# battery_level=$(("$battery_level_0 + $battery_level_1"))
-# battery_max=$(("$battery_max_0 + $battery_max_1"))
+battery_level=$(("$battery_level_0 + $battery_level_1"))
+battery_max=$(("$battery_max_0 + $battery_max_1"))
 
-battery_level=$(("$battery_level_0"))
-battery_max=$(("$battery_max_0"))
+# battery_level=$(("$battery_level_0"))
+# battery_max=$(("$battery_max_0"))
 
 battery_percent=$(("$battery_level * 100"))
 battery_percent=$(("$battery_percent / $battery_max"))
 
-if [ $battery_percent -le 20 ] && [  "$ac" -eq 0 ]
+if [ $battery_percent -le 10 ] && [  "$ac" -eq 0 ]
 then 
     notify-send -u critical -i battery-level-10-symbolic "Arch Linux" "$battery_percent battery left."
 fi
-
-echo $battery_percent
