@@ -13,7 +13,7 @@ exec swayidle -w \
 
 # Set Wob overlay
 set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
-exec_always rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob -a bottom --margin 50 --bar-color '#00A878FF' --border-color '#00A878FF'
+exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 # sway notification center
