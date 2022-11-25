@@ -2,9 +2,9 @@
     "layer": "top",
     "position": "top",
     "output": [
-        "!eDP-1",
+        "eDP-1",
         "HDMI-A-2",
-        "!DP-1"
+        "DP-1"
     ],
     "modules-left": [
         "custom/power",
@@ -115,7 +115,7 @@
         },
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% s",
+        "format-plugged": "{capacity}% ",
         "format-icons": [
             "<big></big>",
             "<big></big>",
@@ -160,7 +160,7 @@
         "format": "{used} <big></big>"
     },
     "temperature": {
-        "critical-threshold": 60,
+        "critical-threshold": 65,
         "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": [
@@ -220,7 +220,7 @@
         "return-type": "json",
         "exec": "curl 'https://wttr.in/Clausthal-Zellerfeld?format=%C+%c+%t+%w+%m' | jq --unbuffered --compact-output -M -R '{text:.}'",
         "interval": 300,
-        "tooltip":"{}"
+        "tooltip": "{}"
     },
     "custom/media": {
         "format": "{icon} {}",
