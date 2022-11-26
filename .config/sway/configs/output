@@ -1,16 +1,11 @@
 output DP-1 {
-    background ~/Pictures/wallpaper/cyberpunk.png fill
-    resolution 1080x1920 pos 0,0 transform 270
+    background ~/Pictures/**/disco_2.png fill
+    resolution 1920x1080 pos 0,0
 }
 
 output HDMI-A-2 {
-    background ~/Pictures/wallpaper/disco_2.png fill
-    resolution 1920x1080 position 1080,0
+    background ~/Pictures/**/disco_2.png fill
+    resolution 1920x1080 position 1920,0
 }
-
-output eDP-1 {
-    background ~/Pictures/wallpaper/disco_2.png fill
-    resolution 1920x1080 position 3000,0
-} 
 
 focus output HDMI-A-2
