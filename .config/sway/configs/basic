@@ -16,6 +16,12 @@ bar {
     swaybar_command waybar
 }
 
+input "1739:0:Synaptics_TM3276-022" {
+    dwt enabled
+    tap enabled
+    middle_emulation enabled
+}
+
 # titlebar colors
 # Property Name             Border  BG      Text    Indicator Child-border
 client.focused              #0a0b16 #34084f #00a878 #4477ff   #4477ff
