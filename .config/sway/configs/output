@@ -1,11 +1,15 @@
-output DP-1 {
+output DP-3 {
     background ~/Pictures/**/disco_2.png fill
     resolution 1920x1080 pos 0,0
 }
 
-output HDMI-A-2 {
+output DP-5 {
     background ~/Pictures/**/disco_2.png fill
     resolution 1920x1080 position 1920,0
 }
 
-focus output HDMI-A-2
+output eDP-1 {
+    background ~/Pictures/**/disco_2.png fill
+}
+
+focus output DP-3
