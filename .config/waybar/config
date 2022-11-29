@@ -2,9 +2,9 @@
     "layer": "top",
     "position": "top",
     "output": [
-        "eDP-1",
-        "HDMI-A-2",
-        "DP-1"
+        "!eDP-1",
+        "DP-3",
+        "!DP-5"
     ],
     "modules-left": [
         "custom/power",
