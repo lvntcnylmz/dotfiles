@@ -1,6 +1,6 @@
 @define-color main-bg-color #120024;
 @define-color main-fg-color #00a878;
-@define-color module-color #34084f;
+@define-color module-color #250c3e;
 @define-color highlight-color #ff6000;
 @define-color critical-color #920053;
 @define-color warning-bg-color #ffffff;
@@ -9,7 +9,7 @@
     margin: 0.2em 0.4em;
     border: none;
     border-radius: 0;
-    font-family: "Fira Code NF";
+    font-family: 'Fira Code NF';
     font-size: 12px;
     font-weight: bold;
 }
