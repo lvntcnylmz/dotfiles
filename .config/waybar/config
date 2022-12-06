@@ -24,7 +24,6 @@
         "network",
         "disk",
         "temperature",
-        "backlight",
         "pulseaudio#volume",
         "pulseaudio#mic",
         "battery#bat0",
@@ -68,11 +67,6 @@
     "sway/mode": {
         "format": "<big></big> {}",
         "max-length": 50
-    },
-    "sway/window": {
-        "format": "{}",
-        "max-length": 50,
-        "tooltip": false
     },
     "bluetooth": {
         "format": "<big></big> {status}",
@@ -159,7 +153,8 @@
         "interval": 1
     },
     "disk": {
-        "format": "{used} <big></big>"
+        "format": "{used} <big></big>",
+        "on-click": "exec thunar"
     },
     "temperature": {
         "critical-threshold": 65,
