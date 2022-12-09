@@ -9,8 +9,8 @@
     "modules-left": [
         "custom/power",
         "idle_inhibitor",
-        "custom/weather",
         "clock",
+        "custom/weather",
         "custom/pacman",
         "custom/mail",
         "custom/scratchpad-indicator",
@@ -220,11 +220,7 @@
     },
     "custom/media": {
         "format": "{icon} {}",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "<big></big>",
-            "firefox": "<big></big>"
-        },
+        "max-length": 100,
         "escape": true,
         "exec": "$HOME/.config/waybar/scripts/mediaplayer.sh 2> /dev/null",
         "interval": 1
