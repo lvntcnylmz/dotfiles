@@ -95,7 +95,7 @@
         "show-passive-items": true
     },
     "clock": {
-        "format": "<big></big>  {:%H:%M:%S  %a %d %b %y  <big></big>}",
+        "format": "<big></big>  {:%H:%M:%S - %a %d %b %y}",
         "tooltip-format": "<tt><big>{calendar}</big></tt>",
         "today-format": "<span color='#ff6000'><big>{}</big></span>",
         "locale": "en_GB.UTF-8",
@@ -223,7 +223,9 @@
         "max-length": 100,
         "escape": true,
         "exec": "$HOME/.config/waybar/scripts/mediaplayer.sh 2> /dev/null",
-        "interval": 1
+        "interval": 1,
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl stop"
     },
     "custom/notification": {
         "tooltip": false,
