@@ -57,7 +57,7 @@
     background: @main-fg-color;
     color: @main-bg-color;
     font-weight: bold;
-    padding: 0 0.3em;
+    padding: 0.2rem 0.5rem;
     margin: 0.2em 0.2em;
     border-radius: 5px;
 }
