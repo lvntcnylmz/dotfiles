@@ -90,7 +90,7 @@
         "tooltip": "true"
     },
     "tray": {
-        "icon-size": 18,
+        "icon-size": 15,
         "spacing": 2,
         "show-passive-items": true
     },
