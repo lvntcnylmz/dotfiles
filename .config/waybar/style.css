@@ -94,11 +94,6 @@
     background: @main-bg-color;
 }
 
-#tray > .needs-attention {
-    background: @highlight-color;
-    border-radius: 5px;
-}
-
 #battery.bat0.charging,
 #battery.bat0.plugged,
 #battery.bat1.charging,
