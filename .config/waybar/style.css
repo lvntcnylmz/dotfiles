@@ -9,7 +9,7 @@
     margin: 0.2em 0.4em;
     border: none;
     border-radius: 0;
-    font-family: 'Fira Code NF';
+    font-family: 'Roboto';
     font-size: 12px;
     font-weight: bold;
 }
@@ -94,6 +94,11 @@
     background: @main-bg-color;
 }
 
+#tray > .needs-attention {
+    background: @highlight-color;
+    border-radius: 5px;
+}
+
 #battery.bat0.charging,
 #battery.bat0.plugged,
 #battery.bat1.charging,
@@ -122,7 +127,7 @@
     background: @highlight-color;
     color: @main-bg-color;
     font-weight: bold;
-    padding: 0 0.6em;
+    padding: 0 0.5em;
     margin: 0.2em 0.2em;
     border-radius: 5px;
 }
