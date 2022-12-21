@@ -6,10 +6,10 @@ INBOX=$(curl --netrc -X "STATUS INBOX (UNSEEN)" imaps://$SERVER/INBOX | tr -d -c
 
 if [ $INBOX ] && [ $INBOX -gt 0 ] ; then
     if [ $INBOX -eq 1 ] ; then
-        echo "<span foreground='#ff6000'>$INBOX <big></big></span>"
+        echo "<span foreground='#ff6000'><big></big> $INBOX</span>"
         notify-send -i mail-unread-symbolic "Thunderbird" "You have an unread e-mail."
     else
-        echo "<span foreground='#ff6000'>$INBOX <big></big></span>" 
+        echo "<span foreground='#ff6000'><big></big> $INBOX</span>" 
         notify-send -i mail-unread-symbolic "Thunderbird" "You have $INBOX unread e-mail."
     fi
 else
