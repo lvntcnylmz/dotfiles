@@ -167,7 +167,7 @@
     },
     "network": {
         "format-wifi": "{essid} <big></big>",
-        "format-ethernet": "Connected {} <big></big>",
+        "format-ethernet": "Connected <big></big>",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected 睊",
         "family": "ipv4",
@@ -241,9 +241,7 @@
         "exec": "swaync-client -swb",
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
-        "escape": true,
-        "max-length": 5,
-        "min-length": 5
+        "escape": true
     },
     "custom/power": {
         "tooltip": false,
