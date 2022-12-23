@@ -6,10 +6,10 @@
 @define-color warning-bg-color #ffffff;
 
 * {
-    margin: 0.2em 0.4em;
+    margin: 2px 5px;
     border: none;
     border-radius: 0;
-    font-family: 'Roboto';
+    font-family: 'FiraCode Nerd Font';
     font-size: 12px;
     font-weight: bold;
 }
@@ -44,9 +44,9 @@
     background: @module-color;
     color: @main-fg-color;
     font-weight: bold;
-    padding: 0.2rem 0.5rem;
-    margin: 0.2em 0.2em;
     border-radius: 5px;
+    padding: 2px 5px;
+    margin: 2px 2px;
 }
 
 #custom-scratchpad-indicator {
@@ -57,17 +57,17 @@
     background: @main-fg-color;
     color: @main-bg-color;
     font-weight: bold;
-    padding: 0.2rem 0.5rem;
-    margin: 0.2em 0.2em;
     border-radius: 5px;
+    padding: 2px 5px;
+    margin: 2px 2px;
 }
 
 #custom-power {
     background: @highlight-color;
     color: @module-color;
-    padding: 0 0.5em;
-    margin: 0.2em 0.2em;
     border-radius: 5px;
+    padding: 2px 5px;
+    margin: 2px 2px;
 }
 
 #workspaces button:hover {
@@ -116,8 +116,8 @@
 #memory.critical,
 #temperature.critical,
 #network.disconnected,
-#idle_inhibitor.activated,
 #pulseaudio.volume.muted,
+#idle_inhibitor.activated,
 #battery.bat0.warning.discharging,
 #battery.bat0.critical.discharging,
 #battery.bat1.warning.discharging,
@@ -127,9 +127,9 @@
     background: @highlight-color;
     color: @main-bg-color;
     font-weight: bold;
-    padding: 0 0.5em;
-    margin: 0.2em 0.2em;
     border-radius: 5px;
+    padding: 2px 5px;
+    margin: 2px 2px;
 }
 
 #battery.bat0.critical.discharging,
