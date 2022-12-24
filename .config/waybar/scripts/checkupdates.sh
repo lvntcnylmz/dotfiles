@@ -22,5 +22,5 @@ if [ "$updates" -gt 0 ]; then
         notify-send -u normal -i software-update-available-symbolic "$updates_pacman updates available from pacman" "$(checkupdates)"
     fi 
 else
-    echo "<big></big> 0"
+    echo "<big></big> 0"
 fi
