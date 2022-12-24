@@ -1,7 +1,7 @@
 @define-color main-bg-color #120024;
-@define-color main-fg-color #00a878;
+@define-color main-fg-color #009242;
 @define-color module-color #250c3e;
-@define-color highlight-color #ff6000;
+@define-color highlight-color #FF0022;
 @define-color critical-color #920053;
 @define-color warning-bg-color #ffffff;
 
@@ -9,7 +9,7 @@
     margin: 2px 5px;
     border: none;
     border-radius: 0;
-    font-family: 'FiraCode Nerd Font';
+    font-family: 'Roboto';
     font-size: 12px;
     font-weight: bold;
 }
@@ -41,7 +41,8 @@
 #idle_inhibitor.deactivated,
 #custom-scratchpad-indicator,
 #pulseaudio.mic.source-muted {
-    background: @module-color;
+    border: 0.5 solid @main-fg-color;
+    background: @main-bg-color;
     color: @main-fg-color;
     font-weight: bold;
     border-radius: 5px;
@@ -124,6 +125,7 @@
 #battery.bat1.critical.discharging,
 #custom-notification.dnd-none,
 #custom-notification.dnd-notification {
+    border: 0.5 solid @highlight-color;
     background: @highlight-color;
     color: @main-bg-color;
     font-weight: bold;
