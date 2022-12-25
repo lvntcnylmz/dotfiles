@@ -31,7 +31,6 @@
         "custom/notification",
         "tray"
     ],
-    
     "backlight": {
         "device": "intel_backlight",
         "format": "{percent}% {icon}",
@@ -96,9 +95,9 @@
         "show-passive-items": true
     },
     "clock": {
-        "format": "<big></big>  {:%H:%M:%S - %a %d %b %y}",
+        "format": "<big></big>  {:%H:%M:%S | %a %d %b %y}",
         "tooltip-format": "<tt><big>{calendar}</big></tt>",
-        "today-format": "<span color='#ff6000'><big>{}</big></span>",
+        "today-format": "<span color='#20BF55'><big>{}</big></span>",
         "locale": "en_GB.UTF-8",
         "interval": 1
     },
