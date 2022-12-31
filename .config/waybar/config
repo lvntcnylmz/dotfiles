@@ -214,7 +214,7 @@
     "custom/weather": {
         "format": "{}",
         "return-type": "json",
-        "exec": "curl 'https://wttr.in/Clausthal-Zellerfeld?format=%C+%c+%t+%w+%m' | jq --unbuffered --compact-output -M -R '{text:.}'",
+        "exec": "$HOME/.config/waybar/scripts/weather.sh Clausthal-Zellerfeld 2> /dev/null",
         "interval": 300,
         "tooltip": true
     },
