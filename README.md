@@ -23,3 +23,4 @@ dotfiles are the files that starts wth a . (dot). This files are generally respo
 
 ![image](/img/desktop1.png)
 ![image](/img/desktop2.png)
+![image](/img/desktop3.png)
