@@ -1,6 +1,6 @@
 @define-color main-bg-color #120024;
 @define-color main-fg-color #7C72A0;
-@define-color highlight-color #20BF55;
+@define-color highlight-color #4B6223;
 @define-color critical-color #D64933;
 @define-color warning-bg-color #FFFFFF;
 
@@ -54,7 +54,7 @@
 }
 
 #custom-media {
-    background: @main-fg-color;
+    background: @highlight-color;
     color: @main-bg-color;
     font-weight: bold;
     border-radius: 5px;
@@ -84,8 +84,8 @@
 }
 
 #workspaces button.urgent {
-    border-color: @critical-color;
-    color: @critical-color;
+    border-color: @highlight-color;
+    color: @highlight-color;
     opacity: 1;
 }
 
@@ -131,7 +131,17 @@
 #battery.bat1.critical.discharging,
 #custom-notification.dnd-none,
 #custom-notification.dnd-notification {
-    border: 0.5 solid @critical-color;
+    border: 0.5 solid @highlight-color;
+    background: @highlight-color;
+    color: @main-bg-color;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin: 2px 2px;
+}
+
+#temperature.critical {
+    border: 0.5 solid @highlight-color;
     background: @critical-color;
     color: @main-bg-color;
     font-weight: bold;
@@ -153,6 +163,6 @@
     }
 
     to {
-        background-color: @critical-color;
+        background-color: @highlight-color;
     }
 }
