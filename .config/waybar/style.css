@@ -1,7 +1,7 @@
 @define-color main-bg-color #120024;
 @define-color main-fg-color #7C72A0;
-@define-color highlight-color #4B6223;
-@define-color critical-color #D64933;
+@define-color highlight-color #544587;
+@define-color critical-color #72A07C;
 @define-color warning-bg-color #FFFFFF;
 
 * {
@@ -50,61 +50,17 @@
 }
 
 #custom-scratchpad-indicator {
-    color: @highlight-color;
+    color: @critical-color;
 }
 
-#custom-media {
+#custom-media,
+#custom-power {
     background: @highlight-color;
     color: @main-bg-color;
     font-weight: bold;
     border-radius: 5px;
     padding: 2px 5px;
     margin: 2px 2px;
-}
-
-#custom-power {
-    background: @highlight-color;
-    color: @main-bg-color;
-    border-radius: 5px;
-    padding: 2px 5px;
-    margin: 2px 2px;
-}
-
-#workspaces button:hover {
-    background: transparent;
-}
-
-#workspaces button {
-    padding: 0;
-    color: @main-fg-color;
-}
-
-#workspaces button.focused {
-    color: @highlight-color;
-}
-
-#workspaces button.urgent {
-    border-color: @highlight-color;
-    color: @highlight-color;
-    opacity: 1;
-}
-
-#tray menu {
-    color: @main-fg-color;
-    background: @main-bg-color;
-}
-
-#tray>.needs-attention {
-    background: @highlight-color;
-    border-radius: 5px;
-}
-
-#battery.bat0.charging,
-#battery.bat0.plugged,
-#battery.bat1.charging,
-#battery.bat1.plugged {
-    background-color: @highlight-color;
-    color: @main-bg-color;
 }
 
 #mode,
@@ -112,23 +68,7 @@
 #memory.warning,
 #memory.critical,
 #network.disconnected,
-#idle_inhibitor.activated {
-    border: 0.5 solid @highlight-color;
-    background: @highlight-color;
-    color: @main-bg-color;
-    font-weight: bold;
-    border-radius: 5px;
-    padding: 2px 5px;
-    margin: 2px 2px;
-}
-
-#pulseaudio.mic,
-#pulseaudio.volume.muted,
-#temperature.critical,
-#battery.bat0.warning.discharging,
-#battery.bat0.critical.discharging,
-#battery.bat1.warning.discharging,
-#battery.bat1.critical.discharging,
+#idle_inhibitor.activated,
 #custom-notification.dnd-none,
 #custom-notification.dnd-notification {
     border: 0.5 solid @highlight-color;
@@ -140,8 +80,18 @@
     margin: 2px 2px;
 }
 
+#pulseaudio.mic,
+#pulseaudio.volume.muted,
+#battery.bat0.charging,
+#battery.bat0.plugged,
+#battery.bat1.charging,
+#battery.bat1.plugged,
+#battery.bat0.warning.discharging,
+#battery.bat0.critical.discharging,
+#battery.bat1.warning.discharging,
+#battery.bat1.critical.discharging,
 #temperature.critical {
-    border: 0.5 solid @highlight-color;
+    border: 0.5 solid @critical-color;
     background: @critical-color;
     color: @main-bg-color;
     font-weight: bold;
