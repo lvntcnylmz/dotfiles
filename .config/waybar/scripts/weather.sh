@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 text=$(curl -s "https://wttr.in/$1?format=%c+%t+%w+%m")
+
 if [[ $? == 0 ]]
 then
     text=$(echo "$text" | sed -E "s/\s+/ /g")
@@ -13,4 +14,4 @@ then
     fi
 fi
 
-echo "{\"text\":\"error\", \"tooltip\":\"error\"}"
+echo "{\"text\":\"Service Unavailable\", \"tooltip\":\"Service Unavailable\"}"
