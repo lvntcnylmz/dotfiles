@@ -214,7 +214,7 @@
     "custom/weather": {
         "format": "{}",
         "return-type": "json",
-        "exec": "$HOME/.config/waybar/scripts/weather.sh Clausthal-Zellerfeld 2> /dev/null",
+        "exec": "$HOME/.config/waybar/scripts/weather.sh 'Clausthal\\-Zellerfeld' 2> /dev/null",
         "interval": 300,
         "tooltip": true
     },
