@@ -20,6 +20,7 @@
         "custom/media"
     ],
     "modules-right": [
+        "custom/notification",
         "network",
         "disk",
         "temperature",
@@ -28,7 +29,6 @@
         "battery#bat0",
         "battery#bat1",
         "custom/battery",
-        "custom/notification",
         "tray"
     ],
     "backlight": {
