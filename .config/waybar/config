@@ -20,7 +20,6 @@
         "custom/media"
     ],
     "modules-right": [
-        "custom/notification",
         "network",
         "disk",
         "temperature",
@@ -29,6 +28,7 @@
         "battery#bat0",
         "battery#bat1",
         "custom/battery",
+        "custom/notification",
         "tray"
     ],
     "backlight": {
@@ -231,10 +231,10 @@
         "tooltip": false,
         "format": "{} {icon}",
         "format-icons": {
-            "notification": "<span foreground='#ff6000'><sup></sup></span>",
-            "none": "",
-            "dnd-notification": "<span foreground='#00a878'><sup></sup></span>",
-            "dnd-none": ""
+            "notification": "<big></big><span foreground='#ff6000'><sup></sup></span>",
+            "none": "<big></big>",
+            "dnd-notification": "<big></big><span foreground='#00a878'><sup></sup></span>",
+            "dnd-none": "<big></big>"
         },
         "return-type": "json",
         "exec-if": "which swaync-client",
