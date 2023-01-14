@@ -6,6 +6,7 @@ workspace 3 output eDP-1
 # border config
 default_border none
 default_floating_border none
+default_orientation auto
 
 # gaps config
 gaps inner 5
