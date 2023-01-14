@@ -180,16 +180,16 @@
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "{volume}% <big></big>",
+        "format-muted": "{volume}% <big></big>",
         "format-icons": {
             "headphone": "",
             "phone": "",
             "portable": "",
             "car": "",
             "default": [
-                "<big></big>",
-                "<big></big>",
-                "<big></big>"
+                "<big>奄</big>",
+                "<big>奔</big>",
+                "<big>墳</big>"
             ]
         },
         "max-length": 7,
