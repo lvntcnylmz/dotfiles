@@ -32,4 +32,5 @@ client.urgent               #2f343f #303D40 #d8dee8 #2f343f   #2f343f
 client.placeholder          #2f343f #303D40 #d8dee8 #2f343f   #2f343f
 
 title_align center
-font pango:Fira Code Medium 10
+
+font pango:Noto Sans Display Regular 11

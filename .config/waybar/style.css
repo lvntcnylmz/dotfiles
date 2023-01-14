@@ -8,8 +8,8 @@
     margin: 2px 5px;
     border: none;
     border-radius: 0;
-    font-family: JetBrainsMono Nerd Fon;
-    font-size: 12px;
+    font-family: "Noto Sans Display Regular";
+    font-size: 11px;
 }
 
 #waybar {
