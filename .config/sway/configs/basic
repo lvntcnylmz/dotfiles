@@ -24,13 +24,14 @@ input "1739:0:Synaptics_TM3276-022" {
 }
 
 # titlebar colors
-# Property Name             Border  BG      Text    Indicator Child-border
-client.focused              #0a0b16 #34084f #00a878 #4477ff   #4477ff
-client.focused_inactive     #2f343f #303D40 #00a878 #2f343f   #2f343f
-client.unfocused            #2f343f #303D40 #d8dee8 #2f343f   #2f343f
-client.urgent               #2f343f #303D40 #d8dee8 #2f343f   #2f343f
-client.placeholder          #2f343f #303D40 #d8dee8 #2f343f   #2f343f
+# Property Name             Border      BG          Text        Indicator   Child-border
+client.focused              #544587     #544587     #120024     #4477ff     #4477ff
+client.focused_inactive     #544587     #120024     #7C72A0     #2f343f     #2f343f
+client.unfocused            #544587     #120024     #7C72A0     #2f343f     #2f343f
+client.urgent               #2f343f     #303D40     #d8dee8     #2f343f     #2f343f
+client.placeholder          #2f343f     #303D40     #d8dee8     #2f343f     #2f343f
 
-title_align center
+title_align center                                                  
+titlebar_padding 5
 
-font pango:Noto Sans Display Regular 11
+font pango:Noto Sans Display Bold 11
