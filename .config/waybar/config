@@ -207,7 +207,7 @@
     },
     "custom/pacman": {
         "interval": 3600,
-        "exec": "$HOME/.config/waybar/scripts/checkupdates.sh",
+        "exec": "$HOME/.config/waybar/scripts/checkupdates.sh 2> /dev/null",
         "signal": 8,
         "on-click": "notify-send -i software-update-available-symbolic \"Updates Available\" \"$(yay -Qu | checkupdates) \""
     },
@@ -219,9 +219,7 @@
         "tooltip": true
     },
     "custom/media": {
-        "format": "{icon} {}",
         "max-length": 100,
-        "escape": true,
         "exec": "$HOME/.config/waybar/scripts/mediaplayer.sh 2> /dev/null",
         "interval": 1,
         "on-click": "playerctl play-pause",
