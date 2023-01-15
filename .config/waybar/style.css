@@ -1,6 +1,8 @@
 @define-color main-bg-color #120024;
-@define-color main-fg-color #7554a3;
-@define-color highlight-color #99de1e;
+@define-color main-fg-color #7C72A0;
+@define-color highlight-color #544587;
+@define-color critical-color #72A07C;
+@define-color warning-bg-color #FFFFFF;
 
 * {
     margin: 2px 5px;
@@ -47,13 +49,12 @@
 }
 
 #custom-scratchpad-indicator {
-    color: @highlight-color;
+    color: @critical-color;
 }
 
 #custom-media,
-#custom-power,
-#idle_inhibitor.activated {
-    background: @main-fg-color;
+#custom-power {
+    background: @highlight-color;
     color: @main-bg-color;
     font-weight: bold;
     border-radius: 5px;
@@ -66,21 +67,31 @@
 #memory.warning,
 #memory.critical,
 #network.disconnected,
-#temperature.critical,
+#idle_inhibitor.activated,
+#custom-notification.dnd-none,
+#custom-notification.dnd-notification {
+    border: 0.5 solid @highlight-color;
+    background: @highlight-color;
+    color: @main-bg-color;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin: 2px 2px;
+}
+
 #pulseaudio.mic,
 #pulseaudio.volume.muted,
 #battery.bat0.charging,
 #battery.bat0.plugged,
 #battery.bat1.charging,
 #battery.bat1.plugged,
-#custom-notification.dnd-none,
 #battery.bat0.warning.discharging,
 #battery.bat0.critical.discharging,
 #battery.bat1.warning.discharging,
 #battery.bat1.critical.discharging,
-#custom-notification.dnd-notification {
-    border: 0.5 solid @highlight-color;
-    background: @highlight-color;
+#temperature.critical {
+    border: 0.5 solid @critical-color;
+    background: @critical-color;
     color: @main-bg-color;
     font-weight: bold;
     border-radius: 5px;
@@ -97,10 +108,10 @@
 
 @keyframes blink-critical {
     from {
-        background-color: @main-fg-color;
+        background-color: @warning-bg-color;
     }
 
     to {
-        background-color: @main-bg-color;
+        background-color: @highlight-color;
     }
 }
