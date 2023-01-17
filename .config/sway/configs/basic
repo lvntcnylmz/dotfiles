@@ -1,37 +1,40 @@
-# workspace config
+# Workspace config
 workspace 1 output HDMI-A-2
 workspace 2 output DP-1
 workspace 3 output eDP-1
 
-# border config
+# Border config
 default_border none
 default_floating_border none
 default_orientation auto
 
-# gaps config
+# Gaps config
 gaps inner 5
 gaps outer 5
 
-# exec waybar
+# Exec waybar
 bar {
     swaybar_command waybar
 }
 
+# Enable thinkPad touchpad
 input "1739:0:Synaptics_TM3276-022" {
     dwt enabled
     tap enabled
     middle_emulation enabled
 }
 
-# titlebar colors
+# Titlebar colors
 # Property Name             Border      BG          Text        Indicator   Child-border
-client.focused              #544587     #544587     #120024     #4477ff     #4477ff
-client.focused_inactive     #544587     #120024     #7C72A0     #2f343f     #2f343f
-client.unfocused            #544587     #120024     #7C72A0     #2f343f     #2f343f
+client.focused              #047e63     #120024     #047e63     #4477ff     #4477ff
+client.focused_inactive     #544587     #120024     #544587     #2f343f     #2f343f
+client.unfocused            #544587     #120024     #544587     #2f343f     #2f343f
 client.urgent               #2f343f     #303D40     #d8dee8     #2f343f     #2f343f
 client.placeholder          #2f343f     #303D40     #d8dee8     #2f343f     #2f343f
 
+# Titlebar sytles
 title_align center                                                  
-titlebar_padding 5
+titlebar_padding 3
 
+# Font
 font pango:Noto Sans Display Bold 11
