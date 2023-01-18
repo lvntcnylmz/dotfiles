@@ -34,7 +34,7 @@ client.placeholder          #2f343f     #303D40     #d8dee8     #2f343f     #2f3
 
 # Titlebar sytles
 title_align center                                                  
-titlebar_padding 3
+titlebar_padding 10 3
 
 # Font
-font pango:Noto Sans Display Bold 11
+font pango:JetBrains Mono Bold 10
