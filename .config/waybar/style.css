@@ -4,9 +4,7 @@
 
 * {
     margin: 2px 5px;
-    border: none;
-    border-radius: 0;
-    font-family: "Noto Sans Display Bold";
+    font-family: "JetBrains Mono Medium";
     font-size: 12px;
 }
 
@@ -43,7 +41,7 @@
     font-weight: bold;
     border-radius: 5px;
     padding: 2px 5px;
-    margin: 2px 2px;
+    margin: 0 2px;
 }
 
 #custom-scratchpad-indicator {
@@ -59,7 +57,7 @@
     font-weight: bold;
     border-radius: 5px;
     padding: 2px 5px;
-    margin: 2px 2px;
+    margin: 0 2px;
 }
 
 #mode,
@@ -86,7 +84,7 @@
     font-weight: bold;
     border-radius: 5px;
     padding: 2px 5px;
-    margin: 2px 2px;
+    margin: 0 2px;
 }
 
 #battery.bat0.critical.discharging,
