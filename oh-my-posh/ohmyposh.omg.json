@@ -8,7 +8,7 @@
         {
           "background": "#1793d1",
           "foreground": "#000000",
-          "leading_diamond": "\u256d\u2500\ue0b6",
+          "leading_diamond": "\u256d\u2500",
           "properties": {
             "linux": "\uF303 ",
             "macos": "\ue27f ",
@@ -213,7 +213,6 @@
           },
           "style": "diamond",
           "template": " \uf5ef {{ .CurrentDate | date .Format }} ",
-          "trailing_diamond": "\ue0b4",
           "type": "time"
         }
       ],
@@ -238,7 +237,7 @@
             "always_enabled": true
           },
           "style": "plain",
-          "template": "\ue285\ufb00 ",
+          "template": "\ue285 ",
           "type": "exit"
         }
       ],
