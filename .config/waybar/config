@@ -192,18 +192,14 @@
                 "<big>墳</big>"
             ]
         },
-        "max-length": 7,
-        "min-length": 7,
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "pavucontrol"
     },
     "pulseaudio#mic": {
         "format": "{format_source}",
-        "format-source": "{volume}% <big></big>",
-        "format-source-muted": "{volume}% <big></big>",
-        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-        "max-length": 7,
-        "min-length": 7
+        "format-source": "{volume}% <big></big>",
+        "format-source-muted": "{volume}% <big></big>",
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
     },
     "custom/pacman": {
         "interval": 3600,
