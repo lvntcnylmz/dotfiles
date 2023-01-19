@@ -12,6 +12,4 @@ if [ $INBOX ] && [ $INBOX -gt 0 ] ; then
         echo "<span foreground='#99de1e'><big></big> $INBOX</span>" 
         notify-send -i mail-unread-symbolic "Thunderbird" "You have $INBOX unread e-mail."
     fi
-else
-    echo "<big></big>"
 fi

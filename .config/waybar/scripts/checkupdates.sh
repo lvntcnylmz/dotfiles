@@ -21,6 +21,4 @@ if [ "$updates" -gt 0 ]; then
         echo "<span foreground='#99de1e'><big></big> $updates</span>"
         notify-send -u normal -i software-update-available-symbolic "$updates_pacman updates available from pacman" "$(checkupdates)"
     fi 
-else
-    echo "<big></big>"
 fi
