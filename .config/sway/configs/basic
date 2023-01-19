@@ -9,8 +9,7 @@ default_floating_border none
 default_orientation auto
 
 # Gaps config
-gaps inner 5
-gaps outer 5
+gaps inner 10
 
 # Exec waybar
 bar {
@@ -26,11 +25,11 @@ input "1739:0:Synaptics_TM3276-022" {
 
 # Titlebar colors
 # Property Name             Border      BG          Text        Indicator   Child-border
-client.focused              #047e63     #120024     #047e63     #4477ff     #4477ff
-client.focused_inactive     #544587     #120024     #544587     #2f343f     #2f343f
-client.unfocused            #544587     #120024     #544587     #2f343f     #2f343f
-client.urgent               #2f343f     #303D40     #d8dee8     #2f343f     #2f343f
-client.placeholder          #2f343f     #303D40     #d8dee8     #2f343f     #2f343f
+client.focused              #250c3e     #120024     #74af39     #4477ff     #4477ff
+client.focused_inactive     #250c3e     #120024     #544587     #2f343f     #2f343f
+client.unfocused            #250c3e     #120024     #544587     #2f343f     #2f343f
+client.urgent               #250c3e     #120024     #544587     #2f343f     #2f343f
+client.placeholder          #250c3e     #120024     #544587     #2f343f     #2f343f
 
 # Titlebar sytles
 title_align center                                                  
