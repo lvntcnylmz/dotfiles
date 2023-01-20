@@ -23,11 +23,9 @@
 #backlight,
 #bluetooth,
 #workspaces,
-#custom-mail,
 #temperature,
 #battery.bat0,
 #battery.bat1,
-#custom-pacman,
 #custom-weather,
 #sway-workspaces,
 #pulseaudio.volume,
@@ -61,7 +59,9 @@
 }
 
 #mode,
+#custom-mail,
 #bluetooth.on,
+#custom-pacman,
 #memory.warning,
 #memory.critical,
 #network.disconnected,
