@@ -8,7 +8,6 @@
     ],
     "modules-left": [
         "custom/power",
-        "idle_inhibitor",
         "clock",
         "custom/weather",
         "custom/pacman",
