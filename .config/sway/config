@@ -6,10 +6,10 @@ include ~/.config/sway/configs/variables
 include ~/.config/sway/configs/bindsym
 
 # swayidle / lockscreen
-exec swayidle -w \
-         timeout 300 'swaylock' \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock'
+# exec swayidle -w \
+#          timeout 300 'swaylock' \
+#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+#          before-sleep 'swaylock'
 
 # Set Wob overlay
 set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
