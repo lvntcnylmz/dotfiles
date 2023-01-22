@@ -108,8 +108,8 @@
             "critical": 10
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format-charging": "{capacity}% <big>󰚥</big>",
+        "format-plugged": "{capacity}% <big>󰚥</big>",
         "format-icons": [
             "<big></big>",
             "<big></big>",
@@ -133,8 +133,8 @@
             "critical": 10
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format-charging": "{capacity}% <big>󰚥</big>",
+        "format-plugged": "{capacity}% <big>󰚥</big>",
         "format-icons": [
             "<big></big>",
             "<big></big>",
