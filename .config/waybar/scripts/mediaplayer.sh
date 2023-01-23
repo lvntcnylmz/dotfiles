@@ -2,7 +2,7 @@
 
 player_status=$(playerctl --player=spotify,firefox status)
 player_name=$(playerctl metadata --format "{{ playerName }}")
-spotify_title=$(playerctl -p spotify metadata --format "<big></big> {{ artist }} - {{ title }} - {{ duration(position) }} | {{ duration(mpris:length) }}")
+spotify_title=$(playerctl -p spotify metadata --format "<big></big> {{ artist }} - {{ title }} [{{ duration(position) }} / {{ duration(mpris:length) }}]")
 firefox_title=$(playerctl metadata --format "<big></big> {{ artist }} - {{ title }}")
 firefox_status=$(playerctl --player=firefox status)
 
