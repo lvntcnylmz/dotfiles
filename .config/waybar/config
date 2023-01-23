@@ -94,7 +94,7 @@
         "show-passive-items": true
     },
     "clock": {
-        "format": "<big></big>  {:%H:%M:%S | %a %d %b %y}",
+        "format": "<big></big> {:%H:%M:%S | %a %d %b %y}",
         "tooltip-format": "<tt><big>{calendar}</big></tt>",
         "today-format": "<span color='#20BF55'><big>{}</big></span>",
         "locale": "en_GB.UTF-8",
@@ -108,8 +108,8 @@
             "critical": 10
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% <big>󰚥</big>",
-        "format-plugged": "{capacity}% <big>󰚥</big>",
+        "format-charging": "{capacity}%<big>󰚥</big>",
+        "format-plugged": "{capacity}%<big>󰚥</big>",
         "format-icons": [
             "<big></big>",
             "<big></big>",
@@ -133,8 +133,8 @@
             "critical": 10
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% <big>󰚥</big>",
-        "format-plugged": "{capacity}% <big>󰚥</big>",
+        "format-charging": "{capacity}%<big>󰚥</big>",
+        "format-plugged": "{capacity}%<big>󰚥</big>",
         "format-icons": [
             "<big></big>",
             "<big></big>",
@@ -223,9 +223,9 @@
         "tooltip": false,
         "format": "{} {icon}",
         "format-icons": {
-            "notification": "<big></big><span foreground='#99de1e'><sup></sup></span>",
+            "notification": "<big></big>",
             "none": "<big></big>",
-            "dnd-notification": "<big></big><span foreground='#120024'><sup></sup></span>",
+            "dnd-notification": "<big></big>",
             "dnd-none": "<big></big>"
         },
         "return-type": "json",
