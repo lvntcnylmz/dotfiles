@@ -89,17 +89,15 @@
 
 #battery.bat0.critical.discharging,
 #battery.bat1.critical.discharging {
-    animation-name: blink-critical;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
+    animation: blink 1s 5;
 }
 
-@keyframes blink-critical {
+@keyframes blink {
     from {
-        background-color: @main-fg-color;
+        background-color: @main-bg-color;
     }
 
     to {
-        background-color: @main-bg-color;
+        background-color: @highlight-color;
     }
 }
