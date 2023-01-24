@@ -111,16 +111,11 @@
         "format-charging": "{capacity}%<big>󰚥</big>",
         "format-plugged": "{capacity}%<big>󰚥</big>",
         "format-icons": [
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>"
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>"
         ],
         "tooltip-format": "{time}",
         "interval": 1
@@ -136,16 +131,11 @@
         "format-charging": "{capacity}%<big>󰚥</big>",
         "format-plugged": "{capacity}%<big>󰚥</big>",
         "format-icons": [
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>"
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>"
         ],
         "tooltip-format": "{time}",
         "interval": 1
