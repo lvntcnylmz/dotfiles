@@ -89,7 +89,7 @@
 
 #battery.bat0.critical.discharging,
 #battery.bat1.critical.discharging {
-    animation: blink 1s 5;
+    animation: blink 1s infinite;
 }
 
 @keyframes blink {
