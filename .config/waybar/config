@@ -104,8 +104,8 @@
         "bat": "BAT0",
         "states": {
             "good": 95,
-            "warning": 20,
-            "critical": 10
+            "warning": 10,
+            "critical": 5
         },
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}%<big>󰚥</big>",
@@ -124,8 +124,8 @@
         "bat": "BAT1",
         "states": {
             "good": 95,
-            "warning": 20,
-            "critical": 10
+            "warning": 10,
+            "critical": 5
         },
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}%<big>󰚥</big>",
