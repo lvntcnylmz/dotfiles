@@ -1,7 +1,15 @@
 # Workspace config
-workspace 1 output HDMI-A-2
-workspace 2 output DP-1
+workspace 1 output DP-3
+workspace 2 output DP-5
 workspace 3 output eDP-1
+
+# Assign apps to specific workspaces
+assign [app_id="firefox"] 1
+assign [class="VSCodium" title=".*VSCodium"] 1
+assign [class="jetbrains-idea-ce" instance="jetbrains-idea-ce"] 1
+assign [class="Spotify" instance="spotify"] 2
+assign [app_id="WebCord"] 2
+assign [app_id="terminator"] 2
 
 # Border config
 default_border none
