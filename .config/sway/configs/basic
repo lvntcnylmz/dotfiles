@@ -4,9 +4,15 @@ workspace 2 output DP-5
 workspace 3 output eDP-1
 
 # Assign apps to specific workspaces
+# Workspace 1
 assign [app_id="firefox"] 1
+assign [app_id="LibreWolf"] 1
+assign [app_id="thunderbird"] 1
 assign [class="VSCodium" title=".*VSCodium"] 1
 assign [class="jetbrains-idea-ce" instance="jetbrains-idea-ce"] 1
+
+# Workspace 2
+assign [app_id="thunar"] 2
 assign [class="Spotify" instance="spotify"] 2
 assign [app_id="WebCord"] 2
 assign [app_id="terminator"] 2
