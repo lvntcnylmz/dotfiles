@@ -28,8 +28,8 @@
     bindsym $mod+Shift+c reload
 
     # Toggle outer gaps
-    bindsym $mod+greater gaps outer current set -5
-    bindsym $mod+less gaps outer current set 5
+    bindsym $mod+greater gaps inner current set -10
+    bindsym $mod+less gaps inner current set 10
 
     # Toggle lock screen
     bindsym $mod+Shift+x exec swaylock
