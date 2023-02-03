@@ -155,15 +155,22 @@
         ]
     },
     "network": {
-        "format-wifi": "{essid} <big></big>",
+        "format-wifi": "{essid} {icon}",
         "format-ethernet": "Connected <big></big>",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected 睊",
+        "format-disconnected": "Disconnected <big>睊</big>",
         "family": "ipv4",
         "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits} -  {bandwidthDownBits}",
         "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits} -  {bandwidthDownBits}",
         "internval": 60,
-        "on-click": "iwgtk"
+        "on-click": "iwgtk",
+        "format-icons": [
+            "<big>󰤯</big>",
+            "<big>󰤟</big>",
+            "<big>󰤢</big>",
+            "<big>󰤥</big>",
+            "<big>󰤨</big>"
+        ]
     },
     "pulseaudio#volume": {
         "format": "{volume}% {icon}",
