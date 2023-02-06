@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-text=$(curl -s "https://wttr.in/$1?format=%c+%t+%w+%m")
+text=$(curl -s "https://wttr.in/$1?format=%c+%f+%m")
 
 if [[ $? == 0 ]]
 then
     text=$(echo "$text" | sed -E "s/\s+/ /g")
-    tooltip=$(curl -s "https://wttr.in/$1?format=%C+%c+%t+%w+%m")
+    tooltip=$(curl -s "https://wttr.in/$1?format=%l:+%C+%c+%t+%w+%m")
     if [[ $? == 0 ]]
     then
         tooltip=$(echo "$tooltip" | sed -E "s/\s+/ /g")
