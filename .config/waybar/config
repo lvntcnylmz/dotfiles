@@ -9,7 +9,8 @@
     "modules-left": [
         "custom/power",
         "clock",
-        "custom/weather",
+        "custom/weather#eu",
+        "custom/weather#tr",
         "custom/pacman",
         "custom/mail",
         "custom/scratchpad-indicator",
@@ -203,10 +204,17 @@
         "signal": 8,
         "on-click": "notify-send -i software-update-available-symbolic \"Updates Available\" \"$(yay -Qu | checkupdates) \""
     },
-    "custom/weather": {
+    "custom/weather#eu": {
         "format": "{}",
         "return-type": "json",
-        "exec": "$HOME/.config/waybar/scripts/weather.sh 'Clausthal\\-Zellerfeld' 2> /dev/null",
+        "exec": "$HOME/.config/waybar/scripts/weather.sh 'Clausthal-Zellerfeld' 2> /dev/null",
+        "interval": 300,
+        "tooltip": true
+    },
+    "custom/weather#tr": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/scripts/weather.sh 'Luleburgaz' 2> /dev/null",
         "interval": 300,
         "tooltip": true
     },
