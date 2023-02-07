@@ -1,15 +1,27 @@
 #!/bin/bash
 
-player_status=$(playerctl --player=spotify,firefox status)
+player_status=$(playerctl status)
 player_name=$(playerctl metadata --format "{{ playerName }}")
-spotify_title=$(playerctl -p spotify metadata --format "<big></big> {{ artist }} - {{ title }} [{{ duration(position) }} / {{ duration(mpris:length) }}]")
-firefox_title=$(playerctl metadata --format "<big></big> {{ artist }} - {{ title }}")
-firefox_status=$(playerctl --player=firefox status)
 
-if [ "$player_status" = "Playing" ] || [ "$player_status" = "Paused" ]; then
-    if [ "$player_name" = "spotify" ] || [ "$firefox_status" = "Paused" ]; then
-        echo "$spotify_title"
+artist=$(playerctl metadata --format "{{ artist }}")
+title=$(playerctl metadata --format "{{ title }}")
+duration=$(playerctl metadata --format "{{ duration(position) }} / {{ duration(mpris:length) }}")
+
+firefox_status=$(playerctl --player=firefox status)
+spotify_status=$(playerctl --player=spotify status)
+
+if [ "$player_name" == "spotify" ]; then
+    echo "<big></big> $artist - $title - [$duration]"
+elif [ "$player_name" == "firefox" ]; then
+    if [ "$artist" == "" ]; then
+        echo "<big></big> $title"
     else
-        echo "$firefox_title"
+        echo "<big></big> $artist - $title"
+    fi
+else 
+    if [ "$player_status" == "Playing" ]; then
+        echo "<big></big> $artist - $title"
+    else
+        echo ""
     fi
 fi
