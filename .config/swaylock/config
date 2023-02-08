@@ -3,7 +3,7 @@ ignore-empty-password
 font=JetBrains Mono
 font-size=40
 
-grace=2
+grace=5
 
 clock
 timestr=%H:%M:%S
@@ -13,7 +13,7 @@ screenshots
 
 fade-in=1
 effect-blur=7x5 
-effect-pixelate=5
+effect-pixelate=10
 
 indicator
 indicator-radius=150
