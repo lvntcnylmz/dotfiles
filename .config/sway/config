@@ -19,3 +19,9 @@ exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 # sway notification center
 exec swaync
+
+# network manager applet
+exec_always nm-applet --indicator
+
+# kde connect
+exec kdeconnect-indicator
