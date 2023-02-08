@@ -90,8 +90,8 @@
         "tooltip": "true"
     },
     "tray": {
-        "icon-size": 15,
-        "spacing": 2,
+        "icon-size": 13,
+        "spacing": 1,
         "show-passive-items": true
     },
     "clock": {
@@ -99,7 +99,8 @@
         "tooltip-format": "<tt><big>{calendar}</big></tt>",
         "today-format": "<span color='#20BF55'><big>{}</big></span>",
         "locale": "en_GB.UTF-8",
-        "interval": 1
+        "interval": 1,
+        "on-click": "gsimplecal"
     },
     "battery#bat0": {
         "bat": "BAT0",
@@ -219,7 +220,7 @@
         "tooltip": true
     },
     "custom/media": {
-        "max-length": 100,
+        "max-length": 70,
         "exec": "$HOME/.config/waybar/scripts/mediaplayer.sh 2> /dev/null",
         "interval": 1,
         "on-click": "playerctl play-pause"
