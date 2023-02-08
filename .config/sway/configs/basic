@@ -14,7 +14,7 @@ assign [class="jetbrains-idea-ce" instance="jetbrains-idea-ce"] 1
 # Workspace 2
 assign [app_id="thunar"] 2
 assign [class="Spotify" instance="spotify"] 2
-assign [app_id="WebCord"] 2
+assign [class="discord"] 2
 assign [app_id="terminator"] 2
 
 # Border config
