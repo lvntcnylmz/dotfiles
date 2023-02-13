@@ -37,6 +37,9 @@ input "1739:0:Synaptics_TM3276-022" {
     middle_emulation enabled
 }
 
+# Enable multiple keyboard layouts
+input * xkb_layout "us,tr"
+
 # Titlebar colors
 # Property Name             Border      BG          Text        Indicator   Child-border
 client.focused              #250c3e     #120024     #74af39     #4477ff     #4477ff
