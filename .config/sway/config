@@ -21,7 +21,10 @@ exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec swaync
 
 # network manager applet
-exec_always nm-applet --indicator
+exec nm-applet --indicator
 
 # kde connect
 exec kdeconnect-indicator
+
+# gammastep
+exec gammastep-indicator
