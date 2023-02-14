@@ -3,6 +3,10 @@
 @define-color module-color #250c3e;
 @define-color highlight-color #ff6000;
 
+.control-center {
+  background: alpha(#120024, 0.85);
+}
+
 .notification-row {
   background: transparent;
   box-shadow: none;
@@ -52,7 +56,7 @@
 .summary {
   font-size: 16px;
   font-weight: bold;
-  background: transparent;
+  background: red;
   color: @main-fg-color;
   text-shadow: none;
 }
