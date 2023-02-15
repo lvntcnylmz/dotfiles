@@ -17,14 +17,9 @@ exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
-# sway notification center
+# auto-start apps
 exec swaync
-
-# network manager applet
 exec nm-applet --indicator
-
-# kde connect
 exec kdeconnect-indicator
-
-# gammastep
 exec gammastep-indicator
+exec swaycons
