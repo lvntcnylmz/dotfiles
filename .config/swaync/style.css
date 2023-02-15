@@ -1,10 +1,12 @@
 @define-color main-bg-color #120024;
 @define-color main-fg-color #00a878;
 @define-color module-color #250c3e;
-@define-color highlight-color #ff6000;
+@define-color module-hover #753AB0;
+@define-color highlight-color #75B03A;
 
 .control-center {
-  background: alpha(#120024, 0.85);
+  background-color: @main-bg-color;
+  border: 2 solid @module-color;
 }
 
 .notification-row {
@@ -24,29 +26,30 @@
   border-radius: 0;
 }
 
-.notification-action,
-.notification-default-action {
+.notification-default-action,
+.notification-action {
   padding: 10px;
   box-shadow: none;
-  background: @main-bg-color;
-  color: #ff6000;
-  border: solid 0.7 @main-fg-color;
+  background: @module-color;
+  border: none;
+  color: white;
+}
+
+.low:hover,
+.normal:hover,
+.critical:hover,
+.notification-default-action:hover,
+.notification-action:hover {
+  background: @module-hover;
   border-radius: 0;
 }
 
-.low, .normal, .critical {
-  padding: 0px;
+.low,
+.normal,
+.critical {
+  background: @module-color;
   margin: 10px;
   border-radius: 0;
-  box-shadow: none;
-}
-
-.critical .body,
-.critical .summary,
-.critical .notification-action,
-.critical .notification-default-action {
-  color: @main-bg-color;
-  background: @highlight-color;
 }
 
 .body-image {
@@ -55,9 +58,9 @@
 
 .summary {
   font-size: 16px;
-  font-weight: bold;
-  background: red;
-  color: @main-fg-color;
+  font-weight: normal;
+  background: transparent;
+  color: white;
   text-shadow: none;
 }
 
@@ -65,31 +68,20 @@
   font-size: 16px;
   font-weight: normal;
   background: transparent;
-  color: @main-fg-color;
+  color: white;
   text-shadow: none;
 }
 
 .time {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: normal;
   background: transparent;
-  color: @highlight-color;
+  color: white;
   text-shadow: none;
-  margin-right: 18px;
 }
 
 .blank-window {
-  background: alpha(black, 0.0);
-}
-
-.close-button {
-  margin: 8px;
-  background: @highlight-color;
-  border-radius: 0;
-}
-
-.close-button:hover {
-  background: @main-fg-color;
+  background: transparent;
 }
 
 .widget-title {
@@ -97,23 +89,30 @@
   font-size: 1.5rem;
 }
 
-.widget-title>button {
-  font-size: initial;
-  color: white;
-  text-shadow: none;
-  background: @main-bg-color;
-  border-radius: 0;
-  margin: 4px;
-}
+.widget-title button {
+   font-size: initial;
+   color: white;
+   text-shadow: none;
+   background: @module-color;
+   box-shadow: none;
+   border-radius: 5px;
+ }
 
-.widget-title>button:hover {
-  background: @main-fg-color;
-  color: @main-bg-color;
-}
+.widget-title > button:hover {
+   background: @highlight-color;
+ }
 
 .widget-dnd {
-  margin: 10px;
+  margin: 8px;
   font-size: 1.1rem;
+}
+
+.widget-dnd>switch {
+  font-size: initial;
+  border-radius: 5px;
+  background: @noti-bg;
+  border: 1px solid @noti-border-color;
+  box-shadow: none;
 }
 
 .widget-dnd>switch {
@@ -133,5 +132,24 @@
 }
 
 .widget-label>label {
+  font-size: 1.1rem;
+}
+
+/* Mpris widget */
+.widget-mpris {
+  background: @module-color;
+}
+
+.widget-mpris-player {
+  padding: 8px;
+  margin: 8px;
+}
+
+.widget-mpris-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.widget-mpris-subtitle {
   font-size: 1.1rem;
 }
