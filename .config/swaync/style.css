@@ -1,107 +1,233 @@
-@define-color main-bg-color #120024;
-@define-color main-fg-color #00a878;
-@define-color module-color #250c3e;
-@define-color module-hover #753AB0;
-@define-color highlight-color #75B03A;
-
-.control-center {
-  background-color: @main-bg-color;
-  border: 2 solid @module-color;
-}
+@define-color foreground rgb(248, 248, 242);
+@define-color background rgba(18, 0, 36, 1);
+@define-color background-alpha rgba(18, 0, 36, 1);
+@define-color accent rgba(117, 58, 176, 1);
+@define-color current-line rgba(37,12,62, 1);
+@define-color comment rgb(98, 114, 164);
 
 .notification-row {
+  transition: all 200ms ease;
+  outline: none;
+  margin-bottom: 4px;
+  margin-right: 13px;
+  margin-top: 8px;
+  border-radius: 80px;
+}
+
+.control-center .notification-row:focus,
+.control-center .notification-row:hover {
+  opacity: 1;
   background: transparent;
+}
+
+.notification-row:focus .notification,
+.notification-row:hover .notification {
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
+  border: 0px solid @accent;
+  background: @current-line;
+}
+
+.control-center .notification {
   box-shadow: none;
-  border: 0;
+}
+
+.control-center .notification-row {
+  opacity: 0.5;
+  margin: -5px;
+}
+
+.notification {
+  transition: all 200ms ease;
+  border-radius: 5px;
+  margin: 12px 7px 0px 7px;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
   padding: 0;
-  margin: 0;
-  border-radius: 0;
 }
 
 .notification-content {
   background: transparent;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.close-button {
+  background: @current-line;
+  color: @foreground;
+  text-shadow: none;
+  padding: 0;
+  border-radius: 100%;
+  margin-top: 17px;
+  margin-right: 10px;
   box-shadow: none;
-  padding: 0px;
-  margin: 0px;
-  border-radius: 0;
+  border: none;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.close-button:hover {
+  box-shadow: none;
+  background: @comment;
+  transition: all 0.15s ease-in-out;
+  border: none;
 }
 
 .notification-default-action,
 .notification-action {
-  padding: 10px;
+  padding: 4px;
+  margin: 0;
   box-shadow: none;
-  background: @module-color;
-  border: none;
-  color: white;
+  background: @current-line;
+  border: 2px solid @accent;
+  color: @foreground;
 }
 
-.low:hover,
-.normal:hover,
-.critical:hover,
 .notification-default-action:hover,
 .notification-action:hover {
-  background: @module-hover;
-  border-radius: 0;
+  -gtk-icon-effect: none;
+  background: @current-line;
 }
 
-.low,
-.normal,
-.critical {
-  background: @module-color;
-  margin: 10px;
-  border-radius: 0;
+.notification-default-action {
+  border-radius: 5px;
 }
+
+/* When alternative actions are visible */
+.notification-default-action:not(:only-child) {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.notification-action {
+  border-radius: 5px;
+  border-top: none;
+  border-right: none;
+}
+
+/* add bottom border radius to eliminate clipping */
+.notification-action:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+.notification-action:last-child {
+  border-bottom-right-radius: 8px;
+  border-right: 1px solid @accent;
+}
+
+.image {}
 
 .body-image {
   margin-top: 6px;
+  background-color: @foreground;
+  border-radius: 5px;
 }
 
 .summary {
   font-size: 16px;
-  font-weight: normal;
+  font-weight: bold;
   background: transparent;
-  color: white;
-  text-shadow: none;
-}
-
-.body {
-  font-size: 16px;
-  font-weight: normal;
-  background: transparent;
-  color: white;
+  color: @foreground;
   text-shadow: none;
 }
 
 .time {
   font-size: 16px;
+  font-weight: bold;
+  background: transparent;
+  color: @foreground;
+  text-shadow: none;
+  margin-right: 18px;
+}
+
+.body {
+  font-size: 15px;
   font-weight: normal;
   background: transparent;
-  color: white;
+  color: @foreground;
   text-shadow: none;
 }
 
+/* The "Notifications" and "Do Not Disturb" text widget */
+.top-action-title {
+  color: @foreground;
+  text-shadow: none;
+}
+
+.control-center-clear-all {
+  color: @foreground;
+  text-shadow: none;
+  background: @background;
+  border: 2px solid @accent;
+  box-shadow: none;
+  border-radius: 5px;
+}
+
+.control-center-clear-all:hover {
+  background: @background;
+}
+
+.control-center-dnd {
+  border-radius: 5px;
+  background: @background;
+  border: 1px solid @accent;
+  box-shadow: none;
+}
+
+.control-center-dnd:checked {
+  background: @accent;
+}
+
+.control-center-dnd slider {
+  background: @background;
+  border-radius: 5px;
+}
+
+.control-center {
+  background: @background-alpha;
+  border-radius: 5px;
+  background-clip: border-box;
+  padding: 4px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.7),
+    0 2px 6px 2px rgba(0, 0, 0, 0.3);
+  color: @foreground;
+  border: 2px solid @accent;
+}
+
+.control-center-list {
+  background: transparent;
+}
+
+.floating-notifications {
+  background: transparent;
+}
+
+/* Window behind control center and on all other monitors */
 .blank-window {
   background: transparent;
 }
 
+/*** Widgets ***/
+
+/* Title widget */
 .widget-title {
   margin: 8px;
   font-size: 1.5rem;
 }
 
-.widget-title button {
-   font-size: initial;
-   color: white;
-   text-shadow: none;
-   background: @module-color;
-   box-shadow: none;
-   border-radius: 5px;
- }
+.widget-title>button {
+  font-size: initial;
+  color: @foreground;
+  text-shadow: none;
+  background: @background;
+  border: 2px solid @accent;
+  box-shadow: none;
+  border-radius: 5px;
+}
 
-.widget-title > button:hover {
-   background: @highlight-color;
- }
+.widget-title>button:hover {
+  background: @background;
+}
 
+/* DND widget */
 .widget-dnd {
   margin: 8px;
   font-size: 1.1rem;
@@ -110,23 +236,22 @@
 .widget-dnd>switch {
   font-size: initial;
   border-radius: 5px;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  background: @background;
+  border: 1px solid @accent;
   box-shadow: none;
 }
 
-.widget-dnd>switch {
-  margin: 4px;
-}
-
 .widget-dnd>switch:checked {
-  background: @highlight-color;
+  background: @accent;
 }
 
 .widget-dnd>switch slider {
-  background: @main-fg-color;
+  background: @background;
+  border-radius: 5px;
+  border: 1px solid @foreground;
 }
 
+/* Label widget */
 .widget-label {
   margin: 8px;
 }
@@ -137,12 +262,16 @@
 
 /* Mpris widget */
 .widget-mpris {
-  background: @module-color;
+  /* The parent to all players */
 }
 
 .widget-mpris-player {
   padding: 8px;
   margin: 8px;
+  background-color: @background;
+  border-radius: 5px;
+  border: 2px solid @accent;
+  color: @foreground;
 }
 
 .widget-mpris-title {
