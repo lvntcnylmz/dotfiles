@@ -14,8 +14,11 @@
     # Start file manager
     bindsym $mod+Shift+t exec thunar
 
-    #Take screenshot
+    # Take screenshot
     bindsym $mod+Shift+p exec swayshot
+
+    # Change keyboard layout 
+    bindsym $mod+z exec swaymsg input type:keyboard xkb_switch_layout next
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -33,6 +36,9 @@
 
     # Toggle lock screen
     bindsym $mod+Shift+x exec swaylock
+
+    # Exec powermenu
+    bindsym $mod+Shift+m exec ".config/waybar/scripts/powermenu.sh"
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
