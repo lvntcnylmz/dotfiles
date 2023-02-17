@@ -33,8 +33,8 @@ fi
 battery_level=$(("$battery_level_0 + $battery_level_1"))
 battery_max=$(("$battery_max_0 + $battery_max_1"))
 
-# battery_level=$(("$battery_level_0"))
-# battery_max=$(("$battery_max_0"))
+battery_level=$(("$battery_level_0"))
+battery_max=$(("$battery_max_0"))
 
 battery_percent=$(("$battery_level * 100"))
 battery_percent=$(("$battery_percent / $battery_max"))
