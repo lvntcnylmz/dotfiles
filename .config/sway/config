@@ -12,8 +12,8 @@ include ~/.config/sway/configs/bindsym
 #          before-sleep 'swaylock'
 
 # Set Wob overlay
-set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
-exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
+# set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
+# exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
