@@ -1,6 +1,6 @@
 @define-color main-bg-color #120024;
-@define-color main-fg-color #7439af;
-@define-color highlight-color #74af39;
+@define-color main-fg-color #753AB0;
+@define-color highlight-color #75B03A;
 
 * {
     margin: 2px 5px;
@@ -16,22 +16,13 @@
 #mode,
 #tray,
 #disk,
-#clock,
-#network,
-#language,
-#sway-mode,
-#backlight,
-#bluetooth,
-#workspaces,
 #temperature,
 #battery.bat0,
 #battery.bat1,
+#pulseaudio.volume,
 #custom-weather.eu,
 #custom-weather.tr,
-#sway-workspaces,
-#pulseaudio.volume,
 #custom-notification,
-#idle_inhibitor.deactivated,
 #custom-scratchpad-indicator,
 #pulseaudio.mic.source-muted {
     border: 0.5 solid @main-fg-color;
@@ -39,32 +30,26 @@
     color: @main-fg-color;
     font-weight: bold;
     border-radius: 5px;
-    padding: 2px 5px;
-    margin: 0 2px;
+    padding: 1px 5px;
+    margin: 0 1px;
 }
 
-#custom-scratchpad-indicator {
-    color: @highlight-color;
-}
-
+#clock,
+#language,
 #custom-media,
-#custom-power,
-#idle_inhibitor.activated {
+#custom-power-user {
     border: 0.5 solid @main-fg-color;
     background: @main-fg-color;
     color: @main-bg-color;
     font-weight: bold;
     border-radius: 5px;
-    padding: 2px 5px;
-    margin: 0 2px;
+    padding: 1px 5px;
+    margin: 0 1px;
 }
 
 #mode,
 #custom-mail,
-#bluetooth.on,
 #custom-pacman,
-#memory.warning,
-#memory.critical,
 #network.disabled,
 #network.disconnected,
 #temperature.critical,
@@ -74,6 +59,7 @@
 #battery.bat0.plugged,
 #battery.bat1.charging,
 #battery.bat1.plugged,
+#custom-scratchpad-indicator,
 #custom-notification.dnd-none,
 #battery.bat0.warning.discharging,
 #battery.bat0.critical.discharging,
@@ -85,8 +71,8 @@
     color: @main-bg-color;
     font-weight: bold;
     border-radius: 5px;
-    padding: 2px 5px;
-    margin: 0 2px;
+    padding: 1px 5px;
+    margin: 0 1px;
 }
 
 #battery.bat0.critical.discharging,
