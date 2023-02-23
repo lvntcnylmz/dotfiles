@@ -39,7 +39,7 @@ battery_max=$(("$battery_max_0"))
 battery_percent=$(("$battery_level * 100"))
 battery_percent=$(("$battery_percent / $battery_max"))
 
-if [ $battery_percent -le 10 ] && [  "$ac" -eq 0 ]
+if ([ $battery_percent -eq 10 ] || [ $battery_percent -eq 6 ]) && [  "$ac" -eq 0 ]
 then 
-    notify-send -u critical -i battery-level-10-symbolic "Arch Linux" "$battery_percent battery left."
+    notify-send -u normal -i battery-level-10-symbolic "Arch Linux" "$battery_percent battery left."
 fi
