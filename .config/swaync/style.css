@@ -73,7 +73,8 @@
   border-right: none;
 }
 
-.image {}
+.image {
+}
 
 .body-image {
   margin-top: 6px;
@@ -106,7 +107,6 @@
   text-shadow: none;
 }
 
-/* The "Notifications" and "Do Not Disturb" text widget */
 .top-action-title {
   color: @foreground;
   text-shadow: none;
@@ -148,20 +148,16 @@
   border: 2px solid @accent;
 }
 
-/* Window behind control center and on all other monitors */
 .blank-window {
   background: transparent;
 }
 
-/*** Widgets ***/
-
-/* Title widget */
 .widget-title {
   margin: 8px;
   font-size: 1.5rem;
 }
 
-.widget-title>button {
+.widget-title > button {
   font-size: initial;
   color: @foreground;
   text-shadow: none;
@@ -171,17 +167,16 @@
   border-radius: 5px;
 }
 
-.widget-title>button:hover {
+.widget-title > button:hover {
   background: @background;
 }
 
-/* DND widget */
 .widget-dnd {
   margin: 8px;
   font-size: 1.1rem;
 }
 
-.widget-dnd>switch {
+.widget-dnd > switch {
   font-size: initial;
   border-radius: 5px;
   background: @background;
@@ -189,28 +184,26 @@
   box-shadow: none;
 }
 
-.widget-dnd>switch:checked {
+.widget-dnd > switch:checked {
   background: @accent;
 }
 
-.widget-dnd>switch slider {
+.widget-dnd > switch slider {
   background: @background;
   border-radius: 5px;
   border: 1px solid @foreground;
 }
 
-/* Label widget */
 .widget-label {
   margin: 8px;
+  font-size: 20px;
 }
 
-.widget-label>label {
-  font-size: 1.1rem;
+.widget-label > label {
+  font-size: 20px;
 }
 
-/* Mpris widget */
 .widget-mpris {
-  /* The parent to all players */
 }
 
 .widget-mpris-player {
@@ -228,4 +221,22 @@
 
 .widget-mpris-subtitle {
   font-size: 1.1rem;
+}
+
+.widget-volume {
+  padding: 8px;
+  margin: 8px;
+  background-color: @current-line;
+  border-radius: 5px;
+  color: @foreground;
+  font-size: 25px;
+}
+
+.widget-backlight {
+  padding: 8px;
+  margin: 8px;
+  background-color: @current-line;
+  border-radius: 5px;
+  color: @foreground;
+  font-size: 25px;
 }
