@@ -14,7 +14,7 @@
   "timeout-critical": 0,
   "fit-to-screen": false,
   "control-center-width": 500,
-  "control-center-height": 700,
+  "control-center-height": 1028,
   "notification-window-width": 500,
   "keyboard-shortcuts": true,
   "image-visibility": "when-available",
@@ -36,9 +36,8 @@
     }
   },
   "widgets": [
-    "controlls",
-    "brightness",
     "volume",
+    "backlight",
     "mpris",
     "title",
     "dnd",
@@ -60,6 +59,12 @@
     "mpris": {
       "image-size": 100,
       "image-radius": 12
+    },
+    "volume": {
+      "label": ""
+    },
+    "backlight": {
+      "label": ""
     }
   }
 }
