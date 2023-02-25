@@ -7,7 +7,8 @@
         "!DP-5"
     ],
     "modules-left": [
-        "custom/power",
+        "custom/power-user",
+        "sway/language",
         "clock",
         "custom/weather#eu",
         "custom/weather#tr",
@@ -31,116 +32,74 @@
         "custom/notification",
         "tray"
     ],
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{percent}% {icon}",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
-        "on-click": "brightnessctl set 5%+",
-        "on-click-right": "brightnessctl set 5%-"
+
+    "custom/power-user": {
+        "tooltip": false,
+        "exec":"$HOME/.config/waybar/scripts/user.sh 2> /dev/null",
+        "on-click": "$HOME/.config/waybar/scripts/powermenu.sh 2> /dev/null",
+        "interval": 60
     },
-    "sway/workspaces": {
-        "disable-scroll": false,
-        "all-outputs": true,
-        "format": "{icon}",
-        "format-icons": {
-            "1": "<big></big>",
-            "2": "<big></big>",
-            "3": "<big></big>",
-            "4": "<big></big>",
-            "5": "<big></big>",
-            "urgent": "<big></big>",
-            "focused": "<big></big>",
-            "default": "<big></big>"
-        }
+    "sway/language": {
+        "format": "{shortDescription} {flag}",
+        "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+    },
+    "clock": {
+        "format": "<big></big> {:%H:%M:%S<big></big>%a<big></big>%d/%b/%Y}",
+        "interval": 1,
+        "on-click": "wldash"
+    },
+    "custom/weather#eu": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/scripts/weather.sh 'Clausthal-Zellerfeld' 2> /dev/null",
+        "interval": 300,
+        "tooltip": true
+    },
+    "custom/weather#tr": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/scripts/weather.sh 'Lüleburgaz' 2> /dev/null",
+        "interval": 300,
+        "tooltip": true
+    },
+    "custom/pacman": {
+        "interval": 3600,
+        "exec": "$HOME/.config/waybar/scripts/checkupdates.sh 2> /dev/null",
+        "signal": 8,
+        "on-click": "notify-send -i software-update-available-symbolic \"Updates Available\" \"$(yay -Qu | checkupdates) \""
+    },
+    "custom/mail": {
+        "exec": "$HOME/.config/waybar/scripts/mail.sh 2> /dev/null",
+        "interval": 3600,
+        "on-click": "thunderbird"
+    },
+    "custom/scratchpad-indicator": {
+        "format": "<big></big> {}",
+        "return-type": "json",
+        "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '(recurse(.nodes[]) | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | if ($scratch_nodes|length) > 0 then { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") } else empty end'",
+        "interval": 3,
+        "on-click": "swaymsg 'scratchpad show'",
+        "on-click-right": "swaymsg 'move scratchpad'"
     },
     "sway/mode": {
         "format": "<big></big> {}",
         "max-length": 50
     },
-    "bluetooth": {
-        "format": "<big></big> {status}",
-        "format-off": "<big></big> {status}",
-        "format-disabled": "",
-        "format-connected": " {device_alias}",
-        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
-        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-        "on-click": "bluetoothctl power on",
-        "on-click-right": "bluetoothctl power off",
-        "on-click-middle": "blueman-manager"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "<big></big>",
-            "deactivated": "<big></big>"
-        },
-        "tooltip": "true"
-    },
-    "tray": {
-        "icon-size": 13,
-        "spacing": 1,
-        "show-passive-items": true
-    },
-    "clock": {
-        "format": "<big></big> {:%H:%M:%S | %a %d %b %y}",
-        "tooltip-format": "<tt><big>{calendar}</big></tt>",
-        "today-format": "<span color='#20BF55'><big>{}</big></span>",
-        "locale": "en_GB.UTF-8",
+
+    "custom/media": {
+        "max-length": 70,
+        "exec": "$HOME/.config/waybar/scripts/mediaplayer.sh 2> /dev/null",
         "interval": 1,
-        "on-click": "gsimplecal"
+        "on-click": "playerctl play-pause"
     },
-    "battery#bat0": {
-        "bat": "BAT0",
-        "states": {
-            "good": 95,
-            "warning": 10,
-            "critical": 5
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}%<big>󰚥</big>",
-        "format-plugged": "{capacity}%<big>󰚥</big>",
-        "format-icons": [
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>"
-        ],
-        "tooltip-format": "{time}",
-        "interval": 1
-    },
-    "battery#bat1": {
-        "bat": "BAT1",
-        "states": {
-            "good": 95,
-            "warning": 10,
-            "critical": 5
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}%<big>󰚥</big>",
-        "format-plugged": "{capacity}%<big>󰚥</big>",
-        "format-icons": [
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>"
-        ],
-        "tooltip-format": "{time}",
-        "interval": 1
+
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-linked": "",
+        "format-disconnected": "Disconnected <big>睊</big>",
+        "internval": 60,
+        "on-click": "iwgtk"
     },
     "disk": {
         "format": "{used} <big></big>",
@@ -156,34 +115,16 @@
             "<big></big>"
         ]
     },
-    "network": {
-        "format-wifi": "{essid} {icon}",
-        "format-ethernet": "Connected <big></big>",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected <big>睊</big>",
-        "family": "ipv4",
-        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits} -  {bandwidthDownBits}",
-        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits} -  {bandwidthDownBits}",
-        "internval": 60,
-        "on-click": "iwgtk",
-        "format-icons": [
-            "<big>󰤯</big>",
-            "<big>󰤟</big>",
-            "<big>󰤢</big>",
-            "<big>󰤥</big>",
-            "<big>󰤨</big>"
-        ]
-    },
     "pulseaudio#volume": {
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "{volume}% <big>婢</big>",
+        "format-muted": "{volume}% <big>󰖁</big>",
         "format-icons": {
-            "headphone": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
+            "headphone": "<big></big>",
+            "phone": "<big></big>",
+            "portable": "<big></big>",
+            "car": "<big></big>",
             "default": [
                 "<big>奄</big>",
                 "<big>奔</big>",
@@ -195,35 +136,41 @@
     },
     "pulseaudio#mic": {
         "format": "{format_source}",
-        "format-source": "{volume}% <big></big>",
-        "format-source-muted": "{volume}% <big></big>",
+        "format-source": "{volume}% <big></big>",
+        "format-source-muted": "{volume}% <big></big>",
         "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
     },
-    "custom/pacman": {
-        "interval": 3600,
-        "exec": "$HOME/.config/waybar/scripts/checkupdates.sh 2> /dev/null",
-        "signal": 8,
-        "on-click": "notify-send -i software-update-available-symbolic \"Updates Available\" \"$(yay -Qu | checkupdates) \""
+    "battery#bat0": {
+        "bat": "BAT0",
+        "states": {
+            "good": 95,
+            "warning": 10,
+            "critical": 5
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% <big></big>",
+        "format-plugged": "{capacity}% <big></big>",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip-format": "{time}",
+        "interval": 1
     },
-    "custom/weather#eu": {
-        "format": "{}",
-        "return-type": "json",
-        "exec": "$HOME/.config/waybar/scripts/weather.sh 'Clausthal-Zellerfeld' 2> /dev/null",
-        "interval": 300,
-        "tooltip": true
+    "battery#bat1": {
+        "bat": "BAT1",
+        "states": {
+            "good": 95,
+            "warning": 10,
+            "critical": 5
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% <big></big>",
+        "format-plugged": "{capacity}% <big></big>",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip-format": "{time}",
+        "interval": 1
     },
-    "custom/weather#tr": {
-        "format": "{}",
-        "return-type": "json",
-        "exec": "$HOME/.config/waybar/scripts/weather.sh 'Luleburgaz' 2> /dev/null",
-        "interval": 300,
-        "tooltip": true
-    },
-    "custom/media": {
-        "max-length": 70,
-        "exec": "$HOME/.config/waybar/scripts/mediaplayer.sh 2> /dev/null",
-        "interval": 1,
-        "on-click": "playerctl play-pause"
+    "custom/battery": {
+        "exec": "$HOME/.config/waybar/scripts/battery.sh 2> /dev/null",
+        "interval": 60
     },
     "custom/notification": {
         "tooltip": false,
@@ -241,26 +188,9 @@
         "on-click-right": "swaync-client -d -sw",
         "escape": true
     },
-    "custom/power": {
-        "tooltip": false,
-        "format": "<big></big>",
-        "on-click": "nwg-bar"
-    },
-    "custom/scratchpad-indicator": {
-        "format": "<big></big> {}",
-        "return-type": "json",
-        "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '(recurse(.nodes[]) | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | if ($scratch_nodes|length) > 0 then { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") } else empty end'",
-        "interval": 3,
-        "on-click": "swaymsg 'scratchpad show'",
-        "on-click-right": "swaymsg 'move scratchpad'"
-    },
-    "custom/mail": {
-        "exec": "$HOME/.config/waybar/scripts/mail.sh 2> /dev/null",
-        "interval": 3600,
-        "on-click": "thunderbird"
-    },
-    "custom/battery": {
-        "exec": "$HOME/.config/waybar/scripts/battery.sh 2> /dev/null",
-        "interval": 60
+    "tray": {
+        "icon-size": 13,
+        "spacing": 1,
+        "show-passive-items": true
     }
 }
