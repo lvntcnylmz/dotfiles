@@ -3,4 +3,4 @@
 system="$(uptime | awk '{print $3}' | tr -d \,)"
 user=$(whoami)
 
-echo "<big></big> ${user^}|$system"
+echo "<big></big> ${user^}<big></big>$system"
