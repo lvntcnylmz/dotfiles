@@ -36,6 +36,8 @@
     }
   },
   "widgets": [
+    "menubar",
+    "buttons-grid",
     "volume",
     "backlight",
     "mpris",
@@ -65,6 +67,50 @@
     },
     "backlight": {
       "label": ""
+    },
+    "menubar": {
+      "menu#power": {
+        "label": "  Power Menu",
+        "position": "left",
+        "actions": [
+          {
+            "label": " Lock",
+            "command": "swaylock"
+          },
+          {
+            "label": "󰗽 Logout",
+            "command": "swaymsg exit"
+          },
+          {
+            "label": " Suspend",
+            "command": "systemctl suspend"
+          },
+          {
+            "label": " Reboot",
+            "command": "systemctl reboot"
+          },
+          {
+            "label": " Shutdown",
+            "command": "systemctl poweroff"
+          }
+        ]
+      }
+    },
+    "buttons-grid": {
+      "actions": [
+        {
+          "label": "",
+          "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        },
+        {
+          "label": "",
+          "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+        },
+        {
+          "label": "",
+          "command": "iwgtk"
+        }
+      ]
     }
   }
 }
