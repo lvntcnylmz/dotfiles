@@ -41,6 +41,17 @@
   padding: 0;
 }
 
+.notification button {
+  min-height: 20px;
+  border-left: 1 solid @accent;
+  border-right: 2 solid @accent;
+  border-radius: 5px;
+}
+
+.notification button:hover {
+  background: @accent;
+}
+
 .notification-content {
   background: transparent;
   padding: 15px;
@@ -152,6 +163,33 @@
   background: transparent;
 }
 
+.widget-menubar,
+.widget-buttons-grid {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background: @current-line;
+}
+
+.widget-menubar > box > .menu-button-bar > button {
+  margin: 5px;
+  padding: 5px 160px;
+  border: 1 solid @accent;
+  font-size: 20px;
+  background: #3d2358;
+  border-radius: 10px;
+}
+
+.widget-menubar button,
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  margin: 5px;
+  padding: 5px 50px;
+  border: 1 solid @accent;
+  font-size: 20px;
+  background: #3d2358;
+  border-radius: 10px;
+}
+
 .widget-title {
   margin: 8px;
   font-size: 1.5rem;
@@ -204,11 +242,18 @@
 }
 
 .widget-mpris {
+  margin: 0px;
+}
+
+.widget-mpris button {
+  border-radius: 5px;
+  background: @current-line;
+  margin: 5px;
 }
 
 .widget-mpris-player {
   padding: 8px;
-  margin: 8px;
+  margin: 5px;
   background-color: @current-line;
   border-radius: 5px;
   color: @foreground;
@@ -224,8 +269,8 @@
 }
 
 .widget-volume {
-  padding: 8px;
-  margin: 8px;
+  padding: 5px 20px;
+  margin: 5px;
   background-color: @current-line;
   border-radius: 5px;
   color: @foreground;
@@ -233,8 +278,8 @@
 }
 
 .widget-backlight {
-  padding: 8px;
-  margin: 8px;
+  padding: 5px 20px;
+  margin: 5px;
   background-color: @current-line;
   border-radius: 5px;
   color: @foreground;
