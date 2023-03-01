@@ -38,7 +38,7 @@ input "1739:0:Synaptics_TM3276-022" {
 }
 
 # Enable multiple keyboard layouts
-input * xkb_layout "us,tr"
+input * xkb_layout "us, tr"
 
 # Titlebar colors
 # Property Name             Border      BG          Text        Indicator   Child-border
