@@ -1,0 +1,74 @@
+* {
+  font-family: JetBrainsMono Nerd Font Propo;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+window#waybar {
+  background: rgba(17, 17, 27, 0.6);
+  color: rgba(205, 214, 244, 1);
+}
+
+tooltip {
+  background: rgb(17, 17, 27);
+  border: 2px solid #cdd6f4;
+  border-radius: 5px;
+}
+
+#disk,
+#tray,
+#clock,
+#battery,
+#pulseaudio,
+#workspaces,
+#temperature,
+#custom-cava,
+#custom-media,
+#custom-power,
+#custom-weather,
+#custom-updates,
+#custom-notification,
+#pulseaudio#volume,
+#pulseaudio#mic,
+#battery#bat0,
+#battery#bat1,
+#custom-battery,
+#language {
+  background: #11111b;
+  margin: 2px;
+  padding: 2px 10px;
+  border-radius: 5px;
+}
+
+#custom-power {
+  color: #1793d1;
+  margin-left: 10px;
+  font-size: larger;
+}
+
+#custom-cava {
+  color: #0fc044;
+}
+
+#workspaces button {
+  padding: 0px 3px;
+  border: 2px solid transparent;
+}
+
+#workspaces button label {
+  padding: 0;
+  margin: 0;
+  font-size: medium;
+}
+
+#workspaces button.active {
+  color: #0fc044;
+}
+
+#custom-notification {
+  margin-right: 10px;
+}
+
+i {
+  font-size: xx-large;
+}

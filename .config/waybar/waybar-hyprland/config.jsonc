@@ -1,0 +1,222 @@
+{
+  "position": "top",
+  "layer": "top",
+  "output": [
+    "DP-3"
+  ],
+  "modules-left": [
+    "custom/power",
+    "hyprland/language",
+    "wlr/workspaces",
+    "custom/weather",
+    "custom/cava"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "custom/updates",
+    "tray",
+    "disk",
+    "temperature",
+    "pulseaudio#volume",
+    "pulseaudio#mic",
+    "battery#bat0",
+    "battery#bat1",
+    "custom/battery",
+    "custom/notification"
+  ],
+  //-------------
+  // modules-left
+  //-------------
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "sleep 0.1 && $HOME/.config/waybar/scripts/powermenu.sh 2> /dev/null",
+    "interval": 60
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "En",
+    "format-tr": "Tr",
+    "keyboard-name": "josefadamcik-sofle"
+  },
+  "wlr/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "󰅭",
+      "2": "󰈹",
+      "3": "󰅱",
+      "4": "󰝚",
+      "5": "󰝰"
+    },
+    "all-outputs": false,
+    "sort-by-number": true,
+    "persistent_workspaces": {
+      "1": [
+        "DP-3"
+      ],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+  "custom/weather": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/scripts/weather.sh 'Lüleburgaz' 2> /dev/null",
+    "interval": 300,
+    "tooltip": true
+  },
+  "custom/cava": {
+    "exec": "$HOME/.config/waybar/scripts/cava.sh 2> /dev/null",
+    "on-click": "sleep 0.1 && playerctl play-pause",
+    "tooltip": "playerctl metadata --format '{{ playerName }}'"
+  },
+  //---------------
+  // modules-center
+  //---------------
+  "clock": {
+    "format": "{: %a %d %b %Y  󰥔 %H:%M:%S}",
+    "interval": 1,
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "locale": "tr_TR.UTF-8",
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  //--------------
+  // modules-right
+  //--------------
+  "custom/updates": {
+    "interval": 3600,
+    "exec": "$HOME/.config/waybar/scripts/checkupdates.sh 2> /dev/null",
+    "signal": 8
+  },
+  "tray": {
+    "icon-size": 15,
+    "spacing": 5
+  },
+  "disk": {
+    "format": "{used} 󰋊",
+    "on-click": "sleep 0.1 && exec thunar"
+  },
+  "temperature": {
+    "critical-threshold": 65,
+    "format-critical": "{temperatureC}°C {icon}",
+    "format": "{temperatureC}°C {icon}",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+  "pulseaudio#volume": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "{volume}% 󰖁",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "on-click": "sleep 0.1 && pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "sleep 0.1 && pavucontrol"
+  },
+  "pulseaudio#mic": {
+    "format": "{format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "{volume}% ",
+    "on-click": "sleep 0.1 && pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+  },
+  "battery#bat0": {
+    "bat": "BAT0",
+    "states": {
+      "good": 95,
+      "warning": 10,
+      "critical": 5
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tooltip-format": "{time}",
+    "interval": 1
+  },
+  "battery#bat1": {
+    "bat": "BAT1",
+    "states": {
+      "good": 95,
+      "warning": 10,
+      "critical": 5
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tooltip-format": "{time}",
+    "interval": 1
+  },
+  "custom/battery": {
+    "exec": "$HOME/.config/waybar/scripts/battery.sh 2> /dev/null",
+    "interval": 60
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{} {icon}",
+    "format-icons": {
+      "notification": "󰂚",
+      "none": "󰂚",
+      "dnd-notification": "󰂜",
+      "dnd-none": "󰂜"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+    "escape": true
+  }
+}
