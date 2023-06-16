@@ -7,15 +7,15 @@ dotfiles are the files that starts wth a . (dot). This files are generally respo
 |**Module Type**|**Module Name / Project Link**|      
 |---------------|------------------------------| 
 |Shell|[fish-shell](https://github.com/fish-shell/fish-shell)|
-|Promt Theme Engine|[oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh)|
-|Window Manager|[swaywm](https://github.com/swaywm/sway)|
+|Promt Theme Engine|[starship](https://github.com/starship/starship)|
+|Window Manager|[hyprland](https://github.com/hyprwm/Hyprland)|
 |Notification Deamon|[swaync](https://github.com/ErikReider/SwayNotificationCenter)|
-|Screen Locker|[swaylock](https://github.com/swaywm/swaylock), [swaylock-effects](https://github.com/mortie/swaylock-effects)|
+|Screen Locker| [swaylock-effects](https://github.com/mortie/swaylock-effects)|
 |Status Bar|[waybar](https://github.com/Alexays/Waybar)|
 |System Into Tool|[neofetch](https://github.com/dylanaraps/neofetch)|
-|Terminal|[terminator](https://github.com/gnome-terminator/terminator)|
+|Terminal|[kitty](https://github.com/kovidgoyal/kitty)|
 |Display Manager|[ly](https://github.com/fairyglade/ly)|
-|File Manager|[ranger](https://github.com/ranger/ranger), [thunar](https://github.com/xfce-mirror/thunar)|
+|File Manager|[thunar](https://github.com/xfce-mirror/thunar)|
 |Text Editor|[nvim](https://github.com/neovim/neovim), [vscodium](https://github.com/VSCodium/vscodium)|
 |App Launcher|[fuzzel](https://codeberg.org/dnkl/fuzzel)|
 
