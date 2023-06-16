@@ -46,19 +46,10 @@
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "format": "{icon}",
     "on-click": "activate",
-    "format-icons": {
-      "1": "󰅭",
-      "2": "󰈹",
-      "3": "󰅱",
-      "4": "󰝚",
-      "5": "󰝰"
-    },
     "all-outputs": false,
     "sort-by-number": true,
     "persistent_workspaces": {
-      "1": [
-        "DP-3"
-      ],
+      "1": [],
       "2": [],
       "3": [],
       "4": [],
@@ -81,7 +72,7 @@
   // modules-center
   //---------------
   "clock": {
-    "format": "{: %a %d %b %Y  󰥔 %H:%M:%S}",
+    "format": "{:<span color='#0fc044'> </span>%a %d %b %Y  <span color='#0fc044'>󰥔</span> %H:%M:%S}",
     "interval": 1,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
