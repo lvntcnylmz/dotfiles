@@ -14,4 +14,4 @@ then
     fi
 fi
 
-echo "{\"text\":\"Service Unavailable\", \"tooltip\":\"Service Unavailable\"}"
+echo "{\"text\":\"Service Unavailable\", \"tooltip\":\"Service Unavailable\"}

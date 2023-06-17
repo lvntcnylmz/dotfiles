@@ -13,7 +13,7 @@ case $chosen in
     $option0)
         swaylock;;
     $option1)
-        swaymsg exit;;
+        sudo pkill -u $(whoami);;
     $option2)
         systemctl suspend;;
     $option3)

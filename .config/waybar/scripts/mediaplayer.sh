@@ -11,12 +11,12 @@ firefox_status=$(playerctl --player=firefox status)
 spotify_status=$(playerctl --player=spotify status)
 
 if [ "$player_name" == "spotify" ]; then
-    echo "<span color='#0fc044'><big></big></span> $artist - $title [$duration]"
+    echo "<span color='#0fc044'><big>󰓇</big></span> $artist - $title [$duration]"
 elif [ "$player_name" == "firefox" ]; then
     if [ "$artist" == "" ]; then
-        echo "<span color='#FF9500'><big></big></span> $title"
+        echo "<span color='#FF9500'><big>󰈹</big></span> $title"
     else
-        echo "<span color='#FF9500'><big></big></span> $artist"
+        echo "<span color='#FF9500'><big>󰈹</big></span> $artist"
     fi
 else 
     if [ "$player_status" == "Playing" ]; then
