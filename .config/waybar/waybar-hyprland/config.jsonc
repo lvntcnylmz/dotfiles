@@ -9,7 +9,8 @@
     "hyprland/language",
     "wlr/workspaces",
     "custom/weather",
-    "custom/cava"
+    "custom/cava",
+    "custom/media"
   ],
   "modules-center": [
     "clock"
@@ -67,6 +68,12 @@
     "exec": "$HOME/.config/waybar/scripts/cava.sh 2> /dev/null",
     "on-click": "sleep 0.1 && playerctl play-pause",
     "tooltip": "playerctl metadata --format '{{ playerName }}'"
+  },
+  "custom/media": {
+    "max-length": 70,
+    "exec": "$HOME/.config/waybar/scripts/mediaplayer.sh 2> /dev/null",
+    "interval": 1,
+    "on-click": "playerctl play-pause"
   },
   //---------------
   // modules-center
