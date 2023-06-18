@@ -1,3 +1,9 @@
+@define-color bg-color rgba(17, 17, 27, 0.6);
+@define-color module-bg-color rgba(17, 17, 27, 1);
+@define-color fg-color rgba(205, 214, 244, 1);
+@define-color arch-color rgba(23, 147, 209, 1);
+@define-color highlight-color rgba(15, 192, 68, 1);
+
 * {
   font-family: JetBrainsMono Nerd Font Propo;
   font-weight: bold;
@@ -5,14 +11,14 @@
 }
 
 window#waybar {
-  background: rgba(17, 17, 27, 0.6);
+  background: @bg-color;
   border-bottom: 1px solid #0fc044;
-  color: #cdd6f4;
+  color: @fg-color;
 }
 
 tooltip {
-  background: rgb(17, 17, 27);
-  border: 2px solid #cdd6f4;
+  background: @module-bg-color;
+  border: 2px solid @fg-color;
   border-radius: 5px;
 }
 
@@ -20,35 +26,39 @@ tooltip {
 #tray,
 #clock,
 #battery,
+#language,
 #pulseaudio,
 #workspaces,
 #temperature,
+#battery#bat0,
+#battery#bat1,
+#pulseaudio#mic,
+#pulseaudio#volume,
+#custom-battery,
 #custom-cava,
 #custom-media,
 #custom-power,
 #custom-weather,
 #custom-updates,
-#custom-notification,
-#pulseaudio#volume,
-#pulseaudio#mic,
-#battery#bat0,
-#battery#bat1,
-#custom-battery,
-#language {
-  background: #11111b;
+#custom-notification {
+  background: @module-bg-color;
   margin: 2px;
   padding: 2px 10px;
   border-radius: 5px;
 }
 
+#custom-notification {
+  margin-right: 10px;
+}
+
 #custom-power {
-  color: #1793d1;
+  color: @arch-color;
   margin-left: 10px;
   font-size: larger;
 }
 
 #custom-cava {
-  color: #0fc044;
+  color: @highlight-color;
 }
 
 #workspaces button {
@@ -57,14 +67,6 @@ tooltip {
 }
 
 #workspaces button.active {
-  border-bottom: 2px solid #0fc044;
-  color: #0fc044;
-}
-
-#custom-notification {
-  margin-right: 10px;
-}
-
-i {
-  font-size: xx-large;
+  border-bottom: 2px solid @highlight-color;
+  color: @highlight-color;
 }
