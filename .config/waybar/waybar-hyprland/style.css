@@ -12,7 +12,6 @@
 
 window#waybar {
   background: @bg-color;
-  border-bottom: 1px solid #0fc044;
   color: @fg-color;
 }
 
@@ -61,12 +60,17 @@ tooltip {
   color: @highlight-color;
 }
 
+#workspaces {
+  padding: 0px 10px;
+}
+
 #workspaces button {
-  padding: 0px 3px;
-  border: 2px solid transparent;
+  margin: 0px;
+  padding: 0px;
 }
 
 #workspaces button.active {
-  border-bottom: 2px solid @highlight-color;
   color: @highlight-color;
+  border-bottom: 1px solid @highlight-color;
+  border-radius: 0px;
 }
