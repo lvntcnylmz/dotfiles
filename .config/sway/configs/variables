@@ -3,5 +3,5 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term terminator 
+set $term kitty 
 set $menu fuzzel

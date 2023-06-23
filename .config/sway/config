@@ -5,22 +5,13 @@ include ~/.config/sway/configs/output
 include ~/.config/sway/configs/variables
 include ~/.config/sway/configs/bindsym
 
-# swayidle / lockscreen
-# exec swayidle -w \
-#          timeout 300 'swaylock' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock'
-
-# Set Wob overlay
-# set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
-# exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
-
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 # auto-start apps
 exec swaync
+exec blueman-applet
 exec nm-applet --indicator
 exec kdeconnect-indicator
 exec gammastep-indicator
 exec swaycons
-exec swayosd
+# exec swayosd

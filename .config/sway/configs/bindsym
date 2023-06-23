@@ -1,21 +1,21 @@
 # Basics:
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+q exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    bindsym $mod+c kill
 
     # Start your launcher
-    bindsym $mod+escape exec $menu
+    bindsym $mod+r exec $menu
 
     # Start browser
     bindsym $mod+Shift+f exec firefox
 
     # Start file manager
-    bindsym $mod+Shift+t exec thunar
+    bindsym $mod+e exec thunar
 
     # Take screenshot
-    bindsym $mod+Shift+p exec swayshot
+    # bindsym $mod+Shift+p exec swayshot
 
     # Change keyboard layout 
     bindsym $mod+z exec swaymsg input type:keyboard xkb_switch_layout next
@@ -35,21 +35,16 @@
     bindsym $mod+less gaps inner current set 10
 
     # Toggle lock screen
-    bindsym $mod+Shift+x exec swaylock
+    bindsym $mod+Ctrl+l exec swaylock
 
     # Exec powermenu
     bindsym $mod+Shift+m exec ".config/waybar/scripts/powermenu.sh"
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+m exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
-    # Move your focus around
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
-    bindsym $mod+$right focus right
     # Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
@@ -99,13 +94,13 @@
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
+    bindsym $mod+h splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+Shift+s layout stacking
+    bindsym $mod+Shift+w layout tabbed
+    bindsym $mod+Shift+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen toggle 
@@ -133,25 +128,20 @@
 
 # Resizing containers:
 mode "resize" {
-    bindsym $left resize shrink width 10ppt
-    bindsym $down resize grow height 10ppt
-    bindsym $up resize shrink height 10ppt
-    bindsym $right resize grow width 10pptr
-
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+    bindsym Left resize grow width 10px
+    bindsym Right resize shrink width 10px
+    bindsym Down resize shrink height 10px
+    bindsym Up resize grow height 10px
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+Shift+r mode "resize"
 
 # PulseAudio controls
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && pactl get-sink-volume @DEFAULT_SINK@ | head -n 1| awk '{print substr($5, 1, length($5)-1)}' > $WOBSOCK
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && pactl get-sink-volume @DEFAULT_SINK@ | head -n 1 | awk '{print substr($5, 1, length($5)-1)}' > $WOBSOCK
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% 
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% 
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle 
 
 # Media controls
@@ -160,8 +150,14 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # brightnessctl control
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%- | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
-bindsym XF86MonBrightnessUp exec brightnessctl set 5%+ | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+ 
 
 # sway notification center control
 bindsym $mod+Shift+n exec swaync-client -t -sw
+
+# Take screenshot
+bindsym $mod+Shift+p exec swayshot display
+bindsym $mod+Ctrl+p exec swayshot window
+bindsym $mod+Alt+p exec swayshot region
+
