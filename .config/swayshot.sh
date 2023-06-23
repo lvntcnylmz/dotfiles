@@ -1,0 +1,2 @@
+SWAYSHOT_SCREENSHOTS="$HOME/Pictures/Screenshots/"
+SWAYSHOT_DATEFMT="%c"
