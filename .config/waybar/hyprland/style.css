@@ -1,8 +1,8 @@
-@define-color bg-color rgba(17, 17, 27, 0.6);
+@define-color bg-color rgba(17, 17, 27, 0.5);
 @define-color module-bg-color rgba(17, 17, 27, 1);
 @define-color fg-color rgba(205, 214, 244, 1);
 @define-color arch-color rgba(23, 147, 209, 1);
-@define-color highlight-color rgba(15, 192, 68, 1);
+@define-color highlight-color rgba(64, 160, 43, 1);
 
 * {
     font-family: JetBrainsMono Nerd Font Propo;
@@ -60,6 +60,12 @@ tooltip {
     color: @highlight-color;
 }
 
+#battery.bat0.charging,
+#battery.bat1.charging {
+    background: @highlight-color;
+    color: @module-bg-color;
+}
+
 #workspaces {
     padding: 0px 10px;
 }
@@ -67,10 +73,16 @@ tooltip {
 #workspaces button {
     margin: 0px;
     padding: 0px;
+    color: @fg-color;
+}
+
+#workspace button:hover {
+    background: transparent;
 }
 
 #workspaces button.active {
     color: @highlight-color;
     border-bottom: 1px solid @highlight-color;
+    border-top: 1px solid @highlight-color;
     border-radius: 0px;
 }

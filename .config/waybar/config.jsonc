@@ -1,5 +1,5 @@
 {
-    "include": [
-        "$HOME/Documents/github/dotfiles/.config/waybar/waybar-hyprland/config.jsonc"
-    ]
+  "include": [
+    "$HOME/.config/waybar/sway/config.jsonc"
+  ]
 }
