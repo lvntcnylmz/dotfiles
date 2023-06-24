@@ -276,13 +276,14 @@
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
-    margin: 0 3px;
+    margin: 3px;
     background: #1b1b2b;
     border-radius: 12px;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
     background: @noti-bg-hover;
+    color: #1793d1;
 }
 
 /* Menubar widget */
