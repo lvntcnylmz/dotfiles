@@ -17,6 +17,7 @@
         "clock"
     ],
     "modules-right": [
+        "custom/scratchpad-indicator",
         "custom/updates",
         "tray",
         "disk",
@@ -46,6 +47,13 @@
         "on-click": "activate",
         "all-outputs": false,
         "sort-by-number": true,
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五"
+        },
         "persistent_workspaces": {
             "1": [],
             "2": [],
@@ -70,13 +78,15 @@
         "max-length": 70,
         "exec": "$HOME/.config/waybar/scripts/mediaplayer.sh 2> /dev/null",
         "interval": 1,
-        "on-click": "playerctl play-pause"
+        "on-click": "playerctl next",
+        "on-click-middle": "playerctl play-pause",
+        "on-click-right": "playerctl previous"
     },
     //---------------
     // modules-center
     //---------------
     "clock": {
-        "format": "{:<span color='#0fc044'> </span>%a %d %b %Y  <span color='#0fc044'>󰥔</span> %H:%M:%S}",
+        "format": "{:<span color='#1793d1'> </span>%a %d %b %Y  <span color='#1793d1'>󰥔</span> %H:%M:%S}",
         "interval": 1,
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
@@ -105,6 +115,14 @@
     //--------------
     // modules-right
     //--------------
+    "custom/scratchpad-indicator": {
+        "interval": 1,
+        "return-type": "json",
+        "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '(recurse(.nodes[]) | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | if ($scratch_nodes|length) > 0 then { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") } else empty end'",
+        "format": "{} 🗗",
+        "on-click": "exec swaymsg 'scratchpad show'",
+        "on-click-right": "exec swaymsg 'move scratchpad'"
+    },
     "custom/updates": {
         "interval": 3600,
         "exec": "$HOME/.config/waybar/scripts/checkupdates.sh 2> /dev/null",

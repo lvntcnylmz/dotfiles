@@ -3,6 +3,7 @@
 @define-color fg-color rgba(205, 214, 244, 1);
 @define-color arch-color rgba(23, 147, 209, 1);
 @define-color highlight-color rgba(15, 192, 68, 1);
+@define-color ws-focused rgba(209, 85, 23, 1);
 
 * {
     font-family: JetBrainsMono Nerd Font Propo;
@@ -18,7 +19,7 @@ window#waybar {
 tooltip {
     background: @module-bg-color;
     border: 2px solid @fg-color;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 #disk,
@@ -39,11 +40,12 @@ tooltip {
 #custom-power,
 #custom-weather,
 #custom-updates,
-#custom-notification {
+#custom-notification,
+#custom-scratchpad-indicator {
     background: @module-bg-color;
     margin: 2px;
     padding: 2px 10px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 #custom-notification {
@@ -57,7 +59,7 @@ tooltip {
 }
 
 #custom-cava {
-    color: @highlight-color;
+    color: @arch-color;
 }
 
 #battery.bat0.charging,
@@ -71,13 +73,16 @@ tooltip {
 }
 
 #workspaces button {
-    margin: 0px;
     padding: 0px;
+    margin: 0px;
+    color: @arch-color;
+}
+
+#workspaces button.persistent {
+    color: @fg-color;
 }
 
 #workspaces button.focused {
-    color: @highlight-color;
-    border-top: 1px solid @highlight-color;
-    border-bottom: 1px solid @highlight-color;
-    border-radius: 0px;
+    color: @ws-focused;
+    border-radius: 8px;
 }
