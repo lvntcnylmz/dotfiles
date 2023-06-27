@@ -83,7 +83,7 @@
                 },
                 {
                     "label": "󰍃",
-                    "command": "sudo pkill -u $(whoami"
+                    "command": "sudo pkill -KILL -u $(whoami)"
                 },
                 {
                     "label": "󰏥",
@@ -104,6 +104,10 @@
                 {
                     "label": "󰂯",
                     "command": "blueman-applet"
+                },
+                {
+                    "label": "",
+                    "command": "kooha"
                 }
             ]
         }
