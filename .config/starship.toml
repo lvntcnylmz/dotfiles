@@ -1,29 +1,28 @@
 format = """
-[┌─](bright green)$time $all\
-[└─>](green) $username@$hostname $character"""
+[┌─](fg:#1793d1)$time $all\
+[└─>](fg:#9ece6a)$username@$hostname $character"""
 
 [character]
-success_symbol = '[=>](green)'
+success_symbol = '[]($style)'
 
 [time]
 disabled = false
-format = '[\[$time\]](bright green) '
+format = '[\[$time\]](fg:#1793d1) '
 time_format = '%T - %a, %d/%b/%y'
 utc_time_offset = 'local'
 
 [directory]
-truncation_length = 1
+truncation_length = 3
 truncation_symbol = '…/'
 
 [username]
 style_user = 'white bold'
 style_root = 'black bold'
-format = '[$user]($style)'
+format = '[\[$user](fg:#9ece6a)'
 disabled = false
 show_always = true
 
 [hostname]
 ssh_only = false
-format = '[$hostname](red) '
+format = '[$hostname\]](fg:#1793d1) '
 disabled = false
-
