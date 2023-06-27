@@ -3,7 +3,6 @@
 @define-color fg-color rgba(205, 214, 244, 1);
 @define-color arch-color rgba(23, 147, 209, 1);
 @define-color highlight-color rgba(15, 192, 68, 1);
-@define-color ws-focused rgba(209, 85, 23, 1);
 
 * {
     font-family: JetBrainsMono Nerd Font Propo;
@@ -43,9 +42,10 @@ tooltip {
 #custom-notification,
 #custom-scratchpad-indicator {
     background: @module-bg-color;
-    margin: 2px;
+    margin: 3px 2px;
     padding: 2px 10px;
     border-radius: 10px;
+    border-bottom: 1px solid @arch-color;
 }
 
 #custom-notification {
@@ -83,6 +83,7 @@ tooltip {
 }
 
 #workspaces button.focused {
-    color: @ws-focused;
+    background: @arch-color;
+    color: @module-bg-color;
     border-radius: 8px;
 }

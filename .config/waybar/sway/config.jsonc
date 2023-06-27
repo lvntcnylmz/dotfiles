@@ -9,12 +9,13 @@
         "custom/power",
         "sway/language",
         "sway/workspaces",
-        "custom/weather",
+        //"custom/weather",
         "custom/cava",
         "custom/media"
     ],
     "modules-center": [
-        "clock"
+        "clock",
+        "custom/weather"
     ],
     "modules-right": [
         "custom/scratchpad-indicator",
@@ -36,6 +37,7 @@
         "format": "",
         "tooltip": false,
         "on-click": "$HOME/.config/waybar/scripts/powermenu.sh 2> /dev/null",
+        "on-click-right": "$HOME/.config/waybar/scripts/wallpaper.sh 2> /dev/null",
         "interval": 60
     },
     "sway/language": {
@@ -45,25 +47,36 @@
     "sway/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
-        "all-outputs": false,
+        "all-outputs": true,
         "sort-by-number": true,
         "format-icons": {
             "1": "一",
             "2": "二",
             "3": "三",
             "4": "四",
-            "5": "五"
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十"
         },
         "persistent_workspaces": {
             "1": [],
             "2": [],
             "3": [],
             "4": [],
-            "5": []
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
         }
     },
     "custom/weather": {
         "format": "{}",
+        "format-alt": "{source $HOME/.config/waybar/scripts/weather.sh 'Istanbul' 2> /dev/null}",
         "return-type": "json",
         "exec": "$HOME/.config/waybar/scripts/weather.sh 'Lüleburgaz' 2> /dev/null",
         "interval": 300,
@@ -86,14 +99,15 @@
     // modules-center
     //---------------
     "clock": {
-        "format": "{:<span color='#1793d1'> </span>%a %d %b %Y  <span color='#1793d1'>󰥔</span> %H:%M:%S}",
+        "format": "{:<span color='#1793d1'>󰥔</span> %H:%M:%S  %a %d %b %Y <span color='#1793d1'> </span>}",
+        "format-alt": "<span color='#1793d1'>󰥔</span> {:%H:%M:%S}",
         "interval": 1,
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "locale": "en_GB.UTF-8",
         "calendar": {
-            "locale": "tr_TR.UTF-8",
             "mode": "year",
             "mode-mon-col": 3,
-            "weeks-pos": "right",
+            "weeks-pos": "left",
             "on-scroll": 1,
             "on-click-right": "mode",
             "format": {
@@ -148,13 +162,13 @@
     },
     "pulseaudio#volume": {
         "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "{volume}% 󰖁",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "{volume}% 󰝟",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "headphone": "󰋋",
+            "hands-free": "󰋋",
+            "headset": "󰋋",
             "phone": "",
             "portable": "",
             "car": "",
