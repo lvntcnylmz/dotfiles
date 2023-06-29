@@ -99,8 +99,8 @@
     // modules-center
     //---------------
     "clock": {
-        "format": "{:<span color='#1793d1'>󰥔</span> %H:%M:%S  %a %d %b %Y <span color='#1793d1'> </span>}",
-        "format-alt": "<span color='#1793d1'>󰥔</span> {:%H:%M:%S}",
+        "format": "{:<span color='#565f89'><big>󰥔</big></span> %H:%M:%S  %a %d %b %Y <span color='#565f89'><big></big> </span>}",
+        "format-alt": "<span color='#565f89'><big>󰥔</big></span> {:%H:%M}",
         "interval": 1,
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "locale": "en_GB.UTF-8",
@@ -147,7 +147,7 @@
         "spacing": 5
     },
     "disk": {
-        "format": "{used} 󰋊",
+        "format": "{used} <big>󰋊</big>",
         "on-click": "exec thunar"
     },
     "temperature": {
@@ -155,26 +155,24 @@
         "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": [
-            "",
-            "",
-            ""
+            "<big></big>",
+            "<big></big.",
+            "<big></big>"
         ]
     },
     "pulseaudio#volume": {
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
         "format-bluetooth-muted": " {icon}",
-        "format-muted": "{volume}% 󰝟",
+        "format-muted": "{volume}% <big>󰝟</big>",
         "format-icons": {
-            "headphone": "󰋋",
-            "hands-free": "󰋋",
-            "headset": "󰋋",
-            "phone": "",
-            "portable": "",
-            "car": "",
+            "headphone": "<big>󰋋</big>",
+            "hands-free": "<big>󰋋</big>",
+            "headset": "<big>󰋋</big>",
+            "phone": "<big></big>",
             "default": [
-                "",
-                ""
+                "<big></big>",
+                "<big></big>"
             ]
         },
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
@@ -182,8 +180,8 @@
     },
     "pulseaudio#mic": {
         "format": "{format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "{volume}% ",
+        "format-source": "{volume}% <big></big>",
+        "format-source-muted": "{volume}% <big></big>",
         "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
     },
     "battery#bat0": {
@@ -197,11 +195,11 @@
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "<big></big>",
+            "<big><big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>"
         ],
         "tooltip-format": "{time}",
         "interval": 1
@@ -217,11 +215,11 @@
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "<big></big>",
+            "<big><big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>"
         ],
         "tooltip-format": "{time}",
         "interval": 1
@@ -234,10 +232,10 @@
         "tooltip": false,
         "format": "{} {icon}",
         "format-icons": {
-            "notification": "󰂚",
-            "none": "󰂚",
-            "dnd-notification": "󰂜",
-            "dnd-none": "󰂜"
+            "notification": "<big>󰂚</big>",
+            "none": "<big>󰂚</big>",
+            "dnd-notification": "<big>󰂜</big>",
+            "dnd-none": "<big>󰂜</big>"
         },
         "return-type": "json",
         "exec-if": "which swaync-client",

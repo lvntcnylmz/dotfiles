@@ -1,6 +1,6 @@
 @define-color bg-color rgba(17, 17, 27, 0.5);
 @define-color module-bg-color rgba(17, 17, 27, 1);
-@define-color fg-color rgba(205, 214, 244, 1);
+@define-color fg-color rgba(169, 177, 214, 1);
 @define-color arch-color rgba(23, 147, 209, 1);
 @define-color highlight-color rgba(15, 192, 68, 1);
 
@@ -45,7 +45,6 @@ tooltip {
     margin: 3px 2px;
     padding: 2px 10px;
     border-radius: 10px;
-    border-bottom: 1px solid @arch-color;
 }
 
 #custom-notification {
@@ -83,7 +82,7 @@ tooltip {
 }
 
 #workspaces button.focused {
-    background: @arch-color;
-    color: @module-bg-color;
+    background: #565f89;
+    color: @bg-color;
     border-radius: 8px;
 }
