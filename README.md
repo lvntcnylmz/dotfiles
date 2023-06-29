@@ -21,8 +21,8 @@ dotfiles are the files that starts wth a . (dot). This files are generally respo
 
 ## Screenshots
 
-![](img/sway-desktop1.png)
+![](screenshots/sway-desktop1.png)
 
-![](img/sway-desktop2.png)
+![](screenshots/sway-desktop2.png)
 
-![](img/sway-deesktop3.png)
+![](screenshots/sway-deesktop3.png)
