@@ -1,5 +1,5 @@
-@define-color bg-color rgba(17, 17, 27, 0.5);
-@define-color module-bg-color rgba(17, 17, 27, 1);
+@define-color bg-color rgba(26, 27, 38, 0.5);
+@define-color module-bg-color rgba(26, 27, 38, 1);
 @define-color fg-color rgba(169, 177, 214, 1);
 @define-color arch-color rgba(23, 147, 209, 1);
 @define-color highlight-color rgba(15, 192, 68, 1);
@@ -17,13 +17,14 @@ window#waybar {
 
 tooltip {
     background: @module-bg-color;
-    border: 2px solid @fg-color;
+    border: 2px solid @arch-color;
     border-radius: 10px;
 }
 
 #disk,
 #tray,
 #clock,
+#upower,
 #battery,
 #language,
 #pulseaudio,
@@ -61,6 +62,7 @@ tooltip {
     color: @arch-color;
 }
 
+#upower.charging,
 #battery.bat0.charging,
 #battery.bat1.charging {
     background: @highlight-color;
@@ -82,7 +84,7 @@ tooltip {
 }
 
 #workspaces button.focused {
-    background: #565f89;
-    color: @bg-color;
-    border-radius: 8px;
+    background: @arch-color;
+    color: @module-bg-color;
+    border-radius: 7px;
 }
