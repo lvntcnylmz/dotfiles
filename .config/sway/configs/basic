@@ -1,21 +1,12 @@
-# Workspace config
-# workspace 1 output DP-3
-# workspace 2 output DP-5
-# workspace 3 output eDP-1
-
-# Assign apps to specific workspaces
-# Workspace 1
-# assign [app_id="firefox"] 1
-# assign [app_id="LibreWolf"] 1
-# assign [app_id="thunderbird"] 1
-# assign [class="VSCodium" title=".*VSCodium"] 1
-# assign [class="jetbrains-idea-ce" instance="jetbrains-idea-ce"] 1
-
-# # Workspace 2
-# assign [app_id="thunar"] 2
-# assign [class="Spotify" instance="spotify"] 2
-# assign [class="discord"] 2
-# assign [app_id="terminator"] 2
+for_window [app_id="firefox"] title_format "<span foreground='#1793d1'><big>󰈹</big></span> <b>%title</b>"
+for_window [app_id="kitty"] title_format "<span foreground='#1793d1'><big>󰅬</big></span> <b>%title</b>"
+for_window [title=".*VSCodium"] title_format "<span foreground='#1793d1'><big>󰨞</big></span> <b>%title</b>"
+for_window [app_id="nvim"] title_format "<span foreground='#1793d1'><big></big></span> <b>%title</b>"
+for_window [instance="spotify"] title_format "<span foreground='#1793d1'><big>󰓇</big></span> <b>%title</b>"
+for_window [app_id="thunar"] title_format "<span foreground='#1793d1'><big>󰉋</big></span> <b>%title</b>"
+for_window [app_id="thunderbird"] title_format "<span foreground='#1793d1'><big>󰺻</big></span> <b>%title</b>"
+for_window [app_id="discord"] title_format "<span foreground='#1793d1'><big>󰙯</big></span> <b>%title</b>"
+for_window [app_id="galculator"] floating enable, border normal, move position cursor
 
 # Border config
 smart_borders on
@@ -41,6 +32,8 @@ input "1739:0:Synaptics_TM3276-022" {
 # Enable multiple keyboard layouts
 input * xkb_layout "us, tr"
 
+seat * xcursor_theme default 32
+
 # Titlebar colors
 # Property Name             Border      BG          Text        Indicator   Child-border
 client.focused                #0fc044     #11111b     #cdd6f4     #4477ff     #0fc044
@@ -51,7 +44,7 @@ client.focused                #0fc044     #11111b     #cdd6f4     #4477ff     #0
 
 # Titlebar sytles
 title_align center                                                  
-titlebar_padding 10 3
+# titlebar_padding 10 3
 
 # Font
-font pango:JetBrainsMono Nerd Font Prop 10
+font pango:JetBrainsMono NF Medium 10

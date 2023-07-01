@@ -8,10 +8,11 @@ include ~/.config/sway/configs/bindsym
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 # auto-start apps
-exec swaync
-exec blueman-applet
+exec_always swaync
+# exec blueman-applet
 exec nm-applet --indicator
 exec kdeconnect-indicator
 exec gammastep-indicator
-exec swaycons
-# exec swayosd
+exec playerctld daemon
+exec polkit-dumb-agent
+exec_always autotiling
