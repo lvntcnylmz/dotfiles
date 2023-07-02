@@ -62,6 +62,9 @@ killall -q checkupdates-with-aur
 mapfile -t updates < <(checkupdates-with-aur)
 
 text=${#updates[@]}
+
+# notify "$text update(s) available" ""
+
 # tooltip="<b>$text  updates (arch+aur) </b>\n"
 tooltip+=" $(stringToLen "Package Name" 20) $(stringToLen "\tPrevious Version" 20) $(stringToLen "\tNext Version" 20)\n"
 [ "$text" -eq 0 ] && text="" || text+=" <big></big>"
@@ -77,6 +80,11 @@ for i in "${updates[@]}"; do
 done
 tooltip=${tooltip::-2}
 
+notify-send -u normal -i software-update-available-symbolic "${#updates[@]} update(s) available" "${updates[*]}" 
+
 cat <<EOF
 {"text":"$text", "tooltip":"$tooltip"}  
 EOF
+
+
+# notify-send -u normal -i software-update-available-symbolic "$update_count update(s) available"
