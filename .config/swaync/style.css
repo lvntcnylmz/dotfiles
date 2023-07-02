@@ -1,4 +1,4 @@
-@define-color cc-bg rgba(0, 0, 0, 0.7);
+@define-color cc-bg rgba(0, 0, 0, 1);
 
 @define-color noti-border-color rgba(255, 255, 255, 0.15);
 @define-color noti-bg rgb(17, 17, 27);
@@ -8,7 +8,7 @@
 @define-color noti-close-bg rgba(255, 255, 255, 0.1);
 @define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
 
-@define-color text-color rgb(255, 255, 255);
+@define-color text-color rgba(169, 177, 214, 1);
 @define-color text-color-disabled rgb(150, 150, 150);
 
 @define-color bg-selected rgb(0, 128, 255);
@@ -32,6 +32,7 @@
     border-radius: 12px;
     margin: 10px;
     padding: 0;
+    border: 2px solid #1793d1;
 }
 
 .notification-content {
@@ -193,7 +194,8 @@
 
 /* Title widget */
 .widget-title {
-    margin: 8px;
+    color: @text-color;
+    margin: 10px;
     font-size: 1.5rem;
 }
 
@@ -213,7 +215,8 @@
 
 /* DND widget */
 .widget-dnd {
-    margin: 8px;
+    color: @text-color;
+    margin: 10px;
     font-size: 1.1rem;
 }
 
@@ -245,7 +248,7 @@
 
 /* Mpris widget */
 .widget-mpris {
-    /* The parent to all players */
+    color: @text-color;
     background: @noti-bg;
     padding: 10px;
     margin: 10px;
@@ -279,6 +282,7 @@
     margin: 3px;
     background: #1b1b2b;
     border-radius: 12px;
+    color: @text-color;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
