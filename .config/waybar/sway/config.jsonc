@@ -7,9 +7,9 @@
     ],
     "modules-left": [
         "custom/power",
-        "sway/language",
+        //"sway/language",
         "sway/workspaces",
-        //"custom/weather",
+        "custom/weather",
         // "custom/cava",
         "custom/media",
         "sway/mode"
@@ -20,8 +20,8 @@
     "modules-right": [
         "custom/scratchpad-indicator",
         "custom/updates",
-        "custom/weather",
         "tray",
+        "sway/language",
         "disk",
         "temperature",
         "pulseaudio#volume",
@@ -40,10 +40,6 @@
         "on-click": "$HOME/.config/waybar/scripts/powermenu.sh 2> /dev/null",
         "on-click-right": "$HOME/.config/waybar/scripts/wallpaper.sh 2> /dev/null",
         "interval": 60
-    },
-    "sway/language": {
-        "format": "{shortDescription}",
-        "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
     },
     "sway/workspaces": {
         "format": "{icon}",
@@ -75,6 +71,13 @@
             "10": []
         }
     },
+    "custom/weather": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/scripts/weather.sh Lüleburgaz Istanbul 2> /dev/null",
+        "interval": 300,
+        "tooltip": true
+    },
     // "custom/cava": {
     //     "exec": "$HOME/.config/waybar/scripts/cava.sh 2> /dev/null",
     //     "on-click": "playerctl play-pause",
@@ -96,10 +99,10 @@
     // modules-center
     //---------------
     "clock": {
-        "format": "{:<big>󰸗</big> %a %d %b %Y  %H:%M:%S <big>󰥔</big>}",
-        "format-alt": "{:%H:%M:%S}",
+        "format": "{:<big>󰸗</big> %d %b %Y %a  %T <big>󰥔</big>}",
+        "format-alt": "{:%T <big>󰥔</big>}",
         "interval": 1,
-        "tooltip-format": "<small>{calendar}</small>",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "locale": "en_GB.UTF-8",
         "calendar": {
             "mode": "year",
@@ -110,9 +113,9 @@
             "format": {
                 "months": "<span color='#ffead3'>{}</span>",
                 "days": "<span color='#ecc6d9'>{}</span>",
-                "weeks": "<span color='#99ffdd'>W{}</span>",
+                "weeks": "<span color='#1793d1'>{}</span>",
                 "weekdays": "<span color='#ffcc66'>{}</span>",
-                "today": "<span color='#ff6600'><u>{}</u></span>"
+                "today": "<span color='#ff6600'><big>{}</big></span>"
             }
         },
         "actions": {
@@ -142,17 +145,13 @@
         // "exec-if": "exit 0",
         // "signal": 8
     },
-    "custom/weather": {
-        "format": "{}",
-        "format-alt": "{source $HOME/.config/waybar/scripts/weather.sh 'Istanbul' 2> /dev/null}",
-        "return-type": "json",
-        "exec": "$HOME/.config/waybar/scripts/weather.sh 'Lüleburgaz' 2> /dev/null",
-        "interval": 300,
-        "tooltip": true
-    },
     "tray": {
         "icon-size": 15,
         "spacing": 5
+    },
+    "sway/language": {
+        "format": "{shortDescription}",
+        "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
     },
     "disk": {
         "format": "{used} <big>󰋊</big>",
