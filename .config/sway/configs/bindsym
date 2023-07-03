@@ -134,7 +134,7 @@ mode "resize" {
     bindsym Left resize grow width 10px
     bindsym Right resize shrink width 10px
     bindsym Down resize shrink height 10px
-    bindsym Up resize grow height 10pxhttps://placehold.it/150/ffffff/ff0000?text=hello
+    bindsym Up resize grow height 10px
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
