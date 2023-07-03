@@ -3,7 +3,7 @@
     "layer": "top",
     "output": [
         "DP-3",
-        "eDP-1"
+        "!eDP-1"
     ],
     "modules-left": [
         "custom/power",
