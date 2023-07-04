@@ -7,11 +7,9 @@
     ],
     "modules-left": [
         "custom/power",
-        //"sway/language",
         "sway/workspaces",
         "custom/weather",
-        // "custom/cava",
-        "custom/media",
+        "mpris",
         "sway/mode"
     ],
     "modules-center": [
@@ -24,11 +22,9 @@
         "sway/language",
         "disk",
         "temperature",
-        "pulseaudio#volume",
-        // "pulseaudio#mic",
-        // "battery#bat0",
-        // "battery#bat1",
-        "upower",
+        "pulseaudio",
+        "battery",
+        "battery#bat1",
         "custom/notification"
     ],
     //-------------
@@ -39,7 +35,8 @@
         "tooltip": false,
         "on-click": "$HOME/.config/waybar/scripts/powermenu.sh 2> /dev/null",
         "on-click-right": "$HOME/.config/waybar/scripts/wallpaper.sh 2> /dev/null",
-        "interval": 60
+        "interval": 60,
+        "signal": 8
     },
     "sway/workspaces": {
         "format": "{icon}",
@@ -83,13 +80,27 @@
     //     "on-click": "playerctl play-pause",
     //     "tooltip": "playerctl metadata --format '{{ playerName }}'"
     // },
-    "custom/media": {
+    // "custom/media": {
+    //     "max-length": 70,
+    //     "exec": "$HOME/.config/waybar/scripts/mediaplayer.sh 2> /dev/null",
+    //     "interval": 1,
+    //     "on-click": "playerctl next",
+    //     "on-click-middle": "playerctl play-pause",
+    //     "on-click-right": "playerctl previous"
+    // },
+    "mpris": {
+        "format": "{player_icon} {artist} - {title} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
         "max-length": 70,
-        "exec": "$HOME/.config/waybar/scripts/mediaplayer.sh 2> /dev/null",
-        "interval": 1,
-        "on-click": "playerctl next",
-        "on-click-middle": "playerctl play-pause",
-        "on-click-right": "playerctl previous"
+        "player-icons": {
+            "default": "▶",
+            "mpv": "🎵",
+            "firefox": "<span color='#FF9500'><big>󰈹</big></span>",
+            "spotify": "<span color='#0fc044'><big>󰓇</big></span>"
+        },
+        "status-icons": {
+            "paused": "⏸"
+        }
     },
     "sway/mode": {
         "format": " {}",
@@ -167,82 +178,53 @@
             "<big></big>"
         ]
     },
-    "pulseaudio#volume": {
+    "pulseaudio": {
         "format": "{volume}% {icon} {format_source}",
-        "format-muted": "{volume}% <big>󰖁</big>",
-        "format-source": "<big></big>",
-        "format-source-muted": "<big></big>",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-bluetooth-muted": " {icon}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
         "format-icons": {
-            "headphone": "<big>󰋋</big>",
-            "hands-free": "<big>󰋋</big>",
-            "headset": "<big>󰋋</big>",
-            "phone": "<big></big>",
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
             "default": [
-                "<big></big>",
-                "<big></big>",
-                "<big></big>"
+                "",
+                "",
+                ""
             ]
         },
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-middle": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
         "on-click-right": "pavucontrol"
     },
-    // "pulseaudio#mic": {
-    //     "format": "{format_source}",
-    //     "format-source": "{volume}% <big></big>",
-    //     "format-source-muted": "{volume}% <big></big>",
-    //     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
-    // },
-    // "battery#bat0": {
-    //     "bat": "BAT0",
-    //     "states": {
-    //         "good": 95,
-    //         "warning": 10,
-    //         "critical": 5
-    //     },
-    //     "format": "{capacity}% {icon}",
-    //     "format-charging": "{capacity}% {icon}",
-    //     "format-plugged": "{capacity}% {icon}",
-    //     "format-icons": [
-    //         "<big></big>",
-    //         "<big><big>",
-    //         "<big></big>",
-    //         "<big></big>",
-    //         "<big></big>"
-    //     ],
-    //     "tooltip-format": "{time}",
-    //     "interval": 1
-    // },
-    // "battery#bat1": {
-    //     "bat": "BAT1",
-    //     "states": {
-    //         "good": 95,
-    //         "warning": 10,
-    //         "critical": 5
-    //     },
-    //     "format": "{capacity}% {icon}",
-    //     "format-charging": "{capacity}% {icon}",
-    //     "format-plugged": "{capacity}% {icon}",
-    //     "format-icons": [
-    //         "<big></big>",
-    //         "<big><big>",
-    //         "<big></big>",
-    //         "<big></big>",
-    //         "<big></big>"
-    //     ],
-    //     "tooltip-format": "{time}",
-    //     "interval": 1
-    // },
-    "upower": {
-        "format": "{percentage} {time}",
-        "format-alt": "{percentage}",
-        "icon-size": 15,
-        "hide-if-empty": true,
-        "tooltip": true,
-        "tooltip-spacing": 10,
-        "tooltip-padding": 10
+    "battery": {
+        "bat": "BAT0",
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-good": "", // An empty format will hide the module
+        "format-full": "",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "battery#bat1": {
+        "bat": "BAT1"
     },
     "custom/notification": {
         "tooltip": false,
