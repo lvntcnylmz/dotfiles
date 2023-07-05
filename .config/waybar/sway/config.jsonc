@@ -75,22 +75,9 @@
         "interval": 300,
         "tooltip": true
     },
-    // "custom/cava": {
-    //     "exec": "$HOME/.config/waybar/scripts/cava.sh 2> /dev/null",
-    //     "on-click": "playerctl play-pause",
-    //     "tooltip": "playerctl metadata --format '{{ playerName }}'"
-    // },
-    // "custom/media": {
-    //     "max-length": 70,
-    //     "exec": "$HOME/.config/waybar/scripts/mediaplayer.sh 2> /dev/null",
-    //     "interval": 1,
-    //     "on-click": "playerctl next",
-    //     "on-click-middle": "playerctl play-pause",
-    //     "on-click-right": "playerctl previous"
-    // },
     "mpris": {
-        "format": "{player_icon} {artist} - {title} {dynamic}",
-        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "format": "{player_icon} {artist} - {title} [{position}/{length}]",
+        "format-paused": "{status_icon} <i>{artist} - {title} [{position}/{length}]</i>",
         "max-length": 70,
         "player-icons": {
             "default": "▶",
@@ -100,7 +87,8 @@
         },
         "status-icons": {
             "paused": "⏸"
-        }
+        },
+        "interval": 1
     },
     "sway/mode": {
         "format": " {}",
