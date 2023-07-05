@@ -9,10 +9,10 @@
     bindsym $mod+r exec $menu
 
     # Start browser
-    bindsym $mod+Shift+f exec firefox
+    bindsym $mod+Shift+f exec $browser
 
     # Start file manager
-    bindsym $mod+e exec thunar
+    bindsym $mod+e exec $file_manager
 
     # Take screenshot
     # bindsym $mod+Shift+p exec swayshot

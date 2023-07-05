@@ -1,10 +1,10 @@
 output DP-3 {
-    background ~/Pictures/Wallpaper/eclipse.jpg fill
+    background $HOME/Pictures/Wallpaper/street.jpg fill
     resolution 1920x1080 pos 0,0
 }
 
 output eDP-1 {
-    background ~/Pictures/Wallpaper/eclipse.jpg fill
+    background $HOME/Pictures/Wallpaper/street.jpg fill
 }
 
 focus output DP-3

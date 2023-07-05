@@ -1,11 +1,13 @@
-for_window [app_id="firefox"] title_format "<span foreground='#1793d1'><big>󰈹</big></span> <b>%title</b>"
-for_window [app_id="kitty"] title_format "<span foreground='#1793d1'><big>󰅬</big></span> <b>%title</b>"
-for_window [title=".*VSCodium"] title_format "<span foreground='#1793d1'><big>󰨞</big></span> <b>%title</b>"
-for_window [app_id="nvim"] title_format "<span foreground='#1793d1'><big></big></span> <b>%title</b>"
-for_window [instance="spotify"] title_format "<span foreground='#1793d1'><big>󰓇</big></span> <b>%title</b>"
-for_window [app_id="thunar"] title_format "<span foreground='#1793d1'><big>󰉋</big></span> <b>%title</b>"
-for_window [app_id="thunderbird"] title_format "<span foreground='#1793d1'><big>󰺻</big></span> <b>%title</b>"
-for_window [app_id="discord"] title_format "<span foreground='#1793d1'><big>󰙯</big></span> <b>%title</b>"
+include ~/.config/sway/configs/colorscheme
+
+for_window [app_id="firefox"] title_format "<big>󰈹</big> <b>%title</b>"
+for_window [app_id="kitty"] title_format "<big>󰅬</big> <b>%title</b>"
+for_window [title=".*VSCodium"] title_format "<big>󰨞</big> <b>%title</b>"
+for_window [app_id="nvim"] title_format "<big></big> <b>%title</b>"
+for_window [instance="spotify"] title_format "<big>󰓇</big> <b>%title</b>"
+for_window [app_id="thunar"] title_format "<big>󰉋</big> <b>%title</b>"
+for_window [app_id="thunderbird"] title_format "<big>󰺻</big> <b>%title</b>"
+for_window [app_id="discord"] title_format "<big>󰙯</big> <b>%title</b>"
 for_window [app_id="galculator"] floating enable, border normal, move position cursor
 
 # Border config
@@ -32,19 +34,18 @@ input "1739:0:Synaptics_TM3276-022" {
 # Enable multiple keyboard layouts
 input * xkb_layout "us, tr"
 
-seat * xcursor_theme default 32
+seat * xcursor_theme default 24
 
-# Titlebar colors
-# Property Name             Border      BG          Text        Indicator   Child-border
-client.focused                #0fc044     #11111b     #cdd6f4     #4477ff     #0fc044
-# client.focused_inactive     #250c3e     #120024     #544587     #2f343f     #2f343f
-# client.unfocused            #250c3e     #120024     #544587     #2f343f     #2f343f
-# client.urgent               #250c3e     #120024     #544587     #2f343f     #2f343f
-# client.placeholder          #250c3e     #120024     #544587     #2f343f     #2f343f
+# Property Name         Border   BG       Text     Indicator  Child Border
+client.focused          $base05  $base0D  $base00  $base0D    $base0D
+client.focused_inactive $base01  $base01  $base05  $base03    $base01
+client.unfocused        $base01  $base00  $base05  $base01    $base01
+client.urgent           $base08  $base08  $base00  $base08    $base08
+client.placeholder      $base00  $base00  $base05  $base00    $base00
+client.background       $base07
 
 # Titlebar sytles
 title_align center                                                  
-# titlebar_padding 10 3
 
 # Font
 font pango:JetBrainsMono NF Medium 10

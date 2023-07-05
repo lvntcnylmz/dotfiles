@@ -5,3 +5,5 @@ set $up k
 set $right l
 set $term kitty 
 set $menu fuzzel
+set $browser firefox
+set $file_manager thunar
