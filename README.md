@@ -10,13 +10,13 @@ dotfiles are the files that starts wth a . (dot). This files are generally respo
 | Promt Theme Engine  | [starship](https://github.com/starship/starship)                                             |
 | Window Manager      | [sway](https://github.com/swaywm/sway)                                                       |
 | Notification Deamon | [swaync](https://github.com/ErikReider/SwayNotificationCenter)                               |
-| Screen Locker       | [swaylock-effects](https://github.com/mortie/swaylock-effects)                               |
+| Screen Locker       | [swaylock](https://github.com/swaywm/swaylock) </br> [swaylock-corrupter](https://github.com/aur-packaging/swaylock-corrupter)                              |
 | Status Bar          | [waybar](https://github.com/Alexays/Waybar)                                                  |
 | System Into Tool    | [neofetch](https://github.com/dylanaraps/neofetch)                                           |
 | Terminal            | [kitty](https://github.com/kovidgoyal/kitty)                                                 |
 | Display Manager     | [ly](https://github.com/fairyglade/ly)                                                       |
-| File Manager        | [ranger](https://github.com/ranger/ranger) / [thunar](https://github.com/xfce-mirror/thunar) |
-| Text Editor         | [nvim](https://github.com/neovim/neovim) / [vscodium](https://github.com/VSCodium/vscodium)  |
+| File Manager        | [ranger](https://github.com/ranger/ranger) </br> [thunar](https://github.com/xfce-mirror/thunar) |
+| Text Editor         | [nvim](https://github.com/neovim/neovim) </br> [vscodium](https://github.com/VSCodium/vscodium)  |
 | App Launcher        | [fuzzel](https://codeberg.org/dnkl/fuzzel)                                                   |
 
 ## Screenshots
