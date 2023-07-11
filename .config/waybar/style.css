@@ -1,1 +1,82 @@
-@import url("../waybar/sway/style.css");
+@define-color bg-color rgba(26, 27, 38, 1);
+@define-color module-bg-color rgba(52, 59, 88, 1);
+@define-color fg-color rgba(169, 177, 214, 1);
+@define-color highlight-color rgba(158, 206, 106, 1);
+
+* {
+    font-family: JetBrainsMono Nerd Font Propo;
+    font-weight: bolder;
+    font-size: 12px;
+}
+
+window#waybar {
+    background: @bg-color;
+    color: @fg-color;
+}
+
+tooltip {
+    color: @fg-color;
+    background: @module-bg-color;
+    border: 2px solid @highlight-color;
+    border-radius: 10px;
+}
+
+#mpris,
+#disk,
+#mode,
+#tray,
+#clock,
+#language,
+#pulseaudio,
+#workspaces,
+#temperature,
+#battery,
+#battery.bat1,
+#custom-power,
+#custom-weather,
+#custom-updates,
+#custom-notification,
+#custom-scratchpad-indicator {
+    background: @module-bg-color;
+    margin: 3px 2px;
+    padding: 1px 10px;
+    border-radius: 10px;
+}
+
+#custom-notification {
+    margin-right: 10px;
+}
+
+#custom-power {
+    background: @highlight-color;
+    color: @module-bg-color;
+    margin-left: 10px;
+    font-size: larger;
+}
+
+#battery.charging,
+#battery-bat1.charging,
+#custom-notification.dnd-none {
+    background: @highlight-color;
+    color: @module-bg-color;
+}
+
+#workspaces {
+    padding: 0px 10px;
+}
+
+#workspaces button {
+    padding: 0px;
+    margin: 0px;
+    color: @highlight-color;
+}
+
+#workspaces button.persistent {
+    color: @fg-color;
+}
+
+#workspaces button.focused {
+    background: @highlight-color;
+    color: @module-bg-color;
+    border-radius: 7px;
+}
