@@ -1,9 +1,8 @@
 output DP-3 {
-    background $HOME/Pictures/Wallpaper/street.jpg fill
     resolution 1920x1080 pos 0,0
 }
 
-output eDP-1 {
+output * {
     background $HOME/Pictures/Wallpaper/street.jpg fill
 }
 

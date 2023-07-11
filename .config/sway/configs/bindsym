@@ -35,7 +35,7 @@
     bindsym $mod+less gaps inner current set 10
 
     # Toggle lock screen
-    bindsym $mod+Ctrl+l exec swaylock
+    bindsym $mod+Shift+x exec swaylock-corrupter
 
     # Exec powermenu
     bindsym $mod+Shift+m exec ".config/waybar/scripts/powermenu.sh"
