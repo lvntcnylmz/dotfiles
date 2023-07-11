@@ -1,8 +1,7 @@
-@define-color bg-color rgba(26, 27, 38, 0.5);
-@define-color module-bg-color rgba(26, 27, 38, 1);
+@define-color bg-color rgba(26, 27, 38, 1);
+@define-color module-bg-color rgba(52, 59, 88, 1);
 @define-color fg-color rgba(169, 177, 214, 1);
-@define-color arch-color rgba(23, 147, 209, 1);
-@define-color highlight-color rgba(15, 192, 68, 1);
+@define-color highlight-color rgba(158, 206, 106, 1);
 
 * {
     font-family: JetBrainsMono Nerd Font Propo;
@@ -11,13 +10,14 @@
 }
 
 window#waybar {
-    background: @module-bg-color;
+    background: @bg-color;
     color: @fg-color;
 }
 
 tooltip {
+    color: @fg-color;
     background: @module-bg-color;
-    border: 2px solid @arch-color;
+    border: 2px solid @highlight-color;
     border-radius: 10px;
 }
 
@@ -26,26 +26,21 @@ tooltip {
 #mode,
 #tray,
 #clock,
-#battery,
 #language,
 #pulseaudio,
 #workspaces,
 #temperature,
 #battery,
-#battery#bat1,
-#custom-battery,
-#custom-cava,
-#custom-media,
+#battery.bat1,
 #custom-power,
 #custom-weather,
 #custom-updates,
 #custom-notification,
 #custom-scratchpad-indicator {
     background: @module-bg-color;
-    margin: 2px;
+    margin: 3px 2px;
     padding: 1px 10px;
     border-radius: 10px;
-    border: 1px solid @arch-color;
 }
 
 #custom-notification {
@@ -53,19 +48,15 @@ tooltip {
 }
 
 #custom-power {
-    background: @arch-color;
+    background: @highlight-color;
     color: @module-bg-color;
     margin-left: 10px;
     font-size: larger;
 }
 
-#custom-cava {
-    color: @arch-color;
-}
-
-#upower.charging,
-#battery.bat0.charging,
-#battery.bat1.charging {
+#battery.charging,
+#battery-bat1.charging,
+#custom-notification.dnd-none {
     background: @highlight-color;
     color: @module-bg-color;
 }
@@ -77,7 +68,7 @@ tooltip {
 #workspaces button {
     padding: 0px;
     margin: 0px;
-    color: @arch-color;
+    color: @highlight-color;
 }
 
 #workspaces button.persistent {
@@ -85,7 +76,7 @@ tooltip {
 }
 
 #workspaces button.focused {
-    background: @arch-color;
+    background: @highlight-color;
     color: @module-bg-color;
     border-radius: 7px;
 }

@@ -1,10 +1,8 @@
 {
-    "position": "top",
-    "layer": "top",
-    "output": [
-        "DP-3",
-        "!eDP-1"
-    ],
+    // "output": [
+    //     "DP-3",
+    //     "eDP-1"
+    // ],
     "modules-left": [
         "custom/power",
         "sway/workspaces",
@@ -29,7 +27,7 @@
     ],
     //-------------
     // modules-left
-    //-------------
+    //------------
     "custom/power": {
         "format": "",
         "tooltip": false,
@@ -80,8 +78,8 @@
         "format-paused": "{status_icon} <i>{artist} - {title} [{position}/{length}]</i>",
         "max-length": 70,
         "player-icons": {
-            "default": "▶",
-            "mpv": "🎵",
+            "default": "<big>▶</big>",
+            "mpv": "<big>🎵</big>",
             "firefox": "<span color='#FF9500'><big>󰈹</big></span>",
             "spotify": "<span color='#0fc044'><big>󰓇</big></span>"
         },
@@ -149,7 +147,7 @@
         "spacing": 5
     },
     "sway/language": {
-        "format": "{shortDescription}",
+        "format": "{shortDescription} <big>󰌌</big>",
         "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
     },
     "disk": {
@@ -171,19 +169,19 @@
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-source": "{volume}% <big></big>",
+        "format-source-muted": "<big></big>",
         "format-icons": {
-            "headphone": "",
+            "headphone": "<big></big>",
             "hands-free": "",
             "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
             "default": [
-                "",
-                "",
-                ""
+                "<big></big>",
+                "<big></big>",
+                "<big></big>"
             ]
         },
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
@@ -198,21 +196,39 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format-charging": "{capacity}% <big></big>",
+        "format-plugged": "{capacity}% <big><</big>",
         "format-alt": "{time} {icon}",
-        "format-good": "", // An empty format will hide the module
-        "format-full": "",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>"
         ]
     },
     "battery#bat1": {
-        "bat": "BAT1"
+        "bat": "BAT1",
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% <big></big>",
+        "format-plugged": "{capacity}% <big></big>",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>"
+        ]
     },
     "custom/notification": {
         "tooltip": false,
@@ -220,8 +236,8 @@
         "format-icons": {
             "notification": "<big>󰂚</big>",
             "none": "<big>󰂚</big>",
-            "dnd-notification": "<big>󰂜</big>",
-            "dnd-none": "<big>󰂜</big>"
+            "dnd-notification": "<big>󰂚</big>",
+            "dnd-none": "<big>󰂚</big>"
         },
         "return-type": "json",
         "exec-if": "which swaync-client",
