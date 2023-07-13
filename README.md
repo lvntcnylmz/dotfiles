@@ -2,7 +2,7 @@
 
 # Arch Linux Dotfiles
 
-dotfiles are the files that starts wth a . (dot). This files are generally responsible for software configurations. This repository contains my favorite and most used dotfiles in my Arch Linux setup.
+dotfiles are the files that starts wth a . (dot). This files are generally responsible for software configurations. This repository contains my favorite and most used dotfiles in my Arch Linux setup. [Screenshots](#screenshots) are somewhere down there.
 
 | **Module Type**     | **Module Name**                                                                              |
 |:------------------- |:--------------------------------------------------------------------------------------------:|
@@ -18,6 +18,18 @@ dotfiles are the files that starts wth a . (dot). This files are generally respo
 | File Manager        | [ranger](https://github.com/ranger/ranger) </br> [thunar](https://github.com/xfce-mirror/thunar) |
 | Text Editor         | [nvim](https://github.com/neovim/neovim) </br> [vscodium](https://github.com/VSCodium/vscodium)  |
 | App Launcher        | [fuzzel](https://codeberg.org/dnkl/fuzzel)                                                   |
+
+## Installation
+
+There is no installation script yet, but in the meantime you can clone the repo and copy the contents of the `./config` folder into your `./config` folder. 
+
+<u>Example</u>:
+
+```
+git clone https://github.com/lvntcnylmz/dotfiles.git
+cp -r dotfiles/.config/* ~/.config
+```
+
 
 ## Screenshots
 
