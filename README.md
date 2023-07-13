@@ -2,7 +2,9 @@
 
 # Arch Linux Dotfiles
 
-dotfiles are the files that starts wth a . (dot). This files are generally responsible for software configurations. This repository contains my favorite and most used dotfiles in my Arch Linux setup. [Screenshots](#screenshots) are somewhere down there.
+dotfiles are the files that starts wth a . (dot). This files are generally responsible for software configurations. This repository contains my favorite and most used dotfiles in my Arch Linux setup.
+
+[Screenshots](#screenshots) are somewhere down there.
 
 | **Module Type**     | **Module Name**                                                                              |
 |:------------------- |:--------------------------------------------------------------------------------------------:|
