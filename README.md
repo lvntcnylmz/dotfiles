@@ -42,4 +42,4 @@ cp -r dotfiles/.config/* ~/.config
 
 ![](./screenshots/sway-3.png)
 
-![](/home/can/Documents/github/dotfiles/screenshots/sway-4.png)
+![](./screenshots/sway-4.png)
