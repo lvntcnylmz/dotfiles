@@ -40,7 +40,7 @@ cp -r dotfiles/.config/* ~/.config
 
 ![](screenshots/sway-2.png)
 
-![](./screenshots/sway-3.png)
+![](screenshots/sway-3.png)
 
-![](./screenshots/sway-4.png)
+![](screenshots/sway-4.png)
 
