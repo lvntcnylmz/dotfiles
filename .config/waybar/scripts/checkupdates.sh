@@ -1,31 +1,3 @@
-# #!/bin/bash
-
-# updates_yay=$(paru -Qu --aur 2> /dev/null | wc -l)
-# updates_pacman=$(checkupdates 2> /dev/null | wc -l)
-# updates=$((updates_pacman + updates_yay))
-
-# if [ "$updates" -gt 0 ]; then
-#     if [ "$updates_yay" -eq 1 ]; then
-#         echo "<big></big> $updates (AUR)"
-#         notify-send -u normal -i software-update-available-symbolic "$updates_yay update available from AUR" "$(paru -Qu --aur)"
-#     fi 
-#     if [ "$updates_pacman" -eq 1 ]; then
-#         echo "<big></big> $updates (pacman)"
-#         notify-send -u normal -i software-update-available-symbolic "$updates_pacman update available from pacman" "$(checkupdates)"
-#     fi
-#     if [ "$updates_yay" -gt 1 ]; then
-#         echo "<big></big> $updates (AUR)"
-#         notify-send -u normal -i software-update-available-symbolic "$updates_yay updates available from AUR" "$(paru -Qu --aur)"
-#     fi 
-#     if [ "$updates_pacman" -gt 1 ]; then
-#         echo "<big></big> $updates (pacman)"
-#         notify-send -u normal -i software-update-available-symbolic "$updates_pacman updates available from pacman" "$(checkupdates)"
-#     fi 
-# else 
-#     echo ""
-# fi
-
-
 #!/usr/bin/env bash
 
 check() {
@@ -63,9 +35,6 @@ mapfile -t updates < <(checkupdates-with-aur)
 
 text=${#updates[@]}
 
-# notify "$text update(s) available" ""
-
-# tooltip="<b>$text  updates (arch+aur) </b>\n"
 tooltip+=" $(stringToLen "Package Name" 20) $(stringToLen "\tPrevious Version" 20) $(stringToLen "\tNext Version" 20)\n"
 [ "$text" -eq 0 ] && text="" || text+=" <big></big>"
 
@@ -80,11 +49,10 @@ for i in "${updates[@]}"; do
 done
 tooltip=${tooltip::-2}
 
-notify-send -u normal -i software-update-available-symbolic "${#updates[@]} update(s) available" "${updates[*]}" 
+if [ "${#updates[@]}" -gt 0 ]; then
+	notify-send -u normal -i software-update-available-symbolic "${#updates[@]} update(s) available" "${updates[*]}" 
+fi
 
 cat <<EOF
 {"text":"$text", "tooltip":"$tooltip"}  
 EOF
-
-
-# notify-send -u normal -i software-update-available-symbolic "$update_count update(s) available"

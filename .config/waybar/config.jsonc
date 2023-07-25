@@ -1,10 +1,9 @@
 {
-    // "output": [
-    //     "DP-3",
-    //     "eDP-1"
-    // ],
+    "output": [
+        "!DP-3",
+        "eDP-1"
+    ],
     "modules-left": [
-        "custom/power",
         "sway/workspaces",
         "custom/weather",
         "mpris",
@@ -18,8 +17,8 @@
         "custom/updates",
         "tray",
         "sway/language",
-        "disk",
         "temperature",
+        "disk",
         "pulseaudio",
         "battery",
         "battery#bat1",
@@ -28,14 +27,6 @@
     //-------------
     // modules-left
     //------------
-    "custom/power": {
-        "format": "",
-        "tooltip": false,
-        "on-click": "$HOME/.config/waybar/scripts/powermenu.sh 2> /dev/null",
-        "on-click-right": "$HOME/.config/waybar/scripts/wallpaper.sh 2> /dev/null",
-        "interval": 60,
-        "signal": 8
-    },
     "sway/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
@@ -69,7 +60,7 @@
     "custom/weather": {
         "format": "{}",
         "return-type": "json",
-        "exec": "$HOME/.config/waybar/scripts/weather.sh Lüleburgaz Istanbul 2> /dev/null",
+        "exec": "$HOME/.config/waybar/scripts/weather.sh Lüleburgaz Istanbul",
         "interval": 300,
         "tooltip": true
     },
@@ -150,10 +141,6 @@
         "format": "{shortDescription} <big>󰌌</big>",
         "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
     },
-    "disk": {
-        "format": "{used} <big>󰋊</big>",
-        "on-click": "exec thunar"
-    },
     "temperature": {
         "critical-threshold": 65,
         "format-critical": "{temperatureC}°C {icon}",
@@ -164,6 +151,10 @@
             "<big></big>"
         ]
     },
+    "disk": {
+        "format": "{used} <big>󰋊</big>",
+        "on-click": "exec thunar"
+    },
     "pulseaudio": {
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
@@ -172,7 +163,7 @@
         "format-source": "{volume}% <big></big>",
         "format-source-muted": "<big></big>",
         "format-icons": {
-            "headphone": "<big></big>",
+            "headphone": "<big>󰋋</big>",
             "hands-free": "",
             "headset": "",
             "phone": "",
@@ -236,8 +227,8 @@
         "format-icons": {
             "notification": "<big>󰂚</big>",
             "none": "<big>󰂚</big>",
-            "dnd-notification": "<big>󰂚</big>",
-            "dnd-none": "<big>󰂚</big>"
+            "dnd-notification": "<big>󰂜</big>",
+            "dnd-none": "<big>󰂜</big>"
         },
         "return-type": "json",
         "exec-if": "which swaync-client",
