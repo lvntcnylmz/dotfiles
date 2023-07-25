@@ -1,7 +1,7 @@
 @define-color cc-bg rgba(0, 0, 0, 1);
 @define-color noti-border-color rgba(255, 255, 255, 0.15);
 @define-color noti-bg rgb(17, 17, 27);
-@define-color noti-bg-darker rgb(38, 38, 38);
+@define-color noti-bg-darker rgb(43, 43, 57);
 @define-color noti-bg-hover rgb(27, 27, 43);
 @define-color noti-bg-focus rgba(27, 27, 27, 0.6);
 @define-color noti-close-bg rgba(255, 255, 255, 0.1);
@@ -18,11 +18,11 @@
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
     opacity: 1;
-    background: #1b1b2b
+    background: @noti-bg-darker
 }
 
 .notification-row {
-    outline: none
+    outline: none;
 }
 
 .notification {
@@ -163,7 +163,7 @@
 }
 
 .control-center {
-    background: @cc-bg
+    background: @cc-bg;
 }
 
 .control-center-list {
@@ -288,7 +288,7 @@
 }
 
 .widget-volume {
-    background-color: @noti-bg-hover;
+    background: @noti-bg-darker;
     padding: 8px;
     margin: 10px;
     border-radius: 12px;
@@ -309,7 +309,7 @@
 }
 
 .widget-backlight {
-    background-color: @noti-bg-hover;
+    background: @noti-bg-darker;
     padding: 8px;
     margin: 10px;
     border-radius: 12px;
