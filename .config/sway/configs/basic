@@ -12,7 +12,7 @@ for_window [app_id="galculator"] floating enable, border normal, move position c
 
 # Border config
 smart_borders on
-default_border pixel 2
+default_border pixel 3
 default_floating_border none
 default_orientation auto
 
