@@ -1,71 +1,151 @@
+@define-color bg-color-blur rgba(26, 27, 38, 0.0);
 @define-color bg-color rgba(26, 27, 38, 1);
 @define-color module-bg-color rgba(52, 59, 88, 1);
 @define-color fg-color rgba(169, 177, 214, 1);
-@define-color highlight-color rgba(122, 162, 247, 1);
+@define-color green rgba(158, 206, 106, 1);
+@define-color red rgba(247, 118, 142, 1);
+@define-color blue rgba(122, 162, 247, 1);
+@define-color yellow rgba(224, 175, 104, 1);
+@define-color purple rgba(187, 154, 247, 1);
 
 * {
     font-family: JetBrainsMono Nerd Font Propo;
     font-weight: bolder;
-    font-size: 12px
+    font-size: 14px;
 }
 
 window#waybar {
-    background: @bg-color;
-    color: @fg-color
+    background: @bg-color-blur;
+    color: @fg-color;
 }
 
 tooltip {
     color: @fg-color;
-    background: @module-bg-color;
-    border: 2px solid @highlight-color;
-    border-radius: 10px
+    background: @bg-color;
+    border: 2px solid @blue;
+    border-radius: 7px
 }
 
-#cava,
-#mpris,
-#disk,
+/* Modules */
 #mode,
 #tray,
-#clock,
-#language,
-#pulseaudio,
-#workspaces,
-#temperature,
+#mpris,
 #battery,
 #battery.bat1,
-#custom-weather,
-#custom-updates,
-#custom-notification,
-#custom-scratchpad-indicator {
-    background: @module-bg-color;
-    margin: 3px 2px;
-    padding: 1px 10px;
-    border-radius: 10px
-}
-
+#workspaces,
 #custom-notification {
-    margin-right: 10px
+    background: @bg-color;
+    margin: 3px 1px;
+    padding: 1px 10px;
+    border-radius: 7px;
 }
 
-#workspaces {
-    margin-left: 10px;
+/* Modules-Center */
+#clock,
+#custom-weather {
+    background: @bg-color;
+    margin: 3px 0px;
+    padding: 1px 5px;
+}
+
+#clock {
+    padding-left: 10px;
+    border-radius: 7px 0px 0px 7px;
+    margin-left: 1px;
+}
+
+#custom-weather {
+    padding-right: 10px;
+    border-radius: 0px 7px 7px 0px;
+    margin-right: 1px;
+}
+
+/* Modules-Left */
+#disk,
+#language,
+#pulseaudio,
+#temperature, 
+#custom-lock {
+    background: @bg-color;
+    margin: 3px 0px;
+    padding: 1px 5px;
+}
+
+#custom-lock {
+    color: red;
+    padding-left: 10px;
+    border-radius: 7px 0px 0px 7px;
+    margin-left: 1px;
+}
+
+#pulseaudio {
+    color: @green;
+    padding-right: 10px;
+    border-radius: 0px 7px 7px 0px;
+    margin-right: 1px;
+}
+
+#temperature {
+    color: @blue;
+}
+#temperature.critical {
+    color: @red;
+}
+
+#disk {
+    color: @purple;
+}
+
+#language {
+    color: @yellow;
+}
+
+#battery.good,
+#battery.bat1.good {
+    color: @green;
+}
+
+#battery.critical,
+#battery.bat1.critical {
+    color: @red;
 }
 
 #battery.charging,
-#battery-bat1.charging,
-#custom-notification.notification {
-    background: @highlight-color;
-    color: @module-bg-color
+#battery-bat1.charging {
+    background: @green;
+    color: @bg-color;
+    margin: 3px 1px;
+    padding: 1px 10px;
+    border-radius: 7px
 }
 
+#custom-updates,
+#custom-notification.notification,
+#custom-notification.dnd-notification,
+#custom-scratchpad-indicator {
+    background: @blue;
+    color: @bg-color;
+    margin: 3px 1px;
+    padding: 1px 10px;
+    border-radius: 7px
+}
+
+#custom-notification,
+#custom-notification.notification,
+#custom-notification.dnd-notification {
+    margin-right: 10px
+}
+
+/* Modules-Left */
 #workspaces {
-    padding: 0 10px
+    margin-left: 10px;
+    padding: 0 10px;
 }
 
 #workspaces button {
     padding: 0;
     margin: 0;
-    color: @highlight-color
+    color: @blue
 }
 
 #workspaces button.persistent {
@@ -73,7 +153,7 @@ tooltip {
 }
 
 #workspaces button.focused {
-    background: @highlight-color;
-    color: @module-bg-color;
-    border-radius: 7px
+    background: @blue;
+    color: @bg-color;
+    border-radius: 5px
 }

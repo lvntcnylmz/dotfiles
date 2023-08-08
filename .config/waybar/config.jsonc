@@ -5,17 +5,18 @@
     ],
     "modules-left": [
         "sway/workspaces",
-        "custom/weather",
-        "mpris",
-        "sway/mode"
+        "mpris"
     ],
     "modules-center": [
-        "clock"
+        "clock",
+        "custom/weather"
     ],
     "modules-right": [
+        "sway/mode",
         "custom/scratchpad-indicator",
         "custom/updates",
         "tray",
+        "custom/lock",
         "sway/language",
         "temperature",
         "disk",
@@ -42,7 +43,7 @@
             "7": "七",
             "8": "八",
             "9": "九",
-            "10": "十"
+            "10": "〇"
         },
         "persistent_workspaces": {
             "1": [],
@@ -58,37 +59,32 @@
         }
     },
     "custom/weather": {
+        "exec": "$HOME/.config/waybar/scripts/weather.sh",
         "format": "{}",
         "return-type": "json",
-        "exec": "$HOME/.config/waybar/scripts/weather.sh Lüleburgaz Istanbul",
         "interval": 300,
         "tooltip": true
     },
     "mpris": {
-        "format": "{player_icon} {artist} - {title} [{position}/{length}]",
-        "format-paused": "{status_icon} <i>{artist} - {title} [{position}/{length}]</i>",
-        "max-length": 70,
+        "format": "{player_icon} {artist} - {title} <small>[{position}/{length}]</small>",
+        "format-paused": "{status_icon} <i>{artist} - {title} <small>[{position}/{length}]</small></i>",
+        "max-length": 100,
         "player-icons": {
-            "default": "<big>▶</big>",
-            "mpv": "<big>🎵</big>",
-            "firefox": "<span color='#FF9500'><big>󰈹</big></span>",
-            "spotify": "<span color='#0fc044'><big>󰓇</big></span>"
+            "default": "<span color='#9ECE6A'><big></big></span>",
+            "firefox": "<span color='#FF9500'><big></big></span>",
+            "spotify": "<span color='#0FC044'><big></big></span>"
         },
         "status-icons": {
-            "paused": "⏸"
+            "paused": "<span color='#F7768E'><big></big></span>"
         },
         "interval": 1
-    },
-    "sway/mode": {
-        "format": " {}",
-        "max-length": 50
-    },
+    },  
     //---------------
     // modules-center
     //---------------
     "clock": {
-        "format": "{:<big>󰸗</big> %d %b %Y %a  %T <big>󰥔</big>}",
-        "format-alt": "{:%T <big>󰥔</big>}",
+        "format": "{:<big></big> %d %b  %a  %H:%M:%OS <big></big>}",
+        "format-alt": "{:%H:%M:%OS}",
         "interval": 1,
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "locale": "en_GB.UTF-8",
@@ -99,11 +95,11 @@
             "on-scroll": 1,
             "on-click-right": "mode",
             "format": {
-                "months": "<span color='#ffead3'>{}</span>",
-                "days": "<span color='#ecc6d9'>{}</span>",
-                "weeks": "<span color='#1793d1'>{}</span>",
-                "weekdays": "<span color='#ffcc66'>{}</span>",
-                "today": "<span color='#ff6600'><big>{}</big></span>"
+                "months": "<span color='#bb9af7'>{}</span>",
+                "days": "<span color='#c0caf5'>{}</span>",
+                "weeks": "<span color='#7aa2f7'>{}</span>",
+                "weekdays": "<span color='#9ece6a'>{}</span>",
+                "today": "<span color='#f7768e'><big>{}</big></span>"
             }
         },
         "actions": {
@@ -117,64 +113,68 @@
     //--------------
     // modules-right
     //--------------
+    "sway/mode": {
+        "format": " {}",
+        "max-length": 50
+    },
     "custom/scratchpad-indicator": {
         "interval": 1,
-        "return-type": "json",
-        "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '(recurse(.nodes[]) | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | if ($scratch_nodes|length) > 0 then { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") } else empty end'",
-        "format": "{} 🗗",
-        "on-click": "exec swaymsg 'scratchpad show'",
-        "on-click-right": "exec swaymsg 'move scratchpad'"
+        "exec": "swaymsg -t get_tree | jq 'recurse(.nodes[]) | first(select(.name==\"__i3_scratch\")) | .floating_nodes | length | select(. >= 1)'",
+        "format": "{} ",
+        "on-click": "swaymsg 'scratchpad show'",
+        "on-click-right": "swaymsg 'move scratchpad'"
     },
     "custom/updates": {
         "format": "{}",
         "interval": 1800,
         "exec": "$HOME/.config/waybar/scripts/checkupdates.sh 2> /dev/null",
         "return-type": "json"
-        // "exec-if": "exit 0",
-        // "signal": 8
     },
     "tray": {
         "icon-size": 15,
         "spacing": 5
     },
+    "custom/lock": {
+        "tooltip": false,
+        "on-click": "swaylock-corrupter",
+        "format": "<big></big>"
+    },
     "sway/language": {
-        "format": "{shortDescription} <big>󰌌</big>",
+        "format": "<big>󰌌</big>",
+        "tooltip-format": "{shortDescription}",
         "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
     },
     "temperature": {
         "critical-threshold": 65,
         "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
+        "format": "{icon}",
         "format-icons": [
             "<big></big>",
             "<big></big.",
             "<big></big>"
-        ]
+        ],
+        "tooltip-format": "{temperatureC}°C"
     },
     "disk": {
-        "format": "{used} <big>󰋊</big>",
+        "format": "<big></big>",
         "on-click": "exec thunar"
     },
     "pulseaudio": {
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format": "{icon} {format_source}",
+        "format-bluetooth": "{volume} {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% <big></big>",
-        "format-source-muted": "<big></big>",
+        "format-muted": "<span color='#f7768e'><big></big></span> {format_source}",
+        "format-source": "<big></big>",
+        "format-source-muted": "<span color='#f7768e'><big></big></span>",
         "format-icons": {
             "headphone": "<big>󰋋</big>",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
             "default": [
                 "<big></big>",
                 "<big></big>",
                 "<big></big>"
             ]
         },
+        "tooltip-format": "{volume} 󰋋",
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-middle": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
         "on-click-right": "pavucontrol"
@@ -186,12 +186,10 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% <big></big>",
-        "format-plugged": "{capacity}% <big><</big>",
+        "format": "{capacity} {icon}",
+        "format-charging": "{capacity} <big></big>",
+        "format-plugged": "{capacity} <big><</big>",
         "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
         "format-icons": [
             "<big></big>",
             "<big></big>",
@@ -203,16 +201,14 @@
     "battery#bat1": {
         "bat": "BAT1",
         "states": {
-            "good": 95,
+            "good": 100,
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% <big></big>",
-        "format-plugged": "{capacity}% <big></big>",
+        "format": "{capacity} {icon}",
+        "format-charging": "{capacity} <big></big>",
+        "format-plugged": "{capacity} <big></big>",
         "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
         "format-icons": [
             "<big></big>",
             "<big></big>",
@@ -222,13 +218,13 @@
         ]
     },
     "custom/notification": {
-        "tooltip": false,
-        "format": "{} {icon}",
+        "tooltip": true,
+        "format": "{icon}",
         "format-icons": {
-            "notification": "<big>󰂚</big>",
-            "none": "<big>󰂚</big>",
-            "dnd-notification": "<big>󰂜</big>",
-            "dnd-none": "<big>󰂜</big>"
+            "notification": "<big></big>",
+            "none": "<span color='#7AA2F7'><big></big></span>",
+            "dnd-notification": "<big>󰂛</big>",
+            "dnd-none": "<big>󰂛</big>"
         },
         "return-type": "json",
         "exec-if": "which swaync-client",
