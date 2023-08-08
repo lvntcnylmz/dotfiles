@@ -103,7 +103,7 @@
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
+    # $mod+h or $mod+v, for horizontal and vertical splits
     # respectively.
     bindsym $mod+h splith
     bindsym $mod+v splitv
@@ -111,7 +111,7 @@
     # Switch the current container between different layout styles
     bindsym $mod+Shift+s layout stacking
     bindsym $mod+Shift+w layout tabbed
-    bindsym $mod+Shift+e layout toggle split
+    bindsym $mod+Shift+e layout toggle 
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen toggle 
@@ -152,7 +152,6 @@ bindsym $mod+Shift+r mode "resize"
 #
 # Utils
 #
-
     # PulseAudio controls
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% 

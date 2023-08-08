@@ -8,7 +8,13 @@ for_window [instance="spotify"] title_format "<big>󰓇</big> <b>%title</b>"
 for_window [app_id="thunar"] title_format "<big>󰉋</big> <b>%title</b>"
 for_window [app_id="thunderbird"] title_format "<big>󰺻</big> <b>%title</b>"
 for_window [app_id="discord"] title_format "<big>󰙯</big> <b>%title</b>"
-for_window [app_id="galculator"] floating enable, border normal, move position cursor
+
+assign [app_id="kitty"] workspace number 1
+assign [app_id="firefox"] workspace number 2
+assign [title=".*VSCodium"] workspace number 3
+assign [instance="spotify"] workspace number 4
+assign [instance="discord"] workspace number 5
+assign [instance="thunar"] workspace number 6
 
 # Border config
 smart_borders on
@@ -18,6 +24,13 @@ default_orientation auto
 
 # Gaps config
 gaps inner 10
+
+# SwayFX configs
+blur enable
+corner_radius 7
+shadows enable
+default_dim_inactive 0.4
+layer_effects "waybar" blur enable; shadows enable
 
 # Exec waybar
 bar {
