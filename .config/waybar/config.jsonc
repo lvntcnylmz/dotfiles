@@ -8,21 +8,22 @@
         "mpris"
     ],
     "modules-center": [
-        "clock",
-        "custom/weather"
+        "clock"
     ],
     "modules-right": [
         "sway/mode",
         "custom/scratchpad-indicator",
         "custom/updates",
+        "custom/weather",
         "tray",
         "custom/lock",
         "sway/language",
         "temperature",
         "disk",
         "pulseaudio",
-        "battery",
-        "battery#bat1",
+        // "battery",
+        // "battery#bat1",
+        "upower",
         "custom/notification"
     ],
     //-------------
@@ -78,13 +79,13 @@
             "paused": "<span color='#F7768E'><big></big></span>"
         },
         "interval": 1
-    },  
+    },
     //---------------
     // modules-center
     //---------------
     "clock": {
-        "format": "{:<big></big> %d %b  %a  %H:%M:%OS <big></big>}",
-        "format-alt": "{:%H:%M:%OS}",
+        "format": "{:<big></big> %d %b %a  %H:%M:%OS <big></big>}",
+        "format-alt": "{:<big></big> %d/%m %a  %H:%M <big></big>}",
         "interval": 1,
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "locale": "en_GB.UTF-8",
@@ -179,43 +180,49 @@
         "on-click-middle": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
         "on-click-right": "pavucontrol"
     },
-    "battery": {
-        "bat": "BAT0",
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity} {icon}",
-        "format-charging": "{capacity} <big></big>",
-        "format-plugged": "{capacity} <big><</big>",
-        "format-alt": "{time} {icon}",
-        "format-icons": [
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>"
-        ]
-    },
-    "battery#bat1": {
-        "bat": "BAT1",
-        "states": {
-            "good": 100,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity} {icon}",
-        "format-charging": "{capacity} <big></big>",
-        "format-plugged": "{capacity} <big></big>",
-        "format-alt": "{time} {icon}",
-        "format-icons": [
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>",
-            "<big></big>"
-        ]
+    // "battery": {
+    //     "bat": "BAT0",
+    //     "states": {
+    //         "good": 95,
+    //         "warning": 30,
+    //         "critical": 15
+    //     },
+    //     "format": "{capacity} {icon}",
+    //     "format-charging": "{capacity} <big></big>",
+    //     "format-plugged": "{capacity} <big><</big>",
+    //     "format-alt": "{time} {icon}",
+    //     "format-icons": [
+    //         "<big></big>",
+    //         "<big></big>",
+    //         "<big></big>",
+    //         "<big></big>",
+    //         "<big></big>"
+    //     ]
+    // },
+    // "battery#bat1": {
+    //     "bat": "BAT1",
+    //     "states": {
+    //         "good": 100,
+    //         "warning": 30,
+    //         "critical": 15
+    //     },
+    //     "format": "{capacity} {icon}",
+    //     "format-charging": "{capacity} <big></big>",
+    //     "format-plugged": "{capacity} <big></big>",
+    //     "format-alt": "{time} {icon}",
+    //     "format-icons": [
+    //         "<big></big>",
+    //         "<big></big>",
+    //         "<big></big>",
+    //         "<big></big>",
+    //         "<big></big>"
+    //     ]
+    // },
+    "upower": {
+        "icon-size": 17,
+        "hide-if-empty": true,
+        "tooltip": true,
+        "tooltip-spacing": 20
     },
     "custom/notification": {
         "tooltip": true,
