@@ -14,7 +14,8 @@ assign [app_id="firefox"] workspace number 2
 assign [title=".*VSCodium"] workspace number 3
 assign [instance="spotify"] workspace number 4
 assign [instance="discord"] workspace number 5
-assign [instance="thunar"] workspace number 6
+assign [app_id="thunar"] workspace number 6
+assign [app_id="thunderbird"] workspace number 7
 
 # Border config
 smart_borders on
@@ -29,7 +30,6 @@ gaps inner 10
 blur enable
 corner_radius 7
 shadows enable
-default_dim_inactive 0.4
 layer_effects "waybar" blur enable; shadows enable
 
 # Exec waybar
