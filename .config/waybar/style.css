@@ -1,6 +1,5 @@
 @define-color bg-color-blur rgba(26, 27, 38, 0.0);
 @define-color bg-color rgba(26, 27, 38, 1);
-@define-color module-bg-color rgba(52, 59, 88, 1);
 @define-color fg-color rgba(169, 177, 214, 1);
 @define-color green rgba(158, 206, 106, 1);
 @define-color red rgba(247, 118, 142, 1);
@@ -15,7 +14,7 @@
 }
 
 window#waybar {
-    background: @bg-color-blur;
+    background: transparent;
     color: @fg-color;
 }
 
@@ -27,37 +26,19 @@ tooltip {
 }
 
 /* Modules */
-#mode,
 #tray,
 #mpris,
+#clock,
+#upower,
 #battery,
 #battery.bat1,
 #workspaces,
+#custom-weather,
 #custom-notification {
     background: @bg-color;
     margin: 3px 1px;
     padding: 1px 10px;
     border-radius: 7px;
-}
-
-/* Modules-Center */
-#clock,
-#custom-weather {
-    background: @bg-color;
-    margin: 3px 0px;
-    padding: 1px 5px;
-}
-
-#clock {
-    padding-left: 10px;
-    border-radius: 7px 0px 0px 7px;
-    margin-left: 1px;
-}
-
-#custom-weather {
-    padding-right: 10px;
-    border-radius: 0px 7px 7px 0px;
-    margin-right: 1px;
 }
 
 /* Modules-Left */
@@ -72,37 +53,24 @@ tooltip {
 }
 
 #custom-lock {
-    color: red;
+    color: @yellow;
     padding-left: 10px;
     border-radius: 7px 0px 0px 7px;
     margin-left: 1px;
 }
 
 #pulseaudio {
-    color: @green;
     padding-right: 10px;
     border-radius: 0px 7px 7px 0px;
     margin-right: 1px;
 }
 
-#temperature {
-    color: @blue;
+#upower.charging {
+    color: @green;
 }
+
 #temperature.critical {
     color: @red;
-}
-
-#disk {
-    color: @purple;
-}
-
-#language {
-    color: @yellow;
-}
-
-#battery.good,
-#battery.bat1.good {
-    color: @green;
 }
 
 #battery.critical,
@@ -119,6 +87,7 @@ tooltip {
     border-radius: 7px
 }
 
+#mode,
 #custom-updates,
 #custom-notification.notification,
 #custom-notification.dnd-notification,
