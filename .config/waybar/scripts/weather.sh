@@ -2,24 +2,38 @@
 
 location1="Luleburgaz"
 location2="Istanbul"
+error="Service Unavailable"
 
-for i in {1..5}
-do
-    text=$(curl -s "https://wttr.in/$location1?format=1")
+get_weather() {
+    curl -s "https://wttr.in/$1?format=1"
+}
 
-    if [[ $? == 0 ]]
-    then
-        text=$(echo "$text" | sed -E "s/\s+/ /g")
-        tooltip="$(curl -s "https://wttr.in/$location1?format=%l:+%C+%c+"Actual:"+%t+"Feels:"+%f+%w+%m+%h")\n"
-        tooltip+="$(curl -s "https://wttr.in/$location2%20%20?format=%l:+%C+%c+"Actual:"+%t+"Feels:"+%f+%w+%m+%h")"
-        if [[ $? == 0 ]]
-        then
-            tooltip=$(echo "$tooltip")
+get_tooltip() {
+    curl -s "https://wttr.in/$1?format=%C+%c+%t+%f+%w+%m+%h"
+}
+
+format_tooltip() {
+    local location="$1"
+    local tooltip="$(get_tooltip "$location")"
+    printf "%-15s %s\n" "$location:" "$tooltip"
+}
+
+for i in {1..5}; do
+    text=$(get_weather "$location1")
+
+    if [[ $? -eq 0 ]]; then
+        tooltip1=$(format_tooltip "$location1")
+        tooltip2=$(format_tooltip "$location2")
+
+        if [[ $? -eq 0 ]]; then
+            text=$(echo "$text" | sed -E "s/\s+/ /g")
+            tooltip="$tooltip1\n$tooltip2"
             echo "{\"text\":\"$text\", \"tooltip\":\"$tooltip\"}"
             exit
         fi
     fi
+
     sleep 2
 done
 
-echo "{\"text\":\"Service Unavailable\", \"tooltip\":\"Service Unavailable\"}"
+echo "{\"text\":\"$error\", \"tooltip\":\"$error\"}"
