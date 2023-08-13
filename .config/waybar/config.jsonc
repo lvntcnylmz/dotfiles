@@ -16,8 +16,8 @@
         "custom/updates",
         "custom/weather",
         "tray",
-        "custom/lock",
         "sway/language",
+        "custom/lock",
         "temperature",
         "disk",
         "pulseaudio",
@@ -44,7 +44,7 @@
             "7": "七",
             "8": "八",
             "9": "九",
-            "10": "〇"
+            "10": "十"
         },
         "persistent_workspaces": {
             "1": [],
@@ -71,12 +71,12 @@
         "format-paused": "{status_icon} <i>{artist} - {title} <small>[{position}/{length}]</small></i>",
         "max-length": 100,
         "player-icons": {
-            "default": "<span color='#9ECE6A'><big></big></span>",
-            "firefox": "<span color='#FF9500'><big></big></span>",
-            "spotify": "<span color='#0FC044'><big></big></span>"
+            "default": "<span color='#9ECE6A'></span>",
+            "firefox": "<span color='#FF9500'></span>",
+            "spotify": "<span color='#0FC044'></span>"
         },
         "status-icons": {
-            "paused": "<span color='#F7768E'><big></big></span>"
+            "paused": "<span color='#F7768E'></span>"
         },
         "interval": 1
     },
@@ -84,8 +84,8 @@
     // modules-center
     //---------------
     "clock": {
-        "format": "{:<big></big> %d %b %a  %H:%M:%OS <big></big>}",
-        "format-alt": "{:<big></big> %d/%m %a  %H:%M <big></big>}",
+        "format": "{: %d/%m %a  %H:%M:%OS }",
+        "format-alt": "{: %d %a  %H:%M }",
         "interval": 1,
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "locale": "en_GB.UTF-8",
@@ -141,7 +141,7 @@
         "format": "<big></big>"
     },
     "sway/language": {
-        "format": "<big>󰌌</big>",
+        "format": "{shortDescription}",
         "tooltip-format": "{shortDescription}",
         "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
     },

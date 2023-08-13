@@ -1,4 +1,3 @@
-@define-color bg-color-blur rgba(26, 27, 38, 0.0);
 @define-color bg-color rgba(26, 27, 38, 1);
 @define-color fg-color rgba(169, 177, 214, 1);
 @define-color green rgba(158, 206, 106, 1);
@@ -25,7 +24,6 @@ tooltip {
     border-radius: 7px
 }
 
-/* Modules */
 #tray,
 #mpris,
 #clock,
@@ -41,7 +39,6 @@ tooltip {
     border-radius: 7px;
 }
 
-/* Modules-Left */
 #disk,
 #language,
 #pulseaudio,
@@ -52,21 +49,33 @@ tooltip {
     padding: 1px 5px;
 }
 
-#custom-lock {
-    color: @yellow;
+#language {
     padding-left: 10px;
     border-radius: 7px 0px 0px 7px;
     margin-left: 1px;
 }
 
 #pulseaudio {
+    color: @purple;
     padding-right: 10px;
     border-radius: 0px 7px 7px 0px;
     margin-right: 1px;
 }
 
+#disk {
+    color: @green;
+}
+
+#custom-lock {
+    color: @yellow;
+}
+
 #upower.charging {
     color: @green;
+}
+
+#temperature {
+    color: @blue;
 }
 
 #temperature.critical {
@@ -105,7 +114,6 @@ tooltip {
     margin-right: 10px
 }
 
-/* Modules-Left */
 #workspaces {
     margin-left: 10px;
     padding: 0 10px;
