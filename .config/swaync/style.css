@@ -12,8 +12,10 @@
 
 * {
     font-family: JetBrainsMono Nerd Font Propo;
-    font-weight: bolder
+    font-weight: bolder;
 }
+
+
 
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
@@ -164,6 +166,8 @@
 
 .control-center {
     background: @cc-bg;
+    border: 1px solid #7aa2f7;
+    border-radius: 10px;
 }
 
 .control-center-list {
@@ -226,20 +230,20 @@
 }
 
 .widget-label {
-    margin: 8px
+    margin: 10px;
 }
 
 .widget-label>label {
-    font-size: 1.1rem
+    font-size: 1.5rem;
+    color: @text-color;
 }
 
 .widget-mpris {
     color: @text-color;
-    background: @noti-bg;
+    background: @noti-bg-darker;
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
-    border: 1px solid #7aa2f7
 }
 
 .widget-mpris-player {
@@ -261,8 +265,7 @@
     padding: 8px;
     margin: 20px 10px 10px;
     border-radius: 12px;
-    border: 1px solid #7aa2f7;
-    background-color: @noti-bg
+    background: @noti-bg-darker;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
@@ -273,7 +276,7 @@
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
-    background: @noti-bg-hover;
+    /* background: @noti-bg-hover; */
     color: rgba(158, 206, 106, 1)
 }
 

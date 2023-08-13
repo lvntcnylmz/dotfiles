@@ -3,9 +3,9 @@
     "positionX": "right",
     "positionY": "top",
     "control-center-margin-top": 10,
-    "control-center-margin-bottom": 0,
+    "control-center-margin-bottom": 10,
     "control-center-margin-right": 10,
-    "control-center-margin-left": 0,
+    "control-center-margin-left": 10,
     "notification-icon-size": 64,
     "notification-body-image-height": 100,
     "notification-body-image-width": 200,
@@ -42,7 +42,7 @@
         },
         "label": {
             "max-lines": 1,
-            "text": "Controll Center"
+            "text": "Notification Center"
         },
         "mpris": {
             "image-size": 96,
