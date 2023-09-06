@@ -10,6 +10,11 @@ exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 # set random wallpaper and change it after 30 minutes
 exec ~/.config/sway/wallpaper.sh &
 
+exec swayidle -w \
+          before-sleep 'swaylock-corrupter'
+          # timeout 300 'swaylock-corrupter' \
+          # timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+
 # auto-start apps
 exec_always swaync
 # exec blueman-applet
@@ -18,4 +23,4 @@ exec kdeconnect-indicator
 exec gammastep-indicator
 exec playerctld daemon
 exec polkit-dumb-agent
-exec_always autotiling
+exec swayosd-server

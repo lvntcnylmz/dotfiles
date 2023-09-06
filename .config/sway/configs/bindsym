@@ -153,10 +153,19 @@ bindsym $mod+Shift+r mode "resize"
 # Utils
 #
     # PulseAudio controls
-    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% 
-    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% 
-    bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle 
+    # bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    # bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% 
+    # bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% 
+    # bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle 
+
+    # Sink volume raise optionally with --device
+    bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume 5 
+    # Sink volume lower optionally with --device
+    bindsym XF86AudioLowerVolume exec  swayosd-client --output-volume -5
+    # Sink volume toggle mute
+    bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle
+    # Source volume toggle mute
+    bindsym XF86AudioMicMute exec swayosd-client --input-volume mute-toggle
 
     # Media controls
     bindsym XF86AudioPlay exec playerctl play-pause
@@ -164,8 +173,16 @@ bindsym $mod+Shift+r mode "resize"
     bindsym XF86AudioPrev exec playerctl previous
 
     # brightnessctl control
-    bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-    bindsym XF86MonBrightnessUp exec brightnessctl set 5%+ 
+    # bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+    # bindsym XF86MonBrightnessUp exec brightnessctl set 5%+ 
+
+    # Brightness raise with custom value
+    bindsym XF86MonBrightnessUp  exec swayosd-client --brightness 5
+    # Brightness lower with custom value
+    bindsym XF86MonBrightnessDown exec swayosd-client --brightness -5
+
+    # Capslock (If you don't want to use the backend)
+    bindsym --release Caps_Lock exec swayosd-client --caps-lock
 
     # sway notification center control
     bindsym $mod+Shift+n exec swaync-client -t -sw

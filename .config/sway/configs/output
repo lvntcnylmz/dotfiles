@@ -3,7 +3,7 @@ output DP-3 {
 }
 
 output * {
-    background $HOME/Pictures/Wallpaper/clouds.jpg fill
+    background $HOME/Pictures/Wallpaper/lost-dream.jpg fill
 }
 
 focus output DP-3
