@@ -4,6 +4,7 @@
         "eDP-1"
     ],
     "modules-left": [
+        "custom/power",
         "sway/workspaces",
         "mpris"
     ],
@@ -29,22 +30,27 @@
     //-------------
     // modules-left
     //------------
+    "custom/power": {
+        "on-click": "wlogout",
+        "format": "<big></big>"
+    },
     "sway/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
         "all-outputs": true,
         "sort-by-number": true,
         "format-icons": {
-            "1": "一",
-            "2": "二",
-            "3": "三",
-            "4": "四",
-            "5": "五",
-            "6": "六",
-            "7": "七",
-            "8": "八",
-            "9": "九",
-            "10": "十"
+            // "1": "一",
+            // "2": "二",
+            // "3": "三",
+            // "4": "四",
+            // "5": "五",
+            // "6": "六",
+            // "7": "七",
+            // "8": "八",
+            // "9": "九",
+            // "10": "十"
+            "10": "0"
         },
         "persistent_workspaces": {
             "1": [],
@@ -58,13 +64,6 @@
             "9": [],
             "10": []
         }
-    },
-    "custom/weather": {
-        "exec": "$HOME/.config/waybar/scripts/weather.sh",
-        "format": "{}",
-        "return-type": "json",
-        "interval": 300,
-        "tooltip": true
     },
     "mpris": {
         "format": "{player_icon} {artist} - {title} <small>[{position}/{length}]</small>",
@@ -129,6 +128,18 @@
         "format": "{}",
         "interval": 1800,
         "exec": "$HOME/.config/waybar/scripts/checkupdates.sh 2> /dev/null",
+        "return-type": "json"
+    },
+    "custom/weather": {
+        // "exec": "$HOME/.config/waybar/scripts/weather.sh",
+        // "format": "{}",
+        // "return-type": "json",
+        // "interval": 300,
+        // "tooltip": true
+        "format": "{} °",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": "wttrbar --date-format '%d %b %y %a' --location Istanbul",
         "return-type": "json"
     },
     "tray": {
@@ -219,6 +230,7 @@
     //     ]
     // },
     "upower": {
+        "format": "{percentage}",
         "icon-size": 17,
         "hide-if-empty": true,
         "tooltip": true,
@@ -226,12 +238,12 @@
     },
     "custom/notification": {
         "tooltip": true,
-        "format": "{icon}",
+        "format": "{icon}<big><sup>{}</sup></big>",
         "format-icons": {
-            "notification": "<big></big>",
-            "none": "<span color='#7AA2F7'><big></big></span>",
-            "dnd-notification": "<big>󰂛</big>",
-            "dnd-none": "<big>󰂛</big>"
+            "notification": "",
+            "none": "",
+            "dnd-notification": "",
+            "dnd-none": ""
         },
         "return-type": "json",
         "exec-if": "which swaync-client",

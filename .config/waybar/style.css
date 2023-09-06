@@ -31,6 +31,7 @@ tooltip {
 #battery,
 #battery.bat1,
 #workspaces,
+#custom-power,
 #custom-weather,
 #custom-notification {
     background: @bg-color;
@@ -60,6 +61,11 @@ tooltip {
     padding-right: 10px;
     border-radius: 0px 7px 7px 0px;
     margin-right: 1px;
+}
+
+#custom-power {
+    margin-left: 10px;
+    color: @blue;
 }
 
 #disk {
@@ -101,8 +107,8 @@ tooltip {
 #custom-notification.notification,
 #custom-notification.dnd-notification,
 #custom-scratchpad-indicator {
-    background: @blue;
-    color: @bg-color;
+    background: @bg-color;
+    color: @blue;
     margin: 3px 1px;
     padding: 1px 10px;
     border-radius: 7px
@@ -112,11 +118,6 @@ tooltip {
 #custom-notification.notification,
 #custom-notification.dnd-notification {
     margin-right: 10px
-}
-
-#workspaces {
-    margin-left: 10px;
-    padding: 0 10px;
 }
 
 #workspaces button {
