@@ -1,0 +1,102 @@
+[global]
+color = "#a0a8cd"
+focused_color = "#11121d"
+icon = "󰖯"
+size = "12pt"
+separator = "  "
+
+[app_id]
+"dev.alextren.Spot" = { icon = "󰓇", color = "#1ed760" }
+"org.daa.NeovimGtk" = { icon = "", color = "#8fff6d" }
+"org.gnome.Calculator" = { icon = "󰃬" }
+"org.gnome.clocks" = { icon = "󱑈" }
+"org.gnome.Nautilus" = { icon = "󰉖", color = "#6291d6" }
+1Password = { icon = "󰍁", color = "#0572ec" }
+Alacritty = { icon = "" }
+Deezer = { icon = "󰋋", color = "#ef5466" }
+Insomnia = { icon = "", color = "#7100df" }
+Signal = { icon = "󰭹", color = "#3777f0" }
+Slack = { icon = "󰒱", color = "#2eb67d" }
+Spotify = { icon = "󰓇", color = "#1ed760" }
+beekeeper-studio = { icon = "󰆼", color = "#fad83b" }
+chromium = { icon = "", color = "#a1c2fa" }
+discord = { icon = "󰙯", color = "#404eed" }
+firefox = { icon = "󰈹", color = "#ff8817" }
+kitty = { icon = "" }
+geary = { icon = "", color = "#f6d32d" }
+gnome-calendar = { icon = "", color = "#3584e4" }
+gnumeric = { icon = "󰈛", color = "#34a853" }
+google-chrome = { icon = "", color = "#4285f4" }
+neovide = { icon = "", color = "#8fff6d" }
+nvim = { icon = "", color = "#8fff6d" }
+shotwell = { icon = "", color = "#4f7aaf" }
+zoom = { icon = "󰕧", color = "#2d8cff" }
+libreoffice-writer = { icon = "", color = "#00A500" }
+libreoffice-calc = { icon = "󰱿", color = "#00A500" }
+steam = { icon = "󰓓", color = "#6291d6" }
+
+[title]
+"(?i)nvim" = { app_id = ["foot", "Alacritty", "kitty"], icon = "", color = "#8fff6d" }
+"(cloud|developers)\\.google.com" = { icon = "", color = "#4285f4" }
+"192\\.168\\.0\\.1|192\\.168\\.86\\.1|ui\\.com" = { icon = "󰖩", color = "#004cb6" }
+"1password\\.com" = { icon = "󰍁", color = "#0572ec" }
+"amazon\\.com" = { icon = "", color = "#ff9900" }
+"angular\\.io" = { icon = "", color = "#dd0031" }
+"archlinux\\.org" = { icon = "", color = "#1793d1" }
+"atlassian\\.(net|com)" = { icon = "󰌃", color = "#0052cc" }
+"aws\\.amazon\\.com" = { icon = "", color = "#ff9900" }
+"bitbucket\\.org" = { icon = "󰂨", color = "#0052cc" }
+"calendar\\.google\\.com" = { icon = "󰃶", color = "#4285f4" }
+"coda\\.io" = { icon = "", color = "#f46a54" }
+"crates\\.io" = { icon = "󰏗", color = "#ffc933" }
+"deezer\\.com" = { icon = "󰋋", color = "#ef5466" }
+"discogs\\.com" = { icon = "󰀥" }
+"discord\\.com" = { icon = "󰙯", color = "#404eed" }
+"docs\\.google\\.com" = { icon = "", color = "#4285f4" }
+"docs\\.google\\.com/spreadsheets" = { icon = "󰈛", color = "#34a853" }
+"docs\\.rs|rust-lang\\.org" = { icon = "", size = "16pt" }
+"drive\\.google\\.com" = { icon = "󰊶", color = "#4285f4" }
+"dropbox\\.com" = { icon = "󰇣", color = "#0061fe" }
+"duckduckgo\\.com" = { icon = "󰇥", color = "#de5833" }
+"facebook\\.com" = { icon = "", color = "#1877f2" }
+"fastmail\\.com" = { icon = "󰗰", color = "#1565c0" }
+"fastmail\\.com/calendar" = { icon = "", color = "#1565c0" }
+"fastmail\\.com/contacts" = { size = "11pt", icon = "", color = "#1565c0" }
+"feedbin\\.com" = { icon = "" }
+"gitbook\\.com" = { icon = "", color = "#346ddb" }
+"github\\.com" = { icon = "" }
+"google\\.com" = { icon = "", color = "#4285f4" }
+"google\\.com/maps" = { icon = "󰗵", color = "#4caf50" }
+"insomnia\\.rest" = { icon = "", color = "#7100df" }
+"keep\\.google\\.com" = { icon = "󰛜", color = "#fbbc04" }
+"last\\.fm" = { icon = "", color = "#ba0000" }
+"mail\\.google\\.com" = { icon = "󰊫", color = "#ad1f1c" }
+"meet\\.google\\.com" = { icon = "", color = "#4285f4" }
+"messages\\.google\\.com" = { icon = "󰍩", color = "#4285f4" }
+"mozilla\\.org" = { icon = "" }
+"nerdfonts\\.com" = { icon = "", color = "#ffce3e" }
+"nytimes\\.com/games/wordle" = { icon = "󰈭", color = "#538d4e" }
+"photos\\.google\\.com" = { icon = "󰄄", color = "#4285f4" }
+"reactjs\\.org" = { icon = "", color = "#61dafb" }
+"reddit\\.com" = { icon = "󰑍", color = "#ff4500" }
+"slack\\.com" = { icon = "󰒱", color = "#2eb67d" }
+"sleeper\\.com" = { icon = "󰉟", color = "#7c8ef4" }
+"spotify\\.com" = { icon = "󰓇", color = "#1ed760" }
+"sr\\.ht|sourcehut\\.org" = { icon = "" }
+"stackoverflow\\.com" = { icon = "", color = "#f48225" }
+"startpage\\.com" = { icon = "", color = "#6573ff" }
+"stripe\\.com" = { icon = "", color = "#635bff" }
+"ticktick\\.com" = { icon = "󰄴", color = "#4774f9" }
+"todoist\\.com" = { icon = "󰄲", color = "#e44232" }
+"travis-ci\\.(com|org)" = { icon = "", color = "#cd324a" }
+"twitter\\.com" = { icon = "", color = "#1d9bf0" }
+"webpack\\.js\\.org" = { icon = "󰆧", color = "#8ed6fb" }
+"wikipedia\\.org" = { icon = "" }
+"youneedabudget\\.com" = { icon = "", color = "#4495d7" }
+"bandcamp\\.com" = { icon = "", color = "#1da0c3", size = "13pt" }
+"zoom\\.us" = { icon = "󰕧", color = "#2d8cff" }
+aerc = { app_id = ["foot", "Alacritty"], icon = "󰇰" }
+litecli = { app_id = ["foot", "Alacritty"], icon = "󰆼", color = "#c74451" }
+nnn = { app_id = ["foot", "Alacritty"], icon = "󰉖" }
+pgcli = { app_id = ["foot", "Alacritty"], icon = "󰆼", color = "#c74451" }
+"VSCodium" = { icon = "󰨞", color = "#4495d7"}
