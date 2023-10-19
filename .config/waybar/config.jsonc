@@ -1,38 +1,41 @@
 {
-    "output": [
-        "!DP-3",
-        "eDP-1"
-    ],
+    "height": 35,
+    "output": "DP-3",
     "modules-left": [
         "custom/power",
         "sway/workspaces",
         "mpris"
     ],
     "modules-center": [
-        "clock"
+        "clock",
+        "custom/weather"
     ],
     "modules-right": [
+        "network#vpn",
         "sway/mode",
         "custom/scratchpad-indicator",
         "custom/updates",
-        "custom/weather",
         "tray",
-        "sway/language",
-        "custom/lock",
+        "backlight",
         "temperature",
-        "disk",
         "pulseaudio",
+        "pulseaudio#mic",
+        "upower",
+        "sway/language",
+        "custom/notification"
+        // "custom/weather",
+        // "custom/lock",
+        // "disk",
         // "battery",
         // "battery#bat1",
-        "upower",
-        "custom/notification"
     ],
     //-------------
     // modules-left
     //------------
     "custom/power": {
         "on-click": "wlogout",
-        "format": "<big></big>"
+        "format": "<big></big>",
+        "tooltip": false
     },
     "sway/workspaces": {
         "format": "{icon}",
@@ -50,41 +53,56 @@
             // "8": "八",
             // "9": "九",
             // "10": "十"
-            "10": "0"
+            // "1": "<big></big>",
+            // "2": "<big>󰈹</big>",
+            // "3": "<big></big>",
+            // "4": "<big></big>",
+            // "5": "<big></big>",
+            // "6": "<big></big>",
+            // "7": "<big>󰇮</big>",
+            // "8": "<big>󰓓</big>"
+            "1": "<big>󰼏</big>",
+            "2": "<big>󰼐</big>",
+            "3": "<big>󰼑</big>",
+            "4": "<big>󰼒</big>",
+            "5": "<big>󰼓</big>",
+            "6": "<big>󰼔</big>",
+            "7": "<big>󰼕</big>",
+            "8": "<big>󰼖</big>",
+            "9": "<big>󰼗</big>",
+            "10": "<big>󰼎</big>"
+            // "active": "",
+            // "default": ""
         },
         "persistent_workspaces": {
             "1": [],
             "2": [],
             "3": [],
             "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": [],
-            "9": [],
-            "10": []
+            "5": []
         }
     },
     "mpris": {
-        "format": "{player_icon} {artist} - {title} <small>[{position}/{length}]</small>",
-        "format-paused": "{status_icon} <i>{artist} - {title} <small>[{position}/{length}]</small></i>",
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} {dynamic}",
         "max-length": 100,
+        "interval": 1,
         "player-icons": {
-            "default": "<span color='#9ECE6A'></span>",
-            "firefox": "<span color='#FF9500'></span>",
-            "spotify": "<span color='#0FC044'></span>"
+            "default": "<span color='#9ECE6A'><big></big></span>",
+            "firefox": "<span color='#FF9500'><big>󰈹</big></span>",
+            "spotify": "<span color='#0FC044'><big></big></span>"
         },
         "status-icons": {
-            "paused": "<span color='#F7768E'></span>"
-        },
-        "interval": 1
+            "paused": "<span color='#F7768E'><big></big></span>"
+        }
     },
     //---------------
     // modules-center
     //---------------
     "clock": {
-        "format": "{: %d/%m %a  %H:%M:%OS }",
-        "format-alt": "{: %d %a  %H:%M }",
+        "format": "{:%a %d  %H:%M}",
+        "format-alt": "{:%b %d %a  %H:%M:%OS}",
+        "on-click": "wldash",
         "interval": 1,
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "locale": "en_GB.UTF-8",
@@ -99,7 +117,7 @@
                 "days": "<span color='#c0caf5'>{}</span>",
                 "weeks": "<span color='#7aa2f7'>{}</span>",
                 "weekdays": "<span color='#9ece6a'>{}</span>",
-                "today": "<span color='#f7768e'><big>{}</big></span>"
+                "today": "<span background='#f7768e' color='#1a1b26'><big>{}</big></span>"
             }
         },
         "actions": {
@@ -110,9 +128,28 @@
             "on-scroll-down": "shift_down"
         }
     },
+    "custom/weather": {
+        // "exec": "$HOME/.config/waybar/scripts/weather.sh",
+        // "format": "{}",
+        // "return-type": "json",
+        // "interval": 300,
+        // "tooltip": true
+        "format": "{}󰔄",
+        "tooltip": true,
+        "interval": 1800,
+        "exec": "wttrbar --date-format '%A, %d %b %Y' --location Luleburgaz --hide-conditions",
+        "return-type": "json"
+    },
     //--------------
     // modules-right
     //--------------
+    "network#vpn": {
+        "interval": 5,
+        "interface": "tun0",
+        "format": "<big>󰞀</big> VPN",
+        "format-disconnected": "",
+        "tooltip-format": "VPN Connected: {ipaddr}"
+    },
     "sway/mode": {
         "format": " {}",
         "max-length": 50
@@ -130,21 +167,31 @@
         "exec": "$HOME/.config/waybar/scripts/checkupdates.sh 2> /dev/null",
         "return-type": "json"
     },
-    "custom/weather": {
-        // "exec": "$HOME/.config/waybar/scripts/weather.sh",
-        // "format": "{}",
-        // "return-type": "json",
-        // "interval": 300,
-        // "tooltip": true
-        "format": "{} °",
-        "tooltip": true,
-        "interval": 3600,
-        "exec": "wttrbar --date-format '%d %b %y %a' --location Istanbul",
-        "return-type": "json"
-    },
     "tray": {
-        "icon-size": 15,
-        "spacing": 5
+        "icon-size": 16,
+        "spacing": 15,
+        "reverse-direction": true
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}",
+        "tooltip": false,
+        "format-icons": [
+            // "<big>󰛩</big>",
+            // "<big>󱩎</big>",
+            // "<big>󱩏</big>",
+            // "<big>󱩐</big>",
+            // "<big>󱩑</big>",
+            // "<big>󱩒</big>",
+            // "<big>󱩓</big>",
+            // "<big>󱩔</big>",
+            // "<big>󱩕</big>",
+            // "<big>󱩖</big>",
+            // "<big>󰛨</big>"
+            "<big>󰃞</big>",
+            "<big>󰃟</big>",
+            "<big>󰃠</big>"
+        ]
     },
     "custom/lock": {
         "tooltip": false,
@@ -153,13 +200,12 @@
     },
     "sway/language": {
         "format": "{shortDescription}",
-        "tooltip-format": "{shortDescription}",
         "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
     },
     "temperature": {
         "critical-threshold": 65,
         "format-critical": "{temperatureC}°C {icon}",
-        "format": "{icon}",
+        "format": "",
         "format-icons": [
             "<big></big>",
             "<big></big.",
@@ -172,73 +218,79 @@
         "on-click": "exec thunar"
     },
     "pulseaudio": {
-        "format": "{icon} {format_source}",
-        "format-bluetooth": "{volume} {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "<span color='#f7768e'><big></big></span> {format_source}",
-        "format-source": "<big></big>",
-        "format-source-muted": "<span color='#f7768e'><big></big></span>",
+        "format": "{icon} {volume}",
+        "format-bluetooth": "{volume} {icon} ",
+        "format-bluetooth-muted": " {icon} ",
+        "format-muted": "<big>󰖁</big> {volume}",
         "format-icons": {
             "headphone": "<big>󰋋</big>",
             "default": [
-                "<big></big>",
-                "<big></big>",
-                "<big></big>"
+                "<big>󰕿</big>",
+                "<big>󰖀</big>",
+                "<big>󰕾</big>"
             ]
         },
-        "tooltip-format": "{volume} 󰋋",
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-middle": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-click-middle": "$TERMINAL -e pulsemixer",
         "on-click-right": "pavucontrol"
     },
-    // "battery": {
-    //     "bat": "BAT0",
-    //     "states": {
-    //         "good": 95,
-    //         "warning": 30,
-    //         "critical": 15
-    //     },
-    //     "format": "{capacity} {icon}",
-    //     "format-charging": "{capacity} <big></big>",
-    //     "format-plugged": "{capacity} <big><</big>",
-    //     "format-alt": "{time} {icon}",
-    //     "format-icons": [
-    //         "<big></big>",
-    //         "<big></big>",
-    //         "<big></big>",
-    //         "<big></big>",
-    //         "<big></big>"
-    //     ]
-    // },
-    // "battery#bat1": {
-    //     "bat": "BAT1",
-    //     "states": {
-    //         "good": 100,
-    //         "warning": 30,
-    //         "critical": 15
-    //     },
-    //     "format": "{capacity} {icon}",
-    //     "format-charging": "{capacity} <big></big>",
-    //     "format-plugged": "{capacity} <big></big>",
-    //     "format-alt": "{time} {icon}",
-    //     "format-icons": [
-    //         "<big></big>",
-    //         "<big></big>",
-    //         "<big></big>",
-    //         "<big></big>",
-    //         "<big></big>"
-    //     ]
-    // },
+    "pulseaudio#mic": {
+        "format": "{format_source}",
+        "format-source": " {volume}",
+        "format-source-muted": " {volume}",
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-click-middle": "$TERMINAL -e pulsemixer",
+        "on-click-right": "pavucontrol"
+    },
+    "battery": {
+        "bat": "BAT0",
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity} {icon}",
+        "format-charging": "{capacity} <big></big>",
+        "format-plugged": "{capacity} <big><</big>",
+        "format-alt": "{time} {icon}",
+        "format-icons": [
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>"
+        ]
+    },
+    "battery#bat1": {
+        "bat": "BAT1",
+        "states": {
+            "good": 100,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity} {icon}",
+        "format-charging": "{capacity} <big></big>",
+        "format-plugged": "{capacity} <big></big>",
+        "format-alt": "{time} {icon}",
+        "format-icons": [
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>",
+            "<big></big>"
+        ]
+    },
     "upower": {
         "format": "{percentage}",
-        "icon-size": 17,
+        "format-alt": "{percentage} {time}",
+        "icon-size": 16,
         "hide-if-empty": true,
         "tooltip": true,
         "tooltip-spacing": 20
     },
     "custom/notification": {
         "tooltip": true,
-        "format": "{icon}<big><sup>{}</sup></big>",
+        "format": "{icon}<sup><big>{}</big></sup>",
         "format-icons": {
             "notification": "",
             "none": "",

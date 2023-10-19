@@ -1,137 +1,174 @@
 @define-color bg-color rgba(26, 27, 38, 1);
 @define-color fg-color rgba(169, 177, 214, 1);
-@define-color green rgba(158, 206, 106, 1);
-@define-color red rgba(247, 118, 142, 1);
-@define-color blue rgba(122, 162, 247, 1);
-@define-color yellow rgba(224, 175, 104, 1);
-@define-color purple rgba(187, 154, 247, 1);
+@define-color tn-green rgba(158, 206, 106, 1);
+@define-color tn-red rgba(247, 118, 142, 1);
+@define-color tn-blue rgba(122, 162, 247, 1);
+@define-color tn-yellow rgba(224, 175, 104, 1);
+@define-color tn-purple rgba(187, 154, 247, 1);
 
+/* Global Styles */
 * {
     font-family: JetBrainsMono Nerd Font Propo;
     font-weight: bolder;
     font-size: 14px;
 }
 
-window#waybar {
-    background: transparent;
+/* Waybar */
+#waybar {
+    background: @bg-color;
     color: @fg-color;
+    /* border-bottom: 1px solid @tn-yellow; */
 }
 
+/* Tooltips */
 tooltip {
     color: @fg-color;
     background: @bg-color;
-    border: 2px solid @blue;
-    border-radius: 7px
+    border: 2px solid @tn-blue;
+    border-radius: 7px;
 }
 
+/* Modules */
+#mode,
 #tray,
-#mpris,
 #clock,
+#mpris,
 #upower,
-#battery,
-#battery.bat1,
+#language,
+#backlight,
 #workspaces,
+#network.vpn,
+#pulseaudio,
+#pulseaudio.mic,
+#temperature,
 #custom-power,
+#custom-updates,
 #custom-weather,
-#custom-notification {
-    background: @bg-color;
-    margin: 3px 1px;
+#custom-notification,
+#custom-scratchpad-indicator {
+    margin: 4px 1px;
     padding: 1px 10px;
     border-radius: 7px;
 }
 
-#disk,
-#language,
-#pulseaudio,
-#temperature, 
-#custom-lock {
-    background: @bg-color;
-    margin: 3px 0px;
-    padding: 1px 5px;
+/* Specific Module Styling */
+#clock,
+#custom-weather {
+    background: rgba(122, 162, 247, 0.2);
 }
 
-#language {
-    padding-left: 10px;
-    border-radius: 7px 0px 0px 7px;
-    margin-left: 1px;
+#clock {
+    border-radius: 7px 0 0 7px;
+    margin-right: 0;
+    padding-right: 7px;
 }
 
-#pulseaudio {
-    color: @purple;
-    padding-right: 10px;
-    border-radius: 0px 7px 7px 0px;
-    margin-right: 1px;
-}
-
-#custom-power {
-    margin-left: 10px;
-    color: @blue;
-}
-
-#disk {
-    color: @green;
-}
-
-#custom-lock {
-    color: @yellow;
+#custom-weather {
+    border-radius: 0 7px 7px 0;
+    margin-left: 0;
+    padding-left: 7px;
 }
 
 #upower.charging {
-    color: @green;
-}
-
-#temperature {
-    color: @blue;
-}
-
-#temperature.critical {
-    color: @red;
-}
-
-#battery.critical,
-#battery.bat1.critical {
-    color: @red;
-}
-
-#battery.charging,
-#battery-bat1.charging {
-    background: @green;
+    /* background: @tn-green; */
     color: @bg-color;
-    margin: 3px 1px;
-    padding: 1px 10px;
-    border-radius: 7px
 }
 
-#mode,
-#custom-updates,
-#custom-notification.notification,
-#custom-notification.dnd-notification,
-#custom-scratchpad-indicator {
-    background: @bg-color;
-    color: @blue;
-    margin: 3px 1px;
-    padding: 1px 10px;
-    border-radius: 7px
+#language {
+    color: @tn-purple;
+}
+
+#mode {
+    background: @tn-blue;
+    color: @bg-color;
+}
+
+#network.vpn {
+    background: @tn-yellow;
+    color: @bg-color;
+}
+
+#custom-updates {
+    color: @tn-blue;
+}
+
+#backlight {
+    color: @tn-yellow;
+}
+
+#pulseaudio {
+    color: @tn-blue;
+}
+
+#pulseaudio.mic {
+    background: @tn-green;
+    color: @bg-color;
+}
+
+#pulseaudio.muted,
+#pulseaudio.mic.source-muted {
+    background: @tn-red;
+    color: @bg-color;
+}
+
+#custom-notification.notification {
+    background: @tn-blue;
+    color: @bg-color;
+}
+
+#custom-notification.dnd-none {
+    color: @tn-red;
+}
+
+#custom-notification.dnd-notification {
+    background: @tn-red;
+    color: @bg-color;
 }
 
 #custom-notification,
 #custom-notification.notification,
 #custom-notification.dnd-notification {
-    margin-right: 10px
+    padding-right: 10px;
+    border-radius: 7px;
+    margin-right: 10px;
+}
+
+#custom-power {
+    background: @tn-red;
+    color: @bg-color;
+    margin-left: 10px;
+    border-radius: 7px;
+}
+
+#upower.charging {
+    color: @tn-green;
+}
+
+#temperature.critical {
+    color: @tn-red;
+}
+
+/* Workspace Buttons */
+#workspaces {
+    padding: 0px;
 }
 
 #workspaces button {
-    padding: 0;
-    margin: 0;
-    color: @blue
+    padding: 0px;
+    color: @tn-blue;
+    border-radius: 7px;
+    min-width: 30px;
 }
 
 #workspaces button.persistent {
-    color: @fg-color
+    color: @fg-color;
+    border-radius: 7px;
+    padding: 0px;
 }
 
 #workspaces button.focused {
-    background: @blue;
+    background: @tn-blue;
     color: @bg-color;
-    border-radius: 5px
+    border-radius: 7px;
+    padding: 0px;
 }

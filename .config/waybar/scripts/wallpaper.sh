@@ -1,6 +1,14 @@
 #!/bin/bash
 
-RANDOM_WP=$(ls ~/Pictures/Wallpaper/ | shuf -n 1)
-NEW_WP="~/Pictures/Wallpaper/"$RANDOM_WP
-swaymsg -s $SWAYSOCK output eDP-1 bg $NEW_WP fill
-swaymsg -s $SWAYSOCK output DP-3 bg $NEW_WP fill
+DIR=$HOME/Pictures/Wallpaper
+PICS=($(ls ${DIR}))
+
+RANDOMPICS=${PICS[ $RANDOM % ${#PICS[@]} ]}
+
+if [[ $(pidof swww) ]]; then
+  pkill swww
+fi
+
+notify-send -i ${DIR}/${RANDOMPICS} "Wallpaper Changed" ${RANDOMPICS}
+#swww img ${DIR}/${RANDOMPICS} --transition-type random --transition-duration 2
+swww img ${DIR}/${RANDOMPICS} --transition-type random --transition-fps 60 --transition-duration 3.0 --transition-bezier 0.65,0,0.35,1 --transition-step 255
