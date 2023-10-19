@@ -1,14 +1,14 @@
 include ~/.config/sway/configs/colorscheme
 
 # Title format
-for_window [app_id="firefox"] title_format "<big>󰈹</big> <b>%title</b>"
-for_window [app_id="kitty"] title_format "<big>󰅬</big> <b>%title</b>"
-for_window [title=".*VSCodium"] title_format "<big>󰨞</big> <b>%title</b>"
-for_window [app_id="nvim"] title_format "<big></big> <b>%title</b>"
-for_window [instance="spotify"] title_format "<big>󰓇</big> <b>%title</b>"
-for_window [app_id="thunar"] title_format "<big>󰉋</big> <b>%title</b>"
-for_window [app_id="thunderbird"] title_format "<big>󰺻</big> <b>%title</b>"
-for_window [app_id="discord"] title_format "<big>󰙯</big> <b>%title</b>"
+# for_window [app_id="firefox"] title_format "<big>󰈹</big> <b>%title</b>"
+# for_window [app_id="kitty"] title_format "<big>󰅬</big> <b>%title</b>"
+# for_window [title=".*VSCodium"] title_format "<big>󰨞</big> <b>%title</b>"
+# for_window [app_id="nvim"] title_format "<big></big> <b>%title</b>"
+# for_window [instance="spotify"] title_format "<big>󰓇</big> <b>%title</b>"
+# for_window [app_id="thunar"] title_format "<big>󰉋</big> <b>%title</b>"
+# for_window [app_id="thunderbird"] title_format "<big>󰺻</big> <b>%title</b>"
+# for_window [app_id="discord"] title_format "<big>󰙯</big> <b>%title</b>"
 
 # Assign windows to workspaces
 assign [app_id="kitty"] workspace number 1
@@ -16,13 +16,16 @@ assign [app_id="firefox"] workspace number 2
 assign [title=".*VSCodium"] workspace number 3
 assign [instance="spotify"] workspace number 4
 assign [instance="discord"] workspace number 5
+assign [instance="teams-for-linux"] workspace number 5
+assign [app_id="telegram"] workspace number 5
 assign [app_id="thunar"] workspace number 6
 assign [app_id="thunderbird"] workspace number 7
+assign [class="steam"] workspace number 8
 
 # Border config
 smart_borders on
 default_border pixel 3
-default_floating_border pixel 10
+default_floating_border pixel 3
 default_orientation auto
 
 # Gaps config
@@ -32,7 +35,7 @@ gaps inner 10
 blur enable
 corner_radius 7
 shadows enable
-layer_effects "waybar" blur enable; shadows enable
+layer_effects "waybar" blur enable; shadows enable 
 
 # Exec waybar
 bar {
@@ -49,18 +52,18 @@ input "1739:0:Synaptics_TM3276-022" {
 # Enable multiple keyboard layouts
 input * xkb_layout "us, tr"
 
-seat * xcursor_theme default 30
+seat * xcursor_theme Simp1e-Tokyo-Night 30
 
-# Property Name         Border   BG       Text     Indicator  Child Border
-client.focused          $base05  $base0D  $base00  $base0D    $base0D
-client.focused_inactive $base01  $base01  $base05  $base03    $base01
-client.unfocused        $base01  $base00  $base05  $base01    $base01
-client.urgent           $base08  $base08  $base00  $base08    $base08
-client.placeholder      $base00  $base00  $base05  $base00    $base00
-client.background       $base07
+# Property Name         Border      BG          Text        Indicator    Child Border
+client.focused          $fg-color   $blue       $bg-color   $yellow      $blue
+client.focused_inactive $bg-color   $bg-color   $fg-color   $bg-color    $bg-color
+client.unfocused        $bg-color   $bg-color   $fg-color   $bg-color    $bg-color
+client.urgent           $red        $red        $bg-color   $red         $red
+client.placeholder      $bg-color   $bg-color   $fg-color   $bg-color    $bg-color
+client.background       $fg-color
 
 # Titlebar sytles
-title_align center                                                  
+# title_align center                                                  
 
 # Font
-font pango:JetBrainsMono Nerd Font Propo 10
+font pango:JetBrainsMono Nerd Font Propo Bold 9

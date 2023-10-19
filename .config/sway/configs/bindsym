@@ -46,28 +46,28 @@
 # Moving around:
 #
     # use $mod+[up|down|left|right]
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
+    bindsym $mod+Left  focus left
+    bindsym $mod+Down  focus down
+    bindsym $mod+Up    focus up
     bindsym $mod+Right focus right
 
     # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$left  move left
+    bindsym $mod+Shift+$down  move down
+    bindsym $mod+Shift+$up    move up
     bindsym $mod+Shift+$right move right
 
     # Ditto, with arrow keys
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Left  move left
+    bindsym $mod+Shift+Down  move down
+    bindsym $mod+Shift+Up    move up
     bindsym $mod+Shift+Right move right
 
     # swap container
-    bindsym $mod+Alt+left mark swap, focus left, swap container with mark swap
+    bindsym $mod+Alt+left  mark swap, focus left, swap container with mark swap
     bindsym $mod+Alt+right mark swap, focus right, swap container with mark swap
-    bindsym $mod+Alt+up mark swap, focus up, swap container with mark swap
-    bindsym $mod+Alt+down mark swap, focus down, swap container with mark swap
+    bindsym $mod+Alt+up    mark swap, focus up, swap container with mark swap
+    bindsym $mod+Alt+down  mark swap, focus down, swap container with mark swap
 
 #
 # Workspaces:
@@ -97,8 +97,12 @@
     bindsym $mod+Shift+0 move container to workspace number 10
    
     # Switch next/prev workspace
-    bindsym $mod+Ctrl+Left workspace prev
+    bindsym $mod+Ctrl+Left  workspace prev
     bindsym $mod+Ctrl+Right workspace next
+
+    # Gestures to change workspace
+    bindgesture swipe:right workspace next
+    bindgesture swipe:left  workspace prev
 #
 # Layout stuff:
 #
@@ -139,10 +143,10 @@
 
 # Resizing containers:
 mode "resize" {
-    bindsym Left resize grow width 10px
+    bindsym Left  resize grow width 10px
     bindsym Right resize shrink width 10px
-    bindsym Down resize shrink height 10px
-    bindsym Up resize grow height 10px
+    bindsym Down  resize shrink height 10px
+    bindsym Up    resize grow height 10px
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -189,5 +193,5 @@ bindsym $mod+Shift+r mode "resize"
 
     # Take screenshot
     bindsym $mod+Shift+p exec swayshot display
-    bindsym $mod+Ctrl+p exec swayshot window
-    bindsym $mod+Alt+p exec swayshot region
+    bindsym $mod+Ctrl+p  exec swayshot window
+    bindsym $mod+Alt+p   exec swayshot region

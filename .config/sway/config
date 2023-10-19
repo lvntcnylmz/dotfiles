@@ -16,11 +16,14 @@ exec swayidle -w \
           # timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
 
 # auto-start apps
-exec_always swaync
-# exec blueman-applet
+#exec swww init
+exec swaync
 exec nm-applet --indicator
-exec kdeconnect-indicator
+exec blueman-applet
 exec gammastep-indicator
+exec kdeconnect-indicator
 exec playerctld daemon
 exec polkit-dumb-agent
 exec swayosd-server
+exec swaycons
+exec autotiling
