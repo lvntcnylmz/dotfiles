@@ -1,4 +1,4 @@
-@define-color cc-bg rgba(0, 0, 0, 1);
+@define-color cc-bg rgba(26, 27, 38, 1);
 @define-color noti-border-color rgba(255, 255, 255, 0.15);
 @define-color noti-bg rgb(17, 17, 27);
 @define-color noti-bg-darker rgb(43, 43, 57);
@@ -15,8 +15,6 @@
     font-weight: bolder;
 }
 
-
-
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
     opacity: 1;
@@ -25,10 +23,12 @@
 
 .notification-row {
     outline: none;
+    margin: 10px 0 0 0;
+    padding: 0;
 }
 
 .notification {
-    border-radius: 12px;
+    border-radius: 7px;
     margin: 10px;
     padding: 0;
     border: 2px solid #7aa2f7
@@ -37,17 +37,17 @@
 .notification-content {
     background: transparent;
     padding: 10px;
-    border-radius: 12px
+    border-radius: 7px
 }
 
 .close-button {
-    background: @noti-close-bg;
-    color: @text-color;
+    background: #f7768e;
+    color: @cc-bg;
     text-shadow: none;
     padding: 0;
-    border-radius: 100%;
-    margin-top: 10px;
-    margin-right: 16px;
+    border-radius: 7px;
+    margin-top: 15px;
+    margin-right: 15px;
     box-shadow: none;
     border: none;
     min-width: 24px;
@@ -56,7 +56,7 @@
 
 .close-button:hover {
     box-shadow: none;
-    background: @noti-close-bg-hover;
+    background: #f7768e;
     transition: all .15s ease-in-out;
     border: none
 }
@@ -79,7 +79,7 @@
 }
 
 .notification-default-action {
-    border-radius: 12px
+    border-radius: 7px
 }
 
 .notification-default-action:not(:only-child) {
@@ -88,7 +88,7 @@
 }
 
 .notification-action {
-    border-radius: 0;
+    border-radius: 7px;
     border-top: none;
     border-right: none
 }
@@ -112,14 +112,14 @@
     color: @text-color;
     caret-color: @text-color;
     border: 1px solid @noti-border-color;
-    border-radius: 12px
+    border-radius: 7px
 }
 
 .inline-reply-button {
     margin-left: 4px;
     background: @noti-bg;
     border: 1px solid @noti-border-color;
-    border-radius: 12px;
+    border-radius: 7px;
     color: @text-color
 }
 
@@ -136,7 +136,7 @@
 .body-image {
     margin-top: 6px;
     background-color: #fff;
-    border-radius: 12px
+    border-radius: 7px
 }
 
 .summary {
@@ -166,8 +166,8 @@
 
 .control-center {
     background: @cc-bg;
-    border: 1px solid #7aa2f7;
-    border-radius: 10px;
+    border: 2px solid #7aa2f7;
+    border-radius: 7px;
 }
 
 .control-center-list {
@@ -197,36 +197,37 @@
     color: @text-color;
     text-shadow: none;
     background: @noti-bg;
-    border: 1px solid @noti-border-color;
+    border: 1px solid #f7768e;
     box-shadow: none;
-    border-radius: 12px
+    border-radius: 7px
 }
 
 .widget-title>button:hover {
-    background: @noti-bg-hover
+    background: #f7768e;
+    color: @cc-bg;
 }
 
 .widget-dnd {
     color: @text-color;
     margin: 10px;
-    font-size: 1.1rem
+    font-size: 1.1rem;
 }
 
 .widget-dnd>switch {
     font-size: initial;
-    border-radius: 12px;
-    background: @noti-bg;
-    border: 1px solid @noti-border-color;
+    border-radius: 7px;
+    /* background: #9ece6a; */
+    border: 1px solid #7aa2f7;
     box-shadow: none
 }
 
 .widget-dnd>switch:checked {
-    background: @bg-selected
+    background: #f7768e
 }
 
 .widget-dnd>switch slider {
-    background: @noti-bg-hover;
-    border-radius: 12px
+    background: #7aa2f7;
+    border-radius: 7px
 }
 
 .widget-label {
@@ -240,10 +241,10 @@
 
 .widget-mpris {
     color: @text-color;
-    background: @noti-bg-darker;
+    background: rgba(122, 162, 247, 0.2);
     padding: 10px;
     margin: 10px;
-    border-radius: 10px;
+    border-radius: 7px;
 }
 
 .widget-mpris-player {
@@ -264,20 +265,20 @@
     font-size: x-large;
     padding: 8px;
     margin: 20px 10px 10px;
-    border-radius: 12px;
+    border-radius: 7px;
     background: @noti-bg-darker;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
     margin: 3px;
     background: #343b58;
-    border-radius: 12px;
+    border-radius: 7px;
     color: @text-color
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
-    /* background: @noti-bg-hover; */
-    color: rgba(158, 206, 106, 1)
+    background: rgba(122, 162, 247, 1);
+    color: @cc-bg;
 }
 
 .widget-menubar>box>.menu-button-bar>button {
@@ -292,15 +293,15 @@
 
 .widget-volume {
     background: @noti-bg-darker;
-    padding: 8px;
+    padding: 10px;
     margin: 10px;
-    border-radius: 12px;
+    border-radius: 7px;
     font-size: x-large;
-    color: @text-color
+    color: #7aa2f7
 }
 
 .widget-volume>box>button {
-    background: transparent;
+    background: #7aa2f7;
     border: none
 }
 
@@ -308,14 +309,14 @@
     background-color: @noti-bg;
     padding: 4px 8px 8px;
     margin: 0 8px 8px;
-    border-radius: 12px
+    border-radius: 7px
 }
 
 .widget-backlight {
     background: @noti-bg-darker;
-    padding: 8px;
+    padding: 10px;
     margin: 10px;
-    border-radius: 12px;
+    border-radius: 7px;
     font-size: x-large;
     color: @text-color
 }
@@ -332,7 +333,7 @@
     background: @noti-bg;
     border: 1px solid @noti-border-color;
     box-shadow: none;
-    border-radius: 12px
+    border-radius: 7px
 }
 
 .widget-inhibitors>button:hover {
