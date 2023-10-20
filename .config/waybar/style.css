@@ -41,6 +41,7 @@ tooltip {
 #pulseaudio,
 #pulseaudio.mic,
 #temperature,
+#custom-lock,
 #custom-power,
 #custom-updates,
 #custom-weather,
@@ -69,16 +70,12 @@ tooltip {
     padding-left: 7px;
 }
 
-#upower.charging {
-    /* background: @tn-green; */
-    color: @bg-color;
-}
-
 #language {
     color: @tn-purple;
 }
 
-#mode {
+#mode,
+#custom-updates {
     background: @tn-blue;
     color: @bg-color;
 }
@@ -88,8 +85,10 @@ tooltip {
     color: @bg-color;
 }
 
-#custom-updates {
-    color: @tn-blue;
+#custom-lock {
+    background: @tn-yellow;
+    color: @bg-color;
+    min-width: 13px;
 }
 
 #backlight {
@@ -97,12 +96,15 @@ tooltip {
 }
 
 #pulseaudio {
-    color: @tn-blue;
+    background: @tn-purple;
+    color: @bg-color;
+    min-width: 13px;
 }
 
 #pulseaudio.mic {
     background: @tn-green;
     color: @bg-color;
+    min-width: 13px;
 }
 
 #pulseaudio.muted,

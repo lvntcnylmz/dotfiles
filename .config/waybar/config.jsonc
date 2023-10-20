@@ -16,15 +16,14 @@
         "custom/scratchpad-indicator",
         "custom/updates",
         "tray",
-        "backlight",
         "temperature",
+        "sway/language",
+        "upower",
+        "custom/lock",
         "pulseaudio",
         "pulseaudio#mic",
-        "upower",
-        "sway/language",
         "custom/notification"
-        // "custom/weather",
-        // "custom/lock",
+        // "backlight",
         // "disk",
         // "battery",
         // "battery#bat1",
@@ -174,20 +173,10 @@
     },
     "backlight": {
         "device": "intel_backlight",
-        "format": "{icon} {percent}",
-        "tooltip": false,
+        "format": "{icon}",
+        "tooltip": true,
+        "tooltip-format": "{percent}",
         "format-icons": [
-            // "<big>󰛩</big>",
-            // "<big>󱩎</big>",
-            // "<big>󱩏</big>",
-            // "<big>󱩐</big>",
-            // "<big>󱩑</big>",
-            // "<big>󱩒</big>",
-            // "<big>󱩓</big>",
-            // "<big>󱩔</big>",
-            // "<big>󱩕</big>",
-            // "<big>󱩖</big>",
-            // "<big>󰛨</big>"
             "<big>󰃞</big>",
             "<big>󰃟</big>",
             "<big>󰃠</big>"
@@ -199,7 +188,7 @@
         "format": "<big></big>"
     },
     "sway/language": {
-        "format": "{shortDescription}",
+        "format": "<big>{shortDescription}</big>",
         "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
     },
     "temperature": {
@@ -218,10 +207,10 @@
         "on-click": "exec thunar"
     },
     "pulseaudio": {
-        "format": "{icon} {volume}",
+        "format": "{icon}",
         "format-bluetooth": "{volume} {icon} ",
         "format-bluetooth-muted": " {icon} ",
-        "format-muted": "<big>󰖁</big> {volume}",
+        "format-muted": "<big>󰖁</big>",
         "format-icons": {
             "headphone": "<big>󰋋</big>",
             "default": [
@@ -236,8 +225,8 @@
     },
     "pulseaudio#mic": {
         "format": "{format_source}",
-        "format-source": " {volume}",
-        "format-source-muted": " {volume}",
+        "format-source": "",
+        "format-source-muted": "",
         "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
         "on-click-middle": "$TERMINAL -e pulsemixer",
         "on-click-right": "pavucontrol"
