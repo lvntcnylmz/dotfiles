@@ -12,7 +12,7 @@ dotfiles are the files that starts wth a . (dot). This files are generally respo
 | Promt Theme Engine  | [starship](https://github.com/starship/starship)                                                                               |
 | Window Manager      | [sway](https://github.com/swaywm/sway)                                                                                         |
 | Notification Deamon | [swaync](https://github.com/ErikReider/SwayNotificationCenter)                                                                 |
-| Screen Locker       | [swaylock](https://github.com/swaywm/swaylock) </br> [swaylock-corrupter](https://github.com/aur-packaging/swaylock-corrupter) |
+| Screen Locker       | [swaylock-effects](https://github.com/mortie/swaylock-effects) </br> [swaylock-corrupter](https://github.com/aur-packaging/swaylock-corrupter) |
 | Status Bar          | [waybar](https://github.com/Alexays/Waybar)                                                                                    |
 | System Into Tool    | [neofetch](https://github.com/dylanaraps/neofetch)                                                                             |
 | Terminal            | [kitty](https://github.com/kovidgoyal/kitty)                                                                                   |
@@ -20,6 +20,9 @@ dotfiles are the files that starts wth a . (dot). This files are generally respo
 | File Manager        | [ranger](https://github.com/ranger/ranger) </br> [thunar](https://github.com/xfce-mirror/thunar)                               |
 | Text Editor         | [nvim](https://github.com/neovim/neovim) </br> [vscodium](https://github.com/VSCodium/vscodium)                                |
 | App Launcher        | [fuzzel](https://codeberg.org/dnkl/fuzzel)                                                                                     |
+| GTK Theme           | [Tokyo Night GTK](https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme)                                                   |
+| Icon Theme          | [Flatery Dark](https://github.com/cbrnix/Flatery)                                                                              |
+| Cursor Theme        | [Simp1e Tokyo Night Theme ](https://gitlab.com/cursors/simp1e)                                                                 |
 
 ## Installation
 
