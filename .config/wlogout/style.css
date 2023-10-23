@@ -5,6 +5,7 @@
 @define-color tn-blue rgba(122, 162, 247, 1);
 @define-color tn-yellow rgba(224, 175, 104, 1);
 @define-color tn-purple rgba(187, 154, 247, 1);
+@define-color button-bg rgba(52, 59, 88, 1);
 
 * {
 	font-family: JetBrainsMono Nerd Font Propo;
@@ -18,17 +19,25 @@ window {
 
 button {
     color: @fg-color;
+    background: @button-bg;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 25%;
 	margin: 5px;
+    outline-style: none;
 }
 
 button:hover {
-	background-color: @tn-blue;
     color: @bg-color;
-	outline-style: none;
+    background: @tn-blue;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 25%;
+	margin: 5px;
+    outline-style: none;
 }
+
+
 
 #lock {
     background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
