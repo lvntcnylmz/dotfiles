@@ -23,12 +23,11 @@
     "hide-on-action": true,
     "script-fail-notify": true,
     "widgets": [
-        "title",
-        "dnd",
         "buttons-grid",
         "mpris",
         "volume",
         "backlight",
+        "title",
         "notifications"
     ],
     "widget-config": {

@@ -188,8 +188,11 @@
 
 .widget-title {
     color: @text-color;
+    background: rgba(122, 162, 247, 0.2);
+    padding: 10px;
     margin: 10px;
-    font-size: 1.5rem
+    font-size: 1.5rem;
+    border-radius: 7px;
 }
 
 .widget-title>button {
@@ -197,13 +200,14 @@
     color: @text-color;
     text-shadow: none;
     background: @noti-bg;
-    border: 1px solid #f7768e;
+    /* border: 1px solid #7aa2f7; */
     box-shadow: none;
     border-radius: 7px
 }
 
 .widget-title>button:hover {
     background: #f7768e;
+    border: 1px solid #f7768e;
     color: @cc-bg;
 }
 
@@ -271,7 +275,7 @@
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
     margin: 3px;
-    background: #343b58;
+    background: rgb(52, 59, 88);
     border-radius: 7px;
     color: @text-color
 }
