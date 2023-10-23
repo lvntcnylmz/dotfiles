@@ -44,4 +44,4 @@ then
     notify-send -u normal -i battery-level-10-symbolic "Arch Linux" "$battery_percent battery left."
 fi
 
-echo ${battery_percent}
+echo ${battery_percent}hello

@@ -1,6 +1,6 @@
 {
     "height": 35,
-    "output": "DP-3",
+    "output": "eDP-1",
     "modules-left": [
         "custom/power",
         "sway/workspaces",
@@ -221,7 +221,8 @@
         },
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-middle": "$TERMINAL -e pulsemixer",
-        "on-click-right": "pavucontrol"
+        "on-click-right": "pavucontrol",
+        "tooltip-format": "{desc} - {volume}"
     },
     "pulseaudio#mic": {
         "format": "{format_source}",
@@ -229,7 +230,8 @@
         "format-source-muted": "",
         "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
         "on-click-middle": "$TERMINAL -e pulsemixer",
-        "on-click-right": "pavucontrol"
+        "on-click-right": "pavucontrol",
+        "tooltip-format": "{desc} - {volume}"
     },
     "battery": {
         "bat": "BAT0",
@@ -279,7 +281,7 @@
     },
     "custom/notification": {
         "tooltip": true,
-        "format": "{icon}<sup><big>{}</big></sup>",
+        "format": "{icon}",
         "format-icons": {
             "notification": "",
             "none": "",
@@ -290,6 +292,7 @@
         "exec-if": "which swaync-client",
         "exec": "swaync-client -swb",
         "on-click": "swaync-client -t -sw",
+        "on-click-middle": "swaync-client -C",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
     }

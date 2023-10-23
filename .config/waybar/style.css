@@ -113,15 +113,18 @@ tooltip {
     color: @bg-color;
 }
 
-#custom-notification.notification {
+#custom-notification {
     background: @tn-blue;
     color: @bg-color;
 }
 
-#custom-notification.dnd-none {
-    color: @tn-red;
+#custom-notification.notification {
+    background: @tn-blue;
+    color: @bg-color;
+    border: none;
 }
 
+#custom-notification.dnd-none,
 #custom-notification.dnd-notification {
     background: @tn-red;
     color: @bg-color;
