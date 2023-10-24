@@ -118,7 +118,7 @@
     bindsym $mod+Shift+e layout toggle 
 
     # Make the current focus fullscreen
-    bindsym $mod+f fullscreen toggle 
+    bindsym $mod+Return fullscreen toggle 
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
