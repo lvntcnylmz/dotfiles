@@ -71,7 +71,8 @@ tooltip {
 }
 
 #language {
-    color: @tn-purple;
+    background: @fg-color;
+    color: @bg-color;
 }
 
 #mode,
@@ -146,7 +147,8 @@ tooltip {
 }
 
 #upower.charging {
-    color: @tn-green;
+    background: @tn-green;
+    color: @bg-color;
 }
 
 #temperature.critical {

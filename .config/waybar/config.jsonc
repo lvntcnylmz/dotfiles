@@ -168,8 +168,7 @@
     },
     "tray": {
         "icon-size": 16,
-        "spacing": 15,
-        "reverse-direction": true
+        "spacing": 10
     },
     "backlight": {
         "device": "intel_backlight",
@@ -226,8 +225,8 @@
     },
     "pulseaudio#mic": {
         "format": "{format_source}",
-        "format-source": "",
-        "format-source-muted": "",
+        "format-source": "<big>󰍬</big>",
+        "format-source-muted": "<big>󰍭</big>",
         "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
         "on-click-middle": "$TERMINAL -e pulsemixer",
         "on-click-right": "pavucontrol",
@@ -277,6 +276,7 @@
         "icon-size": 16,
         "hide-if-empty": true,
         "tooltip": true,
+        "tooltip-format": "{percentage}",
         "tooltip-spacing": 20
     },
     "custom/notification": {
