@@ -7,7 +7,7 @@ grace=1
 
 clock
 timestr=%H:%M:%S
-datestr=%a %d/%b/%y
+datestr=%a %d %b %Y
 
 indicator
 indicator-radius=100
@@ -18,7 +18,7 @@ inside-clear-color=bb9af7
 inside-ver-color=9ece6a
 inside-wrong-color=f7768e
 
-text-color=bb9af7
+text-color=a9b1d6
 text-clear-color=1a1b26
 text-caps-lock-color=f7768e
 text-ver-color=1a1b26
@@ -32,4 +32,4 @@ ring-wrong-color=f7768e
 key-hl-color=7aa2f7
 bs-hl-color=e0af68
 separator-color=7aa2f7
-line-color=7aa2f7
+line-color=1a1b26
