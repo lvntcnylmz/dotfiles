@@ -23,21 +23,22 @@
 
 .notification-row {
     outline: none;
-    margin: 10px 0 0 0;
+    margin: 0;
     padding: 0;
 }
 
 .notification {
-    border-radius: 7px;
-    margin: 10px;
+    background: transparent;
     padding: 0;
-    border: 2px solid #7aa2f7
+    margin: 10px;
 }
 
 .notification-content {
-    background: transparent;
+    background: @cc-bg;
     padding: 10px;
-    border-radius: 7px
+    border-radius: 7px;
+    border: 2px solid #7aa2f7;
+    margin: 0;
 }
 
 .close-button {
@@ -166,7 +167,7 @@
 
 .control-center {
     background: @cc-bg;
-    border: 2px solid #7aa2f7;
+    border: 2px solid #34548a;
     border-radius: 7px;
 }
 
@@ -187,8 +188,8 @@
 }
 
 .widget-title {
-    color: @cc-bg;
-    background: #7aa2f7;
+    color: #a9b1d6;
+    background: #34548a;
     padding: 10px;
     margin: 10px;
     font-size: 1.5rem;
