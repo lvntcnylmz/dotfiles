@@ -1,6 +1,6 @@
 {
     "height": 35,
-    "output": "eDP-1",
+    "output": "DP-3",
     "modules-left": [
         "custom/power",
         "sway/workspaces",
@@ -19,10 +19,11 @@
         "temperature",
         "sway/language",
         "upower",
-        "custom/lock",
+        "idle_inhibitor",
         "pulseaudio",
         "pulseaudio#mic",
         "custom/notification"
+        // "custom/lock",
         // "backlight",
         // "disk",
         // "battery",
@@ -36,6 +37,7 @@
         "format": "<big></big>",
         "tooltip": false
     },
+    
     "sway/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
@@ -75,10 +77,7 @@
         },
         "persistent_workspaces": {
             "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": []
+            "2": []
         }
     },
     "mpris": {
@@ -185,6 +184,14 @@
         "tooltip": false,
         "on-click": "swaylock-corrupter",
         "format": "<big></big>"
+    },
+    "idle_inhibitor": {
+        "format": "<big>{icon}</big> <big></big>",
+        "format-icons": {
+            "activated": "󰈈",
+            "deactivated": "󰈉"
+        },
+        "on-click-right": "swaylock-corrupter"
     },
     "sway/language": {
         "format": "<big>{shortDescription}</big>",

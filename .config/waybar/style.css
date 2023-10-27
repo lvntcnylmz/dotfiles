@@ -1,8 +1,8 @@
-@define-color bg-color rgba(26, 27, 38, 1);
-@define-color fg-color rgba(169, 177, 214, 1);
-@define-color tn-green rgba(158, 206, 106, 1);
-@define-color tn-red rgba(247, 118, 142, 1);
-@define-color tn-blue rgba(122, 162, 247, 1);
+@define-color bg-color  rgba(26, 27, 38, 1);
+@define-color fg-color  rgba(169, 177, 214, 1);
+@define-color tn-green  rgba(158, 206, 106, 1);
+@define-color tn-red    rgba(247, 118, 142, 1);
+@define-color tn-blue   rgba(122, 162, 247, 1);
 @define-color tn-yellow rgba(224, 175, 104, 1);
 @define-color tn-purple rgba(187, 154, 247, 1);
 
@@ -41,6 +41,7 @@ tooltip {
 #pulseaudio,
 #pulseaudio.mic,
 #temperature,
+#idle_inhibitor,
 #custom-lock,
 #custom-power,
 #custom-updates,
@@ -62,6 +63,12 @@ tooltip {
     border-radius: 7px 0 0 7px;
     margin-right: 0;
     padding-right: 7px;
+}
+
+#idle_inhibitor {
+    background: @tn-yellow;
+    color: @bg-color;
+    min-width: 13px;
 }
 
 #custom-weather {
@@ -86,12 +93,6 @@ tooltip {
     color: @bg-color;
 }
 
-#custom-lock {
-    background: @tn-yellow;
-    color: @bg-color;
-    min-width: 13px;
-}
-
 #backlight {
     color: @tn-yellow;
 }
@@ -100,12 +101,16 @@ tooltip {
     background: @tn-purple;
     color: @bg-color;
     min-width: 13px;
+    border-radius: 7px 0px 0px 7px;
+    margin-right: 0px;
 }
 
 #pulseaudio.mic {
     background: @tn-green;
     color: @bg-color;
     min-width: 13px;
+    border-radius: 0px 7px 7px 0px;
+    margin-left: 0px;
 }
 
 #pulseaudio.muted,
