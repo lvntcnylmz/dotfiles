@@ -22,7 +22,7 @@ exec blueman-applet
 exec gammastep-indicator
 exec kdeconnect-indicator
 # exec playerctld daemon
-exec polkit-dumb-agent
+exec_always polkit-dumb-agent
 exec swayosd-server
 exec swaycons
 exec autotiling
