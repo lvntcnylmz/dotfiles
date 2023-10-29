@@ -49,11 +49,12 @@ tooltip {
 #custom-notification,
 #custom-scratchpad-indicator {
     margin: 4px 1px;
-    padding: 1px 10px;
+    padding: 1px 7px;
     border-radius: 7px;
 }
 
 /* Specific Module Styling */
+#mpris,
 #clock,
 #custom-weather {
     background: rgba(122, 162, 247, 0.2);
@@ -127,7 +128,6 @@ tooltip {
 #custom-notification.notification {
     background: @tn-blue;
     color: @bg-color;
-    border: none;
 }
 
 #custom-notification.dnd-none,
@@ -139,7 +139,6 @@ tooltip {
 #custom-notification,
 #custom-notification.notification,
 #custom-notification.dnd-notification {
-    padding-right: 10px;
     border-radius: 7px;
     margin-right: 10px;
 }
