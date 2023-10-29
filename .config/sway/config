@@ -22,7 +22,8 @@ exec blueman-applet
 exec gammastep-indicator
 exec kdeconnect-indicator
 # exec playerctld daemon
-exec_always polkit-dumb-agent
+# exec polkit-dumb-agent
 exec swayosd-server
 exec swaycons
 exec autotiling
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
