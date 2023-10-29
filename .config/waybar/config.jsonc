@@ -18,12 +18,12 @@
         "tray",
         "temperature",
         "sway/language",
-        "upower",
         "idle_inhibitor",
+        "custom/lock",
         "pulseaudio",
         "pulseaudio#mic",
+        "upower",
         "custom/notification"
-        // "custom/lock",
         // "backlight",
         // "disk",
         // "battery",
@@ -186,12 +186,11 @@
         "format": "<big></big>"
     },
     "idle_inhibitor": {
-        "format": "<big>{icon}</big> <big></big>",
+        "format": "<big>{icon}</big>",
         "format-icons": {
             "activated": "󰈈",
             "deactivated": "󰈉"
-        },
-        "on-click-right": "swaylock-corrupter"
+        }
     },
     "sway/language": {
         "format": "<big>{shortDescription}</big>",
@@ -222,6 +221,7 @@
             "default": [
                 "<big>󰕿</big>",
                 "<big>󰖀</big>",
+                "<big>󱄠</big>",
                 "<big>󰕾</big>"
             ]
         },
@@ -291,7 +291,7 @@
         "format": "{icon}",
         "format-icons": {
             "notification": "",
-            "none": "",
+            "none": "",
             "dnd-notification": "",
             "dnd-none": ""
         },

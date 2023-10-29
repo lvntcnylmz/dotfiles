@@ -17,7 +17,7 @@
 #waybar {
     background: @bg-color;
     color: @fg-color;
-    /* border-bottom: 1px solid @tn-yellow; */
+    border-bottom: 1px solid @tn-yellow;
 }
 
 /* Tooltips */
@@ -49,14 +49,12 @@ tooltip {
 #custom-notification,
 #custom-scratchpad-indicator {
     margin: 4px 1px;
-    padding: 1px 7px;
+    padding: 1px 5px;
     border-radius: 7px;
 }
 
 /* Specific Module Styling */
-#mpris,
-#clock,
-#custom-weather {
+#mpris {
     background: rgba(122, 162, 247, 0.2);
 }
 
@@ -67,9 +65,12 @@ tooltip {
 }
 
 #idle_inhibitor {
-    background: @tn-yellow;
-    color: @bg-color;
+    color: @tn-green;
     min-width: 13px;
+}
+
+#idle_inhibitor.activated {
+    color: @tn-red;
 }
 
 #custom-weather {
@@ -79,7 +80,7 @@ tooltip {
 }
 
 #language {
-    background: @fg-color;
+    background: @tn-purple;
     color: @bg-color;
 }
 
@@ -99,19 +100,20 @@ tooltip {
 }
 
 #pulseaudio {
-    background: @tn-purple;
-    color: @bg-color;
+    /* background: @tn-purple; */
+    color: @tn-purple;
     min-width: 13px;
-    border-radius: 7px 0px 0px 7px;
-    margin-right: 0px;
+    /* border-radius: 7px 0px 0px 7px; */
+    /* margin-right: 0px; */
 }
 
 #pulseaudio.mic {
+    /* background: @tn-green; */
     background: @tn-green;
     color: @bg-color;
     min-width: 13px;
-    border-radius: 0px 7px 7px 0px;
-    margin-left: 0px;
+    /* border-radius: 0px 7px 7px 0px; */
+    /* margin-left: 0px; */
 }
 
 #pulseaudio.muted,
@@ -121,8 +123,8 @@ tooltip {
 }
 
 #custom-notification {
-    background: @tn-blue;
-    color: @bg-color;
+    /* background: @tn-zblue; */
+    color: @tn-blue;
 }
 
 #custom-notification.notification {
@@ -150,6 +152,10 @@ tooltip {
     border-radius: 7px;
 }
 
+#custom-lock {
+    color: @tn-yellow;
+}
+
 #upower.charging {
     background: @tn-green;
     color: @bg-color;
@@ -168,7 +174,7 @@ tooltip {
     padding: 0px;
     color: @tn-blue;
     border-radius: 7px;
-    min-width: 30px;
+    min-width: 25px; 
 }
 
 #workspaces button.persistent {
@@ -178,8 +184,8 @@ tooltip {
 }
 
 #workspaces button.focused {
-    background: @tn-blue;
     color: @bg-color;
     border-radius: 7px;
     padding: 0px;
+    background: @tn-blue;
 }
