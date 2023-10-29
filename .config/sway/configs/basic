@@ -24,8 +24,8 @@ assign [class="steam"] workspace number 8
 
 # Border config
 smart_borders on
-default_border pixel 3
-default_floating_border pixel 3
+default_border pixel 2
+default_floating_border pixel 2
 default_orientation auto
 
 # Gaps config
@@ -55,9 +55,9 @@ input * xkb_layout "us, tr"
 seat * xcursor_theme Simp1e-Tokyo-Night 30
 
 # Property Name         Border      BG          Text        Indicator    Child Border
-client.focused          $fg-color   $blue       $bg-color   $yellow      $blue
-client.focused_inactive $bg-color   $bg-color   $fg-color   $bg-color    $bg-color
-client.unfocused        $bg-color   $bg-color   $fg-color   $bg-color    $bg-color
+client.focused          $dark-blue  $dark-blue  $fg-color   $blue        $dark-blue
+client.focused_inactive $fg-color   $bg-color   $bg-color   $bg-color    $bg-color
+client.unfocused        $dark-blue  $bg-color   $fg-color   $bg-color    $bg-color
 client.urgent           $red        $red        $bg-color   $red         $red
 client.placeholder      $bg-color   $bg-color   $fg-color   $bg-color    $bg-color
 client.background       $fg-color
@@ -70,6 +70,7 @@ font pango:JetBrainsMono Nerd Font Propo Bold 9
 
 # Idle configuration
 exec swayidle -w \
-         timeout 300 'swaylock-corrupter' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock-corrupter'
+        timeout 300 'swaylock-corrupter' \
+        timeout 600 'swaymsg "output * dpms off"' \
+             resume 'swaymsg "output * dpms on"' \
+        before-sleep 'swaylock-corrupter'

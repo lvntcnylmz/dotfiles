@@ -2,6 +2,7 @@
 set $bg-color "1a1b26"
 set $fg-color "a9b1d6"
 set $blue "7aa2f7"
+set $dark-blue "34548a"
 set $green "9ece6a"
 set $red "f7768e"
 set $yellow "e0af68"
