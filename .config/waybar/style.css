@@ -80,8 +80,8 @@ tooltip {
 }
 
 #language {
-    background: @tn-purple;
-    color: @bg-color;
+    /* background: @tn-purple; */
+    color: @tn-purple;
 }
 
 #mode,
@@ -154,6 +154,10 @@ tooltip {
 
 #custom-lock {
     color: @tn-yellow;
+}
+
+#upower {
+    color: @tn-blue;
 }
 
 #upower.charging {
