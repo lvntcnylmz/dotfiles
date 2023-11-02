@@ -20,7 +20,7 @@
         "sway/language",
         "idle_inhibitor",
         "custom/lock",
-        "pulseaudio",
+        "pulseaudio#speaker",
         "pulseaudio#mic",
         "upower",
         "custom/notification"
@@ -86,12 +86,12 @@
         "max-length": 100,
         "interval": 1,
         "player-icons": {
-            "default": "<span color='#9ECE6A'><big></big></span>",
+            "default": "<span color='#9ECE6A'><big>󰌳</big></span>",
             "firefox": "<span color='#FF9500'><big>󰈹</big></span>",
             "spotify": "<span color='#0FC044'><big></big></span>"
         },
         "status-icons": {
-            "paused": "<span color='#F7768E'><big></big></span>"
+            "paused": "<span color='#F7768E'><big>󰏥</big></span>"
         }
     },
     //---------------
@@ -211,7 +211,7 @@
         "format": "<big></big>",
         "on-click": "exec thunar"
     },
-    "pulseaudio": {
+    "pulseaudio#speaker": {
         "format": "{icon}",
         "format-bluetooth": "{volume} {icon} ",
         "format-bluetooth-muted": " {icon} ",
