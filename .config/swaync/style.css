@@ -36,7 +36,7 @@
 .notification-content {
     background: @cc-bg;
     padding: 10px;
-    border-radius: 7px;
+    border-radius: 5px;
     border: 2px solid #34548a;
     margin: 0;
 }
@@ -44,7 +44,7 @@
 .notification-default-action {
     margin: 0;
     padding: 0;
-    border-radius: 0px;
+    border-radius: 5px;
 }
 
 .close-button {
@@ -52,7 +52,7 @@
     color: @cc-bg;
     text-shadow: none;
     padding: 0;
-    border-radius: 7px;
+    border-radius: 5px;
     margin-top: 5px;
     margin-right: 5px;
 }
@@ -68,7 +68,7 @@
 .notification-action {
     border: 2px solid #34548a;
     border-top: none;
-    border-radius: 7px;
+    border-radius: 5px;
 }
 
 
@@ -79,7 +79,7 @@
 }
 
 .notification-default-action {
-    border-radius: 7px;
+    border-radius: 5px;
     margin: 0px;
 }
 
@@ -107,14 +107,14 @@
     color: @text-color;
     caret-color: @text-color;
     border: 1px solid @noti-border-color;
-    border-radius: 7px
+    border-radius: 5px
 }
 
 .inline-reply-button {
     margin-left: 4px;
     background: @noti-bg;
     border: 1px solid @noti-border-color;
-    border-radius: 7px;
+    border-radius: 5px;
     color: @text-color
 }
 
@@ -131,7 +131,7 @@
 .body-image {
     margin-top: 6px;
     background-color: #fff;
-    border-radius: 7px
+    border-radius: 5px
 }
 
 .summary {
@@ -162,7 +162,7 @@
 .control-center {
     background: @cc-bg;
     border: 2px solid #34548a;
-    border-radius: 7px;
+    border-radius: 5px;
 }
 
 .control-center-list {
@@ -187,7 +187,7 @@
     padding: 10px;
     margin: 10px 10px 5px 10px;
     font-size: 1.5rem;
-    border-radius: 7px;
+    border-radius: 5px;
 }
 
 .widget-title>button {
@@ -196,7 +196,7 @@
     text-shadow: none;
     background: @noti-bg;
     box-shadow: none;
-    border-radius: 7px;
+    border-radius: 5px;
 }
 
 .widget-title>button:hover {
@@ -209,13 +209,13 @@
     background: @noti-bg-darker;
     padding: 10px;
     margin: 10px 10px 5px 10px;
-    border-radius: 7px;
+    border-radius: 5px;
     font-size: large;
     color: #7aa2f7;
 }
 
 .widget-dnd>switch {
-    border-radius: 7px;
+    border-radius: 5px;
     /* border: 1px solid #7aa2f7; */
     background: #7aa2f7;
 }
@@ -227,12 +227,12 @@
 
 .widget-dnd>switch slider {
     background: @cc-bg;
-    border-radius: 7px
+    border-radius: 5px
 }
 
 .widget-dnd>switch:checked slider {
     background: @cc-bg;
-    border-radius: 7px
+    border-radius: 5px
 }
 
 
@@ -250,11 +250,11 @@
     background: @noti-bg-darker;
     padding: 10px;
     margin: 10px 10px 5px 10px;
-    border-radius: 7px;
+    border-radius: 5px;
 }
 
 .widget-mpris > box > button {
-    border-radius: 7px;
+    border-radius: 5px;
 }
 
 .widget-mpris-player {
@@ -275,14 +275,14 @@
     font-size: x-large;
     padding: 10px;
     margin: 10px 10px 5px 10px;
-    border-radius: 7px;
+    border-radius: 5px;
     background: @noti-bg-darker;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
     margin: 3px;
     background: @cc-bg;
-    border-radius: 7px;
+    border-radius: 5px;
     color: @text-color
 }
 
@@ -305,7 +305,7 @@
     background: @noti-bg-darker;
     padding: 10px;
     margin: 10px 10px 5px 10px;
-    border-radius: 7px;
+    border-radius: 5px;
     font-size: x-large;
     color: @text-color;
 }
@@ -319,14 +319,14 @@
     background-color: @noti-bg;
     padding: 4px 8px 8px;
     margin: 0 8px 8px;
-    border-radius: 7px
+    border-radius: 5px;
 }
 
 .widget-backlight {
     background: @noti-bg-darker;
     padding: 10px;
     margin: 10px 10px 5px 10px;
-    border-radius: 7px;
+    border-radius: 5px;
     font-size: x-large;
     color: @text-color
 }
