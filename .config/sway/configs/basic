@@ -14,6 +14,7 @@ include ~/.config/sway/configs/colorscheme
 assign [app_id="kitty"] workspace number 1
 assign [app_id="firefox"] workspace number 2
 assign [title=".*VSCodium"] workspace number 3
+assign [class="jetbrains-*"] workspace number 3
 assign [instance="spotify"] workspace number 4
 assign [instance="discord"] workspace number 5
 assign [instance="teams-for-linux"] workspace number 5
@@ -32,10 +33,10 @@ default_orientation auto
 gaps inner 10
 
 # SwayFX configs
-blur enable
-corner_radius 7
-shadows enable
-layer_effects "waybar" blur enable; shadows enable 
+# blur enable
+corner_radius 5
+# shadows enable
+# layer_effects "waybar" blur enable; shadows enable 
 
 # Exec waybar
 bar {

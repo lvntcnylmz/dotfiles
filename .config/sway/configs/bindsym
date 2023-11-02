@@ -195,3 +195,5 @@ bindsym $mod+Shift+r mode "resize"
     bindsym $mod+Shift+p exec swayshot display
     bindsym $mod+Ctrl+p  exec swayshot window
     bindsym $mod+Alt+p   exec swayshot region
+
+    bindsym $mod+p exec "echo 2 > /tmp/wcp"
