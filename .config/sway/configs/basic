@@ -39,9 +39,7 @@ corner_radius 5
 # layer_effects "waybar" blur enable; shadows enable 
 
 # Exec waybar
-bar {
-    swaybar_command waybar
-}
+bar swaybar_command waybar
 
 # Enable thinkPad touchpad
 input "1739:0:Synaptics_TM3276-022" {
@@ -56,7 +54,7 @@ input * xkb_layout "us, tr"
 seat * xcursor_theme Simp1e-Tokyo-Night 30
 
 # Property Name         Border      BG          Text        Indicator    Child Border
-client.focused          $dark-blue  $dark-blue  $fg-color   $blue        $dark-blue
+client.focused          $dark-blue  $dark-blue  $fg-color   $yellow      $blue
 client.focused_inactive $fg-color   $bg-color   $bg-color   $bg-color    $bg-color
 client.unfocused        $dark-blue  $bg-color   $fg-color   $bg-color    $bg-color
 client.urgent           $red        $red        $bg-color   $red         $red

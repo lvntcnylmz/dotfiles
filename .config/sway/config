@@ -27,4 +27,3 @@ exec swayosd-server
 # exec swaycons
 exec autotiling
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec rm -f /tmp/wcp && mkfifo /tmp/wcp && tail -f /tmp/wcp | wcp -a rt
