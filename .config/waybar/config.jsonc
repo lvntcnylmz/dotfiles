@@ -4,6 +4,7 @@
     "modules-left": [
         "custom/power",
         "sway/workspaces",
+        "custom/separator",
         "mpris"
     ],
     "modules-center": [
@@ -16,6 +17,7 @@
         "custom/scratchpad-indicator",
         "custom/updates",
         "tray",
+        "custom/separator",
         "temperature",
         "sway/language",
         "idle_inhibitor",
@@ -37,7 +39,6 @@
         "format": "<big></big>",
         "tooltip": false
     },
-    
     "sway/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
@@ -75,23 +76,32 @@
             // "active": "",
             // "default": ""
         },
-        "persistent_workspaces": {
+        "persistent-workspaces": {
             "1": [],
-            "2": []
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
         }
     },
     "mpris": {
         "format": "{player_icon} {dynamic}",
         "format-paused": "{status_icon} {dynamic}",
+        "dynamic-order": [
+            "title",
+            "artist",
+            "position",
+            "length"
+        ],
         "max-length": 100,
         "interval": 1,
         "player-icons": {
-            "default": "<span color='#9ECE6A'><big>󰌳</big></span>",
+            "default": "<span color='#9ECE6A'><big></big></span>",
             "firefox": "<span color='#FF9500'><big>󰈹</big></span>",
             "spotify": "<span color='#0FC044'><big></big></span>"
         },
         "status-icons": {
-            "paused": "<span color='#F7768E'><big>󰏥</big></span>"
+            "paused": "<span color='#F7768E'><big></big></span>"
         }
     },
     //---------------
@@ -141,6 +151,9 @@
     //--------------
     // modules-right
     //--------------
+    "custom/separator": {
+        "format": "<big>󰇙</big>"
+    },
     "network#vpn": {
         "interval": 5,
         "interface": "tun0",
@@ -183,13 +196,13 @@
     "custom/lock": {
         "tooltip": false,
         "on-click": "swaylock-corrupter",
-        "format": "<big></big>"
+        "format": "<big>󰌾</big>"
     },
     "idle_inhibitor": {
         "format": "<big>{icon}</big>",
         "format-icons": {
-            "activated": "󰈈",
-            "deactivated": "󰈉"
+            "activated": "",
+            "deactivated": ""
         }
     },
     "sway/language": {
