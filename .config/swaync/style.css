@@ -184,14 +184,14 @@
 .widget-title {
     color: #7aa2f7;
     background: @noti-bg-darker;
-    padding: 10px;
+    padding: 5px 10px;
     margin: 10px 10px 5px 10px;
     font-size: 1.5rem;
     border-radius: 5px;
 }
 
 .widget-title>button {
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: @text-color;
     text-shadow: none;
     background: @noti-bg;
@@ -201,13 +201,12 @@
 
 .widget-title>button:hover {
     background: #f7768e;
-    border: 1px solid #f7768e;
     color: @cc-bg;
 }
 
 .widget-dnd {
     background: @noti-bg-darker;
-    padding: 10px;
+    padding: 5px 10px;
     margin: 10px 10px 5px 10px;
     border-radius: 5px;
     font-size: large;
@@ -235,20 +234,19 @@
     border-radius: 5px
 }
 
-
 .widget-label {
     margin: 10px 10px 5px 10px;
 }
 
 .widget-label>label {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: @text-color;
 }
 
 .widget-mpris {
     color: @text-color;
     background: @noti-bg-darker;
-    padding: 10px;
+    padding: 5px 10px;
     margin: 10px 10px 5px 10px;
     border-radius: 5px;
 }
@@ -258,8 +256,8 @@
 }
 
 .widget-mpris-player {
-    padding: 8px;
-    margin: 8px
+    padding: 5px 10px;
+    margin: 10px
 }
 
 .widget-mpris-title {
@@ -273,7 +271,7 @@
 
 .widget-buttons-grid {
     font-size: x-large;
-    padding: 10px;
+    padding: 5px;
     margin: 10px 10px 5px 10px;
     border-radius: 5px;
     background: @noti-bg-darker;
@@ -303,7 +301,7 @@
 
 .widget-volume {
     background: @noti-bg-darker;
-    padding: 10px;
+    padding: 5px;
     margin: 10px 10px 5px 10px;
     border-radius: 5px;
     font-size: x-large;
@@ -324,7 +322,7 @@
 
 .widget-backlight {
     background: @noti-bg-darker;
-    padding: 10px;
+    padding: 5px;
     margin: 10px 10px 5px 10px;
     border-radius: 5px;
     font-size: x-large;
