@@ -1,6 +1,9 @@
 {
     "height": 35,
-    "output": "DP-3",
+    "output": [
+        "!DP-3",
+        "eDP-1"
+    ],
     "modules-left": [
         "custom/power",
         "sway/workspaces",
@@ -8,24 +11,27 @@
         "mpris"
     ],
     "modules-center": [
+        "custom/separator",
         "clock",
-        "custom/weather"
+        "custom/weather",
+        "custom/separator"
     ],
     "modules-right": [
         "network#vpn",
         "sway/mode",
         "custom/scratchpad-indicator",
         "custom/updates",
-        "tray",
         "custom/separator",
+        "tray",
         "temperature",
-        "sway/language",
         "idle_inhibitor",
-        "custom/lock",
-        "pulseaudio#speaker",
+        "group/pulse",
         "pulseaudio#mic",
+        "sway/language",
         "upower",
         "custom/notification"
+        // "group/backlight",
+        // "custom/lock",
         // "backlight",
         // "disk",
         // "battery",
@@ -36,6 +42,7 @@
     //------------
     "custom/power": {
         "on-click": "wlogout",
+        "on-click-right": "swaylock-corrupter",
         "format": "<big></big>",
         "tooltip": false
     },
@@ -109,8 +116,7 @@
     //---------------
     "clock": {
         "format": "{:%a %d  %H:%M}",
-        "format-alt": "{:%b %d %a  %H:%M:%OS}",
-        "on-click": "wldash",
+        "format-alt": "{:%b %d %a  %H:%M:%S}",
         "interval": 1,
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "locale": "en_GB.UTF-8",
@@ -182,17 +188,6 @@
         "icon-size": 16,
         "spacing": 10
     },
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon}",
-        "tooltip": true,
-        "tooltip-format": "{percent}",
-        "format-icons": [
-            "<big>󰃞</big>",
-            "<big>󰃟</big>",
-            "<big>󰃠</big>"
-        ]
-    },
     "custom/lock": {
         "tooltip": false,
         "on-click": "swaylock-corrupter",
@@ -224,6 +219,43 @@
         "format": "<big></big>",
         "on-click": "exec thunar"
     },
+    "group/backlight": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500
+        },
+        "modules": [
+            "backlight",
+            "backlight/slider"
+        ]
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}",
+        "tooltip": true,
+        "tooltip-format": "{percent}",
+        "format-icons": [
+            "<big>󰃞</big>",
+            "<big>󰃟</big>",
+            "<big>󰃠</big>"
+        ]
+    },
+    "backlight/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal",
+        "device": "intel_backlight"
+    },
+    "group/pulse": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500
+        },
+        "modules": [
+            "pulseaudio#speaker",
+            "pulseaudio/slider"
+        ]
+    },
     "pulseaudio#speaker": {
         "format": "{icon}",
         "format-bluetooth": "{volume} {icon} ",
@@ -243,10 +275,15 @@
         "on-click-right": "pavucontrol",
         "tooltip-format": "{desc} - {volume}"
     },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
     "pulseaudio#mic": {
         "format": "{format_source}",
-        "format-source": "<big>󰍬</big>",
-        "format-source-muted": "<big>󰍭</big>",
+        "format-source": "<big></big>",
+        "format-source-muted": "<big></big>",
         "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
         "on-click-middle": "$TERMINAL -e pulsemixer",
         "on-click-right": "pavucontrol",
