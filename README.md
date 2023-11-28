@@ -37,12 +37,15 @@ cp -r dotfiles/.config/* ~/.config
 
 ## Screenshots
 
-![](screenshots/sway-0.png)
+![](screenshots/sway0.png)
 
-![](screenshots/sway-1.png)
+![](screenshots/sway1.png)
 
-![](screenshots/sway-2.png)
+![](screenshots/sway2.png)
 
-![](screenshots/sway-3.png)
+![](screenshots/sway3.png)
 
-![](screenshots/sway-4.png)
+![](screenshots/sway4.png)
+
+![](screenshots/sway5.png)
+
