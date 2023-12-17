@@ -15,8 +15,8 @@
 
 /* Global Styles */
 * {
-    font-family: JetBrainsMono Nerd Font Propo;
-    font-weight: bolder;
+    font-family: JetBrainsMono NFP;
+    font-weight: bold;
     font-size: 14px;
 }
 
@@ -24,7 +24,7 @@
 #waybar {
     background: @bg-color;
     color: @fg-color;
-    border-bottom: 1px solid @tn-yellow;
+    /* border-bottom: 2px solid @tn-dark-purple; */
 }
 
 /* Tooltips */
@@ -42,72 +42,45 @@ tooltip {
 #mpris,
 #upower,
 #language,
-#backlight,
-#backlight-slider,
 #workspaces,
 #network.vpn,
-#pulseaudio,
+#pulseaudio.speaker,
 #pulseaudio.mic,
-#pulseaudio-slider,
 #temperature,
-#idle_inhibitor,
-#custom-lock,
 #custom-power,
 #custom-updates,
 #custom-weather,
 #custom-notification,
 #custom-scratchpad-indicator {
-    margin: 4px 1px;
+    margin: 3px 1px;
     padding: 1px 5px;
     border-radius: 5px;
 }
 
 /* Specific Module Styling */
-#custom-separator {
-    color: @tn-yellow;
-    margin: 0 5px;
-    font-size: 1.5rem;
+#mpris {
+    margin-right: 10px;
 }
 
-#clock {
-    border-radius: 5px 0 0 5px;
-    margin-right: 0;
-    padding-right: 7px;
-}
-
+#clock,
 #custom-weather {
-    border-radius: 0 5px 5px 0;
-    margin-left: 0;
-    padding-left: 7px;
+    margin-right: 0;
 }
 
-#idle_inhibitor {
-    color: @tn-yellow;
-    min-width: 13px;
+#mode {
+    color: @tn-green;
 }
 
-#idle_inhibitor.activated {
-    background: @tn-green;
-    color: @bg-color;
-}
-
-#language {
-    color: @tn-purple;
-}
-
-#mode,
-#custom-updates {
-    background: @tn-blue;
-    color: @bg-color;
+#custom-updates,
+#custom-scratchpad-indicator {
+    color: @tn-blue;
 }
 
 #network.vpn {
-    background: @tn-yellow;
-    color: @bg-color;
+    color: @tn-yellow;
 }
 
 #pulseaudio.speaker {
-    color: @tn-purple;
     min-width: 13px;
 }
 
@@ -124,77 +97,42 @@ tooltip {
 
 #pulseaudio.mic.source-muted {
     background: none;
-    color: @tn-red;
-}
-
-#pulseaudio-slider {
-    background: @tn-blue;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-#pulseaudio-slider slider {
-    min-height: 3px;
-    min-width: 3px;
-    background: @bg-color;
-    border-radius: 5px;
-    border: none;
-    box-shadow: none;
-}
-
-#pulseaudio-slider trough {
-    min-height: 5px;
-    min-width: 100px;
-    border-radius: 5px;
-    background: @bg-color;
-}
-
-#pulseaudio-slider highlight {
-    min-width: 5px;
-    border-radius: 5px;
-    background: @bg-color;
-}
-
-#custom-notification {
-    color: @tn-blue;
+    color: @fg-color;
 }
 
 #custom-notification.notification {
-    background: @tn-blue;
-    color: @bg-color;
+    color: @tn-blue;
+    border-radius: 0px;
+    padding-top: 2px;
+    border-bottom: 2px solid @tn-blue;
 }
 
-#custom-notification.dnd-none,
+#custom-notification.dnd-none {
+    color: @tn-red;
+}
+
 #custom-notification.dnd-notification {
-    background: @tn-red;
-    color: @bg-color;
+    color: @tn-red;
+    border-radius: 0px;
+    padding-top: 2px;
+    border-bottom: 2px solid @tn-red;
 }
 
 #custom-notification,
 #custom-notification.notification,
 #custom-notification.dnd-notification {
-    border-radius: 5px;
+    border-radius: 0px;
     margin-right: 10px;
+    margin-bottom: 0px;
 }
 
 #custom-power {
-    background: @tn-red;
-    color: @bg-color;
+    color: @tn-red;
     margin-left: 10px;
-    border-radius: 5px;
-}
-
-#custom-lock {
-    color: @tn-yellow;
-}
-
-#upower {
-    color: @tn-blue;
 }
 
 #upower.charging {
-    background: @tn-green;
-    color: @bg-color;
+    color: @tn-green;
 }
 
 #temperature.critical {
@@ -204,8 +142,8 @@ tooltip {
 
 /* Workspace Buttons */
 #workspaces {
+    margin: 0px 1px;
     padding: 0px;
-    margin-right: 3px;
 }
 
 #workspaces button {
@@ -222,8 +160,8 @@ tooltip {
 }
 
 #workspaces button.focused {
-    color: @bg-color;
-    border-radius: 5px;
-    padding: 0px;
-    background: @tn-blue;
+    color: @tn-green;
+    border-radius: 0px;
+    padding-top: 2px;
+    border-bottom: 2px solid @tn-green;
 }
