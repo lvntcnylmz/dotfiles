@@ -24,12 +24,9 @@
     "script-fail-notify": true,
     "widgets": [
         "title",
-        "buttons-grid",
-        "mpris",
-        "volume",
-        "backlight",
         "dnd",
-        "notifications"
+        "notifications",
+        "buttons-grid"
     ],
     "widget-config": {
         "title": {

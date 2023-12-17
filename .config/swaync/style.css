@@ -11,8 +11,8 @@
 @define-color bg-selected rgb(0, 128, 255);
 
 * {
-    font-family: JetBrainsMono Nerd Font Propo;
-    font-weight: bolder;
+    font-family: JetBrainsMono NFP;
+    font-weight: bold;
 }
 
 .control-center .notification-row:focus,
@@ -207,7 +207,7 @@
 .widget-dnd {
     background: @noti-bg-darker;
     padding: 5px 10px;
-    margin: 10px 10px 5px 10px;
+    margin: 5px 10px 10px 10px;
     border-radius: 5px;
     font-size: large;
     color: #7aa2f7;
@@ -247,7 +247,7 @@
     color: @text-color;
     background: @noti-bg-darker;
     padding: 5px 10px;
-    margin: 10px 10px 5px 10px;
+    margin: 5px 10px 5px 10px;
     border-radius: 5px;
 }
 
@@ -272,7 +272,7 @@
 .widget-buttons-grid {
     font-size: x-large;
     padding: 5px;
-    margin: 10px 10px 5px 10px;
+    margin: 5px 10px 10px 10px;
     border-radius: 5px;
     background: @noti-bg-darker;
 }
