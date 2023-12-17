@@ -14,6 +14,7 @@ include ~/.config/sway/configs/colorscheme
 assign [app_id="kitty"] workspace number 1
 assign [app_id="firefox"] workspace number 2
 assign [title=".*VSCodium"] workspace number 3
+assign [title="nvim"] workspace number 3
 assign [class="jetbrains-*"] workspace number 3
 assign [instance="spotify"] workspace number 4
 assign [instance="discord"] workspace number 5
@@ -22,6 +23,7 @@ assign [app_id="telegram"] workspace number 5
 assign [app_id="thunar"] workspace number 6
 assign [app_id="thunderbird"] workspace number 7
 assign [class="steam"] workspace number 8
+for_window [app_id="kitty" title="nvim"] move container to workspace 3
 
 # Border config
 smart_borders on
@@ -34,7 +36,7 @@ gaps inner 10
 
 # SwayFX configs
 # blur enable
-corner_radius 5
+# corner_radius 5
 # shadows enable
 # layer_effects "waybar" blur enable; shadows enable 
 
@@ -51,25 +53,27 @@ input "1739:0:Synaptics_TM3276-022" {
 # Enable multiple keyboard layouts
 input * xkb_layout "us, tr"
 
+# Set cursor theme
 seat * xcursor_theme Simp1e-Tokyo-Night 30
 
-# Property Name         Border      BG          Text        Indicator    Child Border
-client.focused          $dark-blue  $dark-blue  $fg-color   $yellow      $blue
-client.focused_inactive $fg-color   $bg-color   $bg-color   $bg-color    $bg-color
-client.unfocused        $dark-blue  $bg-color   $fg-color   $bg-color    $bg-color
-client.urgent           $red        $red        $bg-color   $red         $red
-client.placeholder      $bg-color   $bg-color   $fg-color   $bg-color    $bg-color
-client.background       $fg-color
+# Property Name          Border        BG            Text       Indicator   Child Border
+client.focused           $dark-blue    $dark-blue    $fg-color  $yellow     $blue
+client.focused_inactive  $dark-purple  $dark-purple  $fg-color  $bg-color   $bg-color
+client.unfocused         $dark-blue    $bg-color     $fg-color  $bg-color   $bg-color
+client.urgent            $red          $red          $bg-color  $red        $red
+client.placeholder       $bg-color     $bg-color     $fg-color  $bg-color   $bg-color
+client.background        $fg-color
 
 # Titlebar sytles
 # title_align center                                                  
+titlebar_padding 10 2
 
 # Font
-font pango:JetBrainsMono Nerd Font Propo Bold 9
+font pango:JetBrainsMono NFP Bold 10
 
 # Idle configuration
-exec swayidle -w \
-        timeout 300 'playerctl pause | swaylock-corrupter' \
-        timeout 600 'swaymsg "output * dpms off"' \
-             resume 'swaymsg "output * dpms on"' \
-        before-sleep 'playerctl pause | swaylock-corrupter'
+# exec swayidle -w \
+#         timeout 300 'playerctl pause | swaylock-corrupter' \
+#         timeout 600 'swaymsg "output * dpms off"' \
+#              resume 'swaymsg "output * dpms on"' \
+#         before-sleep 'playerctl pause | swaylock-corrupter'

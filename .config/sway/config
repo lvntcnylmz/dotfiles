@@ -7,15 +7,10 @@ include ~/.config/sway/configs/bindsym
 
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
-# set random wallpaper and change it after 30 minutes
+## set random wallpaper and change it after 30 minutes
 exec ~/.config/sway/wallpaper.sh &
 
-exec swayidle -w \
-          before-sleep 'swaylock-corrupter'
-          # timeout 300 'swaylock-corrupter' \
-          # timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-
-# auto-start apps
+## auto-start apps
 exec swaync
 exec nm-applet --indicator
 exec blueman-applet
