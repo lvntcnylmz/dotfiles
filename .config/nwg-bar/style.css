@@ -1,0 +1,55 @@
+@define-color bg-color #1a1b26;
+@define-color fg-color #a9b1d6;
+
+@define-color tn-green #9ece6a;
+@define-color tn-red #f7768e;
+@define-color tn-blue #7aa2f7;
+@define-color tn-yellow #e0af68;
+@define-color tn-purple #bb9af7;
+
+@define-color tn-dark-green #485e30;
+@define-color tn-dark-red #8c4351;
+@define-color tn-dark-blue #34548a;
+@define-color tn-dark-yellow #8f5e15;
+@define-color tn-dark-purple #5a4a78;
+
+window {
+    background: @bg-color;
+	color: @fg-color;
+	border-radius: 5px;
+}
+
+/* Outer bar container, takes all the window width/height */
+#outer-box {
+	border: 2px solid @tn-dark-blue;
+	border-radius: 5px;
+	padding: 0px;
+	margin: 0px; 
+	background: @bg-color;
+}
+
+/* Inner bar container, surrounds buttons */
+#inner-box {
+	background: @bg-color;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 5px
+}
+
+button, image {
+	background: none;
+	border: none;
+	box-shadow: none
+}
+
+button {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 5px;
+	color: @fg-color;
+}
+
+button:hover {
+	background: @tn-dark-purple;
+	color: @bg-color;
+}
