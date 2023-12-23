@@ -18,11 +18,11 @@ dotfiles are the files that starts with a . (dot). This files are generally resp
 | Terminal            | [kitty](https://github.com/kovidgoyal/kitty)                                                                                                   |
 | Display Manager     | [ly](https://github.com/fairyglade/ly)                                                                                                         |
 | File Manager        | [ranger](https://github.com/ranger/ranger) </br> [thunar](https://github.com/xfce-mirror/thunar)                                               |
-| Text Editor         | [nvim](https://github.com/neovim/neovim) </br> [vscodium](https://github.com/VSCodium/vscodium)                                                |
+| Text Editor         | [nvim](https://github.com/neovim/neovim)                                                                                                       |
 | App Launcher        | [fuzzel](https://codeberg.org/dnkl/fuzzel)                                                                                                     |
 | GTK Theme           | [Tokyo Night GTK](https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme)                                                                   |
 | Icon Theme          | [Flatery Dark](https://github.com/cbrnix/Flatery)                                                                                              |
-| Cursor Theme        | [Simp1e Tokyo Night](https://gitlab.com/cursors/simp1e)                                                                                         |
+| Cursor Theme        | [Simp1e Tokyo Night](https://gitlab.com/cursors/simp1e)                                                                                        |
 
 ## Installation
 
