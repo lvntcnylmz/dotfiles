@@ -137,7 +137,7 @@
         "format": "{}°",
         "tooltip": true,
         "interval": 1800,
-        "exec": "wttrbar --date-format '%A, %d %b %Y' --location Luleburgaz --hide-conditions",
+        "exec": "wttrbar --date-format '%A, %d %b %Y' --location Luleburgaz --hide-conditions --custom-indicator '{ICON}{temp_C}[{FeelsLikeC}]'",
         "return-type": "json"
     },
     //--------------
