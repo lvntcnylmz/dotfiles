@@ -35,6 +35,11 @@ git clone https://github.com/lvntcnylmz/dotfiles.git
 cp -r dotfiles/.config/* ~/.config
 ```
 
+### TODO
+- [ ] Add installation script
+- [ ] Better documentation
+
+
 ## Screenshots
 
 ![](screenshots/sway0.png)
