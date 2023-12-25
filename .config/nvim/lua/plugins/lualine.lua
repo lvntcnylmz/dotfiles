@@ -3,22 +3,20 @@ local config = function()
         options = {
             theme = "auto",
             globalstatus = true,
-            component_separators = { left = "󰇙", right = "󰇙" },
+            disabled_filetypes = { statusline = { "dashboard" } },
+            component_separators = { left = "", right = "" },
             section_separators = { left = "", right = "" },
         },
         sections = {
             lualine_a = { { "mode", icon = "" } },
             lualine_b = { "branch", "diff", "diagnostics" },
-            lualine_c = { "filename" },
+            lualine_c = {
+                { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+                "filename",
+            },
             lualine_x = {
-                "encoding",
-                {
-                    "fileformat",
-                    symbols = {
-                        unix = "󰣇",
-                    },
-                },
-                "filetype",
+                { "fileformat", padding = { left = 0, right = 1 } },
+                { "encoding" },
             },
             lualine_y = {
                 { "progress", separator = "", padding = { left = 1, right = 0 } },
@@ -39,4 +37,5 @@ return {
     "nvim-lualine/lualine.nvim",
     lazy = false,
     config = config,
+    -- enabled = false,
 }
