@@ -15,24 +15,24 @@
 
 /* Global Styles */
 * {
-    font-family: JetBrainsMono NFP;
-    font-weight: bold;
-    font-size: 14px;
+  font-family: JetBrainsMono NFP;
+  font-weight: bolder;
+  font-size: 14px;
 }
 
 /* Waybar */
 #waybar {
-    background: @bg-color;
-    color: @fg-color;
-    /* border-bottom: 2px solid @tn-dark-purple; */
+  background: @bg-color;
+  color: @fg-color;
+  /* border-bottom: 2px solid @tn-dark-purple; */
 }
 
 /* Tooltips */
 tooltip {
-    color: @fg-color;
-    background: @bg-color;
-    border: 2px solid @tn-blue;
-    border-radius: 5px;
+  color: @fg-color;
+  background: @bg-color;
+  border: 2px solid @tn-blue;
+  border-radius: 5px;
 }
 
 /* Modules */
@@ -52,116 +52,114 @@ tooltip {
 #custom-weather,
 #custom-notification,
 #custom-scratchpad-indicator {
-    margin: 3px 1px;
-    padding: 1px 5px;
-    border-radius: 5px;
+  margin: 0 1px;
+  padding: 2px 5px;
 }
 
 /* Specific Module Styling */
 #mpris {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 #clock,
 #custom-weather {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 #mode {
-    color: @tn-green;
+  color: @tn-green;
 }
 
 #custom-updates,
 #custom-scratchpad-indicator {
-    color: @tn-blue;
+  color: @tn-blue;
 }
 
 #network.vpn {
-    color: @tn-yellow;
+  color: @tn-yellow;
 }
 
 #pulseaudio.speaker {
-    min-width: 13px;
+  min-width: 13px;
 }
 
 #pulseaudio.mic {
-    background: @tn-green;
-    color: @bg-color;
-    min-width: 13px;
+  background: @tn-green;
+  color: @bg-color;
+  min-width: 13px;
 }
 
 #pulseaudio.speaker.muted {
-    background: @tn-red;
-    color: @bg-color;
+  background: @tn-red;
+  color: @bg-color;
 }
 
 #pulseaudio.mic.source-muted {
-    background: none;
-    color: @fg-color;
+  background: none;
+  color: @fg-color;
 }
 
 #custom-notification.notification {
-    color: @tn-blue;
-    border-radius: 0px;
-    padding-top: 2px;
-    border-bottom: 2px solid @tn-blue;
+  background: @tn-blue;
+  color: @bg-color;
+  border-radius: 0px;
 }
 
 #custom-notification.dnd-none {
-    color: @tn-red;
+  color: @tn-red;
 }
 
 #custom-notification.dnd-notification {
-    color: @tn-red;
-    border-radius: 0px;
-    padding-top: 2px;
-    border-bottom: 2px solid @tn-red;
+  background: @tn-red;
+  color: @bg-color;
+  border-radius: 0px;
 }
 
 #custom-notification,
 #custom-notification.notification,
 #custom-notification.dnd-notification {
-    border-radius: 0px;
-    margin-right: 10px;
-    margin-bottom: 0px;
+  margin-right: 10px;
 }
 
 #custom-power {
-    color: @tn-red;
-    margin-left: 10px;
+  background: @tn-red;
+  color: @bg-color;
+  margin: 0 1px 0 10px;
+  border-radius: 0;
 }
 
 #upower.charging {
-    color: @tn-green;
+  color: @tn-green;
 }
 
 #temperature.critical {
-    background: @tn-red;
-    color: @bg-color;
+  background: @tn-red;
+  color: @bg-color;
 }
 
 /* Workspace Buttons */
 #workspaces {
-    margin: 0px 1px;
-    padding: 0px;
+  margin: 0px 1px;
+  padding: 0px;
 }
 
 #workspaces button {
-    padding: 0px;
-    color: @tn-blue;
-    border-radius: 5px;
-    min-width: 25px;
+  padding: 0px;
+  color: @tn-blue;
+  border-radius: 5px;
+  min-width: 25px;
 }
 
 #workspaces button.persistent {
-    color: @fg-color;
-    border-radius: 5px;
-    padding: 0px;
+  color: @fg-color;
+  border-radius: 5px;
+  padding: 0px;
 }
 
 #workspaces button.focused {
-    color: @tn-green;
-    border-radius: 0px;
-    padding-top: 2px;
-    border-bottom: 2px solid @tn-green;
+  background: @tn-blue;
+  color: @bg-color;
+  border-radius: 0px;
+  /* padding-top: 2px; */
+  /* border-bottom: 2px solid @tn-green; */
 }
