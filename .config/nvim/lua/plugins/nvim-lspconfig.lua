@@ -1,6 +1,14 @@
 return {
     "neovim/nvim-lspconfig",
     opts = {
+        capabilities = {
+            textDocument = {
+                foldingRange = {
+                    dynamicRegistration = false,
+                    lineFoldingOnly = true,
+                },
+            },
+        },
         servers = {
             -- Ensure mason installs the server
             jdtls = {},

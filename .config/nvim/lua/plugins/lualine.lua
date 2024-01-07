@@ -17,6 +17,7 @@ local config = function()
             lualine_x = {
                 { "fileformat", padding = { left = 0, right = 1 } },
                 { "encoding" },
+                { "filetype" },
             },
             lualine_y = {
                 { "progress", separator = "", padding = { left = 1, right = 0 } },
@@ -25,7 +26,7 @@ local config = function()
             lualine_z = {
                 {
                     "datetime",
-                    style = " %a, %d %b %R",
+                    style = "%a, %d %b %R  ",
                 },
             },
         },
