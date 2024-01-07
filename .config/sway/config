@@ -16,9 +16,7 @@ exec nm-applet --indicator
 exec blueman-applet
 exec gammastep-indicator
 exec kdeconnect-indicator
-# exec playerctld daemon
-# exec polkit-dumb-agent
 exec swayosd-server
-# exec swaycons
 exec autotiling
+exec "sleep 5; firewall-applet"
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

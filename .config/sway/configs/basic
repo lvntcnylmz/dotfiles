@@ -1,15 +1,5 @@
 include ~/.config/sway/configs/colorscheme
 
-# Title format
-# for_window [app_id="firefox"] title_format "<big>󰈹</big> <b>%title</b>"
-# for_window [app_id="kitty"] title_format "<big>󰅬</big> <b>%title</b>"
-# for_window [title=".*VSCodium"] title_format "<big>󰨞</big> <b>%title</b>"
-# for_window [app_id="nvim"] title_format "<big></big> <b>%title</b>"
-# for_window [instance="spotify"] title_format "<big>󰓇</big> <b>%title</b>"
-# for_window [app_id="thunar"] title_format "<big>󰉋</big> <b>%title</b>"
-# for_window [app_id="thunderbird"] title_format "<big>󰺻</big> <b>%title</b>"
-# for_window [app_id="discord"] title_format "<big>󰙯</big> <b>%title</b>"
-
 # Assign windows to workspaces
 assign [app_id="kitty"] workspace number 1
 assign [app_id="firefox"] workspace number 2
@@ -18,11 +8,11 @@ assign [title="nvim"] workspace number 3
 assign [class="jetbrains-*"] workspace number 3
 assign [instance="spotify"] workspace number 4
 assign [instance="discord"] workspace number 5
-assign [instance="teams-for-linux"] workspace number 5
 assign [app_id="telegram"] workspace number 5
 assign [app_id="thunar"] workspace number 6
 assign [app_id="thunderbird"] workspace number 7
 assign [class="steam"] workspace number 8
+assign [instance="microsoft teams"] workspace number 10
 for_window [app_id="kitty" title="nvim"] move container to workspace 3
 
 # Border config

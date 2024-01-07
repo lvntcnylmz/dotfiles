@@ -7,3 +7,5 @@ set $term kitty
 set $menu fuzzel
 set $browser firefox
 set $file_manager thunar
+set $dp1 eDP-1
+set $dp2 DP-3
