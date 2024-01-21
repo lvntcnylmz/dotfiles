@@ -1,42 +1,39 @@
+local icons = require("util.icons")
+
 local config = function()
-    require("lualine").setup({
-        options = {
-            theme = "auto",
-            globalstatus = true,
-            disabled_filetypes = { statusline = { "dashboard" } },
-            component_separators = { left = "", right = "" },
-            section_separators = { left = "", right = "" },
-        },
-        sections = {
-            lualine_a = { { "mode", icon = "" } },
-            lualine_b = { "branch", "diff", "diagnostics" },
-            lualine_c = {
-                { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-                "filename",
-            },
-            lualine_x = {
-                { "fileformat", padding = { left = 0, right = 1 } },
-                { "encoding" },
-                { "filetype" },
-            },
-            lualine_y = {
-                { "progress", separator = "", padding = { left = 1, right = 0 } },
-                { "location", padding = { left = 0, right = 1 } },
-            },
-            lualine_z = {
-                {
-                    "datetime",
-                    style = "%a, %d %b %R  ",
-                },
-            },
-        },
-        tabline = {},
-    })
+	require("lualine").setup({
+		options = {
+			-- fmt = string.lower,
+			icons_enabled = true,
+			theme = "auto",
+			component_separators = { left = "", right = "" },
+			section_separators = { left = "", right = "" },
+			globalstatus = true,
+		},
+		sections = {
+			lualine_a = { "mode" },
+			lualine_b = {
+				"branch",
+				{
+					"diff",
+					symbols = {
+						added = icons.git.added,
+						modified = icons.git.modified,
+						removed = icons.git.removed,
+					},
+				},
+				"diagnostics",
+			},
+			lualine_c = { "filename" },
+			lualine_x = { "encoding", "fileformat", "filetype" },
+			lualine_y = { "progress" },
+			lualine_z = { "location" },
+		},
+	})
 end
 
 return {
-    "nvim-lualine/lualine.nvim",
-    lazy = false,
-    config = config,
-    -- enabled = false,
+	"nvim-lualine/lualine.nvim",
+	lazy = false,
+	config = config,
 }

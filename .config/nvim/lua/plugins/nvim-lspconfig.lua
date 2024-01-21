@@ -1,77 +1,134 @@
+local cmp_nvim_lsp = require("cmp_nvim_lsp")
+local diagnostic_signs = require("util.icons").diagnostics
+local capabilities = cmp_nvim_lsp.default_capabilities()
+
+local config = function()
+	-- diagnostic signs for sign column
+	for type, icon in pairs(diagnostic_signs) do
+		local hl = "DiagnosticSign" .. type
+		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+	end
+
+	vim.diagnostic.config({
+		underline = true,
+		update_in_insert = true,
+		float = {
+			focusable = false,
+			style = "minimal",
+			border = "rounded",
+			source = "always",
+			header = "",
+			prefix = "",
+		},
+		virtual_text = {
+			spacing = 3,
+			source = "if_many",
+		},
+		severity_sort = true,
+	})
+
+	-- start other plugins
+	require("autoclose").setup()
+	require("luasnip.loaders.from_vscode").lazy_load()
+	require("neodev").setup({})
+
+	local lspconfig = require("lspconfig")
+
+	local prettier = {
+		formatCommand = [[prettier --stdin-filepath ${INPUT} ${--tab-width:tab_width}]],
+		formatStdin = true,
+	}
+	-- lsp server configurations
+	lspconfig.efm.setup({
+		filetypes = {
+			"javascript",
+			"javascriptreact",
+			"javascript.jsx",
+			"typescript",
+			"typescriptreact",
+			"typescript.tsx",
+		},
+		init_options = { documentFormatting = true },
+		settings = {
+			languages = {
+				javascript = { prettier },
+				typescript = { prettier },
+				yaml = { prettier },
+			},
+		},
+	})
+	lspconfig.tsserver.setup({})
+	lspconfig.jdtls.setup({})
+	lspconfig.lua_ls.setup({
+		capabilities = capabilities,
+		settings = {
+			Lua = {
+				-- make the language server recognize "vim" global
+				diagnostics = {
+					globals = { "vim" },
+				},
+				workspace = {
+					-- make language server aware of runtime files
+					library = {
+						[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+						[vim.fn.stdpath("config") .. "/lua"] = true,
+					},
+				},
+			},
+		},
+	})
+end
+
+local keys = function()
+	vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
+	vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+	vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+	vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
+
+	-- Use LspAttach autocommand to only map the following keys
+	-- after the language server attaches to the current buffer
+	vim.api.nvim_create_autocmd("LspAttach", {
+		group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+		callback = function(ev)
+			-- Enable completion triggered by <c-x><c-o>
+			vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+
+			-- Buffer local mappings.
+			-- See `:help vim.lsp.*` for documentation on any of the below functions
+			local opts = { buffer = ev.buf }
+			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+			vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+			vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
+			vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
+			vim.keymap.set("n", "<space>wl", function()
+				print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+			end, opts)
+			vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
+			vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
+			vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
+			vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+			vim.keymap.set("n", "<space>f", function()
+				vim.lsp.buf.format({ async = true })
+			end, opts)
+		end,
+	})
+end
+
 return {
-    "neovim/nvim-lspconfig",
-    opts = {
-        capabilities = {
-            textDocument = {
-                foldingRange = {
-                    dynamicRegistration = false,
-                    lineFoldingOnly = true,
-                },
-            },
-        },
-        servers = {
-            -- Ensure mason installs the server
-            jdtls = {},
-            rust_analyzer = {
-                keys = {
-                    { "K", "<cmd>RustHoverActions<cr>", desc = "Hover Actions (Rust)" },
-                    { "<leader>cR", "<cmd>RustCodeAction<cr>", desc = "Code Action (Rust)" },
-                    { "<leader>dr", "<cmd>RustDebuggables<cr>", desc = "Run Debuggables (Rust)" },
-                },
-                settings = {
-                    ["rust-analyzer"] = {
-                        cargo = {
-                            allFeatures = true,
-                            loadOutDirsFromCheck = true,
-                            runBuildScripts = true,
-                        },
-                        -- Add clippy lints for Rust.
-                        checkOnSave = {
-                            allFeatures = true,
-                            command = "clippy",
-                            extraArgs = { "--no-deps" },
-                        },
-                        procMacro = {
-                            enable = true,
-                            ignored = {
-                                ["async-trait"] = { "async_trait" },
-                                ["napi-derive"] = { "napi" },
-                                ["async-recursion"] = { "async_recursion" },
-                            },
-                        },
-                    },
-                },
-            },
-            taplo = {
-                keys = {
-                    {
-                        "K",
-                        function()
-                            if
-                                vim.fn.expand("%:t") == "Cargo.toml"
-                                and require("crates").popup_available()
-                            then
-                                require("crates").show_popup()
-                            else
-                                vim.lsp.buf.hover()
-                            end
-                        end,
-                        desc = "Show Crate Documentation",
-                    },
-                },
-            },
-        },
-        setup = {
-            rust_analyzer = function(_, opts)
-                local rust_tools_opts = require("lazyvim.util").opts("rust-tools.nvim")
-                require("rust-tools").setup(
-                    vim.tbl_deep_extend("force", rust_tools_opts or {}, { server = opts })
-                )
-                return true
-            end,
-            jdtls = function()
-                return true -- avoid duplicate servers
-            end,
-        },
-    },
+	"neovim/nvim-lspconfig",
+	event = "FileType",
+	dependencies = {
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"L3MON4D3/LuaSnip",
+		"rafamadriz/friendly-snippets",
+		"j-hui/fidget.nvim",
+		"m4xshen/autoclose.nvim",
+		{ "j-hui/fidget.nvim", opts = {} },
+	},
+	config = config,
+	keys = keys,
 }
