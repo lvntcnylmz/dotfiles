@@ -1,22 +1,17 @@
-include /etc/sway/config.d/*
 include ~/.config/sway/configs/basic
-include ~/.config/sway/configs/output
 include ~/.config/sway/configs/output
 include ~/.config/sway/configs/variables
 include ~/.config/sway/configs/bindsym
-
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+include /etc/sway/config.d/*
 
 ## set random wallpaper and change it after 30 minutes
-exec ~/.config/sway/wallpaper.sh &
+exec ~/.config/sway/wallpaper.sh
 
 ## auto-start apps
 exec swaync
 exec nm-applet --indicator
 exec blueman-applet
 exec gammastep-indicator
-exec kdeconnect-indicator
 exec swayosd-server
 exec autotiling
-exec "sleep 5; firewall-applet"
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
