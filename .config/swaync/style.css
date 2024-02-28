@@ -11,8 +11,7 @@
 @define-color bg-selected rgb(0, 128, 255);
 
 * {
-  font-family: JetBrainsMono NFP;
-  font-weight: bold;
+  font-family: JetBrainsMono NFM SemiBold;
 }
 
 .control-center .notification-row:focus,
@@ -23,22 +22,19 @@
 
 .notification-row {
   outline: none;
-  margin: 10px;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .notification {
-  background: transparent;
-  padding: 0;
-  margin: 0px;
+  background: @cc-bg;
+  border: 2px solid #34548a;
+  border-radius: 5px;
+  margin: 3px -2px 3px 0px;
 }
 
 .notification-content {
   background: @cc-bg;
-  padding: 10px;
-  border-radius: 5px;
-  border: 2px solid #34548a;
-  margin: 0;
 }
 
 .notification-default-action {
@@ -51,7 +47,7 @@
   background: #f7768e;
   color: @cc-bg;
   text-shadow: none;
-  padding: 0;
+  padding: 0px;
   border-radius: 5px;
   margin-top: 5px;
   margin-right: 5px;
@@ -73,7 +69,7 @@
 .notification-default-action:hover,
 .notification-action:hover {
   color: #7aa2f7;
-  background: #7aa2f7;
+  background: @cc-bg;
 }
 
 .notification-default-action {
@@ -126,10 +122,9 @@
   background: @noti-bg-hover;
 }
 
-.body-image {
-  margin-top: 6px;
-  background-color: #fff;
+.image {
   border-radius: 5px;
+  margin-right: 10px;
 }
 
 .summary {
@@ -188,7 +183,7 @@
   border-radius: 5px;
 }
 
-.widget-title > button {
+.widget-title>button {
   font-size: 1rem;
   color: @text-color;
   text-shadow: none;
@@ -197,7 +192,7 @@
   border-radius: 5px;
 }
 
-.widget-title > button:hover {
+.widget-title>button:hover {
   background: #f7768e;
   color: @cc-bg;
 }
@@ -205,29 +200,28 @@
 .widget-dnd {
   background: @noti-bg-darker;
   padding: 5px 10px;
-  margin: 5px 10px 10px 10px;
+  margin: 5px 10px;
   border-radius: 5px;
   font-size: large;
   color: #7aa2f7;
 }
 
-.widget-dnd > switch {
+.widget-dnd>switch {
   border-radius: 5px;
-  /* border: 1px solid #7aa2f7; */
   background: #7aa2f7;
 }
 
-.widget-dnd > switch:checked {
+.widget-dnd>switch:checked {
   background: #f7768e;
   border: 1px solid #f7768e;
 }
 
-.widget-dnd > switch slider {
+.widget-dnd>switch slider {
   background: @cc-bg;
   border-radius: 5px;
 }
 
-.widget-dnd > switch:checked slider {
+.widget-dnd>switch:checked slider {
   background: @cc-bg;
   border-radius: 5px;
 }
@@ -236,7 +230,7 @@
   margin: 10px 10px 5px 10px;
 }
 
-.widget-label > label {
+.widget-label>label {
   font-size: 1rem;
   color: @text-color;
 }
@@ -249,7 +243,7 @@
   border-radius: 5px;
 }
 
-.widget-mpris > box > button {
+.widget-mpris>box>button {
   border-radius: 5px;
 }
 
@@ -275,24 +269,24 @@
   background: @noti-bg-darker;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button {
+.widget-buttons-grid>flowbox>flowboxchild>button {
   margin: 3px;
   background: @cc-bg;
   border-radius: 5px;
   color: @text-color;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
   background: rgba(122, 162, 247, 1);
   color: @cc-bg;
 }
 
-.widget-menubar > box > .menu-button-bar > button {
+.widget-menubar>box>.menu-button-bar>button {
   border: none;
   background: transparent;
 }
 
-.topbar-buttons > button {
+.topbar-buttons>button {
   border: none;
   background: transparent;
 }
@@ -300,49 +294,17 @@
 .widget-volume {
   background: @noti-bg-darker;
   padding: 5px;
-  margin: 10px 10px 5px 10px;
+  margin: 5px 10px;
   border-radius: 5px;
-  font-size: x-large;
-  color: @text-color;
-}
-
-.widget-volume > box > button {
-  background: #7aa2f7;
-  border: none;
-}
-
-.per-app-volume {
-  background-color: @noti-bg;
-  padding: 4px 8px 8px;
-  margin: 0 8px 8px;
-  border-radius: 5px;
+  font-size: 2rem;
+  color: #7aa2f7;
 }
 
 .widget-backlight {
   background: @noti-bg-darker;
   padding: 5px;
-  margin: 10px 10px 5px 10px;
+  margin: 5px 10px;
   border-radius: 5px;
-  font-size: x-large;
-  color: @text-color;
+  font-size: 2rem;
+  color: #7aa2f7;
 }
-
-/* .widget-inhibitors {
-    margin: 8px;
-    font-size: 1.5rem
-}
-
-.widget-inhibitors>button {
-    font-size: initial;
-    color: @text-color;
-    text-shadow: none;
-    background: @noti-bg;
-    border: 1px solid red;
-    box-shadow: none;
-    border-radius: 7px
-}
-
-.widget-inhibitors>button:hover {
-    background: @noti-bg-hover
-} */
-
