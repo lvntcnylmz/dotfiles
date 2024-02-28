@@ -24,7 +24,6 @@
 #waybar {
   background: @bg-color;
   color: @fg-color;
-  /* border-bottom: 2px solid @tn-dark-purple; */
 }
 
 /* Tooltips */
@@ -47,18 +46,20 @@ tooltip {
 #pulseaudio.speaker,
 #pulseaudio.mic,
 #temperature,
+#custom-timer,
 #custom-power,
 #custom-updates,
 #custom-weather,
 #custom-notification,
 #custom-scratchpad-indicator {
-  margin: 0 1px;
-  padding: 2px 5px;
+  margin: 2px 1px;
+  padding: 0 4px;
+  border-radius: 5px;
 }
 
 /* Specific Module Styling */
 #mpris {
-  margin-right: 10px;
+  margin: 2px 5px;
 }
 
 #clock,
@@ -73,6 +74,11 @@ tooltip {
 #custom-updates,
 #custom-scratchpad-indicator {
   color: @tn-blue;
+}
+
+#custom-timer.active {
+  background-color: @tn-red;
+  color: @bg-color;
 }
 
 #network.vpn {
@@ -102,7 +108,7 @@ tooltip {
 #custom-notification.notification {
   background: @tn-blue;
   color: @bg-color;
-  border-radius: 0px;
+  border-radius: 5px;
 }
 
 #custom-notification.dnd-none {
@@ -112,7 +118,7 @@ tooltip {
 #custom-notification.dnd-notification {
   background: @tn-red;
   color: @bg-color;
-  border-radius: 0px;
+  border-radius: 5px;
 }
 
 #custom-notification,
@@ -124,8 +130,8 @@ tooltip {
 #custom-power {
   background: @tn-red;
   color: @bg-color;
-  margin: 0 1px 0 10px;
-  border-radius: 0;
+  margin: 2px 1px 2px 10px;
+  border-radius: 5px;
 }
 
 #upower.charging {
@@ -139,27 +145,25 @@ tooltip {
 
 /* Workspace Buttons */
 #workspaces {
-  margin: 0px 1px;
-  padding: 0px;
+  margin: 2px 1px;
+  padding: 0;
 }
 
 #workspaces button {
   padding: 0px;
   color: @tn-blue;
-  border-radius: 5px;
-  min-width: 25px;
+  min-width: 20px;
 }
 
 #workspaces button.persistent {
   color: @fg-color;
-  border-radius: 5px;
   padding: 0px;
 }
 
 #workspaces button.focused {
   background: @tn-blue;
   color: @bg-color;
-  border-radius: 0px;
+  border-radius: 5px;
   /* padding-top: 2px; */
   /* border-bottom: 2px solid @tn-green; */
 }

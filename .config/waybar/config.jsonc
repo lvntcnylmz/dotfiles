@@ -1,9 +1,21 @@
 {
   // "height": 35,
-  "output": ["DP-3", "!eDP-1"],
-  "modules-left": ["custom/power", "sway/workspaces", "mpris"],
-  "modules-center": ["clock", "custom/weather"],
+  "output": [
+    "DP-3",
+    "!eDP-1"
+  ],
+  "modules-left": [
+    "custom/power",
+    "sway/workspaces",
+    "mpris"
+  ],
+  "modules-center": [
+    "clock",
+    "clock#date",
+    "custom/weather"
+  ],
   "modules-right": [
+    "custom/timer",
     "network#vpn",
     "sway/mode",
     "custom/scratchpad-indicator",
@@ -11,16 +23,16 @@
     "custom/updates",
     "tray",
     "sway/language",
+    "upower",
     "pulseaudio#speaker",
     "pulseaudio#mic",
-    "upower",
     "custom/notification"
   ],
   //-------------
   // modules-left
   //------------
   "custom/power": {
-    "on-click": "nwg-bar",
+    "on-click": "nwg-bar -p 'right'",
     "on-click-right": "swaylock-corrupter",
     "format": "<big></big>",
     "tooltip": false
@@ -70,7 +82,12 @@
   "mpris": {
     "format": "{player_icon} {dynamic}",
     "format-paused": "{status_icon} {dynamic}",
-    "dynamic-order": ["title", "artist", "position", "length"],
+    "dynamic-order": [
+      "title",
+      "artist",
+      "position",
+      "length"
+    ],
     "max-length": 100,
     "interval": 1,
     "player-icons": {
@@ -81,18 +98,26 @@
     "status-icons": {
       "paused": "<span color='#F7768E'><big></big></span>"
     }
+    // "ignored-players": [
+    //   "firefox"
+    // ]
   },
   //---------------
   // modules-center
   //---------------
   "clock": {
-    "format": "{:%a %d  %H:%M }",
-    "format-alt": "{:%a %d %b  %H:%M:%S}",
-    "interval": 1,
+    "format": "{:%H:%M }",
+    "format-alt": "{:%H:%M:%S }",
+    "interval": 1
+  },
+  "clock#date": {
+    "on-click": "gsimplecal",
+    "format": "{:%a %d %b }",
+    "format-alt": "{:%a %d %b }",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "locale": "en_GB.UTF-8",
     "calendar": {
-      "mode": "year",
+      "mode": "month",
       "mode-mon-col": 3,
       "weeks-pos": "left",
       "on-scroll": 1,
@@ -128,6 +153,15 @@
   //--------------
   // modules-right
   //--------------
+  "custom/timer": {
+    "tooltip": true,
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/scripts/timer.sh check",
+    "on-click": "$HOME/.config/waybar/scripts/timer.sh minute_dialog",
+    "on-click-right": "$HOME/.config/waybar/scripts/timer.sh datetime_dialog",
+    "on-click-middle": "$HOME/.config/waybar/scripts/timer.sh stop",
+    "interval": 1
+  },
   "network#vpn": {
     "interval": 5,
     "interface": "tun0",
@@ -165,7 +199,11 @@
     "critical-threshold": 70,
     "format-critical": "{temperatureC}°C {icon}",
     "format": "",
-    "format-icons": ["<big></big>", "<big></big.", "<big></big>"]
+    "format-icons": [
+      "<big></big>",
+      "<big></big.",
+      "<big></big>"
+    ]
   },
   "pulseaudio#speaker": {
     "format": "{icon}",
@@ -188,8 +226,8 @@
   },
   "pulseaudio#mic": {
     "format": "{format_source}",
-    "format-source": "<big></big>",
-    "format-source-muted": "<big></big>",
+    "format-source": "",
+    "format-source-muted": "",
     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
     "on-click-middle": "$TERMINAL -e pulsemixer",
     "on-click-right": "pavucontrol",
@@ -198,7 +236,7 @@
   "upower": {
     "format": "",
     "format-alt": "{percentage} {time}",
-    "icon-size": 18,
+    "icon-size": 15,
     "hide-if-empty": true,
     "tooltip": true,
     "tooltip-format": "{percentage}",
