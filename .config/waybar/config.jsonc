@@ -1,8 +1,7 @@
 {
-  // "height": 35,
   "output": [
-    "DP-3",
-    "!eDP-1"
+    "!DP-3",
+    "eDP-1"
   ],
   "modules-left": [
     "custom/power",
@@ -15,12 +14,12 @@
     "custom/weather"
   ],
   "modules-right": [
-    "custom/timer",
-    "network#vpn",
+    "temperature",
     "sway/mode",
     "custom/scratchpad-indicator",
-    "temperature",
     "custom/updates",
+    "network#vpn",
+    "custom/timer",
     "tray",
     "sway/language",
     "upower",
@@ -106,14 +105,14 @@
   // modules-center
   //---------------
   "clock": {
-    "format": "{:%H:%M }",
-    "format-alt": "{:%H:%M:%S }",
+    "format": "{:%H:%M}",
+    "format-alt": "{:%H:%M:%S}",
     "interval": 1
   },
   "clock#date": {
     "on-click": "gsimplecal",
-    "format": "{:%a %d %b }",
-    "format-alt": "{:%a %d %b }",
+    "format": "{:%a %d %b}",
+    "format-alt": "{:%a %d %b}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "locale": "en_GB.UTF-8",
     "calendar": {
@@ -139,15 +138,10 @@
     }
   },
   "custom/weather": {
-    // "exec": "$HOME/.config/waybar/scripts/weather.sh",
-    // "format": "{}",
-    // "return-type": "json",
-    // "interval": 300,
-    // "tooltip": true
     "format": "{}",
     "tooltip": true,
     "interval": 1800,
-    "exec": "wttrbar --date-format '%A, %d %b %Y' --location Luleburgaz --hide-conditions --custom-indicator '{ICON} {temp_C}°'",
+    "exec": "wttrbar --date-format '%A, %d %b %Y' --location Luleburgaz --hide-conditions --custom-indicator '{ICON} {temp_C}'",
     "return-type": "json"
   },
   //--------------

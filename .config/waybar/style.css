@@ -6,6 +6,7 @@
 @define-color tn-blue #7aa2f7;
 @define-color tn-yellow #e0af68;
 @define-color tn-purple #bb9af7;
+@define-color tn-grey #343b58;
 
 @define-color tn-dark-green #485e30;
 @define-color tn-dark-red #8c4351;
@@ -38,6 +39,7 @@ tooltip {
 #mode,
 #tray,
 #clock,
+#clock.date,
 #mpris,
 #upower,
 #language,
@@ -50,6 +52,7 @@ tooltip {
 #custom-power,
 #custom-updates,
 #custom-weather,
+#custom-launcher,
 #custom-notification,
 #custom-scratchpad-indicator {
   margin: 2px 1px;
@@ -62,18 +65,18 @@ tooltip {
   margin: 2px 5px;
 }
 
-#clock,
-#custom-weather {
-  margin-right: 0;
+.modules-center {
+  background: @tn-grey;
+  margin: 2px 2px;
+  padding: 0 4px;
+  border-radius: 5px;
 }
 
-#mode {
-  color: @tn-green;
-}
-
+#mode,
 #custom-updates,
 #custom-scratchpad-indicator {
-  color: @tn-blue;
+  background: @tn-blue;
+  color: @bg-color;
 }
 
 #custom-timer.active {
