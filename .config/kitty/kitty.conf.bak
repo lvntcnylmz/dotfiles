@@ -785,8 +785,7 @@ font-features JetBrainsMonoNF-Medium +zero +onum +liga
 #: to be used instead. A single value sets all four sides. Two values
 #: set the vertical and horizontal sides. Three values set top,
 #: horizontal and bottom. Four values set top, right, bottom and left.
-
-# window_padding_width 0
+window_padding_width 15
 
 #: The window padding (in pts) (blank area between the text and the
 #: window border). A single value sets all four sides. Two values set
@@ -915,7 +914,7 @@ font-features JetBrainsMonoNF-Medium +zero +onum +liga
 #: The second number is the margin between the tab bar and the
 #: contents of the current tab.
 
-# tab_bar_style fade
+tab_bar_style powerline
 
 #: The tab bar style, can be one of:
 
@@ -973,7 +972,7 @@ font-features JetBrainsMonoNF-Medium +zero +onum +liga
 #: The separator between tabs in the tab bar when using separator as
 #: the tab_bar_style.
 
-# tab_powerline_style angled
+tab_powerline_style slanted
 
 #: The powerline separator style between tabs in the tab bar when
 #: using powerline as the tab_bar_style, can be one of: angled,
@@ -991,7 +990,7 @@ font-features JetBrainsMonoNF-Medium +zero +onum +liga
 #: The maximum number of cells that can be used to render the text in
 #: a tab. A value of zero means that no limit is applied.
 
-# tab_title_template "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{title}"
+tab_title_template "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{title}"
 
 #: A template to render the tab title. The default just renders the
 #: title with optional symbols for bell and activity. If you wish to
@@ -1038,9 +1037,9 @@ font-features JetBrainsMonoNF-Medium +zero +onum +liga
 #: Template to use for active tabs. If not specified falls back to
 #: tab_title_template.
 
-# active_tab_foreground   #000
-# active_tab_background   #eee
-# active_tab_font_style   bold-italic
+active_tab_foreground   #000
+active_tab_background   #0f0
+active_tab_font_style   bold
 # inactive_tab_foreground #444
 # inactive_tab_background #999
 # inactive_tab_font_style normal
@@ -1103,7 +1102,7 @@ font-features JetBrainsMonoNF-Medium +zero +onum +liga
 #: When background image is scaled, whether linear interpolation
 #: should be used.
 
-# dynamic_background_opacity no
+dynamic_background_opacity yes
 
 #: Allow changing of the background_opacity dynamically, using either
 #: keyboard shortcuts (increase_background_opacity and
@@ -1593,7 +1592,7 @@ font-features JetBrainsMonoNF-Medium +zero +onum +liga
 #: configuration will change this value only for newly created OS
 #: windows.
 
-# linux_display_server auto
+linux_display_server wayland
 
 #: Choose between Wayland and X11 backends. By default, an appropriate
 #: backend based on the system state is chosen automatically. Set it
@@ -2346,6 +2345,6 @@ font-features JetBrainsMonoNF-Medium +zero +onum +liga
 
 
 # BEGIN_KITTY_THEME
-# Sakura Night
+# Hipster Green
 include current-theme.conf
 # END_KITTY_THEME
