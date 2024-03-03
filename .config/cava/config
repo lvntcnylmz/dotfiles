@@ -180,16 +180,16 @@ background = '#1a1b26'
 # Gradient mode, only hex defined colors are supported,
 # background must also be defined in hex or remain commented out. 1 = on, 0 = off.
 # You can define as many as 8 different colors. They range from bottom to top of screen
-; gradient = 0
-; gradient_count = 8
-; gradient_color_1 = '#59cc33'
-; gradient_color_2 = '#80cc33'
-; gradient_color_3 = '#a6cc33'
-; gradient_color_4 = '#cccc33'
-; gradient_color_5 = '#cca633'
-; gradient_color_6 = '#cc8033'
-; gradient_color_7 = '#cc5933'
-; gradient_color_8 = '#cc3333'
+# gradient = 1
+# gradient_count = 8
+# gradient_color_1 = '#7aa2f7'
+# gradient_color_2 = '#84a1f8'
+# gradient_color_3 = '#8da0f9'
+# gradient_color_4 = '#979ff9'
+# gradient_color_5 = '#a09ef9'
+# gradient_color_6 = '#a99df9'
+# gradient_color_7 = '#b29bf8'
+# gradient_color_8 = '#bb9af7'
 
 
 
@@ -201,8 +201,8 @@ background = '#1a1b26'
 ; integral = 77
 
 # Disables or enables the so-called "Monstercat smoothing" with or without "waves". Set to 0 to disable.
-; monstercat = 0
-; waves = 0
+; monstercat = 1
+; waves = 1
 
 # Set gravity percentage for "drop off". Higher values means bars will drop faster.
 # Accepts only non-negative values. 50 means half gravity, 200 means double. Set to 0 to disable "drop off".
