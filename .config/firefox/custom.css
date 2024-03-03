@@ -14,15 +14,15 @@
         --tab-active-background: #485e30;
         --tab-active-text: #fbfbfe;
         --tab-text: #fbfbfe;
-        --toolbar-background: rgb(43,42,51);
+        --toolbar-background: rgb(43, 42, 51);
         --toolbar-text: rgb(251, 251, 254);
-        --input-background: rgb(28,27,34);
+        --input-background: rgb(28, 27, 34);
         --input-border: transparent;
-        --input-background-focus: rgb(66,65,77);
-        --input-selected-text: rgb(251,251,254);
-        --input-text: rgb(251,251,254);
-        --input-text-focus: rgb(251,251,254);
-        --identity-color-toolbar: rgb(251,251,254);
+        --input-background-focus: rgb(66, 65, 77);
+        --input-selected-text: rgb(251, 251, 254);
+        --input-text: rgb(251, 251, 254);
+        --input-text-focus: rgb(251, 251, 254);
+        --identity-color-toolbar: rgb(251, 251, 254);
         --tablist-separator: #333333;
         --overflow-indicator-border: #cccccc;
     }
@@ -141,18 +141,22 @@ body {
     margin-left: 0px;
     padding-left: 6px;
 }
+
 #tablist,
 #pinnedtablist:not(.compact) {
     margin-left: -6px;
     padding-left: 6px;
 }
+
 .tab {
     overflow: visible;
 }
+
 #tablist .tab[data-identity-color] .tab-context,
 #pinnedtablist:not(.compact) .tab[data-identity-color] .tab-context {
     box-shadow: none !important;
 }
+
 #tablist .tab[data-identity-color] .tab-context::before,
 #pinnedtablist:not(.compact) .tab[data-identity-color] .tab-context::before {
     content: "";
@@ -165,6 +169,7 @@ body {
     background: var(--identity-color);
     transition: inset .1s;
 }
+
 #tablist .tab.active[data-identity-color] .tab-context::before,
 #pinnedtablist:not(.compact) .tab.active[data-identity-color] .tab-context::before {
     top: 1px;
@@ -178,6 +183,7 @@ body {
 
 /* hide certain items when collapsed */
 @media (max-width: 64px) {
+
     /* using 64px minimum width to give the tab favicons more room during the transition */
     .tab-close,
     .tab-pin {
@@ -203,13 +209,17 @@ body {
 .can-scroll-top #tablist {
     mask: linear-gradient(transparent, black 40px);
 }
+
 .can-scroll-bottom #tablist {
     mask: linear-gradient(black calc(100% - 40px), transparent);
 }
+
 .can-scroll-bottom.can-scroll-top #tablist {
     mask: linear-gradient(transparent, black 40px calc(100% - 40px), transparent);
 }
-#topshadow, #bottomshadow {
+
+#topshadow,
+#bottomshadow {
     display: none;
 }
 
@@ -224,16 +234,22 @@ body {
     overflow-x: auto;
     gap: 2px;
 }
-#pinnedtablist.compact:not(:hover):not(:focus-within) { /* Prevent scrollbar from showing when transitioning */
+
+#pinnedtablist.compact:not(:hover):not(:focus-within) {
+    /* Prevent scrollbar from showing when transitioning */
     scrollbar-width: none;
 }
+
 #pinnedtablist.compact .tab {
     min-width: 36px;
 }
+
 @media (max-width: 48px) {
     #pinnedtablist.compact {
-        overflow-x: clip /* Clip always makes it reset scroll position */
+        overflow-x: clip
+            /* Clip always makes it reset scroll position */
     }
+
     #pinnedtablist.compact .tab.active {
         order: -1
     }
@@ -253,10 +269,12 @@ body {
     background-color: var(--toolbar-background) !important;
     transition: margin .4s;
 }
+
 #tablist-wrapper:not(.shrinked) .tab-icon-wrapper {
     transition: margin .1s;
     z-index: 2;
 }
+
 #tablist-wrapper:not(.shrinked) .tab-icon-overlay {
     top: unset !important;
     bottom: 8px;
@@ -276,12 +294,14 @@ comment out the @media line below and its closing bracket */
         width: 26px;
         margin-right: 0px;
     }
+
     #tablist-wrapper:not(.shrinked) .tab-icon-wrapper {
         background-color: transparent !important;
         margin-top: 0 !important;
         margin-left: 3px !important;
         box-shadow: none !important;
     }
+
     #tablist-wrapper:not(.shrinked) .tab-icon-overlay {
         bottom: 12px;
         left: 16px !important;

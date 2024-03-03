@@ -17,7 +17,7 @@
     }
 
     :root:not([customizing="true"]) #nav-bar:not([inFullscreen]) {
-        padding-left: 80px;
+        padding-left: 80px !important;
     }
 
     :root:not([customizing="true"]) #TabsToolbar .titlebar-buttonbox-container {
@@ -30,7 +30,8 @@
 }
 
 /* Linux/GTK specific styles */
-@media (-moz-gtk-csd-available) {
+@media (-moz-gtk-csd-available),
+(-moz-platform: linux) {
     .browser-toolbar:not(.titlebar-color) {
         /* Fixes wrong coloring applied with --toolbar-bgcolor by Firefox (#101) */
         background-color: transparent !important;
@@ -141,7 +142,8 @@
 }
 
 /* Windows specific styles */
-@media (-moz-platform: windows-win10) {
+@media (-moz-platform: windows),
+(-moz-platform: windows-win10) {
 
     /* Hide main tabs toolbar */
     :root[tabsintitlebar] {
@@ -227,6 +229,12 @@
         /* border-radius: 5px; */
         width: 35px;
         height: 38px;
+        pointer-events: auto;
+    }
+
+    #titlebar {
+        z-index: 3;
+        pointer-events: none;
     }
 
     #main-menubar {
@@ -276,14 +284,15 @@
     display: none;
 }
 
-[sidebarcommand*="tabcenter"] #sidebar,
-#sidebar-box[sidebarcommand*="tabcenter"] {
+#main-window:not([chromehidden~="toolbar"]) [sidebarcommand*="tabcenter"] #sidebar,
+#main-window:not([chromehidden~="toolbar"]) #sidebar-box[sidebarcommand*="tabcenter"]:not([hidden="true"]) {
+    display: block !important;
     min-width: 48px !important;
     max-width: 48px !important;
     width: 48px;
 }
 
-#sidebar-box[sidebarcommand*="tabcenter"]:not([hidden]) {
+#main-window:not([chromehidden~="toolbar"]) #sidebar-box[sidebarcommand*="tabcenter"]:not([hidden]) {
     display: block;
     position: var(--positionX2);
     min-width: 48px;
@@ -295,20 +304,19 @@
     bottom: 0;
 }
 
-/* use :where() selector to lower specificity */
-:where(#main-window[inFullscreen]) #sidebar-box[sidebarcommand*="tabcenter"]:not([hidden]) {
+#main-window[inFullscreen]:not([chromehidden~="toolbar"]) #sidebar-box[sidebarcommand*="tabcenter"]:not([hidden]):not(:hover) {
     min-width: var(--fullscreen-sidebar-width) !important;
     max-width: var(--fullscreen-sidebar-width) !important;
 }
 
-/* #sidebar-box[sidebarcommand*="tabcenter"]:hover #sidebar,
-#sidebar-box[sidebarcommand*="tabcenter"]:hover {
+#main-window:not([chromehidden~="toolbar"]) #sidebar-box[sidebarcommand*="tabcenter"]:hover #sidebar,
+#main-window:not([chromehidden~="toolbar"]) #sidebar-box[sidebarcommand*="tabcenter"]:hover {
     min-width: 10vw !important;
     width: 30vw !important;
     max-width: 200px !important;
     z-index: 1 !important;
     transition: all var(--transition-time) ease var(--delay);
-} */
+}
 
 /* used for delay function */
 #sidebar-box[sidebarcommand*="tabcenter"]:not(:hover) #sidebar,
@@ -316,13 +324,13 @@
     transition: all var(--transition-time) ease 0s;
 }
 
-/* @media (width >=1200px) {
+@media (width >=1200px) {
 
-    #sidebar-box[sidebarcommand*="tabcenter"]:hover #sidebar,
-    #sidebar-box[sidebarcommand*="tabcenter"]:hover {
+    #main-window:not([chromehidden~="toolbar"]) #sidebar-box[sidebarcommand*="tabcenter"]:hover #sidebar,
+    #main-window:not([chromehidden~="toolbar"]) #sidebar-box[sidebarcommand*="tabcenter"]:hover {
         max-width: 250px !important;
     }
-} */
+}
 
 [sidebarcommand*="tabcenter"]~#sidebar-splitter {
     display: none;
@@ -333,11 +341,11 @@
     height: 100%;
 }
 
-#main-window:not([inFullscreen]) #sidebar-box[sidebarcommand*="tabcenter"]:not([hidden])~#appcontent {
+#main-window:not([inFullscreen]):not([chromehidden~="toolbar"]) #sidebar-box[sidebarcommand*="tabcenter"]:not([hidden])~#appcontent {
     margin-left: var(--positionX1);
 }
 
-#main-window[inFullscreen]:not([inDOMFullscreen]) #sidebar-box[sidebarcommand*="tabcenter"]:not([hidden])~#appcontent {
+#main-window[inFullscreen]:not([inDOMFullscreen]):not([chromehidden~="toolbar"]) #sidebar-box[sidebarcommand*="tabcenter"]:not([hidden])~#appcontent {
     margin-left: var(--fullscreen-sidebar-width);
 }
 
@@ -368,4 +376,14 @@
     #menubar-items {
         display: none !important;
     }
+}
+
+/* Up the z-index of the top bar so that the bookmarks toolbar is above the sidebar. */
+#navigator-toolbox {
+    z-index: 2 !important;
+}
+
+#PernonalToolbar .bookmark-item:not([container]) .toolbarbutton-icon,
+#PersonalToolbar .bookmark-item:not([container]) .menu-iconic-left {
+display: none !important;
 }
