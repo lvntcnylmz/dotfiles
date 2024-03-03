@@ -19,6 +19,7 @@ opt.hlsearch = false
 opt.number = true
 opt.relativenumber = true
 opt.termguicolors = true
+opt.cursorline = true
 opt.colorcolumn = "100"
 opt.signcolumn = "yes"
 opt.cmdheight = 1

@@ -1,64 +1,62 @@
-local cmp_nvim_lsp = require("cmp_nvim_lsp")
-local diagnostic_signs = require("util.icons").diagnostics
-local capabilities = cmp_nvim_lsp.default_capabilities()
-
 local config = function()
+	local cmp_nvim_lsp = require("cmp_nvim_lsp")
+	local diagnostic_signs = require("util.icons").diagnostics
+	local lspconfig = require("lspconfig")
+	-- local lspui = require("lspconfig.ui.windows")
+	local capabilities = cmp_nvim_lsp.default_capabilities()
+
 	-- diagnostic signs for sign column
 	for type, icon in pairs(diagnostic_signs) do
 		local hl = "DiagnosticSign" .. type
 		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 	end
 
-	vim.diagnostic.config({
-		underline = true,
-		update_in_insert = true,
-		float = {
-			focusable = false,
-			style = "minimal",
-			border = "rounded",
-			source = "always",
-			header = "",
-			prefix = "",
-		},
-		virtual_text = {
-			spacing = 3,
-			source = "if_many",
-		},
-		severity_sort = true,
-	})
+	-- lspui.default_opts.border = "double"
+
+	-- vim.diagnostic.config({
+	-- 	underline = true,
+	-- 	update_in_insert = false,
+	-- 	float = {
+	-- 		focusable = false,
+	-- 		style = "default",
+	-- 		border = "rounded",
+	-- 		source = "always",
+	-- 		header = "Diagnostics:",
+	-- 	},
+	-- 	virtual_text = {
+	-- 		spacing = 3,
+	-- 		source = "if_many",
+	-- 	},
+	-- 	severity_sort = true,
+	-- })
 
 	-- start other plugins
 	require("autoclose").setup()
 	require("luasnip.loaders.from_vscode").lazy_load()
 	require("neodev").setup({})
 
-	local lspconfig = require("lspconfig")
-
-	local prettier = {
-		formatCommand = [[prettier --stdin-filepath ${INPUT} ${--tab-width:tab_width}]],
-		formatStdin = true,
-	}
-	-- lsp server configurations
-	lspconfig.efm.setup({
+	-- lspconfig.efm.setup({})
+	lspconfig.ast_grep.setup({
+		capabilities = capabilities,
 		filetypes = {
-			"javascript",
-			"javascriptreact",
-			"javascript.jsx",
-			"typescript",
-			"typescriptreact",
-			"typescript.tsx",
-		},
-		init_options = { documentFormatting = true },
-		settings = {
-			languages = {
-				javascript = { prettier },
-				typescript = { prettier },
-				yaml = { prettier },
-			},
+			"html",
+			"css",
 		},
 	})
-	lspconfig.tsserver.setup({})
-	lspconfig.jdtls.setup({})
+
+	lspconfig.clangd.setup({
+		capabilities = capabilities,
+	})
+	lspconfig.tsserver.setup({
+		capabilities = capabilities,
+	})
+	lspconfig.jdtls.setup({
+		capabilities = capabilities,
+	})
+	lspconfig.omnisharp.setup({
+		capabilities = capabilities,
+		organize_imports_on_format = true,
+	})
 	lspconfig.lua_ls.setup({
 		capabilities = capabilities,
 		settings = {
@@ -84,6 +82,7 @@ local keys = function()
 	vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 	vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 	vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
+	vim.keymap.set("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", { noremap = true, silent = true })
 
 	-- Use LspAttach autocommand to only map the following keys
 	-- after the language server attaches to the current buffer
@@ -110,9 +109,9 @@ local keys = function()
 			vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
 			vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
 			vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-			vim.keymap.set("n", "<space>f", function()
-				vim.lsp.buf.format({ async = true })
-			end, opts)
+			-- vim.keymap.set("n", "<space>f", function()
+			--     vim.lsp.buf.format({ async = true, lsp_fallback = true })
+			-- end, opts)
 		end,
 	})
 end
@@ -125,9 +124,8 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		"L3MON4D3/LuaSnip",
 		"rafamadriz/friendly-snippets",
-		"j-hui/fidget.nvim",
 		"m4xshen/autoclose.nvim",
-		{ "j-hui/fidget.nvim", opts = {} },
+		-- { "j-hui/fidget.nvim", opts = {} },
 	},
 	config = config,
 	keys = keys,

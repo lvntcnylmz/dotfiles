@@ -5,5 +5,5 @@ return {
 	-- config = function()
 	-- 	vim.cmd("colorscheme kanagawa-wave")
 	-- end,
-    -- enabled = false
+	-- enabled = false
 }
