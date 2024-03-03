@@ -1,28 +1,154 @@
 format = """
-[┌─](fg:#1793d1)$time $all\
-[└─>](fg:#9ece6a)$username@$hostname $character"""
+$os$all\
+$character
+"""
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
 
 [character]
-success_symbol = '[]($style)'
+success_symbol = "[](#9ece6a)"
+error_symbol = "[](#f7768e)"
 
-[time]
-disabled = false
-format = '[\[$time\]](fg:#1793d1) '
-time_format = '%T - %a, %d/%b/%y'
-utc_time_offset = 'local'
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
 
 [directory]
-truncation_length = 3
-truncation_symbol = '…/'
+read_only = " 󰌾"
+truncation_length = 0
+truncate_to_repo = false
+home_symbol = "$HOME"
+format = '[$path](#7aa2f7)[$read_only]($read_only_style) '
 
-[username]
-style_user = 'white bold'
-style_root = 'black bold'
-format = '[\[$user](fg:#9ece6a)'
-disabled = false
-show_always = true
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
 
 [hostname]
-ssh_only = false
-format = '[$hostname\]](fg:#1793d1) '
+ssh_symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[os]
+format = "[$symbol]($style)"
+style = "bold blue"
 disabled = false
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
+[pijul_channel]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
