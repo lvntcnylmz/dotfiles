@@ -18,7 +18,7 @@
     # bindsym $mod+Shift+p exec swayshot
 
     # Change keyboard layout 
-    bindsym $mod+z exec swaymsg input type:keyboard xkb_switch_layout next
+    bindsym $mod+z exec swaymsg input type:keyboard xkb_switch_layout next | notify-send -i /usr/share/icons/kora/devices/scalable/keyboard.svg "Keyboard layout has been changed." "$(swaymsg -t get_inputs | jq -r '.[] | select(.identifier=="1:1:AT_Translated_Set_2_keyboard") | .xkb_active_layout_name')"
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -35,10 +35,10 @@
     bindsym $mod+less gaps inner current set 10
 
     # Toggle lock screen
-    bindsym $mod+Shift+x exec swaylock-corrupter
+    bindsym $mod+Shift+x exec playerctl pause | swaylock-corrupter
 
     # Exec powermenu
-    bindsym $mod+Shift+m exec nwg-bar -p 'right'
+    bindsym $mod+Shift+m exec nwg-bar -p 'left' -ml 10
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+m exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -180,10 +180,10 @@ bindsym $mod+Shift+r mode "resize"
     # bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
     # bindsym XF86MonBrightnessUp exec brightnessctl set 5%+ 
 
-    # Brightness raise with custom value
-    bindsym XF86MonBrightnessUp  exec swayosd-client --brightness 5
-    # Brightness lower with custom value
-    bindsym XF86MonBrightnessDown exec swayosd-client --brightness -5
+    # Brightness raise
+    bindsym XF86MonBrightnessUp exec swayosd-client --brightness raise
+    # Brightness lower
+    bindsym XF86MonBrightnessDown exec swayosd-client --brightness lower
 
     # Capslock (If you don't want to use the backend)
     bindsym --release Caps_Lock exec swayosd-client --caps-lock

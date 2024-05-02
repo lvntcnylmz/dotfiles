@@ -4,14 +4,15 @@ include ~/.config/sway/configs/variables
 include ~/.config/sway/configs/bindsym
 include /etc/sway/config.d/*
 
-## set random wallpaper and change it after 30 minutes
-exec ~/.config/sway/wallpaper.sh
-
 ## auto-start apps
 exec swaync
 exec nm-applet --indicator
-exec blueman-applet
+exec blueberry-tray
 exec gammastep-indicator
 exec swayosd-server
 exec autotiling
+exec kdeconnect-indicator
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+## set random wallpaper and change it after 30 minutes
+exec sleep 5 | ~/.config/sway/wallpaper.sh

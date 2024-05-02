@@ -10,10 +10,12 @@ assign [instance="spotify"] workspace number 4
 assign [instance="discord"] workspace number 5
 assign [app_id="telegram"] workspace number 5
 assign [app_id="thunar"] workspace number 6
-assign [app_id="thunderbird"] workspace number 7
+assign [class="thunderbird"] workspace number 7
 assign [class="steam"] workspace number 8
-assign [instance="microsoft teams"] workspace number 10
-for_window [app_id="kitty" title="nvim"] move container to workspace 3
+assign [class="Joplin"] workspace number 9
+
+for_window [app_id="gsimplecal"] move position cursor
+for_window [app_id="gsimplecal"] move down 40px
 
 # Border config
 smart_borders on
