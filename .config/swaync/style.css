@@ -216,11 +216,7 @@
   border: 1px solid #f7768e;
 }
 
-.widget-dnd>switch slider {
-  background: @cc-bg;
-  border-radius: 5px;
-}
-
+.widget-dnd>switch slider,
 .widget-dnd>switch:checked slider {
   background: @cc-bg;
   border-radius: 5px;
@@ -278,6 +274,11 @@
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
   background: rgba(122, 162, 247, 1);
+  color: @cc-bg;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:checked {
+  background: rgb(158, 206, 106);
   color: @cc-bg;
 }
 
