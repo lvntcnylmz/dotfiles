@@ -1,17 +1,11 @@
 {
-  "output": [
-    "!DP-3",
-    "eDP-1"
-  ],
-  "modules-left": [
-    "custom/power",
-    "sway/workspaces",
-    "mpris"
-  ],
+  "height": 28,
+  "output": ["DP-3", "!eDP-1"],
+  "modules-left": ["custom/power", "sway/workspaces", "mpris"],
   "modules-center": [
     "clock",
-    "clock#date",
-    "custom/weather"
+    // "clock#date",
+    "custom/weather",
   ],
   "modules-right": [
     "temperature",
@@ -19,22 +13,20 @@
     "custom/scratchpad-indicator",
     "custom/updates",
     "network#vpn",
-    "custom/timer",
     "tray",
-    "sway/language",
     "upower",
     "pulseaudio#speaker",
     "pulseaudio#mic",
-    "custom/notification"
+    "custom/notification",
   ],
   //-------------
   // modules-left
   //------------
   "custom/power": {
-    "on-click": "nwg-bar -p 'right'",
-    "on-click-right": "swaylock-corrupter",
+    "on-click": "nwg-bar -p 'left' -ml 10",
+    "on-click-right": "playerctl pause | swaylock-corrupter",
     "format": "<big></big>",
-    "tooltip": false
+    "tooltip": false,
   },
   "sway/workspaces": {
     "format": "{icon}",
@@ -73,46 +65,33 @@
       // "active": "",
       // "default": ""
     },
-    "persistent-workspaces": {
-      "1": [],
-      "2": []
-    }
+    // "persistent-workspaces": {
+    //   "1": [],
+    //   "2": []
+    // }
   },
   "mpris": {
     "format": "{player_icon} {dynamic}",
     "format-paused": "{status_icon} {dynamic}",
-    "dynamic-order": [
-      "title",
-      "artist",
-      "position",
-      "length"
-    ],
-    "max-length": 100,
+    "dynamic-order": ["title", "artist", "position", "length"],
     "interval": 1,
     "player-icons": {
       "default": "<span color='#9ECE6A'><big></big></span>",
       "firefox": "<span color='#FF9500'><big>󰈹</big></span>",
-      "spotify": "<span color='#0FC044'><big></big></span>"
+      "spotify": "<span color='#0FC044'><big></big></span>",
     },
     "status-icons": {
-      "paused": "<span color='#F7768E'><big></big></span>"
-    }
-    // "ignored-players": [
-    //   "firefox"
-    // ]
+      "paused": "<span color='#F7768E'><big></big></span>",
+    },
+    "ignored-players": ["firefox"],
   },
   //---------------
   // modules-center
   //---------------
   "clock": {
-    "format": "{:%H:%M}",
-    "format-alt": "{:%H:%M:%S}",
-    "interval": 1
-  },
-  "clock#date": {
-    "on-click": "gsimplecal",
-    "format": "{:%a %d %b}",
-    "format-alt": "{:%a %d %b}",
+    "format": "{:%a %d %H:%M}",
+    // "format-alt": "{:%a %d %b}",
+    "interval": 1,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "locale": "en_GB.UTF-8",
     "calendar": {
@@ -126,78 +105,93 @@
         "days": "<span color='#c0caf5'>{}</span>",
         "weeks": "<span color='#7aa2f7'>{}</span>",
         "weekdays": "<span color='#9ece6a'>{}</span>",
-        "today": "<span background='#f7768e' color='#1a1b26'>{}</span>"
-      }
+        "today": "<span background='#f7768e' color='#1a1b26'>{}</span>",
+      },
     },
     "actions": {
       "on-click-right": "mode",
       "on-click-forward": "tz_up",
       "on-click-backward": "tz_down",
       "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down"
-    }
+      "on-scroll-down": "shift_down",
+    },
   },
+  // "clock#date": {
+  //   "on-click": "gsimplecal",
+  //   "format": "<big>{:%a %d %b}</big>",
+  //   "format-alt": "<big>{:%a %d %b}</big>",
+  //   "tooltip-format": "<tt><small>{calendar}</small></tt>",
+  //   "locale": "en_GB.UTF-8",
+  //   "calendar": {
+  //     "mode": "month",
+  //     "mode-mon-col": 3,
+  //     "weeks-pos": "left",
+  //     "on-scroll": 1,
+  //     "on-click-right": "mode",
+  //     "format": {
+  //       "months": "<span color='#bb9af7'>{}</span>",
+  //       "days": "<span color='#c0caf5'>{}</span>",
+  //       "weeks": "<span color='#7aa2f7'>{}</span>",
+  //       "weekdays": "<span color='#9ece6a'>{}</span>",
+  //       "today": "<span background='#f7768e' color='#1a1b26'>{}</span>",
+  //     },
+  //   },
+  //   "actions": {
+  //     "on-click-right": "mode",
+  //     "on-click-forward": "tz_up",
+  //     "on-click-backward": "tz_down",
+  //     "on-scroll-up": "shift_up",
+  //     "on-scroll-down": "shift_down",
+  //   },
+  // },
   "custom/weather": {
     "format": "{}",
     "tooltip": true,
     "interval": 1800,
     "exec": "wttrbar --date-format '%A, %d %b %Y' --location Luleburgaz --hide-conditions --custom-indicator '{ICON} {temp_C}'",
-    "return-type": "json"
+    "return-type": "json",
   },
   //--------------
   // modules-right
   //--------------
-  "custom/timer": {
-    "tooltip": true,
-    "return-type": "json",
-    "exec": "$HOME/.config/waybar/scripts/timer.sh check",
-    "on-click": "$HOME/.config/waybar/scripts/timer.sh minute_dialog",
-    "on-click-right": "$HOME/.config/waybar/scripts/timer.sh datetime_dialog",
-    "on-click-middle": "$HOME/.config/waybar/scripts/timer.sh stop",
-    "interval": 1
-  },
   "network#vpn": {
     "interval": 5,
     "interface": "tun0",
     "format": "<big>󰞀</big>",
     "format-disconnected": "",
-    "tooltip-format": "VPN Connected: {ipaddr}"
+    "tooltip-format": "VPN Connected: {ipaddr}",
   },
   "sway/mode": {
     "format": " {}",
-    "max-length": 50
+    "max-length": 50,
   },
   "custom/scratchpad-indicator": {
     "interval": 1,
     "exec": "swaymsg -t get_tree | jq 'recurse(.nodes[]) | first(select(.name==\"__i3_scratch\")) | .floating_nodes | length | select(. >= 1)'",
     "format": "{} ",
     "on-click": "swaymsg 'scratchpad show'",
-    "on-click-right": "swaymsg 'move scratchpad'"
+    "on-click-right": "swaymsg 'move scratchpad'",
   },
   "custom/updates": {
     "format": "{}",
     "interval": 1800,
     "exec": "$HOME/.config/waybar/scripts/checkupdates.sh 2> /dev/null",
-    "return-type": "json"
+    "return-type": "json",
   },
   "tray": {
-    "icon-size": 16,
+    "icon-size": 14,
     "spacing": 10,
-    "reverse-direction": true
+    "reverse-direction": true,
   },
   "sway/language": {
     "format": "<big>{shortDescription}</big>",
-    "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+    "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
   },
   "temperature": {
     "critical-threshold": 70,
     "format-critical": "{temperatureC}°C {icon}",
     "format": "",
-    "format-icons": [
-      "<big></big>",
-      "<big></big.",
-      "<big></big>"
-    ]
+    "format-icons": ["<big></big>", "<big></big.", "<big></big>"],
   },
   "pulseaudio#speaker": {
     "format": "{icon}",
@@ -210,22 +204,22 @@
         "<big>󰕿</big>",
         "<big>󰖀</big>",
         "<big>󱄠</big>",
-        "<big>󰕾</big>"
-      ]
+        "<big>󰕾</big>",
+      ],
     },
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-click-middle": "$TERMINAL -e pulsemixer",
     "on-click-right": "pavucontrol",
-    "tooltip-format": "{desc} - {volume}"
+    "tooltip-format": "{desc} - {volume}",
   },
   "pulseaudio#mic": {
     "format": "{format_source}",
-    "format-source": "",
-    "format-source-muted": "",
+    "format-source": "<big></big>",
+    "format-source-muted": "<big>󰍭</big>",
     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
     "on-click-middle": "$TERMINAL -e pulsemixer",
     "on-click-right": "pavucontrol",
-    "tooltip-format": "{desc} - {volume}"
+    "tooltip-format": "{desc} - {volume}",
   },
   "upower": {
     "format": "",
@@ -234,16 +228,16 @@
     "hide-if-empty": true,
     "tooltip": true,
     "tooltip-format": "{percentage}",
-    "tooltip-spacing": 20
+    "tooltip-spacing": 20,
   },
   "custom/notification": {
     "tooltip": true,
     "format": "{icon}",
     "format-icons": {
       "notification": "",
-      "none": "",
+      "none": "",
       "dnd-notification": "",
-      "dnd-none": ""
+      "dnd-none": "",
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
@@ -251,6 +245,6 @@
     "on-click": "swaync-client -t -sw",
     "on-click-middle": "swaync-client -C",
     "on-click-right": "swaync-client -d -sw",
-    "escape": true
-  }
+    "escape": true,
+  },
 }
