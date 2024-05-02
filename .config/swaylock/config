@@ -1,9 +1,9 @@
 ignore-empty-password
 
-font=JetBrainsMono NFP ExtraBold
+font=JetBrainsMono NF
 font-size=30
 
-grace=1
+grace=0
 
 clock
 timestr=%H:%M:%S
