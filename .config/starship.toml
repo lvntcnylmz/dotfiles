@@ -25,7 +25,7 @@ symbol = " "
 [directory]
 read_only = " 󰌾"
 truncation_length = 0
-truncate_to_repo = false
+truncate_to_repo = true
 home_symbol = "$HOME"
 format = '[$path](#7aa2f7)[$read_only]($read_only_style) '
 
