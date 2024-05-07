@@ -17,6 +17,7 @@
     "upower",
     "pulseaudio#speaker",
     "pulseaudio#mic",
+    "sway/language",
     "custom/notification",
   ],
   //-------------

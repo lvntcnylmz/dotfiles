@@ -161,6 +161,6 @@ tooltip {
 #workspaces button.focused {
   color: @tn-green;
   border-radius: 0px;
-  padding-top: 2px;
+  /* padding-top: 2px; */
   border-bottom: 2px solid @tn-green;
 }
