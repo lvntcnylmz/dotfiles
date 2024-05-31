@@ -12,6 +12,7 @@ exec gammastep-indicator
 exec swayosd-server
 exec autotiling
 exec kdeconnect-indicator
+exec sleep 2 | fcitx5 -dr &
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 ## set random wallpaper and change it after 30 minutes

@@ -52,7 +52,7 @@ client.placeholder       $bg-color     $bg-color     $fg-color  $bg-color   $bg-
 client.background        $fg-color
 
 # Titlebar sytles
-# title_align center                                                  
+# title_align center
 titlebar_padding 10 2
 
 # Font

@@ -3,7 +3,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term kitty 
+set $term konsole
 set $menu fuzzel
 set $browser firefox
 set $file_manager thunar
