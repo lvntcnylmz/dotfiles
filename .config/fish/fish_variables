@@ -1,5 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export EDITOR:nvim
+SETUVAR --export MYVIMRC:/home/can/\x2econfig/nvim/init\x2elua
 SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:565f89
 SETUVAR fish_color_cancel:\x1d
