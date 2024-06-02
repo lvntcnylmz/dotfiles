@@ -1,12 +1,7 @@
 {
-  "height": 28,
   "output": ["DP-3", "!eDP-1"],
   "modules-left": ["custom/power", "sway/workspaces", "mpris"],
-  "modules-center": [
-    "clock",
-    // "clock#date",
-    "custom/weather",
-  ],
+  "modules-center": ["clock", "custom/weather"],
   "modules-right": [
     "temperature",
     "sway/mode",
@@ -17,7 +12,6 @@
     "upower",
     "pulseaudio#speaker",
     "pulseaudio#mic",
-    "sway/language",
     "custom/notification",
   ],
   //-------------
@@ -35,41 +29,29 @@
     "all-outputs": true,
     "sort-by-number": true,
     "format-icons": {
-      // "1": "一",
-      // "2": "二",
-      // "3": "三",
-      // "4": "四",
-      // "5": "五",
-      // "6": "六",
-      // "7": "七",
-      // "8": "八",
-      // "9": "九",
-      // "10": "十"
-      // "1": "",
-      // "2": "󰈹",
-      // "3": "",
-      // "4": "",
-      // "5": "",
-      // "6": "",
-      // "7": "󰇮",
-      // "8": "󰓓"
-      // "1": "󰼏",
-      // "2": "󰼐",
-      // "3": "󰼑",
-      // "4": "󰼒",
-      // "5": "󰼓",
-      // "6": "󰼔",
-      // "7": "󰼕",
-      // "8": "󰼖",
-      // "9": "󰼗",
-      // "10": "󰼎"
-      // "active": "",
-      // "default": ""
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十",
     },
-    // "persistent-workspaces": {
-    //   "1": [],
-    //   "2": []
-    // }
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": [],
+    },
   },
   "mpris": {
     "format": "{player_icon} {dynamic}",
@@ -90,8 +72,7 @@
   // modules-center
   //---------------
   "clock": {
-    "format": "{:%a %d %H:%M}",
-    // "format-alt": "{:%a %d %b}",
+    "format": "{:%a %d %b %H:%M}",
     "interval": 1,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "locale": "en_GB.UTF-8",
@@ -117,34 +98,6 @@
       "on-scroll-down": "shift_down",
     },
   },
-  // "clock#date": {
-  //   "on-click": "gsimplecal",
-  //   "format": "<big>{:%a %d %b}</big>",
-  //   "format-alt": "<big>{:%a %d %b}</big>",
-  //   "tooltip-format": "<tt><small>{calendar}</small></tt>",
-  //   "locale": "en_GB.UTF-8",
-  //   "calendar": {
-  //     "mode": "month",
-  //     "mode-mon-col": 3,
-  //     "weeks-pos": "left",
-  //     "on-scroll": 1,
-  //     "on-click-right": "mode",
-  //     "format": {
-  //       "months": "<span color='#bb9af7'>{}</span>",
-  //       "days": "<span color='#c0caf5'>{}</span>",
-  //       "weeks": "<span color='#7aa2f7'>{}</span>",
-  //       "weekdays": "<span color='#9ece6a'>{}</span>",
-  //       "today": "<span background='#f7768e' color='#1a1b26'>{}</span>",
-  //     },
-  //   },
-  //   "actions": {
-  //     "on-click-right": "mode",
-  //     "on-click-forward": "tz_up",
-  //     "on-click-backward": "tz_down",
-  //     "on-scroll-up": "shift_up",
-  //     "on-scroll-down": "shift_down",
-  //   },
-  // },
   "custom/weather": {
     "format": "{}",
     "tooltip": true,
@@ -158,7 +111,7 @@
   "network#vpn": {
     "interval": 5,
     "interface": "tun0",
-    "format": "<big>󰞀</big>",
+    "format": "󰞀",
     "format-disconnected": "",
     "tooltip-format": "VPN Connected: {ipaddr}",
   },
@@ -180,7 +133,7 @@
     "return-type": "json",
   },
   "tray": {
-    "icon-size": 14,
+    "icon-size": 13,
     "spacing": 10,
     "reverse-direction": true,
   },
@@ -192,7 +145,7 @@
     "critical-threshold": 70,
     "format-critical": "{temperatureC}°C {icon}",
     "format": "",
-    "format-icons": ["<big></big>", "<big></big.", "<big></big>"],
+    "format-icons": ["", "", ""],
   },
   "pulseaudio#speaker": {
     "format": "{icon}",

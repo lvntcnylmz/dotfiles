@@ -18,7 +18,7 @@
 * {
   font-family: JetBrainsMono NFP;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 /* Waybar */
@@ -32,7 +32,6 @@ tooltip {
   color: @fg-color;
   background: @bg-color;
   border: 2px solid @tn-blue;
-  border-radius: 5px;
 }
 
 /* Modules */
@@ -55,29 +54,24 @@ tooltip {
 #custom-launcher,
 #custom-notification,
 #custom-scratchpad-indicator {
-  margin: 2px 1px;
-  padding: 0 4px;
-  border-radius: 5px;
+  margin: 0px 1px;
+  padding: 0px 4px;
 }
 
 /* Specific Module Styling */
 #mpris {
-  margin: 2px 5px;
-  /* background: @tn-grey; */
+  margin: 0px 5px;
 }
 
 .modules-center {
-  /* background: @tn-grey; */
-  margin: 2px 2px;
+  margin: 0px 2px;
   padding: 0 4px;
-  border-radius: 5px;
 }
 
 #mode,
 #custom-updates,
 #custom-scratchpad-indicator {
   color: @tn-blue;
-  /* color: @bg-color; */
 }
 
 #network.vpn {
@@ -90,13 +84,11 @@ tooltip {
 
 #pulseaudio.mic {
   color: @tn-green;
-  /* color: @bg-color; */
   min-width: 13px;
 }
 
 #pulseaudio.speaker.muted {
   color: @tn-red;
-  /* color: @bg-color; */
 }
 
 #pulseaudio.mic.source-muted {
@@ -106,8 +98,6 @@ tooltip {
 
 #custom-notification.notification {
   color: @tn-blue;
-  /* color: @bg-color; */
-  border-radius: 5px;
 }
 
 #custom-notification.dnd-none {
@@ -116,8 +106,6 @@ tooltip {
 
 #custom-notification.dnd-notification {
   color: @tn-red;
-  /* color: @bg-color; */
-  border-radius: 5px;
 }
 
 #custom-notification,
@@ -128,8 +116,8 @@ tooltip {
 
 #custom-power {
   color: @tn-red;
-  margin: 2px 1px 2px 10px;
-  border-radius: 0px;
+  margin: 0px 1px 0px 10px;
+  border-radius: 5px;
 }
 
 #upower.charging {
@@ -137,16 +125,10 @@ tooltip {
 }
 
 #temperature.critical {
-  background: @tn-red;
-  color: @bg-color;
+  color: @tn-red;
 }
 
 /* Workspace Buttons */
-#workspaces {
-  margin: 0px 1px;
-  padding: 0px;
-}
-
 #workspaces button {
   padding: 0px;
   color: @tn-blue;
@@ -159,8 +141,7 @@ tooltip {
 }
 
 #workspaces button.focused {
-  color: @tn-green;
+  background: @tn-dark-blue;
+  color: @fg-color;
   border-radius: 0px;
-  /* padding-top: 2px; */
-  border-bottom: 2px solid @tn-green;
 }
