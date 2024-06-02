@@ -20,7 +20,7 @@
   "custom/power": {
     "on-click": "nwg-bar -p 'left' -ml 10",
     "on-click-right": "playerctl pause | swaylock-corrupter",
-    "format": "<big></big>",
+    "format": "<span font-size='x-large'></span>",
     "tooltip": false,
   },
   "sway/workspaces": {
@@ -56,7 +56,7 @@
   "mpris": {
     "format": "{player_icon} {dynamic}",
     "format-paused": "{status_icon} {dynamic}",
-    "dynamic-order": ["title", "artist", "position", "length"],
+    "dynamic-order": ["title", "artist"],
     "interval": 1,
     "player-icons": {
       "default": "<span color='#9ECE6A'><big></big></span>",
@@ -111,23 +111,23 @@
   "network#vpn": {
     "interval": 5,
     "interface": "tun0",
-    "format": "󰞀",
+    "format": "<span font-size='large'>󰞀</span>",
     "format-disconnected": "",
     "tooltip-format": "VPN Connected: {ipaddr}",
   },
   "sway/mode": {
-    "format": " {}",
+    "format": "<span font-size='large'></span>",
     "max-length": 50,
   },
   "custom/scratchpad-indicator": {
     "interval": 1,
     "exec": "swaymsg -t get_tree | jq 'recurse(.nodes[]) | first(select(.name==\"__i3_scratch\")) | .floating_nodes | length | select(. >= 1)'",
-    "format": "{} ",
+    "format": "<span font-size='large'>{} </span>",
     "on-click": "swaymsg 'scratchpad show'",
     "on-click-right": "swaymsg 'move scratchpad'",
   },
   "custom/updates": {
-    "format": "{}",
+    "format": "<span font-size='large'>{}</span>",
     "interval": 1800,
     "exec": "$HOME/.config/waybar/scripts/checkupdates.sh 2> /dev/null",
     "return-type": "json",
@@ -148,18 +148,13 @@
     "format-icons": ["", "", ""],
   },
   "pulseaudio#speaker": {
-    "format": "{icon}",
+    "format": "<span font-size='x-large'>{icon}</span>",
     "format-bluetooth": "{volume} {icon} ",
     "format-bluetooth-muted": " {icon} ",
-    "format-muted": "<big>󰖁</big>",
+    "format-muted": "<span font-size='x-large'>󰖁</span>",
     "format-icons": {
-      "headphone": "<big>󰋋</big>",
-      "default": [
-        "<big>󰕿</big>",
-        "<big>󰖀</big>",
-        "<big>󱄠</big>",
-        "<big>󰕾</big>",
-      ],
+      "headphone": "󰋋",
+      "default": ["󰕿", "󰖀", "󱄠", "󰕾"],
     },
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-click-middle": "$TERMINAL -e pulsemixer",
@@ -167,9 +162,9 @@
     "tooltip-format": "{desc} - {volume}",
   },
   "pulseaudio#mic": {
-    "format": "{format_source}",
-    "format-source": "<big></big>",
-    "format-source-muted": "<big>󰍭</big>",
+    "format": "<span font-size='x-large'>{format_source}</span>",
+    "format-source": "",
+    "format-source-muted": "󰍭",
     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
     "on-click-middle": "$TERMINAL -e pulsemixer",
     "on-click-right": "pavucontrol",
@@ -186,7 +181,7 @@
   },
   "custom/notification": {
     "tooltip": true,
-    "format": "{icon}",
+    "format": "<span font-size='large'>{icon}</span>",
     "format-icons": {
       "notification": "",
       "none": "",
