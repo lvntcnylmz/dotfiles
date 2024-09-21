@@ -1,12 +1,39 @@
-
-
 #!/bin/bash
-is_cava_ServerExist=`ps -ef|grep -m 1 cava|grep -v "grep"|wc -l`
-if [ "$is_cava_ServerExist" = "0" ]; then
-	echo "cava_server not found" > /dev/null 2>&1
-#	exit;
-elif [ "$is_cava_ServerExist" = "1" ]; then
-  killall cava
-fi
+# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 
-cava -p ~/.config/cava/config | sed -u 's/;//g;s/0/▁/g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g;'
+# Not my own work. This was added through Github PR. Credit to original author
+
+#----- Optimized bars animation without much CPU usage increase --------
+bar="▁▂▃▄▅▆▇█"
+dict="s/;//g"
+
+# Calculate the length of the bar outside the loop
+bar_length=${#bar}
+
+# Create dictionary to replace char with bar
+for ((i = 0; i < bar_length; i++)); do
+  dict+=";s/$i/${bar:$i:1}/g"
+done
+
+# Create cava config
+config_file="/tmp/bar_cava_config"
+cat >"$config_file" <<EOF
+[general]
+bars = 14
+
+[input]
+method = pulse
+source = auto
+
+[output]
+method = raw
+raw_target = /dev/stdout
+data_format = ascii
+ascii_max_range = 7
+EOF
+
+# Kill cava if it's already running
+pkill -f "cava -p $config_file"
+
+# Read stdout from cava and perform substitution in a single sed command
+cava -p "$config_file" | sed -u "$dict"

@@ -115,10 +115,11 @@ tooltip {
 }
 
 #custom-power {
-  background: @tn-red;
-  color: @bg-color;
+  color: @tn-blue;
+  background: rgba(122, 162, 127, 0.13);
   margin: 0px 0px 0px 10px;
   border-radius: 0px;
+  border-bottom: 2px solid @tn-green;
 }
 
 #upower.charging {
@@ -137,7 +138,7 @@ tooltip {
 
 #workspaces button {
   padding: 0px;
-  color: @tn-blue;
+  color: @fg-color;
   min-width: 20px;
 }
 
@@ -147,7 +148,8 @@ tooltip {
 }
 
 #workspaces button.focused {
-  background: @tn-blue;
-  color: @bg-color;
+  background: rgba(122, 162, 127, 0.13);
+  color: @tn-blue;
   border-radius: 0px;
+  border-bottom: 2px solid @tn-blue;
 }

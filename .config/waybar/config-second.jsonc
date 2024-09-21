@@ -1,0 +1,213 @@
+{
+  "height": 26,
+  "output": [
+    "!DP-3",
+    "eDP-1"
+  ],
+  "modules-left": [
+    "custom/power",
+    "sway/workspaces",
+    "mpris",
+  ],
+  "modules-center": [
+    "clock",
+    "custom/weather",
+  ],
+  "modules-right": [
+    "temperature",
+    "sway/mode",
+    "custom/scratchpad-indicator",
+    "custom/updates",
+    "network#vpn",
+    "sway/language",
+    "tray",
+    "upower",
+    "pulseaudio#speaker",
+    "pulseaudio#mic",
+    "custom/notification",
+  ],
+  //-------------
+  // modules-left
+  //------------
+  "custom/power": {
+    "on-click": "nwg-bar -p 'left' -ml 10",
+    "on-click-right": "playerctl pause | swaylock-corrupter",
+    "format": "<span font-size='x-large'>󰣇</span>",
+    "tooltip": false,
+  },
+  "sway/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "all-outputs": true,
+    "sort-by-number": true,
+    // "persistent-workspaces": {
+    //   "1": [],
+    //   "2": [],
+    //   "3": [],
+    //   "4": [],
+    //   "5": [],
+    //   "6": [],
+    //   "7": [],
+    //   "8": [],
+    //   "9": [],
+    //   "10": [],
+    // },
+  },
+  "mpris": {
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} {dynamic}",
+    "dynamic-order": [
+      "title",
+      "artist"
+    ],
+    "interval": 1,
+    "player-icons": {
+      "default": "<span color='#9ECE6A'><big></big></span>",
+      "firefox": "<span color='#FF9500'><big>󰈹</big></span>",
+      "spotify": "<span color='#0FC044'><big></big></span>",
+    },
+    "status-icons": {
+      "paused": "<span color='#F7768E'><big></big></span>",
+    },
+    "ignored-players": [
+      "firefox"
+    ],
+  },
+  //---------------
+  // modules-center
+  //---------------
+  "clock": {
+    "format": "{:L%a %d %b %H:%M}",
+    "interval": 1,
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "locale": "en_GB.UTF-8",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "left",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#bb9af7'>{}</span>",
+        "days": "<span color='#c0caf5'>{}</span>",
+        "weeks": "<span color='#7aa2f7'>{}</span>",
+        "weekdays": "<span color='#9ece6a'>{}</span>",
+        "today": "<span background='#f7768e' color='#1a1b26'>{}</span>",
+      },
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down",
+    },
+  },
+  "custom/weather": {
+    "format": "{}",
+    "tooltip": true,
+    "interval": 1800,
+    "exec": "wttrbar --date-format '%A, %d %b %Y' --location Luleburgaz --hide-conditions --custom-indicator '{ICON} {temp_C}'",
+    "return-type": "json",
+  },
+  //--------------
+  // modules-right
+  //--------------
+  "network#vpn": {
+    "interval": 5,
+    "interface": "tun0",
+    "format": "<span font-size='large'>󰞀</span>",
+    "format-disconnected": "",
+    "tooltip-format": "VPN Connected: {ipaddr}",
+  },
+  "sway/mode": {
+    "format": "<span font-size='large'>󰩨</span>",
+    "max-length": 50,
+  },
+  "custom/scratchpad-indicator": {
+    "interval": 1,
+    "exec": "swaymsg -t get_tree | jq 'recurse(.nodes[]) | first(select(.name==\"__i3_scratch\")) | .floating_nodes | length | select(. >= 1)'",
+    "format": "<span font-size='large'> <sup>{}</sup></span>",
+    "on-click": "swaymsg 'scratchpad show'",
+    "on-click-right": "swaymsg 'move scratchpad'",
+  },
+  "custom/updates": {
+    "format": "<span font-size='large'>{}</span>",
+    "interval": 3600,
+    "exec": "$HOME/.config/waybar/scripts/checkupdates.sh 2> /dev/null",
+    "return-type": "json",
+  },
+  "tray": {
+    "icon-size": 13,
+    "spacing": 10,
+    "reverse-direction": true,
+  },
+  "sway/language": {
+    "format": "<span text-transform='uppercase'>{shortDescription}</span>",
+    "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+  },
+  "temperature": {
+    "critical-threshold": 70,
+    "format-critical": "{temperatureC}°C {icon}",
+    "format": "",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
+  },
+  "pulseaudio#speaker": {
+    "format": "<span font-size='x-large'>{icon}</span>",
+    "format-bluetooth": "{volume} {icon} ",
+    "format-bluetooth-muted": " {icon} ",
+    "format-muted": "<span font-size='x-large'>󰖁</span>",
+    "format-icons": {
+      "headphone": "󰋋",
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󱄠",
+        "󰕾"
+      ],
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-middle": "$TERMINAL -e pulsemixer",
+    "on-click-right": "pavucontrol",
+    "tooltip-format": "{desc} - {volume}",
+  },
+  "pulseaudio#mic": {
+    "format": "<span font-size='x-large'>{format_source}</span>",
+    "format-source": "",
+    "format-source-muted": "󰍭",
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click-middle": "$TERMINAL -e pulsemixer",
+    "on-click-right": "pavucontrol",
+    "tooltip-format": "{desc} - {volume}",
+  },
+  "upower": {
+    "format": "",
+    "format-alt": "{percentage} {time}",
+    "icon-size": 15,
+    "hide-if-empty": true,
+    "tooltip": true,
+    "tooltip-format": "{percentage}",
+    "tooltip-spacing": 20,
+  },
+  "custom/notification": {
+    "tooltip": true,
+    "format": "<span font-size='large'>{icon}</span>",
+    "format-icons": {
+      "notification": "",
+      "none": "",
+      "dnd-notification": "",
+      "dnd-none": "",
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-middle": "swaync-client -C",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
+  },
+}
