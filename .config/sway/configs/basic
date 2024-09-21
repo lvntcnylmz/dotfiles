@@ -2,15 +2,17 @@ include ~/.config/sway/configs/colorscheme
 
 # Assign windows to workspaces
 assign [app_id="firefox"] workspace number 2
+assign [app_id="LibreWolf"] workspace number 2
 assign [title=".*VSCodium"] workspace number 3
 assign [title="nvim"] workspace number 3
 assign [class="jetbrains-*"] workspace number 3
 assign [instance="spotify"] workspace number 4
-assign [instance="discord"] workspace number 5
+assign [app_id="discord"] workspace number 5
 assign [app_id="thunar"] workspace number 6
 assign [class="thunderbird"] workspace number 7
 assign [class="steam"] workspace number 8
-assign [app_id="kitty"] workspace number 1
+assign [app_id="libreoffice-*"] workspace number 9
+assign [instance="joplin"] workspace number 10
 
 # Border config
 smart_borders on
@@ -28,7 +30,7 @@ gaps inner 10
 # layer_effects "waybar" blur enable; shadows enable 
 
 # Exec waybar
-bar swaybar_command waybar
+# bar swaybar_command waybar
 
 # Enable thinkPad touchpad
 input "1739:0:Synaptics_TM3276-022" {

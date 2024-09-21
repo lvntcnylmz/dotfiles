@@ -5,15 +5,19 @@ include ~/.config/sway/configs/bindsym
 include /etc/sway/config.d/*
 
 ## auto-start apps
+# exec waybar
 exec swaync
-exec nm-applet --indicator
+exec autotiling
+exec swayosd-server
 exec blueberry-tray
 exec gammastep-indicator
-exec swayosd-server
-exec autotiling
 exec kdeconnect-indicator
-exec sleep 2 | fcitx5 -dr &
+exec nm-applet --indicator
+exec wl-paste --watch cliphist store
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 ## set random wallpaper and change it after 30 minutes
 exec sleep 5 | ~/.config/sway/wallpaper.sh
+
+## waybar script
+exec ~/.config/waybar/scripts/waybar.sh

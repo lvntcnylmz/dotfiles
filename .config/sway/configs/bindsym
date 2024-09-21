@@ -195,3 +195,6 @@ bindsym $mod+Shift+r mode "resize"
     bindsym $mod+Shift+p exec swayshot display
     bindsym $mod+Ctrl+p  exec swayshot window
     bindsym $mod+Alt+p   exec swayshot region
+
+    # clipboard manager w/fuzzel
+    bindsym $mod+Ctrl+c cliphist list | fuzzel --dmenu -w 100 | cliphist decode | wl-copy
