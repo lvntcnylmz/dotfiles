@@ -3,7 +3,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term konsole
+set $term footclient
 set $menu fuzzel
 set $browser librewolf
 set $file_manager thunar
