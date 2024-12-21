@@ -15,10 +15,10 @@ dotfiles are the files that starts with a . (dot). This files are generally resp
 | Screen Locker       | [swaylock-effects](https://github.com/mortie/swaylock-effects) </br> [swaylock-corrupter](https://github.com/aur-packaging/swaylock-corrupter) |
 | Status Bar          |                                                  [waybar](https://github.com/Alexays/Waybar)                                                   |
 | System Info Tool    |                     [neofetch](https://github.com/dylanaraps/neofetch) </br> [btop](https://github.com/aristocratos/btop)                      |
-| Terminal            |                                                  [kitty](https://github.com/kovidgoyal/kitty)                                                  |
+| Terminal            |                                                     [foot](https://codeberg.org/dnkl/foot)                                                     |
 | Display Manager     |                                                     [ly](https://github.com/fairyglade/ly)                                                     |
 | File Manager        |                          [yazi](https://github.com/sxyazi/yazi) </br> [thunar](https://github.com/xfce-mirror/thunar)                          |
-| Text Editor         |                                                   [nvim](https://github.com/neovim/neovim)                                                     |
+| Text Editor         |                                                    [nvim](https://github.com/neovim/neovim)                                                    |
 | App Launcher        |                                                   [fuzzel](https://codeberg.org/dnkl/fuzzel)                                                   |
 | GTK Theme           |                                  [Tokyo Night GTK](https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme)                                  |
 | Icon Theme          |                                               [Flatery Dark](https://github.com/cbrnix/Flatery)                                                |
