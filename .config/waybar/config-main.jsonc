@@ -77,7 +77,7 @@
   // modules-center
   //---------------
   "clock": {
-    "format": "{:L%a %d %b %H:%M}",
+    "format": "{:%d/%m/%y %a %R}",
     "interval": 1,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "locale": "en_GB.UTF-8",
@@ -107,7 +107,7 @@
     "format": "{}",
     "tooltip": true,
     "interval": 1800,
-    "exec": "wttrbar --date-format '%A, %d %b %Y' --location Luleburgaz --hide-conditions --custom-indicator '{ICON} {temp_C}'",
+    "exec": "wttrbar --date-format '%A, %d %b %Y' --location Luleburgaz --hide-conditions --observation-time --nerd",
     "return-type": "json",
   },
   //--------------
@@ -133,7 +133,7 @@
   },
   "custom/updates": {
     "format": "<span font-size='large'>{}</span>",
-    "interval": 3600,
+    "interval": 7200,
     "exec": "$HOME/.config/waybar/scripts/checkupdates.sh 2> /dev/null",
     "return-type": "json",
   },

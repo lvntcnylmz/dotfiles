@@ -20,4 +20,3 @@ while true; do
   # Sleep for 1800 seconds/30 minutes before checking again
   sleep 1800
 done
-
