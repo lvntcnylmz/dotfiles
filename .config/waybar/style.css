@@ -1,3 +1,4 @@
+/* tokyonight color scheme */
 @define-color bg-color #1a1b26;
 @define-color fg-color #a9b1d6;
 
@@ -14,6 +15,23 @@
 @define-color tn-dark-yellow #8f5e15;
 @define-color tn-dark-purple #5a4a78;
 
+/* kanagawa color scheme */
+@define-color kngw-bg-color #16161d;
+@define-color kngw-fg-color #dcd7ba;
+
+@define-color kngw-tn-green #98bb6c;
+@define-color kngw-tn-red #e82424;
+@define-color kngw-tn-blue #7e9cd8;
+@define-color kngw-tn-yellow #ffa066;
+@define-color kngw-tn-purple #957fb8;
+@define-color kngw-tn-grey #54546d;
+
+@define-color kngw-tn-dark-green #6a9589;
+@define-color kngw-tn-dark-red #e46876;
+@define-color kngw-tn-dark-blue #2d4f67;
+@define-color kngw-tn-dark-yellow #e6c384;
+@define-color kngw-tn-dark-purple #938aa9;
+
 /* Global Styles */
 * {
   font-family: JetBrainsMono NFP;
@@ -23,8 +41,8 @@
 
 /* Waybar */
 #waybar {
-  background: @bg-color;
-  color: @fg-color;
+  background: @kngw-bg-color;
+  color: @kngw-fg-color;
 }
 
 /* Tooltips */
@@ -116,10 +134,8 @@ tooltip {
 
 #custom-power {
   color: @tn-blue;
-  background: rgba(122, 162, 127, 0.13);
   margin: 0px 0px 0px 10px;
   border-radius: 0px;
-  border-bottom: 2px solid @tn-green;
 }
 
 #upower.charging {
@@ -148,8 +164,6 @@ tooltip {
 }
 
 #workspaces button.focused {
-  background: rgba(122, 162, 127, 0.13);
   color: @tn-blue;
   border-radius: 0px;
-  border-bottom: 2px solid @tn-blue;
 }

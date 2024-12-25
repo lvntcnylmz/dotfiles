@@ -12,6 +12,7 @@
   "modules-center": [
     "clock",
     "custom/weather",
+    "custom/weather-moon",
   ],
   "modules-right": [
     "temperature",
@@ -107,8 +108,14 @@
     "format": "{}",
     "tooltip": true,
     "interval": 1800,
-    "exec": "wttrbar --date-format '%A, %d %b %Y' --location Luleburgaz --hide-conditions --observation-time --nerd",
+    "exec": "wttrbar --date-format '%A, %d %b %Y' --location Luleburgaz --hide-conditions --observation-time",
     "return-type": "json",
+  },
+  "custom/weather-moon": {
+    "format": "{}",
+    "tooltip": true,
+    "interval": 1800,
+    "exec": "curl -s 'wttr.in/Lüleburgaz?format=%m'",
   },
   //--------------
   // modules-right
