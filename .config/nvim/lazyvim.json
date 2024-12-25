@@ -5,7 +5,9 @@
     "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.rust",
     "lazyvim.plugins.extras.lang.toml",
-    "lazyvim.plugins.extras.lang.typescript"
+    "lazyvim.plugins.extras.lang.typescript",
+    "lazyvim.plugins.extras.util.gitui",
+    "lazyvim.plugins.extras.util.mini-hipatterns"
   ],
   "news": {
     "NEWS.md": "10960"
