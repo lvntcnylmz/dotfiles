@@ -1,4 +1,12 @@
 [plugin]
-prepend_previewers = [
-  { name = "*.md", run = "glow" },
-]
+# prepend_previewers = [{ name = "*.md", run = "glow" }]
+
+[[plugin.prepend_fetchers]]
+id = "git"
+name = "*"
+run = "git"
+
+[[plugin.prepend_fetchers]]
+id = "git"
+name = "*/"
+run = "git"

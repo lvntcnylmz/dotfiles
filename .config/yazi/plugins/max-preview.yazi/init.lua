@@ -1,3 +1,4 @@
+--- @sync entry
 local function entry(st)
 	if st.old then
 		Tab.layout, st.old = st.old, nil
