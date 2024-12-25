@@ -14,8 +14,8 @@
     # Start file manager
     bindsym $mod+e exec $file_manager
 
-    # Take screenshot
-    # bindsym $mod+Shift+p exec swayshot
+    # Start neovim
+    bindsym $mod+n exec $term $editor
 
     # Change keyboard layout 
     bindsym $mod+z exec swaymsg input type:keyboard xkb_switch_layout next
@@ -197,4 +197,4 @@ bindsym $mod+Shift+r mode "resize"
     bindsym $mod+Alt+p   exec swayshot region
 
     # clipboard manager w/fuzzel
-    bindsym $mod+Ctrl+c cliphist list | fuzzel --dmenu -w 100 | cliphist decode | wl-copy
+    bindsym $mod+Ctrl+c exec cliphist list | fuzzel --dmenu -w 100 | cliphist decode | wl-copy

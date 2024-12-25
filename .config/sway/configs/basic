@@ -28,9 +28,6 @@ gaps inner 10
 # shadows enable
 # layer_effects "waybar" blur enable; shadows enable 
 
-# Exec waybar
-# bar swaybar_command waybar
-
 # Enable thinkPad touchpad
 input "1739:0:Synaptics_TM3276-022" {
     dwt enabled

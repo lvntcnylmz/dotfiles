@@ -7,5 +7,6 @@ set $term footclient
 set $menu fuzzel
 set $browser librewolf
 set $file_manager thunar
+set $editor nvim
 set $dp1 eDP-1
 set $dp2 DP-3
