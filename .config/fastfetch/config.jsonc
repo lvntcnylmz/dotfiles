@@ -1,0 +1,62 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "sixel",
+    "source": "~/Pictures/Profile/iris_crop.jpeg",
+    // "width": 35,
+    "height": 16,
+    "padding": {
+      "top": 0,
+      "right": 2
+    }
+  },
+  "display": {
+    "separator": "  ",
+    "constants": [
+      "───────" // {$1}, used in Custom module
+    ],
+    "key": {
+      "type": "icon",
+      "paddingLeft": 2
+    }
+  },
+  "modules": [
+    {
+      "type": "custom", // HardwareStart
+      // {#1} is equivalent to `\u001b[1m`. {#} is equivalent to `\u001b[m`
+      "format": "┌{$1} {#1}Hardware Information{#} {$1}┐"
+    },
+    "host",
+    {
+      "type": "cpu",
+      "format": "{name}"
+    },
+    {
+      "type": "gpu",
+      "format": "{vendor}{name}"
+    },
+    {
+      "type": "custom", // SoftwareStart
+      "format": "├{$1} {#1}Software Information{#} {$1}┤"
+    },
+    {
+      "type": "title",
+      "keyIcon": "",
+      "key": "Title", // Title module has no key by default, so that icon is not displayed
+      "format": "{user-name}@{host-name}"
+    },
+    "os",
+    "kernel",
+    "de",
+    "wm",
+    "shell",
+    "terminal",
+    "packages",
+    "uptime",
+    {
+      "type": "custom", // InformationEnd
+      "format": "└{$1}──────────────────────{$1}┘"
+    },
+    "colors"
+  ]
+}
