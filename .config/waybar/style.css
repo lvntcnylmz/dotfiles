@@ -1,7 +1,6 @@
 /* tokyonight color scheme */
 @define-color bg-color #1a1b26;
 @define-color fg-color #a9b1d6;
-
 @define-color tn-green #9ece6a;
 @define-color tn-red #f7768e;
 @define-color tn-blue #7aa2f7;
@@ -9,28 +8,17 @@
 @define-color tn-purple #bb9af7;
 @define-color tn-grey #343b58;
 
-@define-color tn-dark-green #485e30;
-@define-color tn-dark-red #8c4351;
-@define-color tn-dark-blue #34548a;
-@define-color tn-dark-yellow #8f5e15;
-@define-color tn-dark-purple #5a4a78;
 
 /* kanagawa color scheme */
-@define-color kngw-bg-color #16161d;
+@define-color kngw-bg-color #1f1f28;
 @define-color kngw-fg-color #dcd7ba;
+@define-color kngw-green #76946a;
+@define-color kngw-red #c34043;
+@define-color kngw-blue #7e9cd8;
+@define-color kngw-yellow #c0a36e;
+@define-color kngw-purple #957fb8;
+@define-color kngw-grey #7a8382;
 
-@define-color kngw-tn-green #98bb6c;
-@define-color kngw-tn-red #e82424;
-@define-color kngw-tn-blue #7e9cd8;
-@define-color kngw-tn-yellow #ffa066;
-@define-color kngw-tn-purple #957fb8;
-@define-color kngw-tn-grey #54546d;
-
-@define-color kngw-tn-dark-green #6a9589;
-@define-color kngw-tn-dark-red #e46876;
-@define-color kngw-tn-dark-blue #2d4f67;
-@define-color kngw-tn-dark-yellow #e6c384;
-@define-color kngw-tn-dark-purple #938aa9;
 
 /* Global Styles */
 * {
@@ -47,9 +35,9 @@
 
 /* Tooltips */
 tooltip {
-  color: @fg-color;
-  background: @bg-color;
-  border: 2px solid @tn-blue;
+  color: @kngw-fg-color;
+  background: @kngw-bg-color;
+  border: 2px solid @kngw-blue;
 }
 
 /* Modules */
@@ -89,11 +77,11 @@ tooltip {
 #mode,
 #custom-updates,
 #custom-scratchpad-indicator {
-  color: @tn-blue;
+  color: @kngw-blue;
 }
 
 #network.vpn {
-  color: @tn-yellow;
+  color: @kngw-yellow;
 }
 
 #pulseaudio.speaker {
@@ -101,29 +89,29 @@ tooltip {
 }
 
 #pulseaudio.mic {
-  color: @tn-green;
+  color: @kngw-green;
   min-width: 13px;
 }
 
 #pulseaudio.speaker.muted {
-  color: @tn-red;
+  color: @kngw-red;
 }
 
 #pulseaudio.mic.source-muted {
   background: none;
-  color: @fg-color;
+  color: @kngw-fg-color;
 }
 
 #custom-notification.notification {
-  color: @tn-blue;
+  color: @kngw-blue;
 }
 
 #custom-notification.dnd-none {
-  color: @tn-red;
+  color: @kngw-red;
 }
 
 #custom-notification.dnd-notification {
-  color: @tn-red;
+  color: @kngw-red;
 }
 
 #custom-notification,
@@ -133,17 +121,17 @@ tooltip {
 }
 
 #custom-power {
-  color: @tn-blue;
+  color: @kngw-blue;
   margin: 0px 0px 0px 10px;
   border-radius: 0px;
 }
 
 #upower.charging {
-  color: @tn-green;
+  color: @kngw-green;
 }
 
 #temperature.critical {
-  color: @tn-red;
+  color: @kngw-red;
 }
 
 /* Workspace Buttons */
@@ -154,16 +142,16 @@ tooltip {
 
 #workspaces button {
   padding: 0px;
-  color: @fg-color;
-  min-width: 20px;
+  min-width: 17px;
+  color: @kngw-fg-color;
+  border-radius: 0px;
 }
 
-#workspaces button.persistent {
-  color: @fg-color;
-  padding: 0px;
+#workspaces button.empty {
+  color: @kngw-grey;
 }
 
 #workspaces button.focused {
-  color: @tn-blue;
-  border-radius: 0px;
+  color: @kngw-blue;
+  padding-bottom: 2px;
 }

@@ -37,22 +37,22 @@
     "tooltip": false,
   },
   "sway/workspaces": {
-    "format": "{icon}",
+    "format": "{name}",
     "on-click": "activate",
     "all-outputs": true,
     "sort-by-number": true,
-    // "persistent-workspaces": {
-    //   "1": [],
-    //   "2": [],
-    //   "3": [],
-    //   "4": [],
-    //   "5": [],
-    //   "6": [],
-    //   "7": [],
-    //   "8": [],
-    //   "9": [],
-    //   "10": [],
-    // },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": [],
+    },
   },
   "mpris": {
     "format": "{player_icon} {dynamic}",
@@ -68,7 +68,7 @@
       "spotify": "<span color='#0FC044'><big></big></span>",
     },
     "status-icons": {
-      "paused": "<span color='#F7768E'><big></big></span>",
+      "paused": "<span color='#c34043'><big></big></span>",
     },
     "ignored-players": [
       "firefox"

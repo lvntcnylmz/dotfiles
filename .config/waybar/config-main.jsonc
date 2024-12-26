@@ -37,22 +37,22 @@
     "tooltip": false,
   },
   "sway/workspaces": {
-    "format": "{icon}",
+    "format": "{name}",
     "on-click": "activate",
     "all-outputs": true,
     "sort-by-number": true,
-    // "persistent-workspaces": {
-    //   "1": [],
-    //   "2": [],
-    //   "3": [],
-    //   "4": [],
-    //   "5": [],
-    //   "6": [],
-    //   "7": [],
-    //   "8": [],
-    //   "9": [],
-    //   "10": [],
-    // },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": [],
+    },
   },
   "mpris": {
     "format": "{player_icon} {dynamic}",
@@ -68,7 +68,7 @@
       "spotify": "<span color='#0FC044'><big></big></span>",
     },
     "status-icons": {
-      "paused": "<span color='#F7768E'><big></big></span>",
+      "paused": "<span color='#c34043'><big></big></span>",
     },
     "ignored-players": [
       "firefox"
@@ -89,11 +89,11 @@
       "on-scroll": 1,
       "on-click-right": "mode",
       "format": {
-        "months": "<span color='#bb9af7'>{}</span>",
-        "days": "<span color='#c0caf5'>{}</span>",
-        "weeks": "<span color='#7aa2f7'>{}</span>",
-        "weekdays": "<span color='#9ece6a'>{}</span>",
-        "today": "<span background='#f7768e' color='#1a1b26'>{}</span>",
+        "months": "<span color='#957fb8'>{}</span>",
+        "days": "<span color='#dcd7ba'>{}</span>",
+        "weeks": "<span color='#7e9cd8'>{}</span>",
+        "weekdays": "<span color='#76946a'>{}</span>",
+        "today": "<span background='#c34043' color='#1f1f28'>{}</span>",
       },
     },
     "actions": {
@@ -113,7 +113,7 @@
   },
   "custom/weather-moon": {
     "format": "{}",
-    "tooltip": true,
+    "tooltip": false,
     "interval": 1800,
     "exec": "curl -s 'wttr.in/Lüleburgaz?format=%m'",
   },
