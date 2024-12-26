@@ -119,8 +119,8 @@ orientation = bottom
 # 'mono' outputs left to right lowest to highest frequencies.
 # 'mono_option' set mono to either take input from 'left', 'right' or 'average'.
 # set 'reverse' to 1 to display frequencies the other way around.
-; channels = mono
-; mono_option = average
+channels = mono
+mono_option = average
 ; reverse = 0
 
 # Raw output target. A fifo will be created if target does not exist.
