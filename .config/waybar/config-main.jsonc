@@ -146,8 +146,7 @@
   },
   "tray": {
     "icon-size": 13,
-    "spacing": 10,
-    "reverse-direction": true,
+    "spacing": 7,
   },
   "sway/language": {
     "format": "<span text-transform='uppercase'>{shortDescription}</span>",

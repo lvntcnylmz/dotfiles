@@ -17,7 +17,7 @@
 @define-color kngw-blue #7e9cd8;
 @define-color kngw-yellow #c0a36e;
 @define-color kngw-purple #957fb8;
-@define-color kngw-grey #7a8382;
+@define-color kngw-grey #938aa9;
 
 
 /* Global Styles */
@@ -61,7 +61,7 @@ tooltip {
 #custom-notification,
 #custom-scratchpad-indicator {
   margin: 0px 1px;
-  padding: 0px 4px;
+  padding: 0px 3px;
 }
 
 /* Specific Module Styling */
