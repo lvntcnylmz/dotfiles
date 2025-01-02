@@ -51,7 +51,7 @@ client.background        $fg-color
 
 # Titlebar sytles
 # title_align center
-titlebar_padding 10 2
+# titlebar_padding 10 2
 
 # Font
 font pango:JetBrainsMono NFP Bold 10
