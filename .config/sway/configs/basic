@@ -12,6 +12,7 @@ assign [app_id="thunar"] workspace number 6
 assign [app_id="thunderbird"] workspace number 7
 assign [class="steam"] workspace number 8
 assign [app_id="libreoffice-*"] workspace number 9
+assign [class="Chromium"] workspace number 10
 
 # Border config
 smart_borders on
