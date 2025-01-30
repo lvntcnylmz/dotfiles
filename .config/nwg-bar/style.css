@@ -14,42 +14,43 @@
 @define-color tn-dark-purple #5a4a78;
 
 window {
-    background: @bg-color;
-	color: @fg-color;
-	border-radius: 5px;
+  background: transparent;
+  color: @fg-color;
+  border-radius: 0px;
+  font-family: "JetBrainsMono Nerd Font";
 }
 
 /* Outer bar container, takes all the window width/height */
 #outer-box {
-	border: 2px solid @tn-dark-blue;
-	border-radius: 5px;
-	padding: 0px;
-	margin: 0px; 
-	background: @bg-color;
+  border: 2px solid @tn-blue;
+  border-radius: 0px;
+  padding: 0px;
+  margin-bottom: 705px;
+  background: @bg-color;
 }
 
 /* Inner bar container, surrounds buttons */
 #inner-box {
-	background: @bg-color;
-	border-radius: 5px;
-	padding: 5px;
-	margin: 5px
+  background: @bg-color;
+  border-radius: 0px;
 }
 
-button, image {
-	background: none;
-	border: none;
-	box-shadow: none
+button,
+image {
+  background: none;
+  border: none;
+  box-shadow: none;
 }
 
 button {
-	padding-left: 10px;
-	padding-right: 10px;
-	margin: 5px;
-	color: @fg-color;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0px;
+  color: @fg-color;
 }
 
 button:hover {
-	background: @tn-dark-purple;
-	color: @bg-color;
+  background: @tn-blue;
+  color: @bg-color;
+  border-radius: 0px;
 }
