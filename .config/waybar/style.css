@@ -10,14 +10,14 @@
 
 
 /* kanagawa color scheme */
-@define-color kngw-bg-color #1f1f28;
+@define-color kngw-bg-color #16161d;
 @define-color kngw-fg-color #dcd7ba;
 @define-color kngw-green #76946a;
 @define-color kngw-red #c34043;
 @define-color kngw-blue #7e9cd8;
 @define-color kngw-yellow #c0a36e;
 @define-color kngw-purple #957fb8;
-@define-color kngw-grey #938aa9;
+@define-color kngw-grey #727169;
 
 
 /* Global Styles */
@@ -143,7 +143,7 @@ tooltip {
 #workspaces button {
   padding: 0px;
   min-width: 17px;
-  color: @kngw-fg-color;
+  color: @kngw-blue;
   border-radius: 0px;
 }
 
@@ -152,6 +152,7 @@ tooltip {
 }
 
 #workspaces button.focused {
-  color: @kngw-blue;
+  color: @kngw-fg-color;
   padding-bottom: 2px;
+  font-size: xx-large;
 }
