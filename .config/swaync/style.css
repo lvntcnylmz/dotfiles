@@ -183,7 +183,7 @@
   border-radius: 5px;
 }
 
-.widget-title > button {
+.widget-title>button {
   font-size: 1rem;
   color: @text-color;
   text-shadow: none;
@@ -192,7 +192,7 @@
   border-radius: 5px;
 }
 
-.widget-title > button:hover {
+.widget-title>button:hover {
   background: #f7768e;
   color: @cc-bg;
 }
@@ -206,18 +206,18 @@
   color: #7aa2f7;
 }
 
-.widget-dnd > switch {
+.widget-dnd>switch {
   border-radius: 5px;
   background: #7aa2f7;
 }
 
-.widget-dnd > switch:checked {
+.widget-dnd>switch:checked {
   background: #f7768e;
   border: 1px solid #f7768e;
 }
 
-.widget-dnd > switch slider,
-.widget-dnd > switch:checked slider {
+.widget-dnd>switch slider,
+.widget-dnd>switch:checked slider {
   background: @cc-bg;
   border-radius: 5px;
 }
@@ -226,7 +226,7 @@
   margin: 10px 10px 5px 10px;
 }
 
-.widget-label > label {
+.widget-label>label {
   font-size: 1rem;
   color: @text-color;
 }
@@ -236,16 +236,19 @@
   background: @noti-bg-darker;
   padding: 5px 10px;
   margin: 5px 10px 5px 10px;
-  border-radius: 5px;
+  border-radius: 0px;
+  box-shadow: none;
 }
 
-.widget-mpris > box > button {
+.widget-mpris>box>button {
   border-radius: 5px;
 }
 
 .widget-mpris-player {
   padding: 5px 10px;
   margin: 10px;
+  border-radius: 0px;
+  box-shadow: none;
 }
 
 .widget-mpris-title {
@@ -257,6 +260,10 @@
   font-size: 1.1rem;
 }
 
+.widget-mpris-album-art {
+  border-radius: 0px;
+}
+
 .widget-buttons-grid {
   font-size: x-large;
   padding: 5px;
@@ -265,29 +272,29 @@
   background: @noti-bg-darker;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button {
+.widget-buttons-grid>flowbox>flowboxchild>button {
   margin: 3px;
   background: @cc-bg;
   border-radius: 0px;
   color: @text-color;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
   background: rgba(122, 162, 247, 1);
   color: @cc-bg;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button:checked {
+.widget-buttons-grid>flowbox>flowboxchild>button:checked {
   background: rgb(158, 206, 106);
   color: @cc-bg;
 }
 
-.widget-menubar > box > .menu-button-bar > button {
+.widget-menubar>box>.menu-button-bar>button {
   border: none;
   background: transparent;
 }
 
-.topbar-buttons > button {
+.topbar-buttons>button {
   border: none;
   background: transparent;
 }

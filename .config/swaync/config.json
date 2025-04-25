@@ -24,7 +24,8 @@
   "widgets": [
     "buttons-grid",
     "volume",
-    "backlight"
+    "backlight",
+    "mpris"
   ],
   "widget-config": {
     "title": {
@@ -40,8 +41,12 @@
       "text": "Notification Center"
     },
     "mpris": {
-      "image-size": 50,
-      "image-radius": 5
+      "image-size": 100,
+      "image-radius": 0,
+      "blacklist": [
+        "kew",
+        "firefox"
+      ]
     },
     "volume": {
       "label": "󰕾"
