@@ -1,6 +1,9 @@
 return {
   "snacks.nvim",
   opts = {
+    explorer = {
+      replace_netrw = true,
+    },
     dashboard = {
       preset = {
         header = [[
