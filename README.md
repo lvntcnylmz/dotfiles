@@ -6,20 +6,21 @@ dotfiles are the files that starts with a . (dot). This files are generally resp
 
 [Screenshots](#screenshots) are somewhere down there.
 
-| **Module Type**     |                                              **Module Name**                                               |
-| :------------------ | :--------------------------------------------------------------------------------------------------------: |
-| Window Manager      |                                   [sway](https://github.com/swaywm/sway)                                   |
-| Terminal            |                                   [foot](https://codeberg.org/dnkl/foot)                                   |
-| Status Bar          |                                [waybar](https://github.com/Alexays/Waybar)                                 |
-| Display Manager     |                                   [ly](https://github.com/fairyglade/ly)                                   |
-| Text Editor         |                                  [nvim](https://github.com/neovim/neovim)                                  |
-| Shell               |                           [fish-shell](https://github.com/fish-shell/fish-shell)                           |
-| App Launcher        |                                 [fuzzel](https://codeberg.org/dnkl/fuzzel)                                 |
-| File Manager        |                                   [yazi](https://github.com/sxyazi/yazi)                                   |
-| Promt Theme Engine  |                              [starship](https://github.com/starship/starship)                              |
-| Notification Deamon |                       [swaync](https://github.com/ErikReider/SwayNotificationCenter)                       |
-| Screen Locker       |                       [swaylock-effects](https://github.com/mortie/swaylock-effects)                       |
-| System Info Tool    | [fastfetch](https://github.com/fastfetch-cli/fastfetch) </br> [btop](https://github.com/aristocratos/btop) |
+| **Module Type**     |                        **Module Name**                         |
+| :------------------ | :------------------------------------------------------------: |
+| Window Manager      |             [sway](https://github.com/swaywm/sway)             |
+| Terminal            |             [foot](https://codeberg.org/dnkl/foot)             |
+| Status Bar          |          [waybar](https://github.com/Alexays/Waybar)           |
+| Display Manager     |             [ly](https://github.com/fairyglade/ly)             |
+| Text Editor         |            [nvim](https://github.com/neovim/neovim)            |
+| Shell               |     [fish-shell](https://github.com/fish-shell/fish-shell)     |
+| App Launcher        |           [fuzzel](https://codeberg.org/dnkl/fuzzel)           |
+| File Manager        |             [yazi](https://github.com/sxyazi/yazi)             |
+| Promt Theme Engine  |        [starship](https://github.com/starship/starship)        |
+| Notification Deamon | [swaync](https://github.com/ErikReider/SwayNotificationCenter) |
+| Screen Locker       | [swaylock-effects](https://github.com/mortie/swaylock-effects) |
+| System Info Tool    |    [fastfetch](https://github.com/fastfetch-cli/fastfetch)     |
+| Resource Monitor    |          [btop](https://github.com/aristocratos/btop)          |
 
 ## Installation
 
