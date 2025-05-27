@@ -8,16 +8,14 @@ include /etc/sway/config.d/*
 exec swaync
 exec autotiling
 exec swayosd-server
-exec blueberry-tray
+exec blueman-tray
 exec gammastep-indicator
 exec kdeconnect-indicator
 exec nm-applet --indicator
 exec wl-paste --watch cliphist store
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec foot --server
+exec kanshi
 
 ## set random wallpaper and change it after 30 minutes
-exec sleep 5 | ~/.config/sway/wallpaper.sh
-
-## waybar script
-exec ~/.config/waybar/scripts/waybar.sh
+exec sleep 5 | $HOME/.config/sway/wallpaper.sh

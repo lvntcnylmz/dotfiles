@@ -35,7 +35,7 @@
     bindsym $mod+less gaps inner current set 10
 
     # Toggle lock screen
-    bindsym $mod+Shift+x exec playerctl pause | swaylock-corrupter
+    bindsym $mod+Shift+x exec playerctl pause | exec ~/.config/sway/swaylock-corrupter.sh
 
     # Exec powermenu
     bindsym $mod+Shift+m exec nwg-bar -p 'left' -ml 10
@@ -46,10 +46,10 @@
 # Moving around:
 #
     # use $mod+[up|down|left|right]
-    bindsym $mod+Left  focus left
-    bindsym $mod+Down  focus down
-    bindsym $mod+Up    focus up
-    bindsym $mod+Right focus right
+    bindsym $mod+$left  focus left
+    bindsym $mod+$down  focus down
+    bindsym $mod+$up    focus up
+    bindsym $mod+$right focus right
 
     # Move the focused window with the same, but add Shift
     bindsym $mod+Shift+$left  move left
@@ -97,8 +97,8 @@
     bindsym $mod+Shift+0 move container to workspace number 10
    
     # Switch next/prev workspace
-    bindsym $mod+Ctrl+Left  workspace prev
-    bindsym $mod+Ctrl+Right workspace next
+    bindsym $mod+Ctrl+$left  workspace prev
+    bindsym $mod+Ctrl+$right workspace next
 
     # Gestures to change workspace
     bindgesture swipe:right workspace next
@@ -107,9 +107,9 @@
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
-    # $mod+h or $mod+v, for horizontal and vertical splits
+    # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+h splith
+    bindsym $mod+b splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
@@ -118,7 +118,7 @@
     bindsym $mod+Shift+e layout toggle 
 
     # Make the current focus fullscreen
-    bindsym $mod+Return fullscreen toggle 
+    bindsym $mod+f fullscreen toggle 
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
@@ -143,10 +143,10 @@
 
 # Resizing containers:
 mode "resize" {
-    bindsym Left  resize grow width 10px
-    bindsym Right resize shrink width 10px
-    bindsym Down  resize shrink height 10px
-    bindsym Up    resize grow height 10px
+    bindsym $left  resize grow width 10px
+    bindsym $right resize shrink width 10px
+    bindsym $down  resize shrink height 10px
+    bindsym $up    resize grow height 10px
 
     bindsym Return mode "default"
     bindsym Escape mode "default"

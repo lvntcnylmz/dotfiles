@@ -2,7 +2,7 @@ include ~/.config/sway/configs/colorscheme
 
 # Assign windows to workspaces
 assign [app_id="firefox"] workspace number 2
-assign [app_id="LibreWolf"] workspace number 2
+assign [app_id="librewolf"] workspace number 2
 assign [title=".*VSCodium"] workspace number 3
 assign [title="nvim"] workspace number 3
 assign [class="jetbrains-*"] workspace number 3
@@ -22,12 +22,6 @@ default_orientation auto
 
 # Gaps config
 gaps inner 10
-
-# SwayFX configs
-# blur enable
-# corner_radius 5
-# shadows enable
-# layer_effects "waybar" blur enable; shadows enable 
 
 # Enable thinkPad touchpad
 input "1739:0:Synaptics_TM3276-022" {
@@ -50,7 +44,7 @@ client.urgent            $red          $red          $bg-color  $red        $red
 client.placeholder       $bg-color     $bg-color     $fg-color  $bg-color   $bg-color
 client.background        $fg-color
 
-# Titlebar sytles
+# Titlebar styles
 # title_align center
 # titlebar_padding 10 2
 
