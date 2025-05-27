@@ -1,5 +1,6 @@
 {
-  "height": 26,
+  "reload_style_on_change": true,
+  // "height": 26,
   "output": [
     "DP-3",
     "!eDP-1"
@@ -37,7 +38,7 @@
     "tooltip": false,
   },
   "sway/workspaces": {
-    "format": "{name}",
+    "format": "{icon}",
     "on-click": "activate",
     "all-outputs": true,
     "sort-by-number": true,
@@ -53,10 +54,24 @@
       "9": [],
       "10": [],
     },
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十",
+    },
   },
   "mpris": {
     "format": "{player_icon} {dynamic}",
     "format-paused": "{status_icon} {dynamic}",
+    "format-len": 80,
+    "dynamic-len": 80,
     "dynamic-order": [
       "title",
       "artist"
@@ -110,7 +125,7 @@
     "return-type": "json",
   },
   "custom/weather-moon": {
-    "format": "{}",
+    "format": " {}",
     "tooltip": false,
     "interval": 1800,
     "exec": "curl -s 'wttr.in/Lüleburgaz?format=%m'",
