@@ -44,16 +44,5 @@ client.urgent            $red          $red          $bg-color  $red        $red
 client.placeholder       $bg-color     $bg-color     $fg-color  $bg-color   $bg-color
 client.background        $fg-color
 
-# Titlebar styles
-# title_align center
-# titlebar_padding 10 2
-
 # Font
 font pango:JetBrainsMono NFP Bold 10
-
-# Idle configuration
-# exec swayidle -w \
-#         timeout 300 'playerctl pause | swaylock-corrupter' \
-#         timeout 600 'swaymsg "output * dpms off"' \
-#              resume 'swaymsg "output * dpms on"' \
-#         before-sleep 'playerctl pause | swaylock-corrupter'
