@@ -1,10 +1,10 @@
 profile main {
-    output "Lenovo Group Limited L27m-30 UPB67FNK" mode 1920x1080 position 0,0
-    output "eDP-1" mode 1920x1080 position 1920,0
-    exec killall waybar && sleep 1 && waybar -c "$HOME/.config/waybar/config-main.jsonc"
+  output "Lenovo Group Limited L27m-30 UPB67FNK" mode 1920x1080 position 0,0
+  output "eDP-1" mode 1920x1080 position 1920,0
+  exec $HOME/.config/waybar/scripts/waybar.sh && waybar -c "$HOME/.config/waybar/config-main.jsonc"
 }
 
 profile laptop {
   output "eDP-1" mode 1920x1080 position 0,0
-  exec killall waybar && sleep 1 && waybar -c "$HOME/.config/waybar/config-second.jsonc"
+  exec $HOME/.config/waybar/scripts/waybar.sh && waybar -c "$HOME/.config/waybar/config-second.jsonc"
 }
