@@ -5,7 +5,7 @@
 dotfiles are the files that starts with a . (dot). This files are generally responsible for software configurations. This repository contains my favorite and most used dotfiles in my Arch Linux setup.
 
 [Screenshots](#screenshots) are somewhere down there.
-
+<img align="right" width="420" height="550" src="https://user-images.githubusercontent.com/19970595/196564215-06e48c30-46b3-4e02-afe1-c4a56c5415ce.png"/>
 | **Module Type**     |                        **Module Name**                         |
 | :------------------ | :------------------------------------------------------------: |
 | Window Manager      |             [sway](https://github.com/swaywm/sway)             |
