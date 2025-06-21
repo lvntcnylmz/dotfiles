@@ -50,6 +50,4 @@ cp -r dotfiles/.config/* ~/.config
 
 ![](screenshots/sway3.png)
 
-![](screenshots/sway4.png)
-
 ![](screenshots/sway-nvim.png)
