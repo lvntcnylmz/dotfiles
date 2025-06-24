@@ -1,11 +1,6 @@
 #!/bin/bash
-# https://github.com/lvntcnylmz/dotfiles
-if [[ "${UID}" != 0 ]] ; then
-  echo -e "please run this script as with root privileges:\n\tsudo bash ./install.sh"
-  exit 1
-fi
-
 set -e
+
 packages=(
   foot
   waybar
@@ -25,11 +20,10 @@ for pkg in "${packages[@]}"; do
     echo "[✓] $pkg is already installed."
   else
     echo "[+] Installing $pkg..."
-    pacman -S --noconfirm "$pkg"
+    sudo pacman -S --noconfirm "$pkg"
   fi
 done
 
-# install other packages
 if ! pacman -Q swaylock-effects &>/dev/null; then
   echo "[+] Installing swaylock-effects manually from AUR..."
   git clone https://aur.archlinux.org/swaylock-effects.git
