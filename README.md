@@ -26,18 +26,12 @@ For wallpapers you can check [my other repo](https://www.github.com/lvntcnylmz/w
 
 ## Installation
 
-There is no installation script yet, but in the meantime you can clone the repo and copy the contents of the `./config` folder into your `./config` folder.
-
-<u>Example</u>:
-
-```
-git clone https://github.com/lvntcnylmz/dotfiles.git
-cp -r dotfiles/.config/* ~/.config
+```bash
+bash ./install.sh
 ```
 
 ### TODO
 
-- [ ] Add installation script
 - [ ] Better documentation
 
 ## Screenshots
