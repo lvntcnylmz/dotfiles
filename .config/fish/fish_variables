@@ -1,8 +1,9 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export EDITOR:nvim
-SETUVAR --export MANPAGER:sh\x20\x2dc\x20\x27sed\x20\x2du\x20\x2de\x20\x22s/\x5cx1B\x5c\x5b\x5b0\x2d9\x3b\x5d\x2am//g\x3b\x20s/\x2e\x5cx08//g\x22\x20\x7c\x20bat\x20\x2dp\x20\x2dlman\x27
+SETUVAR --export MANPAGER:nvim\x20\x2bMan\x21
 SETUVAR --export MYVIMRC:/home/can/\x2econfig/nvim/init\x2elua
+SETUVAR --export SUDO_EDITOR:nvim
 SETUVAR __fish_initialized:3800
 SETUVAR fish_color_autosuggestion:727169
 SETUVAR fish_color_cancel:\x1d
@@ -43,4 +44,6 @@ SETUVAR fish_pager_color_selected_background:\x1d
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
+SETUVAR --export foot:footclient
 SETUVAR kanagawa:\x1d
+SETUVAR --export nvim:\x1d
