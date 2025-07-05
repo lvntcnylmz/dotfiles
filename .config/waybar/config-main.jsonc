@@ -1,19 +1,15 @@
 {
   "reload_style_on_change": true,
-  // "height": 26,
-  "output": [
-    "DP-3",
-    "!eDP-1"
-  ],
+  "height": 25,
+  "output": "Lenovo Group Limited L27m-30 UPB67FNK",
   "modules-left": [
-    "custom/power",
+    "custom/launcher",
     "sway/workspaces",
     "mpris",
   ],
   "modules-center": [
     "clock",
     "custom/weather",
-    "custom/weather-moon",
   ],
   "modules-right": [
     "temperature",
@@ -31,9 +27,10 @@
   //-------------
   // modules-left
   //------------
-  "custom/power": {
+  "custom/launcher": {
     "on-click": "nwg-bar -p 'left' -ml 10",
     "on-click-right": "playerctl pause | swaylock-corrupter",
+    "on-click-middle": "fuzzel",
     "format": "<span font-size='x-large'>󰣇</span>",
     "tooltip": false,
   },
@@ -54,18 +51,6 @@
       "9": [],
       "10": [],
     },
-    "format-icons": {
-      "1": "一",
-      "2": "二",
-      "3": "三",
-      "4": "四",
-      "5": "五",
-      "6": "六",
-      "7": "七",
-      "8": "八",
-      "9": "九",
-      "10": "十",
-    },
   },
   "mpris": {
     "format": "{player_icon} {dynamic}",
@@ -74,14 +59,16 @@
     "dynamic-len": 80,
     "dynamic-order": [
       "title",
-      "artist"
+      "artist",
+      "position",
+      "length"
     ],
     "interval": 1,
     "player-icons": {
-      "default": "<span color='#76946a'><big></big></span>",
+      "default": "<span color='#76946a'><big></big></span>",
     },
     "status-icons": {
-      "paused": "<span color='#c34043'><big></big></span>",
+      "paused": "<span color='#c34043'><big></big></span>",
     },
     "ignored-players": [
       "firefox"
@@ -91,7 +78,7 @@
   // modules-center
   //---------------
   "clock": {
-    "format": "{:%d/%m/%y %a %R}",
+    "format": "{:%d/%m/%y 󰇙 %a 󰇙 %R} 󰇙",
     "interval": 1,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "locale": "en_GB.UTF-8",
@@ -124,12 +111,6 @@
     "exec": "wttrbar --date-format '%A, %d %b %Y' --location Luleburgaz --hide-conditions --observation-time",
     "return-type": "json",
   },
-  "custom/weather-moon": {
-    "format": " {}",
-    "tooltip": false,
-    "interval": 1800,
-    "exec": "curl -s 'wttr.in/Lüleburgaz?format=%m'",
-  },
   //--------------
   // modules-right
   //--------------
@@ -160,7 +141,7 @@
   },
   "tray": {
     "icon-size": 13,
-    "spacing": 7,
+    "spacing": 5,
   },
   "sway/language": {
     "format": "<span text-transform='uppercase'>{shortDescription}</span>",
@@ -178,8 +159,8 @@
   },
   "pulseaudio#speaker": {
     "format": "<span font-size='x-large'>{icon}</span>",
-    "format-bluetooth": "{volume} {icon} ",
-    "format-bluetooth-muted": " {icon} ",
+    "format-bluetooth": "<span font-size='x-large'>{icon} </span>",
+    "format-bluetooth-muted": "<span font-size='x-large'>{icon} </span>",
     "format-muted": "<span font-size='x-large'>󰖁</span>",
     "format-icons": {
       "headphone": "󰋋",

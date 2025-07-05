@@ -1,19 +1,15 @@
 {
   "reload_style_on_change": true,
-  "height": 26,
-  "output": [
-    "!DP-3",
-    "eDP-1"
-  ],
+  "height": 25,
+  "output": "eDP-1",
   "modules-left": [
-    "custom/power",
+    "custom/launcher",
     "sway/workspaces",
     "mpris",
   ],
   "modules-center": [
     "clock",
     "custom/weather",
-    "custom/weather-moon",
   ],
   "modules-right": [
     "temperature",
@@ -31,9 +27,10 @@
   //-------------
   // modules-left
   //------------
-  "custom/power": {
+  "custom/launcher": {
     "on-click": "nwg-bar -p 'left' -ml 10",
     "on-click-right": "playerctl pause | swaylock-corrupter",
+    "on-click-middle": "fuzzel",
     "format": "<span font-size='x-large'>󰣇</span>",
     "tooltip": false,
   },
@@ -54,25 +51,17 @@
       "9": [],
       "10": [],
     },
-    "format-icons": {
-      "1": "一",
-      "2": "二",
-      "3": "三",
-      "4": "四",
-      "5": "五",
-      "6": "六",
-      "7": "七",
-      "8": "八",
-      "9": "九",
-      "10": "十",
-    },
   },
   "mpris": {
     "format": "{player_icon} {dynamic}",
     "format-paused": "{status_icon} {dynamic}",
+    "format-len": 80,
+    "dynamic-len": 80,
     "dynamic-order": [
       "title",
-      "artist"
+      "album",
+      "position",
+      "length"
     ],
     "interval": 1,
     "player-icons": {
@@ -89,7 +78,7 @@
   // modules-center
   //---------------
   "clock": {
-    "format": "{:%d/%m/%y %a %R}",
+    "format": "{:%d/%m/%y 󰇙 %a 󰇙 %R} 󰇙",
     "interval": 1,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "locale": "en_GB.UTF-8",
@@ -100,11 +89,11 @@
       "on-scroll": 1,
       "on-click-right": "mode",
       "format": {
-        "months": "<span color='#bb9af7'>{}</span>",
-        "days": "<span color='#c0caf5'>{}</span>",
-        "weeks": "<span color='#7aa2f7'>{}</span>",
-        "weekdays": "<span color='#9ece6a'>{}</span>",
-        "today": "<span background='#f7768e' color='#1a1b26'>{}</span>",
+        "months": "<span color='#957fb8'>{}</span>",
+        "days": "<span color='#dcd7ba'>{}</span>",
+        "weeks": "<span color='#7e9cd8'>{}</span>",
+        "weekdays": "<span color='#76946a'>{}</span>",
+        "today": "<span background='#c34043' color='#1f1f28'>{}</span>",
       },
     },
     "actions": {
@@ -121,12 +110,6 @@
     "interval": 1800,
     "exec": "wttrbar --date-format '%A, %d %b %Y' --location Luleburgaz --hide-conditions --observation-time",
     "return-type": "json",
-  },
-  "custom/weather-moon": {
-    "format": " {}",
-    "tooltip": true,
-    "interval": 1800,
-    "exec": "curl -s 'wttr.in/Lüleburgaz?format=%m'",
   },
   //--------------
   // modules-right
@@ -145,7 +128,7 @@
   "custom/scratchpad-indicator": {
     "interval": 1,
     "exec": "swaymsg -t get_tree | jq 'recurse(.nodes[]) | first(select(.name==\"__i3_scratch\")) | .floating_nodes | length | select(. >= 1)'",
-    "format": "<span font-size='large'> <sup>{}</sup></span>",
+    "format": "<span font-size='large'> {}</span>",
     "on-click": "swaymsg 'scratchpad show'",
     "on-click-right": "swaymsg 'move scratchpad'",
   },
@@ -153,13 +136,12 @@
     "format": "<span font-size='large'>{}</span>",
     "interval": 7200,
     "exec": "$HOME/.config/waybar/scripts/checkupdates.sh 2> /dev/null",
-    "on-click": "footclient -e 'paru'", // update system
+    "on-click": "footclient -e 'paru'",
     "return-type": "json",
   },
   "tray": {
     "icon-size": 13,
-    "spacing": 10,
-    "reverse-direction": true,
+    "spacing": 5,
   },
   "sway/language": {
     "format": "<span text-transform='uppercase'>{shortDescription}</span>",
@@ -193,6 +175,7 @@
     "on-click-middle": "pactl --format=json list sinks short | jq -cM --unbuffered \"[.[].name] | .[((index(\\\"$(pactl get-default-sink)\\\")+1)%length)]\" | xargs pactl set-default-sink",
     "on-click-right": "pavucontrol",
     "tooltip-format": "{desc} - {volume}",
+    //pactl list sinks | grep -A 15 "Sink #" | grep "Description" | awk -F': ' '{print $2}'   // print just sinks name
   },
   "pulseaudio#mic": {
     "format": "<span font-size='x-large'>{format_source}</span>",

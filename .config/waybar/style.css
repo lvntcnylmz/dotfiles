@@ -54,14 +54,13 @@ tooltip {
 #pulseaudio.mic,
 #temperature,
 #custom-timer,
-#custom-power,
 #custom-updates,
 #custom-weather,
 #custom-launcher,
 #custom-notification,
 #custom-scratchpad-indicator {
   margin: 0px 1px;
-  padding: 0px 3px;
+  padding: 0px 2px;
 }
 
 /* Specific Module Styling */
@@ -120,7 +119,7 @@ tooltip {
   margin-right: 10px;
 }
 
-#custom-power {
+#custom-launcher {
   color: @kngw-blue;
   margin: 0px 0px 0px 10px;
   border-radius: 0px;
@@ -142,7 +141,7 @@ tooltip {
 
 #workspaces button {
   padding: 0px;
-  min-width: 17px;
+  min-width: 13px;
   color: @kngw-blue;
   border-radius: 0px;
 }
@@ -153,6 +152,4 @@ tooltip {
 
 #workspaces button.focused {
   color: @kngw-fg-color;
-  padding-bottom: 2px;
-  /* font-size: xx-large; */
 }
