@@ -13,23 +13,27 @@ indicator
 indicator-radius=100
 indicator-thickness=10
 
-inside-color=1a1b26
-inside-clear-color=bb9af7
-inside-ver-color=9ece6a
-inside-wrong-color=f7768e
+# Backgrounds (inside areas)
+inside-color=16161d
+inside-clear-color=957fb8
+inside-ver-color=76946a
+inside-wrong-color=c34043
 
-text-color=a9b1d6
-text-clear-color=1a1b26
-text-caps-lock-color=f7768e
-text-ver-color=1a1b26
-text-wrong-color=1a1b26
+# Text Colors
+text-color=dcd7ba
+text-clear-color=16161d
+text-caps-lock-color=c34043
+text-ver-color=16161d
+text-wrong-color=16161d
 
-ring-color=1a1b26
-ring-ver-color=9ece6a
-ring-clear-color=bb9af7
-ring-wrong-color=f7768e
+# Ring (indicator border)
+ring-color=16161d
+ring-ver-color=76946a
+ring-clear-color=957fb8
+ring-wrong-color=c34043
 
-key-hl-color=7aa2f7
-bs-hl-color=e0af68
-separator-color=7aa2f7
-line-color=1a1b26
+# Highlights
+key-hl-color=7e9cd8
+bs-hl-color=c0a36e
+separator-color=7e9cd8
+line-color=16161d
