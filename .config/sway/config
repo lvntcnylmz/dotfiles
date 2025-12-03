@@ -16,6 +16,8 @@ exec wl-paste --watch cliphist store
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec foot --server
 exec kanshi
+exec playerctld daemon
+# exec fcitx5 -dr &
 
 ## set random wallpaper and change it after 30 minutes
 exec sleep 5 | $HOME/.config/sway/wallpaper.sh

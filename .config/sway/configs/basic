@@ -6,13 +6,14 @@ assign [app_id="librewolf"] workspace number 2
 assign [title=".*VSCodium"] workspace number 3
 assign [title="nvim"] workspace number 3
 assign [class="jetbrains-*"] workspace number 3
-assign [instance="spotify"] workspace number 4
+assign [app_id="spotify"] workspace number 4
 assign [class="discord"] workspace number 5
 assign [app_id="thunar"] workspace number 6
-assign [app_id="thunderbird"] workspace number 7
+assign [app_id="Thunderbird"] workspace number 7
 assign [class="steam"] workspace number 8
 assign [app_id="libreoffice-*"] workspace number 9
-assign [class="Chromium"] workspace number 10
+assign [app_id="chromium"] workspace number 10
+assign [app_id="chrome-*"] workspace number 10
 
 # Border config
 smart_borders on
@@ -22,6 +23,9 @@ default_orientation auto
 
 # Gaps config
 gaps inner 10
+
+# Xwayland support
+xwayland force
 
 # Enable thinkPad touchpad
 input "1739:0:Synaptics_TM3276-022" {
@@ -37,7 +41,7 @@ input * xkb_layout "us, tr"
 seat * xcursor_theme Simp1e-Tokyo-Night 30
 
 # Property Name          Border        BG            Text       Indicator   Child Border
-client.focused           $dark-blue    $dark-blue    $fg-color  $yellow     $blue
+client.focused           $green        $green        $bg-color  $yellow     $blue
 client.focused_inactive  $dark-purple  $dark-purple  $fg-color  $bg-color   $bg-color
 client.unfocused         $dark-blue    $bg-color     $fg-color  $bg-color   $bg-color
 client.urgent            $red          $red          $bg-color  $red        $red
@@ -45,4 +49,4 @@ client.placeholder       $bg-color     $bg-color     $fg-color  $bg-color   $bg-
 client.background        $fg-color
 
 # Font
-font pango:JetBrainsMono NFP Bold 10
+font pango:JetBrainsMono NFP Bold 11
