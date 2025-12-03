@@ -7,7 +7,9 @@
 
 local save = ya.sync(function(st, _cwd, output)
     st.output = output
-    ya.render()
+    -- Support for versions later than v25.5.31 (not yet a full release as of writing this comment)
+    local render = ui.render or ya.render
+    render()
 end)
 
 -- Helper function for accessing the `config_file` state variable
@@ -89,7 +91,10 @@ return {
             if st.cwd ~= cwd then
                 st.cwd = cwd
 
-                ya.manager_emit("plugin", {
+                -- `ya.emit` as of 25.5.28
+                local emit = ya.emit or ya.manager_emit
+
+                emit("plugin", {
                     st._id,
                     ya.quote(tostring(cwd), true),
                 })

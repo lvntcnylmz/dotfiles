@@ -19,7 +19,7 @@
 # surimiOrange  "#ffa066"
 # waveAqua2     "#7aa89f"
 
-[manager]
+[mgr]
 marker_copied = { fg = "#98bb6c", bg = "#98bb6c" }
 marker_cut = { fg = "#e46876", bg = "#e46876" }
 marker_marked = { fg = "#957fb8", bg = "#957fb8" }
@@ -32,16 +32,19 @@ preview_hovered = { reversed = true }
 find_keyword = { fg = "#ffa066", bg = "#1f1f28" }
 find_position = {}
 
-tab_active = { reversed = true }
-tab_inactive = {}
-tab_width = 1
-
 count_copied = { fg = "#1f1f28", bg = "#98bb6c" }
 count_cut = { fg = "#1f1f28", bg = "#e46876" }
-count_selected = { fg = "#1f1f28", bg = "#e6c384" }
+count_selected = { fg = "#1f1f28", bg = "#ffa066" }
 
 border_symbol = "│"
 border_style = { fg = "#dcd7ba" }
+
+[tabs]
+active = { fg = "#1f1f28", bg = "#7e9cd8" }
+inactive = { fg = "#7e9cd8", bg = "#2a2a37" }
+
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
 
 
 [mode]
@@ -58,7 +61,7 @@ sep_left = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 overall = { fg = "#c8c093", bg = "#16161d" }
 
-progress_label = { fg = "#7e9cd8", bg = "#2a2a37", bold = true }
+progress_label = { fg = "#7e9cd8", bold = true }
 progress_normal = { fg = "#2a2a37", bg = "#1f1f28" }
 progress_error = { fg = "#2a2a37", bg = "#1f1f28" }
 

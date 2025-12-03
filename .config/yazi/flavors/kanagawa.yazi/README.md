@@ -13,7 +13,7 @@
 ## 🎨 Installation
 
 ```bash
-ya pack -a dangooddd/kanagawa
+ya pkg add dangooddd/kanagawa
 ```
 
 ## ⚙️ Usage

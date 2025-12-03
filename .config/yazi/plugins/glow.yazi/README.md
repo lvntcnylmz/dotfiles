@@ -1,5 +1,8 @@
 # glow.yazi
 
+>[!WARNING]
+>This plugin is now deprecated with the release of [Piper](https://github.com/yazi-rs/plugins/tree/main/piper.yazi#examples)
+
 Plugin for [Yazi](https://github.com/sxyazi/yazi) to preview markdown files with [glow](https://github.com/charmbracelet/glow). To install, run the below mentioned command:
 
 ```bash
