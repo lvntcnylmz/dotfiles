@@ -1,4 +1,4 @@
-function lsd --description 'alias lsd=lsd -al'
- command lsd -al $argv
-        
+function lsd --description 'alias lsd=lsd -AFlgh --header'
+    command lsd -AFlgh --header $argv
+
 end

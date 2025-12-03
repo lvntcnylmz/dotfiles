@@ -1,7 +1,9 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export EDITOR:nvim
+SETUVAR --export GTK_IM_MODULE:fcitx
 SETUVAR --export MANPAGER:nvim\x20\x2bMan\x21
+SETUVAR --export MOZ_ENABLE_WAYLAND:1
 SETUVAR --export MYVIMRC:/home/can/\x2econfig/nvim/init\x2elua
 SETUVAR --export SUDO_EDITOR:nvim
 SETUVAR __fish_initialized:3800
