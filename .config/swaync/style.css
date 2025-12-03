@@ -86,7 +86,6 @@
 
 .notification-action {
   border: 2px solid @border-green;
-  border-top: none;
 }
 
 .notification-default-action:hover,
@@ -197,12 +196,13 @@
 .widget-buttons-grid {
   font-size: x-large;
   padding: 5px;
-  margin: 10px;
+  margin: 0px 10px 10px 10px;
   background: @noti-bg-darker;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
   margin: 3px;
+  padding: 4px 30px;
   background: @cc-bg;
   color: @text-color;
   transition: background-color 0.15s ease-in-out;
@@ -230,8 +230,7 @@
 .widget-mpris {
   color: @text-color;
   background: @noti-bg-darker;
-  padding: 5px 10px;
-  margin: 5px 10px 5px 10px;
+  margin: 0px 10px 10px 10px;
   box-shadow: none;
 }
 
@@ -240,6 +239,19 @@
 .widget-mpris-album-art {
   border-radius: 0;
   box-shadow: none;
-  padding: 5px 10px;
-  margin: 10px 0 0 0;
+  margin: 10px;
+}
+
+picture.mpris-background {
+  opacity: 0;
+}
+
+.notification-action>button {
+  color: @text-color;
+  border-radius: 0px;
+}
+
+.notification-action>button:hover {
+  background-color: @border-green;
+  color: @cc-bg;
 }
