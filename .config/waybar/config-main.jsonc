@@ -17,7 +17,7 @@
     "custom/scratchpad-indicator",
     "custom/updates",
     "network#vpn",
-    "sway/language",
+    // "sway/language",
     "tray",
     "upower",
     "pulseaudio#speaker",
@@ -29,13 +29,13 @@
   //------------
   "custom/launcher": {
     "on-click": "nwg-bar -p 'left' -ml 10",
-    "on-click-right": "playerctl pause | swaylock-corrupter",
+    "on-click-right": "playerctl pause | $HOME/.config/sway/swaylock-corrupter.sh",
     "on-click-middle": "fuzzel",
     "format": "<span font-size='x-large'>󰣇</span>",
     "tooltip": false,
   },
   "sway/workspaces": {
-    "format": "{icon}",
+    "format": "<big>{icon}</big>",
     "on-click": "activate",
     "all-outputs": true,
     "sort-by-number": true,
@@ -71,14 +71,15 @@
       "paused": "<span color='#c34043'><big></big></span>",
     },
     "ignored-players": [
-      "firefox"
+      "firefox",
+      "kdeconnect"
     ],
   },
   //---------------
   // modules-center
   //---------------
   "clock": {
-    "format": "{:%d/%m/%y 󰇙 %a 󰇙 %R} 󰇙",
+    "format": "{:%d.%m.%y %a %R}",
     "interval": 1,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "locale": "en_GB.UTF-8",
