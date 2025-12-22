@@ -12,12 +12,12 @@ wallpapers=($WALLPAPER_DIR/*)
 # swaymsg output "*" bg "$(find $HOME/Pictures/Wallpaper/ | shuf -n 1)" fill
 
 while true; do
-	# Select a random wallpaper from the list
-	random_wallpaper="${wallpapers[RANDOM % ${#wallpapers[@]}]}"
+  # Select a random wallpaper from the list
+  random_wallpaper="${wallpapers[RANDOM % ${#wallpapers[@]}]}"
 
-	# Set the wallpaper using swaymsg command
-	swaymsg output "*" bg "$random_wallpaper" fill
+  # Set the wallpaper using swaymsg command
+  swaymsg output "*" bg "$random_wallpaper" fit
 
-	# Sleep for 30 minutes (1800 seconds) before changing the wallpaper again
-	sleep 1800
+  # Sleep for 30 minutes (1800 seconds) before changing the wallpaper again
+  sleep 1800
 done

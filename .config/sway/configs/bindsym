@@ -169,9 +169,16 @@ bindsym $mod+Shift+r mode "resize"
     bindsym XF86AudioMicMute exec swayosd-client --input-volume mute-toggle
 
     # Media controls
-    bindsym XF86AudioPlay exec playerctl play-pause
-    bindsym XF86AudioNext exec playerctl next
-    bindsym XF86AudioPrev exec playerctl previous
+    # bindsym XF86AudioPlay exec playerctl play-pause
+    # bindsym XF86AudioNext exec playerctl next
+    # bindsym XF86AudioPrev exec playerctl previous
+
+    # Play/Pause current player
+    bindsym XF86AudioPlay exec swayosd-client --playerctl play-pause
+    # Next song for current player
+    bindsym XF86AudioNext exec swayosd-client --playerctl next
+    # Previous song for current player
+    bindsym XF86AudioPrev exec swayosd-client --playerctl previous
 
     # brightnessctl control
     # bindsym XF86MonBrightnessDown exec brightnessctl set 5%-

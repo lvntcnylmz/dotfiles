@@ -8,6 +8,8 @@ assign [title="nvim"] workspace number 3
 assign [class="jetbrains-*"] workspace number 3
 assign [app_id="spotify"] workspace number 4
 assign [class="discord"] workspace number 5
+assign [app_id="gimp"] workspace number 5
+assign [app_id="Inkscape"] workspace number 5
 assign [app_id="thunar"] workspace number 6
 assign [app_id="Thunderbird"] workspace number 7
 assign [class="steam"] workspace number 8
@@ -49,4 +51,4 @@ client.placeholder       $bg-color     $bg-color     $fg-color  $bg-color   $bg-
 client.background        $fg-color
 
 # Font
-font pango:JetBrainsMono NFP Bold 11
+font pango:JetBrainsMono NFP Bold 9
