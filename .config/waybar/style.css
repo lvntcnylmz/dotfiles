@@ -9,7 +9,7 @@
 @define-color tn-grey #343b58;
 
 /* kanagawa color scheme */
-@define-color kngw-bg-color #16161d;
+@define-color kngw-bg-color #000000;
 @define-color kngw-fg-color #dcd7ba;
 @define-color kngw-green #76946a;
 @define-color kngw-red #c34043;
@@ -22,7 +22,7 @@
 * {
   font-family: JetBrainsMono NFP;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 /* Waybar */
@@ -57,13 +57,17 @@ tooltip {
 #custom-launcher,
 #custom-notification,
 #custom-scratchpad-indicator {
-  margin: 0px 1px;
+  margin: 0px 3px;
   padding: 0px 2px;
 }
 
 /* Specific Module Styling */
 #mpris {
   margin: 0px 5px;
+}
+
+#mpris.paused {
+  color: @kngw-red;
 }
 
 .modules-center {
@@ -139,10 +143,14 @@ tooltip {
 
 #workspaces button {
   padding: 0px;
-  min-width: 13px;
+  min-width: 17px;
   color: @kngw-fg-color;
   border-radius: 0px;
 }
+
+/* #workspaces button label { */
+/*   font-size: 13px; */
+/* } */
 
 #workspaces button.empty {
   color: @kngw-grey;

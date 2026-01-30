@@ -2,15 +2,8 @@
   "reload_style_on_change": true,
   "height": 25,
   "output": "eDP-1",
-  "modules-left": [
-    "custom/launcher",
-    "sway/workspaces",
-    "mpris",
-  ],
-  "modules-center": [
-    "clock",
-    "custom/weather",
-  ],
+  "modules-left": ["custom/launcher", "sway/workspaces", "mpris"],
+  "modules-center": ["clock", "custom/weather"],
   "modules-right": [
     "temperature",
     "sway/mode",
@@ -57,29 +50,21 @@
     "format-paused": "{status_icon} {dynamic}",
     "format-len": 80,
     "dynamic-len": 80,
-    "dynamic-order": [
-      "title",
-      "artist",
-      "position",
-      "length"
-    ],
+    "dynamic-order": ["title", "artist", "position", "length"],
     "interval": 1,
     "player-icons": {
-      "default": "<span color='#76946a'><big></big></span>",
+      "default": "<span color='#76946a'><big></big></span>",
     },
-    "status-icons": {
-      "paused": "<span color='#c34043'><big></big></span>",
-    },
-    "ignored-players": [
-      "firefox",
-      "kdeconnect"
-    ],
+    // "status-icons": {
+    //   "paused": "<span color='#c34043'><big></big></span>",
+    // },
+    "ignored-players": ["firefox", "kdeconnect"],
   },
   //---------------
   // modules-center
   //---------------
   "clock": {
-    "format": "{:%d.%m.%y %a %R}",
+    "format": "{:%d/%m/%y %a %R}",
     "interval": 1,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "locale": "en_GB.UTF-8",
@@ -141,8 +126,8 @@
     "return-type": "json",
   },
   "tray": {
-    "icon-size": 13,
-    "spacing": 5,
+    "icon-size": 15,
+    "spacing": 7,
   },
   "sway/language": {
     "format": "<span text-transform='uppercase'>{shortDescription}</span>",
@@ -152,11 +137,7 @@
     "critical-threshold": 70,
     "format-critical": "{temperatureC}°C {icon}",
     "format": "",
-    "format-icons": [
-      "",
-      "",
-      ""
-    ],
+    "format-icons": ["", "", ""],
   },
   "pulseaudio#speaker": {
     "format": "<span font-size='x-large'>{icon}</span>",
@@ -165,12 +146,7 @@
     "format-muted": "<span font-size='x-large'>󰖁</span>",
     "format-icons": {
       "headphone": "󰋋",
-      "default": [
-        "󰕿",
-        "󰖀",
-        "󱄠",
-        "󰕾"
-      ],
+      "default": ["󰕿", "󰖀", "󱄠", "󰕾"],
     },
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-click-middle": "pactl --format=json list sinks short | jq -cM --unbuffered \"[.[].name] | .[((index(\\\"$(pactl get-default-sink)\\\")+1)%length)]\" | xargs pactl set-default-sink",
