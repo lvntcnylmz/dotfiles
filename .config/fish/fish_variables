@@ -6,46 +6,9 @@ SETUVAR --export MANPAGER:nvim\x20\x2bMan\x21
 SETUVAR --export MOZ_ENABLE_WAYLAND:1
 SETUVAR --export MYVIMRC:/home/can/\x2econfig/nvim/init\x2elua
 SETUVAR --export SUDO_EDITOR:nvim
-SETUVAR __fish_initialized:3800
-SETUVAR fish_color_autosuggestion:727169
-SETUVAR fish_color_cancel:\x1d
-SETUVAR fish_color_command:7AA89F
-SETUVAR fish_color_comment:727169
-SETUVAR fish_color_cwd:\x1d
-SETUVAR fish_color_cwd_root:red
-SETUVAR fish_color_end:FF9E64
-SETUVAR fish_color_error:C34043
-SETUVAR fish_color_escape:D27E99
-SETUVAR fish_color_history_current:\x2d\x2dbold
-SETUVAR fish_color_host:\x1d
-SETUVAR fish_color_host_remote:\x1d
-SETUVAR fish_color_keyword:D27E99
-SETUVAR fish_color_normal:DCD7BA
-SETUVAR fish_color_operator:76946A
-SETUVAR fish_color_option:\x1d
-SETUVAR fish_color_param:957FB8
-SETUVAR fish_color_quote:C0A36E
-SETUVAR fish_color_redirection:DCD7BA
-SETUVAR fish_color_search_match:\x2d\x2dbackground\x3d2D4F67
-SETUVAR fish_color_selection:\x2d\x2dbackground\x3d2D4F67
-SETUVAR fish_color_status:red
-SETUVAR fish_color_user:\x1d
-SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR __fish_initialized:4300
 SETUVAR fish_greeting:
 SETUVAR fish_key_bindings:fish_default_key_bindings
-SETUVAR fish_pager_color_background:\x1d
-SETUVAR fish_pager_color_completion:DCD7BA
-SETUVAR fish_pager_color_description:727169
-SETUVAR fish_pager_color_prefix:7AA89F
-SETUVAR fish_pager_color_progress:727169
-SETUVAR fish_pager_color_secondary_background:\x1d
-SETUVAR fish_pager_color_secondary_completion:\x1d
-SETUVAR fish_pager_color_secondary_description:\x1d
-SETUVAR fish_pager_color_secondary_prefix:\x1d
-SETUVAR fish_pager_color_selected_background:\x1d
-SETUVAR fish_pager_color_selected_completion:\x1d
-SETUVAR fish_pager_color_selected_description:\x1d
-SETUVAR fish_pager_color_selected_prefix:\x1d
 SETUVAR --export foot:footclient
 SETUVAR kanagawa:\x1d
 SETUVAR --export nvim:\x1d
