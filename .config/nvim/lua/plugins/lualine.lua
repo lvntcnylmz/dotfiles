@@ -1,16 +1,16 @@
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
+
   init = function()
     vim.g.lualine_laststatus = vim.o.laststatus
     if vim.fn.argc(-1) > 0 then
-      -- set an empty statusline till lualine loads
       vim.o.statusline = " "
     else
-      -- hide the statusline on the starter page
       vim.o.laststatus = 0
     end
   end,
+
   opts = function()
     local lualine_require = require("lualine_require")
     lualine_require.require = require
@@ -28,9 +28,13 @@ return {
         section_separators = { left = "", right = "" },
         disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
       },
+
       sections = {
-        lualine_a = { { "mode", icon = { "" }, color = { gui = "bold" } } },
-        lualine_b = {
+        lualine_a = {
+          { "mode", icon = { "" }, color = { gui = "bold" } },
+        },
+
+        lualine_c = {
           { "branch", color = { gui = "bold" } },
           {
             "diff",
@@ -62,56 +66,92 @@ return {
             color = { gui = "bold" },
           },
         },
-        lualine_c = {
-          { "filetype", icon_only = true, padding = { left = 1, right = 0 }, color = { bg = "#24283b", gui = "bold" } },
-          { "filename", padding = { left = 0, right = 1 }, color = { bg = "#24283b", gui = "bold" } },
+
+        lualine_b = {
+          {
+            "filename",
+            file_status = true, -- Displays file status (readonly status, modified status)
+            newfile_status = false, -- Display new file status (new file means no write after created)
+            path = 4,
+            -- 0: Just the filename
+            -- 1: Relative path
+            -- 2: Absolute path
+            -- 3: Absolute path, with tilde as the home directory
+            -- 4: Filename and parent dir, with tilde as the home directory
+
+            shorting_target = 40,
+            icon_only = true,
+            padding = { left = 1, right = 0 },
+            -- color = { bg = "#24283b", gui = "bold" },
+          },
         },
+
         lualine_x = {
           Snacks.profiler.status(),
-          -- stylua: ignore
-          -- {
-          --   function() return require("noice").api.status.command.get() end,
-          --   cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-          --   color = function() return { fg = Snacks.util.color("Statement") } end,
-          -- },
-          -- stylua: ignore
+
           {
-            function() return require("noice").api.status.mode.get() end,
-            cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-            color = function() return { fg = Snacks.util.color("Constant") } end,
+            function()
+              return require("noice").api.status.mode.get()
+            end,
+            cond = function()
+              return package.loaded["noice"] and require("noice").api.status.mode.has()
+            end,
+            color = function()
+              return { fg = Snacks.util.color("Constant") }
+            end,
           },
-          -- stylua: ignore
+
           {
-            function() return "  " .. require("dap").status() end,
-            cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
-            color = function() return { fg = Snacks.util.color("Debug") } end,
+            function()
+              return "  " .. require("dap").status()
+            end,
+            cond = function()
+              return package.loaded["dap"] and require("dap").status() ~= ""
+            end,
+            color = function()
+              return { fg = Snacks.util.color("Debug") }
+            end,
           },
+
           {
             function()
               local msg = "No Active Lsp"
-              local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-              local clients = vim.lsp.get_active_clients()
-              if next(clients) == nil then
+              local buf_ft = vim.bo.filetype
+              local clients = vim.lsp.get_clients({ bufnr = 0 })
+
+              if not clients or vim.tbl_isempty(clients) then
                 return msg
               end
+
               for _, client in ipairs(clients) do
                 local filetypes = client.config.filetypes
-                if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+                if filetypes and vim.tbl_contains(filetypes, buf_ft) then
                   return client.name
                 end
               end
+
               return msg
             end,
             icon = " ",
-            color = { bg = "#24283b", fg = "#e0af68", gui = "bold" },
+            -- color = { bg = "#24283b", fg = "#e0af68", gui = "bold" },
           },
-          { "fileformat", icons_enabled = false, color = { bg = "#24283b" } },
-          { "encoding", color = { bg = "#24283b", gui = "bold" } },
+
+          {
+            "fileformat",
+            icons_enabled = false,
+            -- color = { bg = "#24283b" }
+          },
+          {
+            "encoding",
+            -- color = { bg = "#24283b", gui = "bold" }
+          },
         },
+
         lualine_y = {
           { "progress", separator = " ", padding = { left = 1, right = 0 }, color = { gui = "bold" } },
           { "location", padding = { left = 0, right = 1 }, color = { gui = "bold" } },
         },
+
         lualine_z = {
           {
             function()
@@ -121,6 +161,7 @@ return {
           },
         },
       },
+
       extensions = { "lazy" },
     }
   end,
