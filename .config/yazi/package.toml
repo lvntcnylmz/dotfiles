@@ -1,34 +1,24 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "eaf6920"
+rev = "6f50636"
 hash = "3996fc74044bc44144b323686f887e1"
 
 [[plugin.deps]]
-use = "Rolv-Apneseth/starship"
-rev = "d7056e3"
-hash = "be8e1b31833e356cad14dcda9d8ad2d3"
-
-[[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "eaf6920"
-hash = "27ca02f49fd236b5cc7bf03c243859fe"
+rev = "6f50636"
+hash = "270915fa8282a19908449530ff66f7e2"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:toggle-pane"
-rev = "eaf6920"
+rev = "6f50636"
 hash = "8a7c58225816a163a6e8730c0adafbc8"
 
 [[plugin.deps]]
-use = "Reledia/glow"
-rev = "bd3eaa5"
-hash = "92b5c58159a51c567f82b618cee2b78"
+use = "yazi-rs/plugins:piper"
+rev = "6f50636"
+hash = "25aee698dd1081001008ce0cb1cc4da3"
 
 [[flavor.deps]]
 use = "dangooddd/kanagawa"
-rev = "a0b1d9d"
-hash = "abfb0b2371259b2c8adfc7b617c3d7e5"
-
-[[flavor.deps]]
-use = "marcosvnmelo/kanagawa-dragon"
-rev = "4905527"
-hash = "5fd7aa0bf4e7d9753ad8a4660a6eb94f"
+rev = "04985d1"
+hash = "c69a63981e254a3a06a11c2bf0e6af1d"
