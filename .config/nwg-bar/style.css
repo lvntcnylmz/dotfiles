@@ -1,30 +1,24 @@
-@define-color bg-color #16161D;
-@define-color fg-color #DCD7BA;
-
-@define-color tn-green #76946A;
-@define-color tn-red #C34043;
-@define-color tn-blue #7E9CD8;
-@define-color tn-yellow #C0A36E;
-@define-color tn-purple #957FB8;
-
-@define-color tn-dark-green #485e30;
-@define-color tn-dark-red #8c4351;
-@define-color tn-dark-blue #34548a;
-@define-color tn-dark-yellow #8f5e15;
-@define-color tn-dark-purple #5a4a78;
+@define-color kngw-bg-color #000000;
+@define-color kngw-fg-color #dcd7ba;
+@define-color kngw-green #76946a;
+@define-color kngw-red #c34043;
+@define-color kngw-blue #7e9cd8;
+@define-color kngw-yellow #c0a36e;
+@define-color kngw-purple #957fb8;
+@define-color kngw-grey #727169;
 
 window {
   background: transparent;
-  color: @fg-color;
+  color: @kngw-fg-color;
   border-radius: 0px;
   font-family: "JetBrainsMono NFP";
   font-weight: bold;
-  font-size: 12;
+  font-size: 13px;
 }
 
 /* Outer bar container, takes all the window width/height */
 #outer-box {
-  border: 2px solid @tn-blue;
+  border: 2px solid @kngw-green;
   border-radius: 0px;
   padding: 0px;
   margin-bottom: 705px;
@@ -33,7 +27,7 @@ window {
 
 /* Inner bar container, surrounds buttons */
 #inner-box {
-  background: @bg-color;
+  background: @kngw-bg-color;
   border-radius: 0px;
 }
 
@@ -48,11 +42,11 @@ button {
   padding-left: 10px;
   padding-right: 10px;
   margin: 0px;
-  color: @fg-color;
+  color: @kngw-fg-color;
 }
 
 button:hover {
-  background: @tn-blue;
-  color: @bg-color;
+  background: @kngw-green;
+  color: @kngw-bg-color;
   border-radius: 0px;
 }
