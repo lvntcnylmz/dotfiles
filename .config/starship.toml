@@ -34,7 +34,7 @@ format = '\[[$symbol($version)]($style)\]'
 [directory]
 # truncation_length = 8
 # truncation_symbol = ''
-home_symbol = " HOME"
+home_symbol = " Home"
 
 [docker_context]
 format = '\[[$symbol$context]($style)\]'
