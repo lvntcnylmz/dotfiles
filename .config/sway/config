@@ -18,7 +18,6 @@ exec foot --server
 exec kanshi
 exec playerctld daemon
 exec --no-startup-id mpv ~/.config/sway/pc_startup.ogg 2>/dev/null
-# exec fcitx5 -dr &
 
 ## set random wallpaper and change it after 30 minutes
 exec sleep 5 | $HOME/.config/sway/wallpaper.sh
