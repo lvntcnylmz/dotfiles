@@ -18,7 +18,7 @@
     bindsym $mod+n exec $term $editor
 
     # Change keyboard layout 
-    bindsym $mod+z exec swaymsg input type:keyboard xkb_switch_layout next
+    # bindsym $mod+z exec swaymsg input type:keyboard xkb_switch_layout next
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
