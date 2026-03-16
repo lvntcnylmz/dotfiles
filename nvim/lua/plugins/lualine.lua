@@ -120,19 +120,19 @@ return {
               local clients = vim.lsp.get_clients({ bufnr = 0 })
 
               if not clients or vim.tbl_isempty(clients) then
-                return msg
+                return " " .. msg
               end
 
               for _, client in ipairs(clients) do
                 local filetypes = client.config.filetypes
                 if filetypes and vim.tbl_contains(filetypes, buf_ft) then
-                  return client.name
+                  return "  " .. client.name
                 end
               end
 
               return msg
             end,
-            icon = " ",
+            -- icon = " ",
             -- color = { bg = "#24283b", fg = "#e0af68", gui = "bold" },
           },
 

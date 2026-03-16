@@ -5,7 +5,13 @@ return {
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
-    explorer = { search = false },
+    explorer = {
+      search = false,
+      cwd = function()
+        local dir = vim.fn.expand("%:p:h")
+        return dir ~= "" and dir or vim.loop.cwd()
+      end,
+    },
     indent = { enabled = true },
     input = { enabled = true },
     picker = { enabled = true },
