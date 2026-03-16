@@ -8,7 +8,6 @@
     "sway/mode",
     "custom/scratchpad-indicator",
     "custom/updates",
-    "network#vpn",
     // "sway/language",
     "tray",
     "upower",
@@ -43,6 +42,18 @@
       "9": [],
       "10": [],
     },
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十",
+    },
   },
   "mpris": {
     "format": "{player_icon} {dynamic}",
@@ -52,7 +63,7 @@
     "dynamic-order": ["title", "artist", "position", "length"],
     "interval": 1,
     "player-icons": {
-      "default": "<span color='#76946a'><big></big></span>",
+      "default": "<span color='#8a9a7b'><big></big></span>",
     },
     // "status-icons": {
     //   "paused": "<span color='#c34043'><big></big></span>",
@@ -63,10 +74,9 @@
   // modules-center
   //---------------
   "clock": {
-    "format": "{:%b %d %a %R}",
+    "format": "{:%d/%m/%y %a %T}",
     "interval": 1,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "locale": "en_GB.UTF-8",
     "calendar": {
       "mode": "month",
       "mode-mon-col": 3,
@@ -99,13 +109,6 @@
   //--------------
   // modules-right
   //--------------
-  "network#vpn": {
-    "interval": 5,
-    "interface": "tun0",
-    "format": "<span font-size='large'>󰞀</span>",
-    "format-disconnected": "",
-    "tooltip-format": "VPN Connected: {ipaddr}",
-  },
   "sway/mode": {
     "format": "<span font-size='large'>󰩨</span>",
     "max-length": 50,
@@ -118,8 +121,8 @@
     "on-click-right": "swaymsg 'move scratchpad'",
   },
   "custom/updates": {
-    "format": "<span font-size='large'>{}</span>",
-    "interval": 7200,
+    "format": "{}",
+    "interval": 3600,
     "exec": "$HOME/.config/waybar/scripts/checkupdates.sh 2> /dev/null",
     "on-click": "footclient -e 'paru'",
     "return-type": "json",

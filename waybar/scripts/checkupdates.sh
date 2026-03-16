@@ -42,7 +42,7 @@ mapfile -t updates < <(checkupdates-with-aur)
 text=${#updates[@]}
 
 tooltip+=" $(stringToLen "Package Name" 20) $(stringToLen "\tPrevious Version" 20) $(stringToLen "\tNext Version" 20)\n"
-[ "$text" -eq 0 ] && text="" || text="<sup>$text</sup>"
+[ "$text" -eq 0 ] && text="" || text="($text)<span font-size='large'></span>"
 
 for i in "${updates[@]}"; do
   # shellcheck disable=2046

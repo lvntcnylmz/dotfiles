@@ -10,17 +10,17 @@
 
 /* kanagawa color scheme */
 @define-color kngw-bg-color #000000;
-@define-color kngw-fg-color #dcd7ba;
+@define-color kngw-fg-color #c5c9c5;
 @define-color kngw-green #76946a;
 @define-color kngw-red #c34043;
 @define-color kngw-blue #7e9cd8;
 @define-color kngw-yellow #c0a36e;
 @define-color kngw-purple #957fb8;
-@define-color kngw-grey #727169;
+@define-color kngw-grey #54546d;
 
 /* Global Styles */
 * {
-  font-family: JetBrainsMono NFP;
+  font-family: "JetBrainsMono NFP", "Noto Sans CJK JP SemiBold", monospace;
   font-weight: bold;
   font-size: 13px;
 }
@@ -47,7 +47,6 @@ tooltip {
 #upower,
 #language,
 #workspaces,
-#network.vpn,
 #pulseaudio.speaker,
 #pulseaudio.mic,
 #temperature,
@@ -57,7 +56,7 @@ tooltip {
 #custom-launcher,
 #custom-notification,
 #custom-scratchpad-indicator {
-  margin: 0px 3px;
+  margin: 0px 2px;
   padding: 0px 2px;
 }
 
@@ -79,10 +78,6 @@ tooltip {
 #custom-updates,
 #custom-scratchpad-indicator {
   color: @kngw-blue;
-}
-
-#network.vpn {
-  color: @kngw-yellow;
 }
 
 #pulseaudio.speaker {
