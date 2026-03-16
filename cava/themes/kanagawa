@@ -1,0 +1,21 @@
+[color]
+
+gradient = 1
+gradient_count = 16
+
+gradient_color_1  = '#2d4f67'
+gradient_color_2  = '#3d6b57'
+gradient_color_3  = '#8a9a7b'
+gradient_color_4  = '#87a987'
+gradient_color_5  = '#8a9a7b'
+gradient_color_6  = '#7aa89f'
+gradient_color_7  = '#8a9a7b'
+gradient_color_8  = '#87a987'
+gradient_color_9  = '#8a9a7b'
+gradient_color_10 = '#a292a3'
+gradient_color_11 = '#938aa9'
+gradient_color_12 = '#a292a3'
+gradient_color_13 = '#938aa9'
+gradient_color_14 = '#a292a3'
+gradient_color_15 = '#938aa9'
+gradient_color_16 = '#a292a3'
