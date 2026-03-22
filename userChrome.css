@@ -1,0 +1,75 @@
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+  font-family:
+    "JetBrainsMono NFM SemiBold", "Noto Sans CJK JP SemiBold", monospace;
+}
+
+:root {
+  --toolbar-bgcolor: #000000 !important;
+  --lwt-accent-color: #000000 !important;
+  --tabpanel-background-color: #000000 !important;
+  --arrowpanel-background: #000000 !important;
+}
+
+/* Üst toolbar */
+#navigator-toolbox {
+  background-color: #000000 !important;
+}
+
+/* Sekme çubuğu */
+#TabsToolbar {
+  background-color: #000000 !important;
+}
+
+/* Aktif sekme */
+.tabbrowser-tab[selected="true"] .tab-background {
+  background-color: #000000 !important;
+}
+
+/* Pasif sekmeler */
+.tabbrowser-tab .tab-background {
+  background-color: #000000 !important;
+}
+
+/* URL bar */
+#urlbar-background {
+  background-color: #000000 !important;
+}
+
+/* Açılır paneller */
+.panel-subview-body,
+.panel-viewstack,
+.panel-viewcontainer,
+#appMenu-popup {
+  background-color: #000000 !important;
+}
+
+#navigator-toolbox {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#TabsToolbar {
+  order: 2 !important;
+}
+
+#nav-bar {
+  order: 1 !important;
+}
+
+#titlebar {
+  order: 0 !important;
+}
+
+#TabsToolbar {
+  position: fixed !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  z-index: 100 !important;
+}
+
+#browser {
+  margin-bottom: 40px !important;
+}
