@@ -1,21 +1,22 @@
 include ~/.config/sway/configs/colorscheme
 
 # Assign windows to workspaces
-assign [app_id="firefox"] workspace number 2
 assign [app_id="librewolf"] workspace number 2
-assign [title=".*VSCodium"] workspace number 3
 assign [title="nvim"] workspace number 3
-assign [class="jetbrains-*"] workspace number 3
 assign [app_id="spotify"] workspace number 4
-assign [class="discord"] workspace number 5
-assign [app_id="gimp"] workspace number 5
-assign [app_id="Inkscape"] workspace number 5
 assign [app_id="thunar"] workspace number 6
 assign [app_id="Thunderbird"] workspace number 7
 assign [class="steam"] workspace number 8
 assign [app_id="libreoffice-*"] workspace number 9
 assign [app_id="chromium"] workspace number 10
-assign [app_id="chrome-*"] workspace number 10
+
+for_window [app_id="librewolf" title="Picture-in-Picture"] {
+    floating enable
+    border none
+    move container to output eDP-1
+    resize set 945 525
+    move position 0 535
+}
 
 # Border config
 smart_borders on
@@ -27,7 +28,7 @@ default_orientation auto
 gaps inner 10
 
 # Xwayland support
-xwayland force
+xwayland enable
 
 # Enable thinkPad touchpad
 input "1739:0:Synaptics_TM3276-022" {
@@ -37,9 +38,8 @@ input "1739:0:Synaptics_TM3276-022" {
 }
 
 # Enable multiple keyboard layouts
-input * xkb_layout "us, tr"
+# input * xkb_layout "us, tr"
 
-# Set cursor theme
 seat * xcursor_theme Simp1e-Tokyo-Night 30
 
 # Property Name          Border        BG            Text       Indicator   Child Border

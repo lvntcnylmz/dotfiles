@@ -1,10 +1,8 @@
-output DP-3 {
-    resolution 1920x1080 pos 0,0
-}
-
+# output "Lenovo Group Limited L27m-30 UPB67FNK" mode 1920x1080@60Hz pos 0 0 scale_filter smart
+# output eDP-1 mode 1920x1080@60Hz pos 1920 0 scale_filter smart
+output * scale_filter smart
+output * adaptive_sync on
 output "*" bg "$(find $HOME/Pictures/Wallpapers/ | shuf -n 1)" fill
-
-# output "*" bg $HOME/Pictures/Wallpapers/disco.png fill
 
 workspace 1 output eDP-1
 workspace 2 output DP-3

@@ -5,21 +5,40 @@ include ~/.config/sway/configs/bindsym
 include /etc/sway/config.d/*
 
 ## auto-start apps
+# 1. Audio system (pipewire first, then dependents)
+exec pipewire
+exec pipewire-pulse
+exec wireplumber
+
+# 2. X resources (must be loaded before applications start)
+exec xrdb -load $HOME/.Xresources
+
+# 3. Display & screen management
+exec kanshi
+
+# 4. Brightness & color
+exec wluma
+exec gammastep-indicator
+
+# 5. Input method
+exec fcitx5 -dr
+
+# 6. Terminal server (may be used by other applications)
+exec foot --server
+
+# 7. Media
+exec playerctld daemon
+
+# 8. Notification & tiling
 exec swaync
 exec autotiling
 exec swayosd-server
-exec blueman-tray
-exec gammastep-indicator
-exec kdeconnect-indicator
-exec nm-applet --indicator
-exec wl-paste --watch cliphist store
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec foot --server
-exec kanshi
-exec playerctld daemon
-exec --no-startup-id mpv ~/.config/sway/pc_startup.ogg 2>/dev/null
-exec fcitx5 -dr &
-exec sleep 10 | $HOME/.config/sway/layout.sh
 
-## set random wallpaper and change it after 30 minutes
-exec sleep 5 | $HOME/.config/sway/wallpaper.sh
+# 9. Tray applications
+exec nm-applet --indicator
+exec kdeconnect-indicator
+
+# 10. Last — delayed scripts
+exec --no-startup-id mpv $HOME/.config/sway/audio/pc_startup.ogg 2>/dev/null
+exec sleep 5 && $HOME/.config/sway/scripts/layout.sh
+exec sleep 5 && $HOME/.config/sway/scripts/wallpaper.sh

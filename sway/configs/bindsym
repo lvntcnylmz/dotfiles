@@ -30,12 +30,12 @@
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
-    # Toggle outer gaps
+    # Toggle outer gas
     bindsym $mod+greater gaps inner current set -10
     bindsym $mod+less gaps inner current set 10
 
     # Toggle lock screen
-    bindsym $mod+Shift+x exec playerctl pause | exec ~/.config/sway/swaylock-corrupter.sh
+    bindsym $mod+Shift+x exec playerctl pause | exec $HOME/.config/sway/scripts/swaylock-corrupter.sh
 
     # Exec powermenu
     bindsym $mod+Shift+m exec nwg-bar -p 'left' -ml 10
